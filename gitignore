@@ -1,0 +1,9 @@
+.DS_Store
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+server/
+database/
+dist/
+node_modules/
+
