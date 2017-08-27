@@ -5,4 +5,5 @@ xcuserdata/
 server/
 database/
 dist/
+node_modules/
 
