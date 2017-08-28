@@ -7,6 +7,8 @@
 # git add --all ajoute tous mes fichier contenu ds mon git
 # le fichier .gitignore permet de preciser les dossiers ou fichiers qui ne devraient pas etr$
 # git status permet de voir le statut. à faire souvent avt de pushen, pour savoir si on devr$
-
+# git add -A ajoute tous les fichiers
+# git add . actualise tous les noveaux fichiers et ceux modifies, mais pas ceux supprimés
+# git add -u actualise tous les fichiers et meme ceux supprimés
 
 

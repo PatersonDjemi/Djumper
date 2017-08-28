@@ -1,12 +1,20 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux'];
+const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        bundle: './src/index.js',
+        vendor: VENDOR_LIBS
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].[chunkHash].js",
         path: path.resolve(__dirname, 'dist'),
-        publicPath: "dist/"
+
     },
     module: {
         rules: [
@@ -27,14 +35,21 @@ module.exports = {
                 use: [
                     {
                         loader: "url-loader",
-                        options: { limit: 40000}
+                        options: { limit: 400000}
                     },
                     'image-webpack-loader']
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'manifest']
+        }),
+        new htmlWebpackPlugin({
+            template: 'index.html'
+        })
+
     ]
 };
 
@@ -46,3 +61,8 @@ module.exports = {
 // besoin d installer file-loader pr que les loader prles images puissent fonctionner
 // on ajoute publicpath pr linker les images
 // les images qui depassent la limite fixee ne st pas chargees ds le bundle.js mais ds notre fichier et place ds notre output dossier
+// installer babel-preset-react afin que babel puisse transpiler les jsx en pure js, puis on va ds le fichier babelrc
+// on ajoute aussi le string react au fichier babelrc pour que webpack puisse transpile aussi le le jsx synthaxe en pure js
+// le html-webpack-plugin permet d ajouter automatiquement les scripts generes par webpack ds notre fichier html,
+    // ensuite un fichier html est generé aussi ds notre nvo dossier dist contenant tsles scripts de ce dossier(css, js,...)
+// en ajoutant le chunkHash, on change la propiété name to names au nivo du commonschunkplugin et on lui passe un tableau
