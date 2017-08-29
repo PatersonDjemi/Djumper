@@ -14,4 +14,7 @@
 # git rebase permet de 
 # git branch permet de d afficher les differentes branches et celle ds laquelle on se trouve.
 # git branch "nom d un branche" permet de créer une nvlle branche
+# git reset HEAD, te ramène à la position du head,
+# git clean -f(force) efface tous les unstaged changes
+# git log liste les differents commit avec les commits id
 
