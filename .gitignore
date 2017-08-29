@@ -6,4 +6,5 @@ server/
 database/
 dist/
 node_modules/
+.idea/
 

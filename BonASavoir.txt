@@ -10,5 +10,8 @@
 # git add -A ajoute tous les fichiers
 # git add . actualise tous les noveaux fichiers et ceux modifies, mais pas ceux supprimés
 # git add -u actualise tous les fichiers et meme ceux supprimés
-
+# git checkcout "nom de la branche" permet de changer de branches
+# git rebase permet de 
+# git branch permet de d afficher les differentes branches et celle ds laquelle on se trouve.
+# git branch "nom d un branche" permet de créer une nvlle branche
 
