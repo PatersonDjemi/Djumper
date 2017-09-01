@@ -26,9 +26,9 @@ module.exports = {
             {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader'
+                    use: ['css-loader', 'less-loader']
                 }),
-                test: /\.css$/
+                test: /\.(css|less)$/
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
@@ -38,7 +38,11 @@ module.exports = {
                         options: { limit: 400000}
                     },
                     'image-webpack-loader']
-            }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: 'file-loader'
+            },
         ]
     },
     plugins: [
