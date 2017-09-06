@@ -1,11 +1,24 @@
 import React from 'react'
+import { Container } from 'semantic-ui-react'
+
+import Navigation from './navigation'
+import FirstBlock from './first_block'
+import SecondBlock from './second_block'
+import ThirdBlock from './third_block'
+import FourthBlock from './fourth_block'
+
 
 
 const App = () => {
     return (
-        <div> React we are coming!! On va te kill
-                <h3> its gonna be amazing </h3>
+        <div className="_yop">
+            <Navigation/>
+            <FirstBlock/>
+            <SecondBlock/>
+            <ThirdBlock/>
+            <FourthBlock/>
         </div>
+
     );
 }
 

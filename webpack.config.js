@@ -1,9 +1,9 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux'];
+const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux', 'react-router-dom'];
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+// const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -70,3 +70,13 @@ module.exports = {
 // le html-webpack-plugin permet d ajouter automatiquement les scripts generes par webpack ds notre fichier html,
     // ensuite un fichier html est generé aussi ds notre nvo dossier dist contenant tsles scripts de ce dossier(css, js,...)
 // en ajoutant le chunkHash, on change la propiété name to names au nivo du commonschunkplugin et on lui passe un tableau
+
+
+
+ /*
+resolve: {
+    alias: {
+        '../../theme.config$': path.join(__dirname, 'My-semantic-theme/theme.config')
+    }
+},
+*/
