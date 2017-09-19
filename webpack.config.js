@@ -45,6 +45,10 @@ module.exports = {
             },
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './'
+    },
     plugins: [
         new ExtractTextPlugin('style.css'),
         new webpack.optimize.CommonsChunkPlugin({
@@ -70,6 +74,8 @@ module.exports = {
 // le html-webpack-plugin permet d ajouter automatiquement les scripts generes par webpack ds notre fichier html,
     // ensuite un fichier html est generé aussi ds notre nvo dossier dist contenant tsles scripts de ce dossier(css, js,...)
 // en ajoutant le chunkHash, on change la propiété name to names au nivo du commonschunkplugin et on lui passe un tableau
+
+// devServer : historyApiFallback permet de dire à webpack de traquer l history du browser afin de pouvoir naviguer d une page à une autre
 
 
 
