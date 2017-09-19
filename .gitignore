@@ -7,4 +7,4 @@ database/
 dist/
 node_modules/
 .idea/
-
+semantic/
