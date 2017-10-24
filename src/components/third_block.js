@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Grid, Header, Button, List } from 'semantic-ui-react'
 
 
-const ThirdBlock = () => {
+const H_Third = () => {
     return (
         <Container fluid className="_thirdBlock">
             <Grid centered stackable columns="sixteen">
@@ -22,4 +22,4 @@ const ThirdBlock = () => {
     );
 }
 
-export default ThirdBlock;
+export default H_Third;

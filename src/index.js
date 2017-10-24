@@ -8,16 +8,16 @@ import { BrowserRouter as Router, browserHistory, Route, Switch} from 'react-rou
 import '../semantic/src/semantic.less'
 import '../styles/style.css'
 
-// import RootReducers from './reducers'
+import RootReducers from './reducers'
 
 import App from './components/app';
 import SignUp from './components/signup'
 
-//let myStore = createStore(RootReducers);
+let myStore = createStore(RootReducers);
 // creer le store au niveau du provider
 
 ReactDom.render(
-    <Provider>
+    <Provider store={myStore}>
         <Router history={browserHistory}>
             <div>
                 <Switch>

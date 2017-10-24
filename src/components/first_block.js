@@ -6,15 +6,19 @@ const FirstBlock = () => {
     return (
         <Grid.Column width={16} className="_firstBlock">
             <div className="_mainFunc">
-                <Header as="h1">PAYE TON VOYAGE EN PLUSIEURS MENSUALITES</Header>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.
+                <Header as="h1" className="_djumper" >PAYE TON VOYAGE EN PLUSIEURS MENSUALITES</Header>
+                <p id="djumperText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.
                     Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mu
                 </p>
-                <Button>CREATE AN ACCOUNT</Button>
+                <Button size="big" className="_createBtn">CREATE AN ACCOUNT</Button>
 
             </div>
 
-            <div className="_separationOne"></div>
+            <div className="_separationOne">
+               <div className="_over"> <div className="_circle1"></div> </div>
+                <div className="_circle2"></div>
+                <div className="_circle3"></div>
+            </div>
         </Grid.Column>
     );
 }
