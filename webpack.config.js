@@ -8,7 +8,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        bundle: './src/index.js',
+        bundle: ['babel-polyfill', './src/index.js'],
         vendor: VENDOR_LIBS
     },
     output: {
@@ -86,3 +86,6 @@ resolve: {
     }
 },
 */
+// bundle: ['babel-polyfill', './src/index.js'] babel-polyfill permet d utiliser les generator et les await feature
+
+//bundle: './src/index.js',

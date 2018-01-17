@@ -6,16 +6,82 @@ import PropTypes from 'prop-types'
 
 // local import image
 import Check from '../../assets/tick.svg';
+import Show from '../../assets/eye-outline.svg';
+import Hide from '../../assets/not-visible-interface-symbol-of-an-eye-with-a-slash-on-it.svg';
+
+
 
 //mes Inputs
-export const MyInput = ({HtmlFor, Label, Type, Placeholder, Inputs, HasError, Error}) => {
+export const MyInput = ({HtmlFor, Label, Type, Placeholder, Inputs, HasError, Error, labelClass}) => {
     return (
         <Form.Field width={16} className="_feld">
-            <label htmlFor={HtmlFor}>{ Label }</label>
+            <label htmlFor={HtmlFor} className={labelClass}>{ Label }</label>
             <input id={HtmlFor} type={Type} placeholder={Placeholder} {...Inputs} className="_input"/>
             {HasError && <div className="_formError">{Error}</div>}
         </Form.Field>
     );
+}
+
+
+export class PasswordInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visibility: false,
+            type: "password"
+        };
+
+        this.renderOnVisibility = this.renderOnVisibility.bind(this);
+    }
+
+    changeVisibility() {
+        if (this.state.type === "password") {
+            this.setState({type: 'text', visibility: true});
+        } else {
+            this.setState({type: 'password', visibility: false});
+        }
+    }
+
+    renderOnVisibility() {
+
+        const {visibility} = this.state;
+
+        if (visibility) {
+
+            return (
+                <div className="view" onClick={this.changeVisibility.bind(this)}>
+                    <Image src={Hide} width={25} height={25}  />
+                </div>
+            );
+        }
+
+        return (
+            <div className="view" onClick={this.changeVisibility.bind(this)}>
+                <Image src={Show} width={25} height={25} />
+            </div>
+        );
+    }
+
+
+    render() {
+        return (
+            <Form.Field width={16} className="_feld" >
+
+                <label htmlFor={this.props.HtmlFor} className={this.props.labelClass}>{ this.props.Label }</label>
+
+                <div className="inputIcon">
+
+                    <input id={this.props.HtmlFor} type={this.state.type} placeholder={this.props.Placeholder} {...this.props.Inputs}  className="_input"/>
+
+                    { this.renderOnVisibility() }
+
+                </div>
+
+                {this.props.HasError && <div className="_formError">{this.props.Error}</div>}
+
+            </Form.Field>
+        );
+    }
 }
 
 export const MyCheckBox = ({icons_,ForLabel, Label, Inputs, HasError, Error }) => {

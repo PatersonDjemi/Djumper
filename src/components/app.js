@@ -1,26 +1,25 @@
+// all the router stuff of the app
 import React from 'react'
-import { Container } from 'semantic-ui-react'
+import {Route, Switch} from 'react-router-dom'
 
-import H_First from './NavBlock'
-import H_Second from './second_block'
-import H_Third from './third_block'
-import H_Fourth from './fourth_block'
-import H_Fifth from './fifth_block'
-import H_Sixth from './sixth_block'
+
+import Home from './home_page';
+import FAQ from './faq_page'
+import Signup from '../containers/signup'
+import Login from './login_page';
+import Dashboard from './dashboard'
 
 
 
 const App = () => {
     return (
-        <div className="_yop">
-            <H_First/>
-            <H_Second/>
-            <H_Third/>
-            <H_Fourth/>
-            <H_Fifth/>
-            <H_Sixth/>
-        </div>
-
+        <Switch>
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login}  />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" component={Home} />
+        </Switch>
     );
 }
 

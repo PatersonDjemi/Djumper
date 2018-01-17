@@ -7,6 +7,10 @@
     margin-left: 0em !important;
     margin-right: 0em !important;
 }
+.noPTB {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
 @media only screen and (max-width: 767px) {
     .ui.container {
         width: auto !important;
@@ -17,7 +21,7 @@
 
 /*-------------------- navigation -----------------------------*/
 ._topContainer {
-    padding-top: 55px !important;
+    padding-top: 5px !important;
     background: #f1f1f1;
 }
 ._topNav {
@@ -63,11 +67,14 @@
 
 /*-------------------------------------------------------------------*/
 /* first block*/
+._main {
+    margin: auto auto 7% 15%;
+}
 ._mainFunc {
     background-color: #f1f1f1;
-    flex-basis: 40% !important;
+    flex-basis: 45% !important;
     padding: 20px !important;
-    margin: auto auto 10% 15%;
+    max-width: 700px;
 }
 ._firstBlock {
     padding: 100px 30px 400px !important;
@@ -87,27 +94,18 @@
     background-color: rgb(255, 255, 255); /* Temporaire */
 
 }
-._over {
-    padding: 5px;
-    display: flex;
+._circle1 {
+    display: inline-block;
     position: relative;
     left: 48%;
     top: -45px;
     transform: skewY(-8deg);
     transform-origin: 0;
     border-radius: 50px;
-    background: white;
-    width: 90px;
+    border: solid 10px white;
     height: 90px;
-}
-._circle1 {
-    height: 80px;
-    width: 80px;
-    border-radius: 50px;
-    background-color: red;
-    display: inline-block;
-    margin: auto;
-
+    width: 90px;
+    background: red;
 }
 ._circle2 {
     height: 50px;
@@ -116,8 +114,8 @@
     background-color: red;
     display: inline-block;
     position: relative;
-    left: 45%;
-    top: -50px;
+    left: 40%;
+    top: -10px;
     transform: skewY(-8deg);
     transform-origin: 0;
     border-radius: 50px;
@@ -129,8 +127,8 @@
     background-color: red;
     display: inline-block;
     position: relative;
-    left: 45%;
-    top: -20px;
+    left: 41%;
+    top: 21px;
     transform: skewY(-8deg);
     transform-origin: 0;
     border-radius: 50px;
@@ -220,6 +218,7 @@
     margin: 10px 0px;
     padding: 30px 2px;
     text-align: center;
+    line-height: 1.5em !important;
 }
 ._cardNber {
     text-align: center;
@@ -522,4 +521,557 @@
     font-weight: 600;
     line-height: 1em;
     text-align: center;
+}
+
+/********** Popup **********/
+.showModal {
+    display: flex !important;
+    height: 100vh !important;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+}
+
+.hideModal {
+    display: none !important;
+}
+
+._content {
+    position: relative;
+    max-width: 550px;
+   /* height: 500px;*/
+    /*padding: 25px;*/
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
+/*
+._close {
+    display: inline-block;
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    right: -40px;
+    top:0px;
+    border-radius: 50px;
+    background-color: white;
+    border: 5px solid white ;
+}
+*/
+
+.myModalTitle {
+    padding: 10px 10px 5px;
+    margin: 0px;
+    font-size: 22px;
+    text-align: center;
+}
+
+._form {
+    padding: 15px 40px 0px !important;
+}
+._centerModal {
+    padding: 75px;
+    width: 80%;
+    margin: auto !important;
+}
+.resetPassword {
+    text-align: right;
+    padding: 5px;
+    font-size: 15px;
+}
+.haventAccount {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0px 5px 15px;
+}
+._log-in-button {
+    margin: 25px 0px 15px !important;
+}
+._labelLogin {
+    font-size: 1.2em !important;
+}
+._closeModal {
+    position: absolute !important;
+    top: 15px;
+    right: 13px;
+    cursor: pointer;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.ModalHeader {
+    position: relative !important;
+}
+
+
+.view {
+    display: inline-block !important;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.inputIcon {
+    position: relative;
+}
+
+.error_server {
+    text-align: center;
+    color: red;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/*------- login page ---------*/
+#page_div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    padding: 25px;
+}
+
+#center_content {
+    flex-basis: 80%;
+    margin: auto;
+    padding: 15px;
+}
+
+#content_login {
+    position: relative;
+    max-width: 550px;
+    box-shadow: rgba(0, 0, 0, 0.12) 1px 2px 10px, rgba(0, 0, 0, 0.12) 1px 2px 2px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
+/*------- login page ---------*/
+
+/*--------- FAQ ------------*/
+.faq_first {
+    padding: 150px 20px !important;
+    background-color: dimgrey;
+    position: relative;
+}
+
+.questions {
+    width: 80% !important;
+    margin: auto;
+    padding: 50px;
+}
+
+.question_one {
+    font-size: 45px !important;
+    font-weight: 500 !important;
+    margin-bottom: 40px !important;
+}
+
+.take_look {
+    font-size: 22px !important;
+    font-weight: 300 !important;
+}
+.go_down {
+    position: absolute !important;
+    display: inline-block !important;
+    right: 50%;
+    bottom: 75px;
+    cursor: pointer;
+}
+
+.faq_second {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.categorie_question {
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    margin-bottom: 30px !important;
+    padding: 0px 5px !important;
+}
+.the_question {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding: 10px 5px !important;
+}
+.reponse {
+    font-size: 20px !important;
+    font-weight: normal !important;
+    padding: 0px 5px ;
+    text-align: justify;
+}
+.question_reponse {
+    margin-top: 20px;
+    padding: 20px 5px ;
+}
+.faq_third {
+    padding-bottom: 200px;
+    padding-top: 100px;
+}
+.still_question {
+    font-size: 50px !important;
+    font-weight: 500 !important;
+    margin-bottom: 30px !important;
+}
+.customized_service {
+    font-size: 23px;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+.btn_connexion {
+    text-align: center;
+    padding: 20px;
+}
+
+/*--------------- Dashboard ------*/
+.dashmenu {
+    position: fixed !important;
+    width: 300px;
+    height: 100%;
+    background-color: #673AB7;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white !important;
+}
+.dashcontent {
+    height: 100%;
+    max-width: 100%;
+    /*background-color: dimgrey;*/
+    margin-left: 300px;
+}
+.dashlogo {
+   /* margin-bottom: 15px !important;*/
+    padding-bottom: 30px !important;
+}
+.userinfo {
+    text-align: center;
+    padding: 34px 10px 31px 10px;
+    line-height: 2em;
+    background-color: #ffffff;
+    color: black;
+}
+#greeting {
+    font-size: 17px;
+    font-weight: normal;
+}
+#username {
+    font-size: 22px;
+    font-weight: 500;
+}
+#confirmed {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+.confimedaccount {
+    display: inline-block !important;
+    margin-top: 15px !important;
+}
+.userimg {
+    display: inline !important;
+    margin-right: 20px;
+}
+.usertasks {
+    padding: 15px 0px;
+}
+.taskslist {
+    list-style: none;
+    padding: 0px !important;
+}
+.imgplus {
+    display: inline-block !important;
+}
+.taskname_ {
+    vertical-align: middle;
+    padding-left: 20px;
+}
+.task {
+    padding: 20px 15px 20px 50px;
+    font-size: 17px;
+    font-weight: 300;
+}
+ul.taskslist li:hover {
+    background-color: #0ea432;
+}
+
+ul.taskslist a {
+    text-decoration: none;
+    color: black;
+}
+.headmenu {
+    padding: 10px 10px;
+}
+.navimenu {
+    margin: 0px !important;
+    list-style: none;
+    padding: 0px;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.navimenu li {
+    display: inline-block;
+
+}
+.navimenu li a {
+    padding-left: 25px;
+    padding-right: 25px;
+    display: block;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 15px;
+}
+.menuname {
+    padding: 5px 0px;
+}
+.headsearch {
+    padding: 0px 25px;
+}
+.searchdiv {
+    max-width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.12) 1px 0px 10px, rgba(0, 0, 0, 0.12) 1px 2px 2px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+}
+#mysearchbar {
+    width: 100%;
+    border: none;
+    height: 30px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.dashcontentheader {
+    height: 70px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px;
+    /*margin-bottom: 30px !important;*/
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 10px, rgba(0, 0, 0, 0.12) 1px 1px 2px;
+}
+.gridnav {
+    height: 100% !important;
+    align-items: center !important;
+}
+.banner_account {
+    background-color: lightBlue;
+    margin-top: 35px !important;
+}
+.saldo {
+    padding: 10px 20px 5px 20px;
+    text-align: left;
+}
+.amount {
+    font-size: 30px;
+    font-weight: 200;
+    padding: 10px 20px 20px 20px;
+    color: #673ab7;
+    text-align: center;
+}
+.bannerBox1 {
+    padding: 16px 20px;
+}
+.titreicons {
+    padding: 30px 10px 20px 10px;
+}.bannerwrap {
+    display: flex;
+    justify-content: space-between;
+ }
+.bannerbox2 {
+    display: inline-block;
+    padding: 15px 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 2px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 10px, rgba(0, 0, 0, 0.12) 1px 1px 2px;
+}
+.bannerbox2:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;
+}
+.iconsboxes {
+    display: inline-block !important;
+    vertical-align: middle;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: content-box !important;
+}
+.textboxes {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/******************** Add card component ************/
+.addCard {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+}
+.addCardtitle {
+    padding: 20px 30px !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    margin-bottom: 0px !important;
+}
+.descriptionAddCard {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 17px;
+    text-align: justify;
+    line-height: 1.71;
+}
+.cardBox {
+    padding: 50px 30px 30px !important;
+}
+.cardbank {
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+.cardbank:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px;
+}
+.entete-card {
+    position: relative;
+    padding-bottom: 10px;
+}
+.entete-text {
+    padding: 10px;
+}
+.entete-img {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+}
+.linkbank {
+    font-size: 30px;
+    padding: 10px 0px 16px;
+}
+.imgbank {
+    display: inline-block !important;
+}
+.body-card {
+    padding: 0px 10px 10px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.71;
+}
+.footer-card {
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+
+
+/************ cote input **************/
+.label_card {
+    display: block;
+    position: relative;
+    font-size: 15px;
+}
+        /****** transition***
+        .label_card {
+            top: 30px;
+            font-size: 20px;
+            font-weight: 300;
+         }
+        ****/
+
+.input_card {
+    /*display: block;*/
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 22px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    width: 100%;
+}
+.group_input {
+    position: relative;
+   /* margin-bottom: 15px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.card_type {
+    font-size: 20px;
+    font-weight: 300;
+    padding-left: 25px;
+    padding-top: 12px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.adds {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    margin-bottom: 50px;
+}
+.error_card {
+    display:block;
+    padding-top: 3px;
+}
+.next_step {
+    display: inline-block;
+    margin-left: 15px !important;
+}
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px 0px 10px;
+}
+.bank_name {
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px 10px 23px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+.addwzIban {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+/*************** Transactions banner ******************/
+.transaction_banner {
+    height: 190px;
+    background-color: lightblue;
+    margin-top: 8px;
+}
+.total_transaction {
+    font-size: 23px;
+    font-weight: 500;
+    padding-top: 40px;
+}
+.montant {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    color: #673AB7;
 }

@@ -1,13 +1,15 @@
 // import from libraries
 import React, { Component } from 'react'
 import { reduxForm, Field, SubmissionError } from 'redux-form'
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import { Container, Grid, Header, Button, Form} from 'semantic-ui-react'
 
 //local import
 import {require, valLength, isEmail} from "../reusable/forms";
-import {MyInput, MyCheckBox} from '../reusable/inputForm';
+import {MyInput, MyCheckBox, PasswordInput} from '../reusable/inputForm';
+import {startSignUp} from '../actions/index';
 
 
 
@@ -16,13 +18,13 @@ class SignUp extends Component {
        super(props);
        this.state = {
            check: false
-       }
+       };
 
        this.handleAgree = this.handleAgree.bind(this)
     }
 
-    renderFiledInput({ input, label, type, meta: {touched, error, warning}, placeholder, forLabel }) {
-        const hasError = touched && error !== undefined;
+    renderFiledInput({ input, label, type, meta: {touched, error, warning, active}, placeholder, forLabel }) {
+        const hasError = !active && touched && error !== undefined;
         return (
             <MyInput  HtmlFor={forLabel}
                     Label={label}
@@ -34,8 +36,20 @@ class SignUp extends Component {
         );
     }
 
+    renderFieldPassword({input, label, type, meta: {touched, error, warning, active}, placeholder, forLabel}) {
+        const hasError = !active && touched && error !== undefined;
+        return (
+            <PasswordInput  HtmlFor={forLabel}
+                      Label={label}
+                      Placeholder={placeholder}
+                      Inputs={input}
+                      HasError={hasError}
+                      Error={error} />
+        );
+    }
+
     renderCheckbox({input, label, meta: {touched, error, warning}, forLabel, icons }) {
-        const hasError = error;
+        const hasError = touched && error !== undefined;
         return (
             <MyCheckBox
                 Label={label}
@@ -52,21 +66,19 @@ class SignUp extends Component {
         this.setState({ check: !this.state.check});
     }
 
+    onFomSubmit({FirstName, LastName, Email, Password, Agree}) {
+        const {reset, history} = this.props;
 
-    onFomSubmit(values) {
-        const {reset} = this.props;
-
-        if (!values.Agree) {
+        if (!Agree) {
             throw new SubmissionError({
                 Agree: 'Please agree to the terms and conditions'
             })
         }
 
-        console.log(values);
-        // clear the form after submitting it
+        this.props.startSignUp({FirstName, LastName, Email, Password, Agree, history})
+        this.setState({check: false});
         reset()
     }
-
 
     render() {
 
@@ -78,7 +90,7 @@ class SignUp extends Component {
                 <Grid centered stackable className="kis">
                     <Grid.Column computer={7} tablet={5}>
                         <div className="_text-description">
-                            <Header as="h1" className="_appName" textAlign="left" size="massive">
+                            <Header as="h1" className="_appName" textAlign="left">
                                 DJUMPER
                             </Header>
                             <Header as="h2" textAlign="left" className="_caracteristics">
@@ -127,11 +139,10 @@ class SignUp extends Component {
                                     />
                                     <Field
                                         name="Password"
-                                        component={this.renderFiledInput}
+                                        component={this.renderFieldPassword}
                                         label="Password"
                                         forLabel="password"
                                         placeholder="Password"
-                                        type="password"
                                         validate={[reqPassword, valPassword]}
                                     />
                                     <Field
@@ -146,13 +157,14 @@ class SignUp extends Component {
                                         onChange={this.handleAgree}
                                     />
 
+
                                     <Button primary size="big" className="_sign-up-button" fluid> SIGN UP </Button>
 
                                 </Form>
 
                                 <div className="_already-account">
                                     <Header as="h5" textAlign="center" size="small">
-                                        Already have a DJUMPER account ? <Link to="/"> login</Link>
+                                        Already have a DJUMPER account ? <Link to="/login"> login</Link>
                                     </Header>
                                 </div>
 
@@ -166,7 +178,7 @@ class SignUp extends Component {
     }
 }
 
-// call the function for validating every input
+/* ---- call the function for validating every input ---- */
     // for the first name
 const reqFirstName = require("First Name");
 const valFirstName = valLength("First Name", 3, 20);
@@ -185,14 +197,22 @@ const valPassword = valLength("Password", 5, 100);
 
     // for the checkbox
 const checkedBox = (value) => {
-    console.log('my check is ', value);
-}
+    if (value !== true) {
 
+        return 'Please agree to the terms and conditions';
+    }
+};
+
+
+SignUp = connect(null, {startSignUp})(SignUp);
 
 
 export default reduxForm({
     form: "SignUpForm"
 })(SignUp);
+
+
+
 
 
 
