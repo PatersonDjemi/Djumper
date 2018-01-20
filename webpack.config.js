@@ -34,6 +34,9 @@ module.exports = {
                             },
                             {
                                 loader: 'less-loader'
+                            },
+                            {
+                                loader: 'sass-loader'
                             }
                         ]
                 }),

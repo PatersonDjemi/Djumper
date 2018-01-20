@@ -9,9 +9,9 @@ import  createSagaMiddleware  from 'redux-saga';
 
 
 
-import '../semantic/src/semantic.less'
+import '../semantic/out/semantic.css'
 import '../styles/style.css'
-//import '../sass/main.scss'
+import '../sass/main.scss'
 
 import RootReducers from './reducers'
 import rootSaga from './sagas'
