@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "compile-sass": "node-sass sass/main.scss mycss.css"
   },
   "author": "",
   "license": "ISC",
@@ -45,9 +46,11 @@
     "image-webpack-loader": "^3.4.2",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "node-sass": "^4.5.1",
     "redux-devtools": "^3.4.1",
     "redux-devtools-extension": "^2.13.2",
     "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.3",
     "semantic-ui": "^2.2.13",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",

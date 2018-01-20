@@ -1,9 +1,12 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux', 'react-router-dom'];
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+
 // const cleanWebpackPlugin = require('clean-webpack-plugin');
+
+const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux', 'react-router-dom', 'redux-form', 'redux-saga', 'immutability-helper',
+    'prop-types', 'redux-promise'];
 
 
 module.exports = {
@@ -26,9 +29,15 @@ module.exports = {
             {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'less-loader']
+                    use: [  {
+                                loader:'css-loader'
+                            },
+                            {
+                                loader: 'less-loader'
+                            }
+                        ]
                 }),
-                test: /\.(css|less)$/
+                test: /\.(css|less|scss)$/
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
@@ -89,3 +98,22 @@ resolve: {
 // bundle: ['babel-polyfill', './src/index.js'] babel-polyfill permet d utiliser les generator et les await feature
 
 //bundle: './src/index.js',
+
+/*
+                    use: [  {
+                                loader:'css-loader',
+                                options: {
+                                    sourceMap:tr
+                                }
+                            },
+                            {
+                                loader: 'sass-loader',
+                                options: {
+                                    sourceMap: true
+                                }
+                            },
+                            {
+                                loader: 'less-loader'
+                            }
+                        ]
+ */

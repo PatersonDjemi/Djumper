@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
 import { composeWithDevTools } from 'redux-devtools-extension'; // pour utiliser reduxdevtools
 import  createSagaMiddleware  from 'redux-saga';
 
@@ -11,6 +11,7 @@ import  createSagaMiddleware  from 'redux-saga';
 
 import '../semantic/src/semantic.less'
 import '../styles/style.css'
+//import '../sass/main.scss'
 
 import RootReducers from './reducers'
 import rootSaga from './sagas'
