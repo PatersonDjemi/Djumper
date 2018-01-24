@@ -122,7 +122,10 @@ const Dashcontent = () => {
                 </Grid>
             </Container>
 
-            <Transacion/>
+            <Banner/>
+
+
+            <AddCard/>
 
         </div>
     );

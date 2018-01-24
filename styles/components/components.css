@@ -1,0 +1,38 @@
+/********************** navigation *********************/
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 5rem;
+   /* background: orange; */
+}
+
+.navigation__logo {
+    margin-left: 15rem;
+}
+.navigation__logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.navigation__menu {
+    margin-right: 15rem;
+}
+.navigation__menu a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.navigation__menu > a {
+    margin-right: 2rem;
+}
+.navigation__menu a:last-child span {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    background: orange; /*** for test ***/
+    border-radius: .3rem;
+}

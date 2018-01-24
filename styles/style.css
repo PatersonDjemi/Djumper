@@ -1,9 +1,11 @@
-/*----------------*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/*** all my imports ***/
+
+@import "basics/base.css";
+@import "components/components.css";
+@import "layouts/layout.css";
+
+
+
 
 /*-------------------*/
 ._noPadding {
@@ -29,29 +31,7 @@
 /*-------------------- navigation -----------------------------*/
 ._topContainer {
     padding-top: 5px !important;
-    background: #f1f1f1;
-}
-._topNav {
-    flex-wrap: wrap !important;
-    display: flex !important;
-   /* background-color: aqua;*/
-    padding: 30px 0px;
-}
-._logo {
-    flex: 1;
-    padding-left: 200px !important;
-    display: flex;
-    margin: auto 0px;
-}
-._menuNav {
-    flex: 1;
-    padding-right: 200px;
-    text-align: right;
-    margin: auto 0px;
-    font-size: 15px;
-}
-._faqLink {
-    margin: auto 30px;
+
 }
 
 /*--------Queries responsive --------*/

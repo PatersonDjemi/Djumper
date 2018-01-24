@@ -8,7 +8,7 @@ import FirstBlock from './first_block'
 
 const H_First = () => {
     return (
-        <Container fluid className="_topContainer">
+        <Container fluid className="container__top">
             <Grid>
                 <Navigation/>
                 <FirstBlock/>
