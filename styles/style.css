@@ -3,6 +3,7 @@
 @import "basics/base.css";
 @import "components/components.css";
 @import "layouts/layout.css";
+@import "pages/home.css";
 
 
 
@@ -54,20 +55,6 @@
 
 /*-------------------------------------------------------------------*/
 /* first block*/
-._main {
-    margin: auto auto 7% 15%;
-}
-._mainFunc {
-    background-color: #f1f1f1;
-    flex-basis: 45% !important;
-    padding: 20px !important;
-    max-width: 700px;
-}
-._firstBlock {
-    padding: 100px 30px 400px !important;
-    display: flex !important;
-    position: relative;
-}
 ._separationOne {
     position: absolute;
     bottom: -20px;
@@ -155,88 +142,7 @@
     }
 }
 /*----------------------------------------------------------------------*/
-/* second block*/
-._secondBlock {
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    transform-origin: 0;
-    z-index: 0;
-    padding-bottom: 50px !important;
-}
-._separationTwo {
-    position: absolute;
-    bottom: -20px;
-    left: -2px;
-    transform: skewY(8deg);
-    transform-origin: 0;
-    width: 105%;
-    height: 35%;
-    z-index: -1;
-   /* background: dimgrey;*/
-    background-color: rgb(255, 255, 255); /* Temporaire */
-}
-.titre_2 {
-    text-align: center;
-    font-size: 45px !important;
-    font-weight: 400 !important;
-}
-._AllCard {
-    padding: 25px 10px;
-    margin: auto;
-}
-._card {
-    background: white;
-    border-radius: 2px;
-    border: none;
-    background-color: rgb(255, 255, 255);
-    /*box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;*/
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 40px, rgba(0, 0, 0, 0.23) 0px 5px 10px;
-}
-._cardText {
-    padding: 15px 30px 45px;
-    font-weight: 300;
-    font-size: 20px;
-    text-align: justify;
-    line-height: 1.5em;
-}
-._cardTitle {
-    font-size: 30px !important;
-    font-weight: 400;
-    margin: 10px 0px;
-    padding: 30px 2px;
-    text-align: center;
-    line-height: 1.5em !important;
-}
-._cardNber {
-    text-align: center;
-    padding: 5px 0px;
-    margin: 30px 0px !important;
-}
-._myNber {
-    margin: auto;
-    width: 75px;
-    height: 75px;
-    border-radius: 50px;
-    /*background: darkcyan;*/
-    background: white; /* temporaire*/
-    display: flex;
-    padding: 20px !important;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px, rgba(0, 0, 0, 0.23) 0px 2px 10px;
-}
-._myNber span {
-    font-size: 25px !important;
-    margin: auto;
-    font-weight: 500;
-}
-._confirmAcc {
-    margin-top: 130px;
-}
-._enjoyAcc {
-    margin-top: 260px;
-}
-._cardImage {
-    margin: auto !important;
-}
+/* second block */
 
 /*--------Queries responsive --------*/
 @media only screen and (max-width: 767px) {
