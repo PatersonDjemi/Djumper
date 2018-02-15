@@ -2,29 +2,37 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, browserHistory, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
+import { composeWithDevTools } from 'redux-devtools-extension'; // pour utiliser reduxdevtools
+import  createSagaMiddleware  from 'redux-saga';
 
 
-import '../semantic/src/semantic.less'
+
+
+import '../semantic/out/semantic.css'
 import '../styles/style.css'
+import '../sass/main.scss'
 
-// import RootReducers from './reducers'
+import RootReducers from './reducers'
+import rootSaga from './sagas'
 
-import App from './components/app';
-import SignUp from './components/signup'
+import App from './components/app'
 
-//let myStore = createStore(RootReducers);
-// creer le store au niveau du provider
+
+const sagaMiddleware = createSagaMiddleware();
+
+const ComposeWithDevTools =  composeWithDevTools(applyMiddleware(sagaMiddleware));
+
+export const MyStore = createStore(RootReducers, ComposeWithDevTools);
+
+
+sagaMiddleware.run(rootSaga)
+
 
 ReactDom.render(
-    <Provider>
-        <Router history={browserHistory}>
-            <div>
-                <Switch>
-                    <Route path="/signup" component={SignUp} />
-                    <Route path="/" component={App} />
-                </Switch>
-            </div>
+    <Provider store={MyStore}>
+        <Router >
+            <App/>
         </Router>
     </Provider>,
     document.getElementById('root')
@@ -32,4 +40,3 @@ ReactDom.render(
 
 
 // browserRouter va mettre à notre disposition l' history library
-//<Route path="/" component={App} />

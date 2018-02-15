@@ -2,59 +2,64 @@ import React from 'react'
 import { Grid, Container, Button, Header } from 'semantic-ui-react'
 
 import CardBlock from './card_block'
+import CreateAccont from '../../assets/avatar.svg';
+import Confirm from '../../assets/confirm.svg';
+import Enjoy from '../../assets/flight.svg';
 
-const SecondBlock = () => {
+
+const H_Second = () => {
     return (
-        <Container fluid className="_secondBlock _noPadding">
-            <Grid centered stackable>
-                <Grid.Column width={16}>
-                    <Header as="h1" className="titre_2" textAlign="center"> HOW TO USE IT </Header>
-                </Grid.Column>
+        <Container fluid className="how_work _noPadding">
+            <Container fluid className="how_work_block">
+
+                <h2 className="how_work-header">how it works</h2>
 
                 <Grid centered stackable>
                     <Grid.Column tablet={7} computer={4}>
-                        <div className="_createAcc">
+                        <div className="create_account how_work__card">
                             <CardBlock
                                 classes="_myCard _createAcc"
                                 nber="1"
-                                title="Create your account"
+                                src={CreateAccont}
+                                title="create aour account"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                        mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                        0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                        pour réaliser un livre spécimen de polices de texte"
+                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
+                                pour réaliser un livre spécimen de polices"
                             />
                         </div>
                     </Grid.Column>
                     <Grid.Column tablet={7} computer={4}>
-                        <div className="_confirmAcc">
+                        <div className="confirm_account how_work__card">
                             <CardBlock
                                 nber="2"
-                                title="Confirm your account"
+                                src={Confirm}
+                                title="confirm your account"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                        mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                        0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                        pour réaliser un livre spécimen de polices de texte"
+                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
+                                pour réaliser un livre spécimen de polices"
                             />
                         </div>
                     </Grid.Column>
                     <Grid.Column tablet={7} computer={4}>
-                        <div className="_enjoyAcc">
+                        <div className="enjoy_djumper how_work__card">
                             <CardBlock
                                 nber="3"
-                                title="Enjoy djumper"
+                                src={Enjoy}
+                                title="enjoy djumper"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                        mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                        0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                        pour réaliser un livre spécimen de polices de texte"
+                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
+                                pour réaliser un livre spécimen de polices"
                             />
                         </div>
                     </Grid.Column >
                 </Grid>
-            </Grid>
 
-            <div className="_separationTwo"></div>
+            </Container>
         </Container>
     );
 }
 
-export default SecondBlock;
+export default H_Second;

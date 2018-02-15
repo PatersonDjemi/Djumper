@@ -1,40 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { Grid, Header, Menu, Button, Container} from 'semantic-ui-react'
+import { Grid} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-
-import FirstBlock from './first_block'
-
 
 
 const Navigation = () => {
     return (
-        <Container fluid className="_topContainer">
-            <Grid>
-                <Grid.Column width={16}>
-                    <div className="_topNav">
-                        <div className="_logo">
-                            <Header as="h3">DJUMPER</Header>
-                        </div>
-                        <div className="_menu">
-                            <a className="_faqLink"> FAQ </a>
-                            <Button className="_logIn"> Log In </Button>
-                        </div>
-                    </div>
-                </Grid.Column>
+        <Grid.Column width={16}>
 
-                <FirstBlock/>
-            </Grid>
-        </Container>
+            <div className="navigation">
+                <div className="navigation__logo">
+                        <Link to="/"> djumper </Link>
+                </div>
+                <div className="navigation__menu">
+                    <Link to="/faq" className="_faqLink"> faq </Link>
+                    <Link to="/login" className="link_btn link_btn--orange " > log in </Link>
+                </div>
 
+            </div>
 
-
-
-
-
-
+        </Grid.Column>
     );
 }
 
 
+
 export default Navigation;
+
+

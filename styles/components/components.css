@@ -1,0 +1,117 @@
+/********************** navigation *********************/
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 5rem 2.5rem;
+   /* background: orange; */
+}
+
+.navigation__logo {
+    margin-left: 15rem;
+}
+.navigation__logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.navigation__menu {
+    margin-right: 15rem;
+}
+.navigation__menu a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.navigation__menu > a {
+    margin-right: 2rem;
+}
+
+.link_btn:link,
+.link_btn:visited {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+    transition: all .2s;
+}
+
+.link_btn:active {
+    transform: translateY(2px);
+}
+
+.link_btn--orange {
+    background: orange; /*** for test ***/
+}
+
+
+/************************* how to work card components *****************/
+.card_home__nber{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    margin: 0 auto 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 200;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
+
+}
+
+.card_home__content {
+    padding-bottom: 3rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+}
+
+.card_home_content__image {
+    margin: 3rem auto !important;
+    display: block;
+}
+
+.card_home_content__titre {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin:3.5rem auto 2rem !important;
+    text-align: center;
+    line-height: 1.3em;
+}
+
+.card_home_content__text {
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 2em;
+    padding: 1rem 3rem;
+}
+
+.how_work__card {
+    width: 85%;
+    margin: auto;
+}
+
+.confirm_account {
+    margin-top: 13rem;
+}
+
+.enjoy_djumper {
+    margin-top: 26rem;
+}
+
+/************************* why use components *****************/
+.why_use_reasons__one,
+.why_use_reasons__two,
+.why_use_reasons__three {
+    text-align: justify;
+    font-size: 1.7rem;
+    padding: .5rem 1.5rem 1.5rem 0;
+    line-height: 2em;
+    width: 80%;
+}

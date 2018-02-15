@@ -8,3 +8,5 @@ dist/
 node_modules/
 .idea/
 semantic/
+.idea/workspace.xml
+
