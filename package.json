@@ -47,7 +47,6 @@
     "image-webpack-loader": "^3.4.2",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
-    "node-sass": "^4.5.1",
     "redux-devtools": "^3.4.1",
     "redux-devtools-extension": "^2.13.2",
     "rimraf": "^2.6.2",
