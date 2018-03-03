@@ -2,7 +2,7 @@
     /*height: 80vh;*/
     background: #f1f1f1;
     display: flex;
-    padding-bottom: 37rem;
+    padding-bottom: 40rem;
 }
 .djumper__header {
     text-transform: uppercase !important;
@@ -39,7 +39,7 @@
     transform-origin: 0;
     z-index: 0;
     padding-top: 13rem;
-    padding-bottom: 15rem !important;
+    padding-bottom: 20rem !important;
     transform: skewY(8deg);
     margin-top: -27rem;
 }
@@ -63,7 +63,7 @@
 /**** Left part */
 .why_use {
     background: #f1f1f1;
-    padding-top: 25rem;
+    padding-top: 27rem;
     padding-bottom: 25rem !important;
 }
 
@@ -155,4 +155,122 @@
     margin-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+
+/*************** fourth component ********/
+.never_miss {
+    padding: 25rem 0 !important;
+    background-color: #f1f1f1;
+}
+.never_miss__title {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: .3rem;
+    text-align: center;
+    margin-bottom: 3rem !important;
+}
+.never_miss__text {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 2em; 
+    margin-bottom: 2rem !important;
+}
+
+.art_of_trip {
+    margin-top: 2.5rem !important;
+}
+
+.never_miss__box_row2 {
+    padding-top: 10rem !important;
+}
+
+.never_miss__box_row1 {
+    padding-bottom: 5rem !important;
+}
+
+
+/*************** fifth component ********/
+
+/****** recht ****** */
+.keep_tracking {
+    padding-top: 5rem 2rem;
+    padding-bottom: 20rem;
+    background-color: #f1f1f1;
+}
+
+.keep_tracking__infos {
+    padding: 10rem 0 3rem 2rem;
+}
+
+.keep_tracking__titre {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: .3rem;
+    line-height: 1.5em;
+    /* text-align: center; */
+    margin-bottom: 3rem !important;
+}
+
+#create_account {
+    margin-top: 3rem;
+}
+
+
+/****** links ****** */
+.device_type {
+    width: 95%;
+    height: 60rem;
+    margin-top: 12rem;
+    background-color: aquamarine;
+}
+
+
+
+/*************** fifth component ********/
+.get_started {
+    padding: 15rem 0;
+}
+
+.get_started__title {
+    text-transform: uppercase !important;
+    font-size: 4rem !important;
+    font-weight: 500 !important;
+    letter-spacing: .3rem !important;
+    margin-bottom: 7.5rem !important;
+
+}
+
+#get_started__btn {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+    font-size: 2.5rem !important;
+}
+
+
+/*************** footer component ********/
+
+.footer {
+    padding: 5rem 0 3rem;
+}
+
+.footer__copyright {
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    font-weight: 300;  
+}
+
+.links {
+    list-style: none;
+    text-align: right
+}
+
+.links > li {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    font-weight: 300;
 }
