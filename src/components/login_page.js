@@ -2,8 +2,12 @@ import React from 'react';
 import {Container, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
-import {MyModalHeader, MyModalContent, MyModalFooter} from '../reusable/modals';
-import Login from '../containers/login'
+// import {MyModalHeader, MyModalContent, MyModalFooter} from '../reusable/modals';
+// import Login from '../containers/login'
+
+import { FormInput } from '../reusable/inputs';
+import Mail from '../../assets/Mail.svg';
+import Password from '../../assets/locked.svg'
 
 
 const LoginPage = (props) => {
@@ -14,21 +18,22 @@ const LoginPage = (props) => {
                 <div className="signin__left">
                    <h2 className="login__logo">djumper</h2>
                    <div className="login__title">
-                        <span className="welcomme">
+                        {/* <span className="welcomme"> */}
                             welcome back
-                        </span>
+                        {/* </span> */}
                    </div>
                    <div className="login__form">
-                        <div className="login__form_input" id="emails">
-                            {/* <label htmlFor="">Email</label> */}
-                            <input type="text" className="login__input" placeholder="Email"/>
-                            <div className="feeback"> error email not valid</div>
-                        </div>
-                        <div className="login__form_input" id="passwords">
-                            {/* <label htmlFor="">Password</label> */}
-                            <input type="password" className="login__input" placeholder="Password"/>
-                            <div className="feeback"> error password not valid</div>
-                        </div>
+
+                        <FormInput className="login__form_input form__icons"
+                            placeholder="Email"
+                            type="email"
+                            url={Mail} />
+
+                        <FormInput className="login__form_input form__icons" 
+                            placeholder="Password"
+                            type="password"
+                            url={Password} />
+
                    </div>
                    <div className="setting">
                        <Link to="/">
@@ -36,7 +41,7 @@ const LoginPage = (props) => {
                                     forget password?
                             </span>
                        </Link>
-                        <span className="login__btn">
+                        <span className="login__btn sign__btn">
                             Log in &rsaquo;
                         </span>
                    </div>

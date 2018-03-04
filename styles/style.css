@@ -5,6 +5,7 @@
 @import "layouts/layout.css";
 @import "pages/home.css";
 @import "pages/login.css";
+@import "pages/signup.css";
 
 
 
@@ -201,11 +202,11 @@
 
 /*-------------------- sign up page ----------------------*/
 
-.kis {
+/* .kis {
     background: white;
     height: 100vh;
     overflow: auto;
-}
+} */
 ._FormDiv {
     max-width: 100%;
     display: flex;
@@ -238,7 +239,7 @@
     padding-top: 75px;
     padding-left: 10px;
 }
-._appName {
+/* ._appName {
     font-size: 3em !important;
     font-weight: 600;
     margin-bottom: 30px !important;
@@ -247,7 +248,7 @@
     font-size: 2em !important;
     font-weight: 600;
     padding-top: 20px !important;
-}
+} */
 ._DescriptionSignUp {
     font-size: 18px;
     font-weight: 400;
@@ -461,32 +462,7 @@
 }
 
 /*------- login page ---------*/
-#page_div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: flex;
-    padding: 25px;
-}
 
-#center_content {
-    flex-basis: 80%;
-    margin: auto;
-    padding: 15px;
-}
-
-#content_login {
-    position: relative;
-    max-width: 550px;
-    box-shadow: rgba(0, 0, 0, 0.12) 1px 2px 10px, rgba(0, 0, 0, 0.12) 1px 2px 2px;
-    background: white;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2px;
-}
 /*------- login page ---------*/
 
 /*--------- FAQ ------------*/

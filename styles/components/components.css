@@ -41,7 +41,7 @@
 }
 
 .link_btn:active {
-    transform: translateY(2px);
+    transform: translateY(.2rem);
 }
 
 .link_btn--orange {
@@ -157,4 +157,55 @@
     line-height: 2em;
 }
 
+/**************** input components ********/
 
+.login__form_input {
+    width: 100%;
+    padding: 1rem 0 1rem 5rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.form__icons {
+    background-repeat: no-repeat;
+    background-size: 3rem 3rem;
+    background-position: 0rem .8rem;
+}
+
+.login__input {
+    border: none !important;
+    outline: none !important;
+    border-bottom: 1px solid black !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    letter-spacing: .1rem !important;
+    padding: 0 0 .8rem 0 !important;
+    width: 100% !important;
+}
+
+.login__form > .login__form_input {
+    margin-bottom: 1.5rem;
+}
+
+.feeback {
+    padding: 1rem 0px .3rem;
+    color: red;
+    visibility: hidden;
+}
+
+/*********** sign button ************/
+
+.sign__btn {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 7.5rem;
+    cursor: pointer;
+    background-color: lightskyblue;
+}
+
+/* .sign__btn:active {
+    transform: translateY(.2rem) !important;
+} */

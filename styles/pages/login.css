@@ -52,66 +52,14 @@
     padding: 2rem 2.5rem 0rem 1.5rem !important;    
 }
 
-.login__form_input {
-    width: 100%;
-    padding: 1rem 0 1rem 5rem;
-    font-size: 1.7rem;
-    font-weight: 300;
-}
-
-#emails {
-    background-image: url('../../assets/mail.svg');
-    background-repeat: no-repeat;
-    background-size: 3rem 3rem;
-    background-position: 0rem .8rem;
-}
-
-#passwords {
-    background-image: url('../../assets/locked.svg');
-    background-repeat: no-repeat;
-    background-size: 3rem 3rem;
-    background-position: 0rem .8rem;
-}
-
-.login__input {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: .1rem;
-    padding: 0 0 .8rem 0;
-    width: 100%;
-}
-
-.login__form > .login__form_input {
-    margin-bottom: 1.5rem;
-}
-
-.feeback {
-    padding: 1rem 0px .3rem;
-    color: red;
-    visibility: hidden;
+.login__btn {
+    transition: all .2s;
 }
 
 .password_forget {
     /* padding-left: 1.5rem; */
     font-size: 1.7rem;
     font-weight: 300;
-}
-
-.login__btn {
-    display: inline-block;
-    padding: 2rem 7.5rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
-    font-size: 2rem;
-    font-weight: 500;
-    border-radius: 7.5rem;
-    /* position: relative;
-    left: 50%;
-    transform: translateX(-50%); */
-    cursor: pointer;
-    background-color: lightskyblue;
 }
 
 .setting {
