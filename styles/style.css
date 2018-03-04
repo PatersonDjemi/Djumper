@@ -315,7 +315,7 @@
 /*------- login page ---------*/
 
 /*--------- FAQ ------------*/
-.faq_first {
+/* .faq_first {
     padding: 150px 20px !important;
     background-color: dimgrey;
     position: relative;
@@ -348,7 +348,7 @@
 .faq_second {
     padding-top: 150px;
     padding-bottom: 150px;
-}
+} */
 
 /* .categorie_question {
     font-size: 30px !important;
@@ -358,16 +358,13 @@
 } */
 
 
-.faq_third {
+/* .faq_third {
     padding-bottom: 200px;
     padding-top: 100px;
 }
 
 
-.btn_connexion {
-    text-align: center;
-    padding: 20px;
-}
+*/
 
 /*--------------- Dashboard ------*/
 .dashmenu {
