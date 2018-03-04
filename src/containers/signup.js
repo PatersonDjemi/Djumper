@@ -126,19 +126,18 @@ class SignUp extends Component {
                                     
                                     <FormInput className="login__form_input form__icons" 
                                         placeholder="Email"
-                                        type="text" 
+                                        type="email" 
                                         url={Mail} />
 
                                     <FormInput className="login__form_input form__icons" 
                                         placeholder="Password"
-                                        type="text" 
+                                        type="password" 
                                         url={Password} />
 
-                                    <CheckInput/>
+                                    <CheckInput text="I agree to the Terms and Conditions.Le Lorem 
+                                        Ipsum est simplement du faux texte employé"/>
 
-                                    <span className="signup__btn sign__btn"> Sign up </span>
-
-                                   
+                                    <span className="signup__btn sign__btn"> Sign up </span>                                   
 
                                 </Form>
 

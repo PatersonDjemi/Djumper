@@ -209,3 +209,35 @@
 /* .sign__btn:active {
     transform: translateY(.2rem) !important;
 } */
+
+
+/************** faq categorie title ***********/
+.faq__categorie_question {
+    font-size: 3rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .1rem !important;
+    margin-bottom: 3rem !important;
+    padding: 0 .5rem !important;
+}
+
+.faq__reponse {
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    padding: 0px .5rem !important;
+    text-align: justify !important;
+    letter-spacing: .1rem !important;
+}
+.faq__question_reponse {
+    margin-top: 2rem;
+    padding: 2rem .5rem;
+}
+
+.faq__the_question {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    padding: 1rem .5px !important;
+}
+
+.faq__grid {
+    padding: 0 3rem !important;
+}

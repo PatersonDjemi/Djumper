@@ -6,6 +6,7 @@
 @import "pages/home.css";
 @import "pages/login.css";
 @import "pages/signup.css";
+@import "pages/faq.css";
 
 
 
@@ -202,158 +203,6 @@
 
 /*-------------------- sign up page ----------------------*/
 
-/* .kis {
-    background: white;
-    height: 100vh;
-    overflow: auto;
-} */
-._FormDiv {
-    max-width: 100%;
-    display: flex;
-    height: 100%;
-
-}
-._formTitel {
-    margin: 10px 5px 35px !important;
-}
-._FormContent {
-    max-width: 100%;
-    /*border: 1px solid black;*/
-    margin: auto 20px !important;
-    padding: 50px 40px !important;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-}
-._my-form {
-    padding: 15px 0px 25px ;
-}
-._sign-up-button {
-    margin: 40px 0px !important;
-}
-._already-account {
-    padding: 5px 0px 5px;
-}
-._text-description {
-    margin-top: 60px !important;
-    padding-top: 75px;
-    padding-left: 10px;
-}
-/* ._appName {
-    font-size: 3em !important;
-    font-weight: 600;
-    margin-bottom: 30px !important;
-}
-._caracteristics {
-    font-size: 2em !important;
-    font-weight: 600;
-    padding-top: 20px !important;
-} */
-._DescriptionSignUp {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.8em;
-}
-._signUpPage {
-    overflow: auto;
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-}
-.ui.grid {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-}
-._input {
-    border: none !important;
-    border-bottom: 1.5px solid #2196F3 !important;
-    border-radius: 0px !important;
-    padding: 0.6em 0em 0.3em !important;
-}
-._feld {
-    margin: 0em 0em 2em !important;
-}
-._formError {
-    margin: 5px 0px 0px;
-    color: #FF1744;
-}
-._labelo {
-    margin: 5px 0px 5px 28px !important;
-}
-._myCheckbox {
-    position: relative;
-    margin-top: 50px !important;
-}
-._checkons {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 1.3px solid #2196F3 !important;
-    top: 4px;
-    padding: 0px 0.2px 0px 0px;
-}
-#agree {
-    visibility: hidden;
-}
-/*--------Queries responsive --------*/
-@media only screen and (max-width: 767px) {
-    ._text-description {
-        /*margin-top: 30px !important;
-        padding-top: 10px;
-        padding-left: 0px;*/
-        display: none;
-    }
-    ._signUpPage {
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
-    ._FormContent {
-        padding: 20px 10px !important;
-        margin: auto 10px !important;
-    }
-    .ui.grid {
-        margin-top: 0px !important;
-    }
-
-
-}
-@media only screen and (min-width: 768px) and  (max-width: 991px){
-    .ui.grid {
-        margin-top: 0px !important;
-        margin-bottom: 0px !important;
-    }
-
-}
-
-
-/*-----*/
-._yet {
-
-    background: antiquewhite !important;
-    border-radius: 2px !important;
-    margin-left: 50px;
-    display: inline-block;
-    /*display: flex !important;*/
-    /*font-size: 1.5em;*/
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 1px 1px;
-}
-._Texts{
-    padding: 14px 16px  !important;
-    position: relative;
-    /*margin: auto;*/
-    font-size: 15px;
-    font-style: normal;
-    display: inline-block;
-    -webkit-user-select: none; /* Chrome, Opera, Safari */
-    -moz-user-select: none; /* Firefox 2+ */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard syntax */
-    text-transform: none;
-    text-shadow: none;
-    font-weight: 600;
-    line-height: 1em;
-    text-align: center;
-}
 
 /********** Popup **********/
 .showModal {
@@ -501,44 +350,20 @@
     padding-bottom: 150px;
 }
 
-.categorie_question {
+/* .categorie_question {
     font-size: 30px !important;
     font-weight: 400 !important;
     margin-bottom: 30px !important;
     padding: 0px 5px !important;
-}
-.the_question {
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    padding: 10px 5px !important;
-}
-.reponse {
-    font-size: 20px !important;
-    font-weight: normal !important;
-    padding: 0px 5px ;
-    text-align: justify;
-}
-.question_reponse {
-    margin-top: 20px;
-    padding: 20px 5px ;
-}
+} */
+
+
 .faq_third {
     padding-bottom: 200px;
     padding-top: 100px;
 }
-.still_question {
-    font-size: 50px !important;
-    font-weight: 500 !important;
-    margin-bottom: 30px !important;
-}
-.customized_service {
-    font-size: 23px;
-    text-align: center;
-    font-weight: normal;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 10px;
-}
+
+
 .btn_connexion {
     text-align: center;
     padding: 20px;

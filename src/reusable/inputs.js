@@ -23,8 +23,7 @@ export class CheckInput extends Component {
     render () {
         return (
                 <label className="checkboxs">
-                    I agree to the Terms and Conditions.Le Lorem Ipsum est simplement
-                    du faux texte employé
+                        {this.props.text}
                     <input type="checkbox" id="agree__check"/>
                     <span className="check_box"></span>
                 </label>                              
