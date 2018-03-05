@@ -15,6 +15,7 @@ import {FormInput, CheckInput} from '../reusable/inputs'
 import Mail from '../../assets/Mail.svg';
 import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
+import SignupForm from '../containers/signupForm'
 
 
 class SignUp extends Component {
@@ -114,28 +115,7 @@ class SignUp extends Component {
 
                                 <Form className="_my-form" size="large">
 
-                                    <FormInput className="login__form_input form__icons" 
-                                        placeholder="First name"
-                                        type="text" 
-                                        url={User} />
-
-                                    <FormInput className="login__form_input form__icons" 
-                                        placeholder="Last name"
-                                        type="text" 
-                                        url={User} />
-                                    
-                                    <FormInput className="login__form_input form__icons" 
-                                        placeholder="Email"
-                                        type="email" 
-                                        url={Mail} />
-
-                                    <FormInput className="login__form_input form__icons" 
-                                        placeholder="Password"
-                                        type="password" 
-                                        url={Password} />
-
-                                    <CheckInput text="I agree to the Terms and Conditions.Le Lorem 
-                                        Ipsum est simplement du faux texte employé"/>
+                                    <SignupForm />
 
                                     <span className="signup__btn sign__btn"> Sign up </span>                                   
 
@@ -156,38 +136,12 @@ class SignUp extends Component {
     }
 }
 
-/* ---- call the function for validating every input ---- */
-    // for the first name
-// const reqFirstName = require("First Name");
-// const valFirstName = valLength("First Name", 3, 20);
-
-//     // for the last name
-// const reqLastName = require("Last Name");
-// const valLastName = valLength("Last Name", 3, 20);
-
-//     // for the email
-// const reqEmail = require("Email");
-// const myEmail = isEmail("Email");
-
-//     // for the password
-// const reqPassword = require("Password");
-// const valPassword = valLength("Password", 5, 100);
-
-//     // for the checkbox
-// const checkedBox = (value) => {
-//     if (value !== true) {
-
-//         return 'Please agree to the terms and conditions';
-//     }
-// };
 
 
 // SignUp = connect(null, {startSignUp})(SignUp);
 
 export default SignUp;
-// export default reduxForm({
-//     form: "SignUpForm"
-// })(SignUp);
+
 
 
 

@@ -54,8 +54,8 @@ class LogIn extends Component {
                     placeholder="Email"
                     forLabel="email_"
                     component={this.renderFiledInput}
-                    validate={[reqEmail, myEmail]}
-                />
+                    validate={[reqEmail, myEmail]} />
+                    
                 <Field
                     name="Password"
                     label="Password"

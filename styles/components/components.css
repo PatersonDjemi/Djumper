@@ -188,9 +188,20 @@
 }
 
 .feeback {
-    padding: 1rem 0px .3rem;
+    padding: 1rem 0 .3rem;
     color: red;
-    visibility: hidden;
+    height: 3.5rem;
+}
+.feeback__checkbox {
+    padding: 1rem 0 .3rem 5rem;
+    color: red;
+    height: 3.5rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.space {
+    height: 3.5rem;
 }
 
 /*********** sign button ************/

@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { FormInput } from '../reusable/inputs';
 import Mail from '../../assets/Mail.svg';
 import Password from '../../assets/locked.svg'
+import LoginForm from '../containers/loginForm'
 
 
 const LoginPage = (props) => {
@@ -17,24 +18,16 @@ const LoginPage = (props) => {
 
                 <div className="signin__left">
                    <h2 className="login__logo">djumper</h2>
-                   <div className="login__title">
-                        {/* <span className="welcomme"> */}
-                            welcome back
-                        {/* </span> */}
+                   <div className="login__title">                    
+                            welcome back        
                    </div>
+
                    <div className="login__form">
 
-                        <FormInput className="login__form_input form__icons"
-                            placeholder="Email"
-                            type="email"
-                            url={Mail} />
-
-                        <FormInput className="login__form_input form__icons" 
-                            placeholder="Password"
-                            type="password"
-                            url={Password} />
+                       <LoginForm/>
 
                    </div>
+
                    <div className="setting">
                        <Link to="/">
                             <span className="password_forget">
@@ -62,30 +55,4 @@ const LoginPage = (props) => {
 
 export default LoginPage;
 
-// const LoginPage = (props) => {
-//     return (
-//         <div id="page_div">
-//             <div id="center_content">
-//                 <div id="content_login">
-//                     <Grid className="_noMargin" stackable centered>
 
-//                         <MyModalHeader ModalTitle="Log In" className="myModalTitle"/>
-
-//                         <MyModalContent>
-//                             <Login history={props.history} />
-//                         </MyModalContent>
-
-//                         <MyModalFooter>
-//                             <div className="haventAccount">
-//                                 <span> Don't you have an account?</span>
-//                                 <span> <Link to="/signup"> Sign up </Link> </span>
-//                             </div>
-//                         </MyModalFooter>
-
-//                     </Grid>
-//                 </div>
-//             </div>
-
-//         </div>
-//     );
-// }
