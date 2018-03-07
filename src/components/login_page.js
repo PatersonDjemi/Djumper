@@ -22,22 +22,12 @@ const LoginPage = (props) => {
                             welcome back        
                    </div>
 
-                   <div className="login__form">
+                   
 
                        <LoginForm/>
 
-                   </div>
+                   
 
-                   <div className="setting">
-                       <Link to="/">
-                            <span className="password_forget">
-                                    forget password?
-                            </span>
-                       </Link>
-                        <span className="login__btn sign__btn">
-                            Log in &rsaquo;
-                        </span>
-                   </div>
                    <div className="create__account">
                         <span>Don´t have an account yet ? </span>
                          <Link to="/signup"> <span> Sign up </span> </Link> 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
 import validator from 'validator';
+import { Link } from 'react-router-dom'
 
 
 import { FormInput } from '../reusable/inputs';
@@ -32,25 +33,50 @@ class LoginForm extends Component {
         );
     }
 
+    submitLogin(values) {
+        console.log('my values are: ', values),
+        this.props.reset()
+    }
+
 
 
     render () {
-        return (
-            <div>
-                <Field name="email"
-                       component={this.renderInputField}
-                       placeholder="Email"
-                       type="email" 
-                       url={Mail}
-                       validate={[reqEmail, myEmail]}/>
 
-                <Field name="password"
-                       component={this.renderInputField}
-                       placeholder="Password"
-                       type="password"
-                       url={Password}
-                       validate={[reqPassword, valPassword]} />
-            </div>           
+        const { handleSubmit } = this.props;
+
+        return (
+            <div className="login__form">
+                    <Field name="email"
+                        component={this.renderInputField}
+                        placeholder="Email"
+                        type="email" 
+                        url={Mail}
+                        validate={[reqEmail, myEmail]}/>
+
+                    <Field name="password"
+                        component={this.renderInputField}
+                        placeholder="Password"
+                        type="password"
+                        url={Password}
+                        validate={[reqPassword, valPassword]} />
+
+                <div className="setting">
+
+                    <Link to="/">
+                        <span className="password_forget">
+                                forget password?
+                        </span>
+                    </Link>
+
+                    <span className="login__btn sign__btn" 
+                          onClick={handleSubmit(this.submitLogin.bind(this))}>
+
+                        Log in &rsaquo;
+
+                    </span>
+                    
+                </div> 
+            </div>         
         );
     }
 }
