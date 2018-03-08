@@ -6,9 +6,32 @@
     box-sizing: inherit;
 }
 
+/* 1em = 16px 16px is provided by the browser
+
+    600px = 37.5em
+    900px = 56.25em
+    1200px = 75em
+    1800px = 112.5rem 
+*/
 html {
-    font-size: 62.5%; /* 1rem = 10px */
-}
+    font-size: 62.5%; /* 1rem = 10px */}
+    @media (max-width: 1112.5em) {
+        html { font-size: 62.5%;
+        }
+    }
+    @media (max-width: 75em) {
+        html { font-size: 70%;   
+        }
+    }  
+    @media (max-width: 56.25em) {
+        html { font-size: 60%;
+        }
+    }
+    @media (max-width: 37.5em) {
+        html { font-size: 50%;
+        }            
+    } 
+
 
 body {
     box-sizing: border-box;

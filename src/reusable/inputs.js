@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 export class FormInput extends Component {
 
     render () {
-        const {url, className, type, placeholder } = this.props;
+        const {url, className, type, placeholder, inputStyle } = this.props;
         const {input, error, hasError } = this.props;
 
         return (
             <div className={className} style={{backgroundImage: `url(${url})` }} >
                 <input type={type} 
-                    className="login__input" 
+                    className={inputStyle} 
                     placeholder={placeholder}
                     {...input} />
                 {hasError ? (<div className="feeback"> {error} </div>) : <div className="space"></div>}

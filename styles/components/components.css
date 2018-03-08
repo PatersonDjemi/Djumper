@@ -180,8 +180,12 @@
     font-weight: 300 !important;
     letter-spacing: .1rem !important;
     padding: 0 0 .8rem 0 !important;
-    width: 100% !important;
-}
+    width: 100% !important;}
+    @media (max-width: 25em) {
+        .login__input {
+            font-size: 1.7rem !important;
+        }
+    }
 
 .login__form > .login__form_input {
     margin-bottom: 1.5rem;
@@ -190,19 +194,36 @@
 .feeback {
     padding: 1rem 0 .3rem;
     color: red;
-    height: 3.5rem;
-}
+    height: 3.5rem;}
+    @media (max-width: 75em) {
+        .feeback {
+            height: 2.5rem;
+
+        }
+    }
+
 .feeback__checkbox {
     padding: 1rem 0 .3rem 5rem;
     color: red;
     height: 3.5rem;
     font-size: 1.7rem;
-    font-weight: 300;
-}
+    font-weight: 300;}
+    /* @media (max-width: 75em) {
+        .feeback__checkbox {
+            height: 2.5rem;
+            font-size: 1.6rem;
+
+        }
+    } */
 
 .space {
-    height: 3.5rem;
-}
+    height: 3.5rem;}
+    @media (max-width: 75em) {
+        .space {
+            height: 2.5rem;
+
+        }
+    }
 
 /*********** sign button ************/
 

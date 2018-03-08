@@ -32,7 +32,8 @@ const LoginPage = (props) => {
 
 
                 <div className="signin__right">
-                    image
+                    image. mettre l image de ce block en background
+                    quand le block ci disparait
                 </div>
             </div>
         </Container>

@@ -19,7 +19,7 @@ const SignUp = (props) => {
     return (
         <Container fluid className="signup">
             <Grid centered stackable className="signup__grid">
-                <Grid.Column computer={6} tablet={5}>
+                <Grid.Column computer={7} tablet={7}>
                     <div className="signup__left">
                         <Header as="h1" className="signup__logo">
                             djumper
@@ -32,7 +32,7 @@ const SignUp = (props) => {
                             l'imprimerie 0depuis les années 1500, quand un peintre. </p>
                     </div>
                 </Grid.Column>
-                <Grid.Column computer={6} tablet={7}>
+                <Grid.Column computer={7} tablet={9}>
                     <div className="create_account__outside">
                         <div className="create_account__box">
                             <Header as="h3" content="create an account" 

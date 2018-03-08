@@ -27,6 +27,7 @@ class LoginForm extends Component {
 
         return (
             <FormInput className="login__form_input form__icons"
+                inputStyle="login__inputs"
                 placeholder={placeholder}
                 type={type}
                 url={url}
@@ -78,7 +79,7 @@ class LoginForm extends Component {
                         </span>
                     </Link>
 
-                    <span className="login__btn sign__btn" 
+                    <span className="login__btn sign__btns" 
                           onClick={handleSubmit(this.submitLogin.bind(this))} >
 
                         Log in &rsaquo;
