@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
 import validator from 'validator';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 
 import { FormInput } from '../reusable/inputs';
@@ -9,6 +10,8 @@ import Mail from '../../assets/Mail.svg';
 import Password from '../../assets/locked.svg';
 
 import { valLength , isEmail, require } from '../reusable/forms';
+import { loginStart } from '../actions'
+
 
 
 
@@ -33,9 +36,16 @@ class LoginForm extends Component {
         );
     }
 
-    submitLogin(values) {
-        console.log('my values are: ', values),
-        this.props.reset()
+    submitLogin({email, password}) {
+        const { reset, loginStart, history } = this.props;
+
+        // call the action creator
+        loginStart({email, password, history})
+        
+        // clear the input fields
+        reset()
+
+        
     }
 
 
@@ -69,12 +79,12 @@ class LoginForm extends Component {
                     </Link>
 
                     <span className="login__btn sign__btn" 
-                          onClick={handleSubmit(this.submitLogin.bind(this))}>
+                          onClick={handleSubmit(this.submitLogin.bind(this))} >
 
                         Log in &rsaquo;
 
                     </span>
-                    
+
                 </div> 
             </div>         
         );
@@ -89,6 +99,9 @@ const myEmail = isEmail("Email");
 // for the password
 const reqPassword = require("Password");
 const valPassword = valLength("Password", 5, 100);
+
+
+LoginForm = connect(null, { loginStart })(LoginForm)
 
 
 export default reduxForm({

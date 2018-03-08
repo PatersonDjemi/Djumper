@@ -1,3 +1,3 @@
-export const LOG_IN_START = 'log in start';
+export const LOG_IN_START = 'LOG_IN_START';
 
-export const SIGN_UP_START = 'sign up start';
+export const SIGN_UP_START = 'SIGN_UP_START';

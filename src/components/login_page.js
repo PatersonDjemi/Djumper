@@ -20,13 +20,9 @@ const LoginPage = (props) => {
                    <h2 className="login__logo">djumper</h2>
                    <div className="login__title">                    
                             welcome back        
-                   </div>
+                   </div>                   
 
-                   
-
-                       <LoginForm/>
-
-                   
+                    <LoginForm history={props.history} />                   
 
                    <div className="create__account">
                         <span>Don´t have an account yet ? </span>

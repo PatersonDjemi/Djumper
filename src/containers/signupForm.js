@@ -10,7 +10,8 @@ import Password from '../../assets/locked.svg'
 
 
 import { valLength , isEmail, require } from '../reusable/forms';
-import Divider from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { signupStart } from '../actions'
 
 
 
@@ -45,9 +46,24 @@ class SignupForm extends Component {
         );
     }
 
+    submitSignup({first, last, email, password, agree}) {
+        
+        const { reset, history, signupStart } = this.props;
+        
+        // call the action creator
+        signupStart({first, last, email, password, agree, history});
+        
+        // clear the fields input
+        reset()
+    }
+
     render () {
+
+        const { handleSubmit } = this.props;
+
         return (
-            <div>
+            <div style={{paddingTop: 1.5 + 'rem'}}>
+
                 <Field name="first"
                     component={this.renderInputField}
                     placeholder="First name"
@@ -81,6 +97,12 @@ class SignupForm extends Component {
                        text="I agree to the Terms and Conditions.Le Lorem 
                        Ipsum est simplement du faux texte employé"
                        validate={reqCheckbox}/>
+
+                <span className="signup__btn sign__btn"
+                      onClick={handleSubmit(this.submitSignup.bind(this))}> 
+                Sign up 
+                </span>
+
             </div>
         );
     }
@@ -110,6 +132,7 @@ const reqCheckbox = (value) => {
         return 'Please agree to the terms and conditions'
 }
 
+SignupForm = connect(null, { signupStart })(SignupForm);
 
 
 export default reduxForm({

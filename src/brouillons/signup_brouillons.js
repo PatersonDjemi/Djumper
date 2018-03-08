@@ -113,13 +113,7 @@ class SignUp extends Component {
                                         className="create_account__title" 
                                         textAlign="center" />
 
-                                <Form className="_my-form" size="large">
-
-                                    <SignupForm />
-
-                                    <span className="signup__btn sign__btn"> Sign up </span>                                   
-
-                                </Form>
+                                    <SignupForm history={this.props.history} />                                   
 
                                 <div className="account__already">
                                     <span>Already a DJUMPER account? </span>

@@ -6,8 +6,12 @@ import axios from 'axios'
 
 
 
-/************** Log in **************/
-
+/************** 
+ * 
+ * 
+ * Log in
+ * 
+ *  **************/
 function* loginStartAsync(Email, Password) {
 
     const endPoint = `${config.baseUrl}/login`;
@@ -24,22 +28,23 @@ function* loginStartAsync(Email, Password) {
 function* loginStart(action) {
 
     const { payload: { Email, Password }, history} = action;
+    console.log('action login in saga', action)
 
-    const response = yield call(loginStartAsync, Email, Password);
+    // const response = yield call(loginStartAsync, Email, Password);
 
-    const { data, status } = response;
+    // const { data, status } = response;
 
-        if (status === 200) {
-          // send action to the reducer
-          yield  put({type: "AUTH_USER"});
-          // redirect the user
-          yield history.push('/');
+    //     if (status === 200) {
+    //       // send action to the reducer
+    //       yield  put({type: "AUTH_USER"});
+    //       // redirect the user
+    //       yield history.push('/');
 
-        } else {
+    //     } else {
 
-           yield put({type: "ERROR", payload: data.error });
+    //        yield put({type: "ERROR", payload: data.error });
 
-        }
+    //     }
 }
 
 export function* startLogInSaga() {
@@ -49,7 +54,13 @@ export function* startLogInSaga() {
 
 
 
-/********* sign up ****************/
+/*********
+ * 
+ * 
+ *  sign up
+ * 
+ * 
+ *  ****************/
 
 function* startSignUpAsync(FirstName, LastName, Email, Password, Agree) {
 
@@ -60,27 +71,29 @@ function* startSignUpAsync(FirstName, LastName, Email, Password, Agree) {
                     .catch(error => error.response)
 }
 
-function* startSignUp(action) {
+function* signupStart(action) {
 
     const { payload: { FirstName, LastName, Email, Password, Agree}, history } = action;
 
-    const response =  yield call(startSignUpAsync, FirstName, LastName, Email, Password, Agree );
+    console.log('action signup in saga is: ', action)
 
-    const { data, status } = response;
+    // const response =  yield call(startSignUpAsync, FirstName, LastName, Email, Password, Agree );
 
-    if  (status === 200 ) {
+    // const { data, status } = response;
 
-        yield put({type: "AUTH_USER"});
+    // if  (status === 200 ) {
 
-        yield history.push('/');
+    //     yield put({type: "AUTH_USER"});
 
-    } else {
+    //     yield history.push('/');
 
-        yield put({type: "ERROR", payload: data.error });
-    }
+    // } else {
+
+    //     yield put({type: "ERROR", payload: data.error });
+    // }
 
 }
 
 export function* startSignUpSaga() {
-    yield takeLatest(types.SIGN_UP_START, startSignUp)
+    yield takeLatest(types.SIGN_UP_START, signupStart)
 }
