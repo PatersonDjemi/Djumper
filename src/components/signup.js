@@ -15,7 +15,6 @@ import SignupForm from '../containers/signupForm'
 
 
 const SignUp = (props) => {
-
     return (
         <Container fluid className="signup">
             <Grid centered stackable className="signup__grid">

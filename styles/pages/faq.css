@@ -18,19 +18,84 @@
     font-weight: 500 !important;
     text-transform: uppercase !important;
     letter-spacing: .5rem !important;
-    margin-bottom: 4rem !important;
-}
+    margin-bottom: 4rem !important;}
+    @media (max-width: 87.5em) {
+        .faq__question_one  {
+            font-size: 3rem !important;
+        }
+    }
+    @media (max-width: 75.5em) {
+        .faq__question_one  {
+            font-size: 2.5rem !important;
+        }
+    }
+    @media (max-width: 43.75em) {
+        .faq__question_one {
+            font-size: 1.7rem !important;
+        }
+    }
+
+
+
+
+    /*********** fix this block
+    le css est uberschreiben par quelque chose dautre 
+    **********************/
+.faq__grid {
+    padding: 0 3rem !important;}
+    @media (max-width: 87.5em) {
+        .grid.faq__grid  {
+            padding: 0 1.5rem !important;
+        }
+    }
+    @media (max-width: 75em) {
+        .faq__grid  {
+            padding: 0 1rem !important;
+        }
+    }
+    @media (max-width: 47.9375em) {
+        .faq__grid  {
+            margin-bottom: 3rem !important;
+        }
+    }
+    /*********** fix this block
+    le css est uberschreiben par quelque chose dautre 
+    **********************/
+
+
+
+
+
 
 .faq__take_look {
     font-size: 1.7rem !important;
     font-weight: 300 !important;
-    letter-spacing: .1rem !important;   
-}
+    letter-spacing: .1rem !important;}
+    @media (max-width: 87.5em) {
+        .faq__take_look {
+            font-size: 1.6rem !important;
+        }
+    }
+    @media (max-width: 75.5em) {
+        .faq__take_look {
+            font-size: 1.5rem !important;
+        }
+    }
+    @media (max-width: 43.75em) {
+        .faq__take_look {
+            font-size: 1.3rem !important;
+        }
+    }
+
+
+
+
 
 .faq__go_down {
     position: absolute !important;
     display: inline-block !important;
-    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 15% !important;
     cursor: pointer;
 }
@@ -40,16 +105,35 @@
 }
 
 .faq__all_questions {
-    padding: 20rem 0 15rem;
-}
+    padding: 20rem 0 15rem;}
+    @media (max-width: 75.5em) {
+        .faq__all_questions {
+            padding: 13rem 0 15rem;}
+    }
 
 .still_question {
     font-size: 4rem !important;
     font-weight: 500 !important;
     margin-bottom: 3rem !important;
     letter-spacing: .5rem !important;
-    text-transform: uppercase !important;
-}
+    text-transform: uppercase !important;}
+    @media (max-width: 87.5em) {
+        .still_question {
+            font-size: 3rem !important;
+        }
+    }
+    @media (max-width: 75.5em) {
+        .still_question {
+            font-size: 2.5rem !important;
+        }
+    }
+    @media (max-width: 43.75em) {
+        .still_question {
+            font-size: 1.7rem !important;
+        }
+    }
+
+
 
 .customized_service {
     font-size: 1.7rem;
@@ -57,10 +141,55 @@
     font-weight: normal;
     margin-top: 5rem;
     margin-bottom: 5rem;
-    padding: 1rem;
-}
+    padding: 1rem;}
+    @media (max-width: 87.5em) {
+        .customized_service {
+            font-size: 1.6rem !important;
+        }
+    }
+    @media (max-width: 75.5em) {
+        .customized_service {
+            font-size: 1.5rem !important;
+        }
+    }
+    @media (max-width: 43.75em) {
+        .customized_service {
+            font-size: 1.3rem !important;
+        }
+    }
+
+
+
 
 .btn_connexion {
     text-align: center;
     padding: 2rem;
 } 
+
+.sign__btnss {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 7.5rem;
+    cursor: pointer;
+    background-color: lightskyblue;}
+    @media (max-width: 87.5em) {
+        .sign__btnss {
+            font-size: 1.8rem !important;
+            padding: 2rem 5.5rem;
+        }
+    }
+    @media (max-width: 75.5em) {
+        .sign__btnss {
+            font-size: 1.6rem !important;
+            padding: 2rem 3.5rem;
+        }
+    }
+    @media (max-width: 43.75em) {
+        .sign__btnss {
+            font-size: 1.3rem !important;
+            padding: 2rem 2rem;
+        }
+    }
