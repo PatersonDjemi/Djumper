@@ -4,13 +4,12 @@ export function signupStart({ first, last, email, password, agree, history }) {
     return {
         type: types.SIGN_UP_START,
         payload: {
-            FirstName: first,
-            LastName: last, 
-            Email: email,
-            Password: password,
-            Agree: agree 
-        },
-         history
+            firstName: first,
+            lastName: last, 
+            email: email,
+            password: password,
+            agree: agree 
+        }
     }
 }
 
@@ -20,8 +19,7 @@ export function loginStart({email, password, history}) {
         payload: { 
             email, 
             password
-        },
-        history
+        }
     }
 
 }

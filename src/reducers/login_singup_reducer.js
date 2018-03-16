@@ -11,7 +11,7 @@ export default function authentication(state = {}, action) {
             return update(state, { authenticated: { $set: true} } );
 
         case 'UNAUTH_USER':
-            return update(state, { authenticated: { $set: true} } );
+            return update(state, { authenticated: { $set: false} } );
 
         case 'ERROR':
             return update(state, { authenticated: { $set: false }, error: { $set: action.payload }});

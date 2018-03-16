@@ -16,6 +16,9 @@ import { signupStart } from '../actions'
 
 
 class SignupForm extends Component {
+    constructor(props) {
+        super(props);
+    }
 
     renderInputField({input, 
         meta: {touched, error, active},
@@ -49,10 +52,10 @@ class SignupForm extends Component {
 
     submitSignup({first, last, email, password, agree}) {
         
-        const { reset, history, signupStart } = this.props;
+        const { reset, signupStart } = this.props;
         
         // call the action creator
-        signupStart({first, last, email, password, agree, history});
+        signupStart({first, last, email, password, agree});
         
         // clear the fields input
         reset()
@@ -110,31 +113,31 @@ class SignupForm extends Component {
 }
 
 
-/* ---- call the function for validating every input ---- */
-    // for the first name
-const reqFirstName = require("First Name");
-const valFirstName = valLength("First Name", 3, 20);
-
-    // for the last name
-const reqLastName = require("Last Name");
-const valLastName = valLength("Last Name", 3, 20);
-
-    // for the email
-const reqEmail = require("Email");
-const myEmail = isEmail("Email");
-
-    // for the password
-const reqPassword = require("Password");
-const valPassword = valLength("Password", 5, 100);
-
-    // for the checkbox
-const reqCheckbox = (value) => {
-    if(value !== true)  
-        return 'Please agree to the terms and conditions'
-}
-
 SignupForm = connect(null, { signupStart })(SignupForm);
 
+
+/* ---- call the function for validating every input ---- */
+    // for the first name
+    const reqFirstName = require("First Name");
+    const valFirstName = valLength("First Name", 3, 20);
+    
+        // for the last name
+    const reqLastName = require("Last Name");
+    const valLastName = valLength("Last Name", 3, 20);
+    
+        // for the email
+    const reqEmail = require("Email");
+    const myEmail = isEmail("Email");
+    
+        // for the password
+    const reqPassword = require("Password");
+    const valPassword = valLength("Password", 5, 100);
+    
+        // for the checkbox
+    const reqCheckbox = (value) => {
+        if(value !== true)  
+            return 'Please agree to the terms and conditions'
+    }
 
 export default reduxForm({
     form: "signupForm"

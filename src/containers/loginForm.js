@@ -38,10 +38,10 @@ class LoginForm extends Component {
     }
 
     submitLogin({email, password}) {
-        const { reset, loginStart, history } = this.props;
+        const { reset, loginStart } = this.props;
 
         // call the action creator
-        loginStart({email, password, history})
+        loginStart({email, password})
         
         // clear the input fields
         reset()

@@ -2,6 +2,7 @@ import { takeLatest, put, call } from 'redux-saga/effects'
 import * as types from '../actions/type';
 import config from '../../config'
 import axios from 'axios'
+import { saveToken, extractResponse } from '../../utils';
 
 
 
@@ -12,39 +13,46 @@ import axios from 'axios'
  * Log in
  * 
  *  **************/
-function* loginStartAsync(Email, Password) {
+function* loginStartAsync(email, password) {
 
-    const endPoint = `${config.baseUrl}/login`;
+    const endPoint = `${config.baseUrl}/user/login`;
 
-     return yield axios.post(endPoint, {Email, Password})
+     return yield axios.post(endPoint, { email, password})
          .then(response => response)
          .catch(error => {
-             // la reponse en cas de mauvaise requete se trouve dans error.response
-             return error.response
-         });
+            if(error.response) {
+                // server respond but with a bad status code
+                console.log('response back but not was expected')
+                throw error.response;
+
+            } else if (error.request) {
+                // request was made but no response received
+                console.log('why no response from server');
+                throw error.request;
+            }         
+        });
 }
 
 
 function* loginStart(action) {
 
-    const { payload: { Email, Password }, history} = action;
-    console.log('action login in saga', action)
+    const { payload: { email, password } } = action;
+    let response;
 
-    // const response = yield call(loginStartAsync, Email, Password);
+    try {
+        response = yield call(loginStartAsync, email, password);
 
-    // const { data, status } = response;
+        const data = extractResponse(response);
+        console.log('response data', data );
 
-    //     if (status === 200) {
-    //       // send action to the reducer
-    //       yield  put({type: "AUTH_USER"});
-    //       // redirect the user
-    //       yield history.push('/');
-
-    //     } else {
-
-    //        yield put({type: "ERROR", payload: data.error });
-
-    //     }
+        yield put({type: 'AUTH_USER'});
+    }
+    catch (e) {
+        // customiser l erreur et renvoyer un feedback à l utilisateur
+        console.log('error on the request', e)
+        // user not authenticated
+        yield put({type: 'UNAUTH_USER'})
+    }
 }
 
 export function* startLogInSaga() {
@@ -62,36 +70,47 @@ export function* startLogInSaga() {
  * 
  *  ****************/
 
-function* startSignUpAsync(FirstName, LastName, Email, Password, Agree) {
+function* startSignUpAsync(firstName, lastName, email, password, agree) {
 
-    const endPoint = `${config.baseUrl}/sign-up`;
+    const endPoint = `${config.baseUrl}/user/signup`;
 
-    return yield axios.post(endPoint, {FirstName, LastName, Email, Password, Agree})
-                    .then(response => response)
-                    .catch(error => error.response)
+    return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
+        .then( response => response)
+        .catch(error => {
+            if(error.response) {
+                // server respond but with a bad status code
+                console.log('response back but not was expected')
+                throw error.response;
+
+            } else if (error.request) {
+                // request was made but no response received
+                console.log('why no response from server');
+                throw error.request;
+            }         
+        });
 }
 
 function* signupStart(action) {
 
-    const { payload: { FirstName, LastName, Email, Password, Agree}, history } = action;
+    const { payload: { firstName, lastName, email, password, agree}, history } = action;
+    //console.log('action signup in saga is: ', action)
+    let response;
 
-    console.log('action signup in saga is: ', action)
+    try {
+        response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
+    // extract data and save token
+        const data = extractResponse(response)
+        console.log('response data', data );
 
-    // const response =  yield call(startSignUpAsync, FirstName, LastName, Email, Password, Agree );
+        yield put({type: 'AUTH_USER'});
+    }
 
-    // const { data, status } = response;
-
-    // if  (status === 200 ) {
-
-    //     yield put({type: "AUTH_USER"});
-
-    //     yield history.push('/');
-
-    // } else {
-
-    //     yield put({type: "ERROR", payload: data.error });
-    // }
-
+    catch(e)  {
+        // customiser l erreur et renvoyer un feedback à l utilisateur
+        console.log('error on the request', e)
+        // user not authenticated
+        yield put({type: 'UNAUTH_USER'})
+    }
 }
 
 export function* startSignUpSaga() {
