@@ -10,6 +10,7 @@ const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux', 're
 
 
 module.exports = {
+    target: 'web',
     entry: {
         bundle: ['babel-polyfill', './src/index.js'],
         vendor: VENDOR_LIBS
@@ -60,14 +61,14 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('style.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
-        }),
-        new htmlWebpackPlugin({
-            template: 'index.html'
-        })
-
+        // new webpack.({
+        //     names: ['vendor', 'manifest']
+        // }),
+        // new htmlWebpackPlugin({
+        //     template: 'index.html'
+        // })
     ]
+   
 };
 
 
