@@ -34,13 +34,10 @@ module.exports = {
                             },
                             {
                                 loader: 'less-loader'
-                            },
-                            {
-                                loader: 'sass-loader'
                             }
                         ]
                 }),
-                test: /\.(css|less|scss)$/
+                test: /\.(css|less)$/
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,

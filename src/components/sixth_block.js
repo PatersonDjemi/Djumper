@@ -1,26 +1,17 @@
 import React from 'react'
 import { Container, Grid, Header, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 
 const H_Sixth = () => {
     return (
-        <Container fluid className="_sixthBlock">
-            <Grid centered stackable >
-                <Grid.Column width={6}>
-                    <div className="_phone">
-
-                    </div>
+        <Container fluid className="get_started">
+            <Grid centered columns="twelve">
+                <Grid.Column width={12} textAlign="center">
+                    <Header as="h2" textAlign="center" className="get_started__title"> it´s simple - start now and enjoy paying your trip </Header>
+                    <Link to="/sign_in" id="get_started__btn" className="link_btn link_btn--orange"> get started </Link>
                 </Grid.Column>
-                <Grid.Column width={6}>
-                    <Header as="h2" className="_yourTicket"> YOUR TICKET IN YOUR HAND </Header>
-                    <p className="_textTicket">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                        mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                        0depuis les années 1500, quand un peintre
-                    </p>
-                </Grid.Column>
-
             </Grid>
-
         </Container>
     );
 }

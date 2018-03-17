@@ -7,7 +7,13 @@ import Smart from '../../assets/bulb.svg';
 import Plan from '../../assets/planning.svg';
 import Easy from '../../assets/solution.svg';
 
-
+const Reasons = (props) => {
+    return (
+    <div className={props.ClassName}>
+        {props.reason}
+    </div>   
+    );
+}
 
 const H_Third = () => {
     return (
@@ -18,21 +24,21 @@ const H_Third = () => {
                     <div className="why_use__reasons">
                         <h2 className="why_use__titre"> why to use djumper </h2>
 
-                        <div className="why_use_reasons__one">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor invidunt ut labore
-                            et dolore magna aliquyam erat, sed diam voluptua
-                        </div>
-                        <div className="why_use_reasons__two">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor invidunt ut labore
-                            et dolore magna aliquyam erat, sed diam voluptua
-                        </div>
-                        <div className="why_use_reasons__three">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor invidunt ut labore
-                            et dolore magna aliquyam erat, sed diam voluptua
-                        </div>
+                        <Reasons ClassName="why_use_reasons__one"
+                                reason="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore
+                                et dolore magna aliquyam erat, sed diam voluptua"/>
+
+                        <Reasons ClassName="why_use_reasons__two"
+                                reason="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore
+                                et dolore magna aliquyam erat, sed diam voluptua"/>
+
+                        <Reasons ClassName="why_use_reasons__three"
+                                reason="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore
+                                et dolore magna aliquyam erat, sed diam voluptua"/>
+
                     </div>
 
                     <Link to="/sign_in" id="free_account" className="link_btn link_btn--orange"> creata a free account </Link>
@@ -67,10 +73,3 @@ const H_Third = () => {
 }
 
 export default H_Third;
-
-{/*<List className="_listW">*/}
-    {/*<List.Item>Le Lorem Ipsum est simplement du faux texte employé dans la </List.Item>*/}
-    {/*<List.Item>Le Lorem Ipsum est simplement du faux texte employé dans la </List.Item>*/}
-    {/*<List.Item>Le Lorem Ipsum est simplement du faux texte employé dans la </List.Item>*/}
-    {/*<List.Item>Le Lorem Ipsum est simplement du faux texte employé dans la </List.Item>*/}
-{/*</List>*/}

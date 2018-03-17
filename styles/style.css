@@ -191,75 +191,12 @@
 
 /*---------------------------------------------------------------------------------*/
 
-/* Fourth Block */
-._fourthBlock {
-    padding-top: 150px !important;
-    /*background-color: dimgrey;*/
-    background: white;
-    position: relative;
-}
-._nverMiss {
-    font-size: 40px !important;
-    font-weight: 400 !important;
-    margin: 10px 0px 5px !important;
-}
-._textAf {
-    text-align: center;
-    padding: 0px 30px;
-    font-size: 20px !important;
-    font-weight: 300;
-    line-height: 1.5em !important;
-}
-._myCont {
-    height: 600px;
-    max-width: 960px;
-    margin: 150px auto -50px auto;
-    /*background: chartreuse;*/
-    background: white;
-    position: relative !important;
-    z-index: 1;
-}
 
 /* ------------------------------------------------------------- */
-/* fifth block */
-._fifthBlock {
-    background: #f1f1f1;
-    padding: 300px 0px 300px !important;
-}
-._simpl {
-    font-size: 40px !important;
-    font-weight: 400 !important;
-    margin: 50px 0px 30px !important;
-}
-._getStarted {
-    margin: 50px 0px 20px !important;
-}
 
 
 /*-----------------------------------------------------------------*/
 /* sixth block */
-._sixthBlock {
-    background: dimgrey;
-    padding: 100px 0px 75px !important;
-}
-._phone {
-    height: 400px;
-    max-width: 100%;
-    margin: 50px auto 10px !important;
-    background: white;
-}
-._yourTicket {
-    font-size: 40px !important;
-    font-weight: 400 !important;
-    padding: 0px 30px !important;
-    margin: 40px 0px 20px !important;
-}
-._textTicket {
-    padding: 0px 30px;
-    font-size: 20px !important;
-    font-weight: 300;
-    line-height: 1.5em !important;
-}
 
 /*-------------------- sign up page ----------------------*/
 
