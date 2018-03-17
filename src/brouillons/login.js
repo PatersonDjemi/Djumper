@@ -43,7 +43,7 @@ class LogIn extends Component {
     render() {
 
         const {handleSubmit, error} = this.props;
-
+        //error comming from server
         return (
 
             <Form className="_form" onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
@@ -54,8 +54,8 @@ class LogIn extends Component {
                     placeholder="Email"
                     forLabel="email_"
                     component={this.renderFiledInput}
-                    validate={[reqEmail, myEmail]}
-                />
+                    validate={[reqEmail, myEmail]} />
+                    
                 <Field
                     name="Password"
                     label="Password"

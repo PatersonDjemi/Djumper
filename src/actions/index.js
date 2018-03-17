@@ -1,18 +1,25 @@
 import * as types from './type'
 
-export function startSignUp({ FirstName, LastName, Email, Password, Agree, history }) {
+export function signupStart({ first, last, email, password, agree, history }) {
     return {
         type: types.SIGN_UP_START,
-        payload: {FirstName, LastName, Email, Password, Agree},
-        history
+        payload: {
+            firstName: first,
+            lastName: last, 
+            email: email,
+            password: password,
+            agree: agree 
+        }
     }
 }
 
-export function startLogIn({Email, Password, history}) {
+export function loginStart({email, password, history}) {
     return {
         type: types.LOG_IN_START,
-        payload: { Email, Password },
-        history
+        payload: { 
+            email, 
+            password
+        }
     }
 
 }

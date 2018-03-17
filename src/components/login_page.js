@@ -1,38 +1,65 @@
-import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import {Container, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-import {MyModalHeader, MyModalContent, MyModalFooter} from '../reusable/modals';
-import Login from '../containers/login'
+import { FormInput } from '../reusable/inputs';
+import Mail from '../../assets/Mail.svg';
+import Password from '../../assets/locked.svg'
+import LoginForm from '../containers/loginForm'
 
 
-const LoginPage = (props) => {
-    return (
-        <div id="page_div">
-            <div id="center_content">
-                <div id="content_login">
-                    <Grid className="_noMargin" stackable centered>
+class LoginPage extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-                        <MyModalHeader ModalTitle="Log In" className="myModalTitle"/>
+    shouldComponentUpdate(nextProps, nextState) {
+        const { authUser, history } = nextProps;
 
-                        <MyModalContent>
-                            <Login history={props.history} />
-                        </MyModalContent>
+        if (authUser.authenticated) {
+            history.push('/dashboard');
+            return false;
+        }
+    }
 
-                        <MyModalFooter>
-                            <div className="haventAccount">
-                                <span> Don't you have an account?</span>
-                                <span> <Link to="/signup"> Sign up </Link> </span>
-                            </div>
-                        </MyModalFooter>
-
-                    </Grid>
+    render () {
+        return (
+            <Container fluid className="login">
+                <div className="login__outside_box">
+    
+                    <div className="signin__left">
+                       <h2 className="login__logo">djumper</h2>
+                       <div className="login__title">                    
+                                welcome back        
+                       </div>                   
+    
+                        <LoginForm />                   
+    
+                       <div className="create__account">
+                            <span>Don´t have an account yet ? </span>
+                             <Link to="/signup"> <span> Sign up </span> </Link> 
+                       </div>
+                    </div>
+    
+    
+                    <div className="signin__right">
+                        image. mettre l image de ce block en background
+                        quand le block ci disparait
+                    </div>
                 </div>
-            </div>
+            </Container>
+        );
+    }
 
-        </div>
-    );
 }
 
+function mapStateToProps ({authentication}) {
+    return {
+        authUser: authentication
+    }
+}
 
-export default LoginPage;
+export default connect(mapStateToProps)(LoginPage);
+
+

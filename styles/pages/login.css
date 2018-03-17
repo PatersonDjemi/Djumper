@@ -1,0 +1,227 @@
+.login {
+    position: fixed;
+    /* width: 100%; */
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #f1f1f1; */
+    overflow: hidden;}
+    /* @media (max-width: 47.9375em) {
+        .login {
+            width: 100% !important;   
+        }
+    } */
+    @media(max-width: 767px) {
+    .ui.container.login {
+        width: 100% !important;
+        margin-left: 0em !important;
+        margin-right: 0em !important;
+        }
+    }
+    @media(max-width: 767px) {
+        .ui.container.login {
+            margin-left: 0em !important;
+            margin-right: 0em !important;
+        }
+    }
+
+.login__outside_box {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* background-color: blueviolet; */
+    width: 70%;
+    height: 70rem;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;}
+    @media (max-width: 75em) {
+        .login__outside_box {
+            width: 95%;
+            height: 60rem;   
+        }
+    }
+    @media (max-width: 62.5em) {
+        .login__outside_box {
+            width: 60% !important;   
+        }
+    }
+    @media (max-width: 47.9375em) {
+        .login__outside_box {
+            width: 68% !important;   
+        }
+    }
+    @media (max-width: 37.5em) {
+        .login__outside_box {
+            width: 75% !important;   
+        }
+    }
+    @media (max-width: 25em) {
+        .login__outside_box {
+            width: 90% !important;   
+        }
+    }
+
+/*************** left side ************/
+
+.signin__left {
+    flex: 2 0;
+    padding: 4rem;  
+    background-color: white;}
+    @media (max-width: 100em) {
+        .signin__left {
+            padding: 2rem;   
+        }
+    }
+    @media (max-width: 62.5em) {
+        .signin__left {
+            padding: 4rem;  
+        }
+    }
+    @media (max-width: 47.9375em) {
+        .signin__left {
+            flex: 1 0;  
+            padding: 3rem;
+        }
+    }
+
+
+.login__logo {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: .5rem;
+    padding: 0 0 0 1.5rem;
+    margin-bottom: 6rem !important;}
+    @media (max-width: 100em) {
+        .login__logo {
+            font-size: 1.5rem;
+            margin-bottom: 3.5rem !important;   
+        }
+    }
+
+.login__title {
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    padding-top: 2rem;
+    padding-left: 1.5rem;}
+    @media (max-width: 100em) {
+        .login__title {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem !important;   
+        }
+    }
+    @media (max-width: 68.75em) {
+        .login__title {
+            font-size: 2.3rem;
+            margin-bottom: 3.5rem !important;   
+        }
+    }
+
+.login__form {
+    padding: 2rem 2.5rem 0rem 1.5rem !important;}
+    @media (max-width: 75em) {
+        .login__form {
+            padding: 1.5rem 1.5rem 0rem 1rem !important;     
+        }
+    }
+
+.login__btn {
+    transition: all .2s;
+}
+
+.setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 2.5rem 2rem 1.5rem; */
+    margin-bottom: 3rem;}
+    @media (max-width: 100em) {
+        .setting {
+            padding: 0 0 1rem 1rem !important; 
+            margin-bottom: 2.5rem;    
+        }
+    }
+
+.password_forget {
+    /* padding-left: 1.5rem; */
+    font-size: 1.7rem;
+    font-weight: 300;}
+    @media (max-width: 100em) {
+        .password_forget {
+            font-size: 1.5rem;    
+        }
+    }
+
+.sign__btns {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 7.5rem;
+    cursor: pointer;
+    background-color: lightskyblue;}
+    @media (max-width: 100em) {
+        .sign__btns {
+            padding: 1.5rem 3rem;     
+            font-size: 1.7rem;
+        }
+    }
+    @media (max-width: 75em) {
+        .sign__btns {
+            padding: 1.5rem 4rem;     
+        }
+    }
+    @media (max-width: 68.75em) {
+        .sign__btns {
+            padding: 1.5rem 3rem;     
+            font-size: 1.7rem;
+        }
+    }
+
+
+
+.create__account {
+    text-align: center;
+    letter-spacing: .1rem;
+    padding: 5rem 2.5rem 0 1.5rem;}
+    @media (max-width: 100em) {
+        .create__account {
+            padding: 3rem 1.5rem 0 1rem;     
+        }
+    }
+
+
+.login__inputs {
+    border: none !important;
+    outline: none !important;
+    border-bottom: 1px solid black !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    letter-spacing: .1rem !important;
+    padding: 0 0 .8rem 0 !important;
+    width: 100% !important;}
+    @media (max-width: 75em) {
+        .login__inputs {
+            font-size: 1.7rem !important;
+
+        }
+    }
+
+
+/*************** right side ************/
+.signin__right{
+    flex: 3 1;
+    padding: 4rem;
+    background-color: cornflowerblue;}
+    @media (max-width: 62.5em) {
+        .signin__right {
+            display: none;
+
+        }
+    }

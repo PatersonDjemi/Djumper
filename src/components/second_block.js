@@ -15,7 +15,7 @@ const H_Second = () => {
                 <h2 className="how_work-header">how it works</h2>
 
                 <Grid centered stackable>
-                    <Grid.Column tablet={7} computer={4}>
+                    <Grid.Column tablet={7} computer={5}>
                         <div className="create_account how_work__card">
                             <CardBlock
                                 classes="_myCard _createAcc"
@@ -29,7 +29,7 @@ const H_Second = () => {
                             />
                         </div>
                     </Grid.Column>
-                    <Grid.Column tablet={7} computer={4}>
+                    <Grid.Column tablet={7} computer={5}>
                         <div className="confirm_account how_work__card">
                             <CardBlock
                                 nber="2"
@@ -42,7 +42,7 @@ const H_Second = () => {
                             />
                         </div>
                     </Grid.Column>
-                    <Grid.Column tablet={7} computer={4}>
+                    <Grid.Column tablet={7} computer={5}>
                         <div className="enjoy_djumper how_work__card">
                             <CardBlock
                                 nber="3"

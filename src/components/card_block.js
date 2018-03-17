@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import { Container, Grid, Button, Image } from 'semantic-ui-react'
 
 
@@ -22,9 +22,9 @@ export default CardBlock;
 
 
 
-CardBlock.PropTypes = {
-    nber: PropTypes.number,
-    title: PropTypes.string,
-    text: PropTypes.string,
-    src: PropTypes.string
+CardBlock.propTypes = {
+    nber: propTypes.number,
+    title: propTypes.string,
+    text: propTypes.string,
+    src: propTypes.string
 }

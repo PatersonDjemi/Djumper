@@ -5,28 +5,100 @@
     justify-content: space-between;
     align-items: center;
     padding: 4rem 5rem 2.5rem;
-   /* background: orange; */
-}
+   /* background: orange; */}
+   @media (max-width: 87.5em) {
+    .navigation {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        }
+    }
+    @media (max-width: 75em) {
+        .navigation {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            }
+    }
+    @media (max-width: 43.75em) {
+        .navigation {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            }
+    }
 
 .navigation__logo {
-    margin-left: 15rem;
-}
+    margin-left: 15rem;}
+    @media (max-width: 87.5em) {
+        .navigation__logo {
+            margin-left: 13rem;
+            }
+    }
+    @media (max-width: 75em) {
+        .navigation__logo {
+            margin-left: 8rem;
+            }
+    }
+    @media (max-width: 43.75em) {
+        .navigation__logo {
+            margin-left: 4rem;
+            }
+    }
+    @media (max-width: 31.25em) {
+        .navigation__logo {
+            margin-left: 1rem;
+            }
+    }
+
+
+
+
 .navigation__logo a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 3rem;
-    font-weight: 500;
-}
+    font-weight: 500;}
+    @media (max-width: 87.5em) {
+        .navigation__logo a  {
+            font-size: 2.2rem;
+            }
+    }
 
 .navigation__menu {
-    margin-right: 15rem;
-}
+    margin-right: 15rem;}
+    @media (max-width: 87.5em) {
+        .navigation__menu {
+            margin-right: 13rem;
+            }
+    }
+    @media (max-width: 75em) {
+        .navigation__menu {
+            margin-right: 8rem;
+            }
+    }
+    @media (max-width: 43.75em) {
+        .navigation__menu {
+            margin-right: 4rem;
+            }
+    }
+    @media (max-width: 31.25em) {
+        .navigation__menu {
+            margin-right: 1rem;
+            }
+    }
+
+
+
 .navigation__menu a {
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 500;
-    text-transform: uppercase;
-}
+    text-transform: uppercase;}
+    @media (max-width: 75em) {
+        .navigation__menu a {
+            font-size: 1.5rem;
+            }
+    }
+
+
 .navigation__menu > a {
     margin-right: 2rem;
 }
@@ -41,7 +113,7 @@
 }
 
 .link_btn:active {
-    transform: translateY(2px);
+    transform: translateY(.2rem);
 }
 
 .link_btn--orange {
@@ -81,29 +153,111 @@
     font-weight: 400;
     margin:3.5rem auto 2rem !important;
     text-align: center;
-    line-height: 1.3em;
-}
+    line-height: 1.3em;}
+    @media (max-width: 87.5em) {
+        .card_home_content__titre {
+            font-size: 2rem;
+            margin:3rem auto 1.7rem !important;
+        }
+    }
+    @media (max-width: 75em) {
+        .card_home_content__titre {
+            font-size: 1.7rem;
+            margin:2rem auto 1rem !important;
+        }
+    }
+
+
 
 .card_home_content__text {
     font-size: 1.7rem;
     font-weight: 300;
     text-align: justify;
     line-height: 2em;
-    padding: 1rem 3rem;
-}
+    padding: 1rem 3rem;}
+    @media (max-width: 87.5em) {
+        .card_home_content__text {
+            font-size: 1.6rem;
+            padding: 1rem 1.8rem;
+        }
+    }
+    @media (max-width: 75em) {
+        .card_home_content__text {
+            font-size: 1.4rem;
+            padding: 1rem 1rem;
+        }
+    }
+    @media (max-width: 61.9375em) {
+        .card_home_content__text {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+        }
+    }
+
 
 .how_work__card {
-    width: 85%;
-    margin: auto;
+    width: 75%;
+    margin: auto;}
+    @media (max-width: 100em) {
+        .how_work__card {
+            width: 95%;
+        }
+    }
+    @media (max-width: 75em) {
+        .how_work__card {
+            width: 100%;
+        }
+    }
+    @media (max-width: 61.9375em) {
+        .how_work__card {
+            width: 85%;
+        }
+    }
+    @media (max-width: 47.9375em) {
+        .how_work__card {
+            width: 55%;
+        }
+    }
+    @media (max-width: 31.25em) {
+        .how_work__card {
+            width: 80%;
+        }
+    }
+    @media (max-width: 21.875em) {
+        .how_work__card {
+            width: 95%;
+        }
+    }
+
+
+
+
+@media (max-width: 61.9375em) {
+    .create_account {
+        margin-top: 5rem;
+    }
 }
 
 .confirm_account {
-    margin-top: 13rem;
-}
+    margin-top: 13rem;}
+    @media (max-width: 61.9375em) {
+        .confirm_account {
+            margin-top: 5rem;
+        }
+    }
 
 .enjoy_djumper {
-    margin-top: 26rem;
-}
+    margin-top: 26rem;}
+    @media (max-width: 61.9375em) {
+        .enjoy_djumper {
+            margin-top: 3rem;
+        }
+    }
+    @media (max-width: 47.9375em) {
+        .enjoy_djumper {
+            margin-top: 5rem;
+        }
+    }
 
 /************************* why use components *****************/
 .why_use_reasons__one,
@@ -157,4 +311,164 @@
     line-height: 2em;
 }
 
+/**************** input components ********/
+
+.login__form_input {
+    width: 100%;
+    padding: 1rem 0 1rem 5rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.form__icons {
+    background-repeat: no-repeat;
+    background-size: 3rem 3rem;
+    background-position: 0rem .8rem;
+}
+
+.login__input {
+    border: none !important;
+    outline: none !important;
+    border-bottom: 1px solid black !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    letter-spacing: .1rem !important;
+    padding: 0 0 .8rem 0 !important;
+    width: 100% !important;}
+    @media (max-width: 25em) {
+        .login__input {
+            font-size: 1.7rem !important;
+        }
+    }
+
+.login__form > .login__form_input {
+    margin-bottom: 1.5rem;
+}
+
+.feeback {
+    padding: 1rem 0 .3rem;
+    color: red;
+    height: 3.5rem;}
+    @media (max-width: 75em) {
+        .feeback {
+            height: 2.5rem;
+
+        }
+    }
+
+.feeback__checkbox {
+    padding: 1rem 0 .3rem 5rem;
+    color: red;
+    height: 3.5rem;
+    font-size: 1.7rem;
+    font-weight: 300;}
+    /* @media (max-width: 75em) {
+        .feeback__checkbox {
+            height: 2.5rem;
+            font-size: 1.6rem;
+
+        }
+    } */
+
+.space {
+    height: 3.5rem;}
+    @media (max-width: 75em) {
+        .space {
+            height: 2.5rem;
+
+        }
+    }
+
+/*********** sign button ************/
+
+.sign__btn {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 7.5rem;
+    cursor: pointer;
+    background-color: lightskyblue;
+}
+
+/* .sign__btn:active {
+    transform: translateY(.2rem) !important;
+} */
+
+
+/************** faq categorie title ***********/
+.faq__categorie_question {
+    font-size: 3rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .1rem !important;
+    margin-bottom: 3rem !important;
+    padding: 0 .5rem !important;}
+    @media (max-width: 87.5em) {
+        .faq__categorie_question {
+            font-size: 2.7rem !important;
+            margin-bottom: 2.5rem !important;
+        }
+    }
+    @media (max-width: 75em) {
+        .faq__categorie_question {
+            font-size: 2.3rem !important;
+            margin-bottom: 2rem !important;
+        }
+    }
+    @media (max-width: 61.9375em) {
+        .faq__categorie_question {
+            font-size: 2rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+    }
+
+
+.faq__reponse {
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    padding: 0px .5rem !important;
+    text-align: justify !important;
+    letter-spacing: .1rem !important;}
+    @media (max-width: 87.5em) {
+        .faq__reponse {
+            font-size: 1.6rem !important;
+        }
+    }
+    @media (max-width: 75em) {
+        .faq__reponse {
+            font-size: 1.4rem !important;
+        }
+    }
+    @media (max-width: 61.9375em) {
+        .faq__reponse {
+            font-size: 1.2rem !important;
+        }
+    }
+
+
+
+.faq__question_reponse {
+    padding: 2rem .5rem;
+}
+
+.faq__the_question {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    padding: 1rem .5px !important;}
+    @media (max-width: 87.5em) {
+        .faq__the_question {
+            font-size: 1.8rem !important;
+        }
+    }
+    @media (max-width: 75em) {
+        .faq__the_question {
+            font-size: 1.6rem !important;
+        }
+    }
+    @media (max-width: 61.9375em) {
+        .faq__reponse {
+            font-size: 1.3rem !important;
+        }
+    }
 
