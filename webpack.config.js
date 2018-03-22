@@ -61,11 +61,13 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('style.css'),
-        new webpack.({
+        new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']
         }),
         new htmlWebpackPlugin({
-            template: 'index.html'
+            title: 'djumper',
+            filename: 'index.html', 
+            template: './index.html'
         })
     ]
    
