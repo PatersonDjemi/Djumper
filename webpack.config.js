@@ -61,12 +61,12 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('style.css'),
-        // new webpack.({
-        //     names: ['vendor', 'manifest']
-        // }),
-        // new htmlWebpackPlugin({
-        //     template: 'index.html'
-        // })
+        new webpack.({
+            names: ['vendor', 'manifest']
+        }),
+        new htmlWebpackPlugin({
+            template: 'index.html'
+        })
     ]
    
 };
