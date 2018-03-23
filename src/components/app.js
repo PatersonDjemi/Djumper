@@ -5,8 +5,8 @@ import {Route, Switch} from 'react-router-dom'
 
 import Home from './home_page';
 import FAQ from './faq_page'
-import Signup from './signup'
-import Login from './login_page';
+import Signup from '../containers/signup_page'
+import Login from '../containers/login_page';
 import Dashboard from './dashboard'
 
 

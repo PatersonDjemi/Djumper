@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { FormInput } from '../reusable/inputs';
 import Mail from '../../assets/Mail.svg';
 import Password from '../../assets/locked.svg'
-import LoginForm from '../containers/loginForm'
+import LoginForm from './loginForm'
 
 
 class LoginPage extends Component {

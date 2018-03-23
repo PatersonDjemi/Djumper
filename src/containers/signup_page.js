@@ -11,7 +11,7 @@ import {FormInput, CheckInput} from '../reusable/inputs'
 import Mail from '../../assets/Mail.svg';
 import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
-import SignupForm from '../containers/signupForm'
+import SignupForm from './signupForm'
 
 
 class SignUp extends Component  {
@@ -31,7 +31,18 @@ class SignUp extends Component  {
             // empeche le component de rerendern
             // si on retourne true le component rendern tjrs après avoir changé de page
             return false;
+        } 
+
+        return true;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        
+        if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated === true) ) {
+            // change state for the spinner here
+            return console.log('props true: change state for the spinner here');
         }
+
     }
 
     render() {
