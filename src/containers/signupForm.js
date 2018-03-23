@@ -53,6 +53,8 @@ class SignupForm extends Component {
     submitSignup({first, last, email, password, agree}) {
         
         const { reset, signupStart } = this.props;
+
+        this.props.loading();
         
         // call the action creator
         signupStart({first, last, email, password, agree});

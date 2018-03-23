@@ -14,8 +14,8 @@ import { saveToken, extractResponse } from '../../utils';
  * 
  *  **************/
 function* loginStartAsync(email, password) {
-
-    const endPoint = `${config.baseUrl}/user/login`;
+//penser à changer test par login pour des expemles reels
+    const endPoint = `${config.baseUrl}/user/test`;
 
      return yield axios.post(endPoint, { email, password})
          .then(response => response)
@@ -75,8 +75,8 @@ export function* startLogInSaga() {
  *  ****************/
 
 function* startSignUpAsync(firstName, lastName, email, password, agree) {
-
-    const endPoint = `${config.baseUrl}/user/signup`;
+    //penser à changer test par signup pour des expemles reels
+    const endPoint = `${config.baseUrl}/user/test`;
 
     return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
         .then( response => response)
