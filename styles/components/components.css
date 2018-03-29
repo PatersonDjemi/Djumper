@@ -315,7 +315,7 @@
 
 .login__form_input {
     width: 100%;
-    padding: 1rem 0 1rem 5rem;
+    padding: 1rem 0 1rem 4.5rem;
     font-size: 1.7rem;
     font-weight: 300;
 }
@@ -330,7 +330,7 @@
     border: none !important;
     outline: none !important;
     border-bottom: 1px solid black !important;
-    font-size: 2rem !important;
+    font-size: 1.7rem !important;
     font-weight: 300 !important;
     letter-spacing: .1rem !important;
     padding: 0 0 .8rem 0 !important;
@@ -341,9 +341,9 @@
         }
     }
 
-.login__form > .login__form_input {
+/* .login__form > .login__form_input {
     margin-bottom: 1.5rem;
-}
+} */
 
 .feeback {
     padding: 1rem 0 .3rem;

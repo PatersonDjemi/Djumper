@@ -73,13 +73,8 @@ class LoginForm extends Component {
                         url={Password}
                         validate={[reqPassword, valPassword]} />
 
-                <div className="setting">
 
-                    <Link to="/">
-                        <span className="password_forget">
-                                forget password?
-                        </span>
-                    </Link>
+                <div className="setting">
 
                     <span className="login__btn sign__btns" 
                           onClick={handleSubmit(this.submitLogin.bind(this))} >

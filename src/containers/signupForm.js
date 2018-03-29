@@ -68,7 +68,7 @@ class SignupForm extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <div style={{paddingTop: 1.5 + 'rem'}}>
+            <div style={{paddingTop: 1.5 + 'rem', paddingBottom: 1.5 + 'rem'}}>
 
                 <Field name="first"
                     component={this.renderInputField}

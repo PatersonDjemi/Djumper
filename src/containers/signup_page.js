@@ -69,7 +69,7 @@ class SignUp extends Component  {
                         <Grid.Column computer={7} tablet={7}>
                             <div className="signup__left">
                                 <Header as="h1" className="signup__logo">
-                                    djumper
+                                   <Link to="/">djumper</Link> 
                                 </Header>
                                 <div className="signup__caracteristics">
                                     easy - flexibel - smart

@@ -49,19 +49,28 @@ class LoginPage extends Component {
                     <div className="login__outside_box">
         
                         <div className="signin__left">
-                        <h2 className="login__logo">djumper</h2>
-                        <div className="login__title">                    
-                                    welcome back        
-                        </div>                   
+                            <h2 className="login__logo">
+                                <Link to="/">djumper</Link> 
+                            </h2>
+                            <div className="login__title">                    
+                                        welcome back        
+                            </div>                   
         
                             <LoginForm loading={this.isLoading} />                   
         
-                        <div className="create__account">
+                            <div className="create__account">
+                                <div className="password__forget">
+                                    <Link to="/">
+                                        <span className="password_forgets">
+                                                forget password?
+                                        </span>
+                                    </Link>
+                                </div>
+
                                 <span>Don´t have an account yet ? </span>
                                 <Link to="/signup"> <span> Sign up </span> </Link> 
-                        </div>
-                        </div>
-        
+                            </div>
+                        </div>        
         
                         <div className="signin__right">
                             image. mettre l image de ce block en background

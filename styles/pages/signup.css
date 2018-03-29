@@ -96,7 +96,7 @@
 }
 
 .create_account__box {
-    width: 70%;
+    width: 65%;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     background-color: rgb(255, 255, 255);
@@ -135,7 +135,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 4rem;}
+    margin-top: 2.5rem;}
     @media (max-width: 100em) {
         .signup__btn {
             margin-top: 3rem;  
