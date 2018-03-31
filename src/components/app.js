@@ -9,6 +9,8 @@ import Signup from '../containers/signup_page'
 import Login from '../containers/login_page';
 import Dashboard from './dashboard'
 import Modal from '../reusable/modal';
+import Test from './thankyou'
+import Thankyou from './thankyou'
 
 
 
@@ -20,6 +22,8 @@ const App = () => {
             <Route path="/faq" component={FAQ} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/modal" component={Modal} />
+            <Route path="/thankyou" component={Thankyou} />
+            <Route path="/test" component={Test} />
             <Route path="/" component={Home} />
         </Switch>
     );

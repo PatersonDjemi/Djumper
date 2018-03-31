@@ -16,6 +16,9 @@ export default function authentication(state = {}, action) {
         case 'ERROR':
             return update(state, { authenticated: { $set: false }, error: { $set: action.payload }});
 
+        case 'EMAIL_CONFIRM':
+            return update(state, {authenticated: { $set: 'pending'} } )
+
         default:
             return state;
     }

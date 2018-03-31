@@ -76,7 +76,7 @@ export function* startLogInSaga() {
 
 function* startSignUpAsync(firstName, lastName, email, password, agree) {
     //penser à changer test par signup pour des expemles reels
-    const endPoint = `${config.baseUrl}/user/test`;
+    const endPoint = `${config.baseUrl}/user/signup`;
 
     return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
         .then( response => response)
@@ -103,10 +103,10 @@ function* signupStart(action) {
     try {
         response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
     // extract data and save token
-        const data = extractResponse(response)
-        console.log('response data', data );
+        const {data} = response
+        console.log('response data', response );
 
-        yield put({type: 'AUTH_USER'});
+        yield put({type: 'EMAIL_CONFIRM'});
     }
 
     catch(e)  {

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { reduxForm, Field, SubmissionError } from 'redux-form'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom';
+import {Link, Route } from 'react-router-dom';
 import { Container, Grid, Header, Button, Form} from 'semantic-ui-react'
 
 
@@ -13,6 +13,7 @@ import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
 import SignupForm from './signupForm'
 import Loader from '../reusable/Loader'
+import ThankYOu from '../components/thankyou'
 
 
 class SignUp extends Component  {
@@ -20,11 +21,13 @@ class SignUp extends Component  {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            isLoading: false,
+            signup: false
         }
 
         this.isLoading = this.isLoading.bind(this);
     }
+
 
     isLoading() {
         // displays the loader
@@ -36,11 +39,11 @@ class SignUp extends Component  {
         // ici nextProps = this.props
         const { authUser, history } = nextProps;
         
-        if ( authUser.authenticated) {
-            // on redirige ici vers le dashboard
-            history.push('/dashboard');
-            // empeche le component de rerendern
-            // si on retourne true le component rendern tjrs après avoir changé de page
+        if ( authUser.authenticated === 'pending') {
+        //     // on redirige ici vers le dashboard
+            history.push('/thankyou');
+        //     // empeche le component de rerendern
+        //     // si on retourne true le component rendern tjrs après avoir changé de page
             return false;
         } 
 
@@ -85,8 +88,8 @@ class SignUp extends Component  {
                                     <Header as="h3" content="create an account" 
                                             className="create_account__title" 
                                             textAlign="center" />
-        
-                                        <SignupForm loading={this.isLoading} />                                   
+
+                                        <SignupForm  loading={this.isLoading} />                                   
         
                                     <div className="account__already">
                                         <span>Already a DJUMPER account? </span>
