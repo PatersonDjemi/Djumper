@@ -18,7 +18,7 @@ module.exports = {
     output: {
         filename: "[name].[chunkHash].js",
         path: path.resolve(__dirname, 'dist'),
-
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -57,7 +57,8 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: './'
+        contentBase: path.resolve('./dist')
+        // publicpath: './'
     },
     plugins: [
         new ExtractTextPlugin('style.css'),

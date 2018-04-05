@@ -24,3 +24,10 @@ export function loginStart({email, password, history}) {
 
 }
 
+export function autoLogin(token) {
+    return {
+        type: types.AUTO_LOGIN,
+        payload: token
+    }
+}
+

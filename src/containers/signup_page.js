@@ -22,7 +22,6 @@ class SignUp extends Component  {
         super(props);
         this.state = {
             isLoading: false,
-            signup: false
         }
 
         this.isLoading = this.isLoading.bind(this);
@@ -51,12 +50,12 @@ class SignUp extends Component  {
     }
 
     // don´t need this step anymore, react will rerender with the initaial state anyway
-    // componentWillReceiveProps(nextProps) {        
-    //     if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated === true) ) {
-    //         // change state for the loader here
-    //         this.setState({isLoading: false});
-    //     }
-    // }
+    componentWillReceiveProps(nextProps) {        
+        if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
+            // change state for the loader here
+            this.setState({isLoading: false});
+        }
+    }
 
     render() {
         
