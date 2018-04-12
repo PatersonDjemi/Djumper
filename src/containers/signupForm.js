@@ -143,5 +143,6 @@ SignupForm = connect(null, { signupStart })(SignupForm);
     }
 
 export default reduxForm({
-    form: "signupForm"
+    form: "signupForm",
+    touchOnBlur: true
 })(SignupForm);

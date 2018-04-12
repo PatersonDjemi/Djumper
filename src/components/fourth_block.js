@@ -18,6 +18,9 @@ const TripBox = (props) => {
             <ul className="advantage">
                 {props.children}
             </ul>
+            <div className="mybtn">
+                <span className="get_start "> get started </span>
+            </div>
         </div>        
     );
 }
@@ -42,7 +45,7 @@ const H_Fourth = () => {
 
                 <Grid.Row className="never_miss__box_row2">
                     <Grid.Column computer={6} >
-                        <TripBox title="Next Trip ?">
+                        <TripBox title="Next trip ?">
                             <Advantage text="Le Lorem Ipsum est simplement du fauxxxxx"/>
                             <Advantage text="mise en page avant impression. Le Lorem Ipsum est le"/>
                             <Advantage text="Le Lorem Ipsum est simplement du fauxLe Lorem Ipsum"/>
@@ -50,7 +53,7 @@ const H_Fourth = () => {
                         </TripBox>
                     </Grid.Column>
                     <Grid.Column computer={6} >
-                        <TripBox title="Last Minute ?" >
+                        <TripBox title="Last minute ?" >
                         <Advantage text="Le Lorem Ipsum est simplement du faux"/>
                             <Advantage text="mise en page avant impression. Le Lorem Ipsum est le"/>
                             <Advantage text="Le Lorem Ipsum est simplement du fauxLe Lorem Ipsum"/>

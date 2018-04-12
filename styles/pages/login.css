@@ -101,8 +101,12 @@
         }
     }
 
+.login__logo a {
+    color: var(--blue-light);
+}
+
 .login__title {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
     font-size: 2.5rem;
     text-transform: uppercase;
@@ -124,7 +128,7 @@
     }
 
 .login__form {
-    padding: 2rem 2.5rem 1rem 1.5rem !important;}
+    padding: 2rem 2.5rem 3rem 1.5rem !important;}
     @media (max-width: 75em) {
         .login__form {
             padding: 1.5rem 1.5rem .5rem 1rem !important;     
@@ -146,7 +150,7 @@
     justify-content: space-between; */
     /* padding: 0 2.5rem 2rem 1.5rem; */
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     margin-bottom: 5rem;}
     @media (max-width: 100em) {
         .setting {
@@ -167,13 +171,14 @@
 
 .sign__btns {
     display: inline-block;
-    padding: 2rem 7.5rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    padding: 2rem 7rem;
+    box-shadow:rgba(0, 0, 0, 0.16) 3px 3px 10px, rgba(0, 0, 0, 0.23) 1px 3px 10px;
     font-size: 2rem;
     font-weight: 500;
-    border-radius: 7.5rem;
+    border-radius: 4px;
     cursor: pointer;
-    background-color: lightskyblue;}
+    color: var(--white-color);
+    background-color: var(--blue-light);}
     @media (max-width: 100em) {
         .sign__btns {
             padding: 1.5rem 3rem;     
@@ -192,12 +197,18 @@
         }
     }
 
+.sign__btns:hover {
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    background-color: #4FC3F7;
+}
+
 
 
 .create__account {
     text-align: center;
     letter-spacing: .1rem;
-    padding: 5rem 2.5rem 0 1.5rem;}
+    padding: 3rem 2.5rem 0 1.5rem;}
     @media (max-width: 100em) {
         .create__account {
             padding: 3rem 1.5rem 0 1rem;     
@@ -208,7 +219,7 @@
 .login__inputs {
     border: none !important;
     outline: none !important;
-    border-bottom: 1px solid black !important;
+    /* border-bottom: 1px solid black !important; */
     font-size: 1.7rem !important;
     font-weight: 300 !important;
     letter-spacing: .1rem !important;

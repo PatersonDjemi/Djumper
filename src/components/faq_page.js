@@ -31,7 +31,7 @@ const Content = (props) => {
 
 const Mycolumn = (props) => {
     return (
-        <Grid.Column width={5} className="faq__grid">
+        <Grid.Column width={4} className="faq__grid">
             <Titre titre={props.titre} />
             <Content question={props.question_one} reponse={props.reponse_one} />
             <Content question={props.question_two} reponse={props.reponse_two} />

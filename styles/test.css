@@ -1,0 +1,49 @@
+.inputblock {
+    width: 200px;
+    margin: auto;
+}
+
+.inp {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* .barrons:hover {
+    background: red;
+} */
+
+.barrons {
+    height: 5px;
+    background: blue;
+    transition: background .3s;
+    position: relative;
+}
+.barr {
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.inputblock:hover .boss {
+    animation-name: pop;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    z-index: 1;
+}
+
+@keyframes pop {
+    from {
+        background: green;
+        left: 40%;
+        width: 0;
+    }
+    to {
+        background: green;
+        left: 0;  
+        width: 100%; 
+    }
+}

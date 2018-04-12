@@ -21,7 +21,7 @@ import Test from './test'
 const App = () => {
     return (
         <Switch>
-            {/* <Route path="/test/:tests/" component={Test} /> */}
+            <Route path="/test" component={Test} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login}  />
             <Route path="/faq" component={FAQ} />

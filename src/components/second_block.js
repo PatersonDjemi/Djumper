@@ -21,11 +21,10 @@ const H_Second = () => {
                                 classes="_myCard _createAcc"
                                 nber="1"
                                 src={CreateAccont}
-                                title="create aour account"
+                                title="create account"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
                                 mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                                pour réaliser un livre spécimen de polices"
+                                0depuis les années 1500"
                             />
                         </div>
                     </Grid.Column>
@@ -34,11 +33,10 @@ const H_Second = () => {
                             <CardBlock
                                 nber="2"
                                 src={Confirm}
-                                title="confirm your account"
+                                title="confirm it"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
                                 mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                                pour réaliser un livre spécimen de polices"
+                                0depuis les années 1500"
                             />
                         </div>
                     </Grid.Column>
@@ -50,8 +48,7 @@ const H_Second = () => {
                                 title="enjoy djumper"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
                                 mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte
-                                pour réaliser un livre spécimen de polices"
+                                0depuis les années 1500"
                             />
                         </div>
                     </Grid.Column >

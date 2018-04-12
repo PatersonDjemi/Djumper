@@ -32,7 +32,8 @@
     }
 
 .signup__logo {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
+    color: var(--blue-dark) !important;
     font-weight: 500 !important;
     text-transform: uppercase !important;
     letter-spacing: .5rem;
@@ -51,7 +52,8 @@
 
 .signup__caracteristics {
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 600;
+    color: var(--cyan-middle);
     text-transform: uppercase;
     letter-spacing: .1rem;
     padding-top: 1rem;
@@ -66,7 +68,8 @@
 .signup__description {
     font-size: 1.7rem;
     font-weight: 300;
-    line-height: 2em;
+    line-height: 1.7;
+    color: var(--black-color);
     padding-right: 10rem;
     text-align: justify;}
     @media (max-width: 75em) {
@@ -115,7 +118,7 @@
     }
 
 .create_account__title {
-    margin: 1rem .5rem 4rem !important;
+    margin: 1rem .5rem 2rem !important;
     font-size: 2rem !important;
     text-transform: uppercase !important;
     letter-spacing: .5rem;
@@ -143,7 +146,7 @@
     }
 
 .account__already {
-    margin-top: 7rem;
+    margin-top: 5rem;
     text-align: center;
     font-size: 1.7rem;
     font-weight: 300;}
@@ -184,11 +187,12 @@
     position: absolute;
     height: 3rem;
     width: 3rem;
-    background-color: lightpink;
+    /* background-color: lightpink; */
     left: 0;
     top: 1.2rem;
     border: .1rem solid black;
     border-radius: 50%;
+    border-color: var(--color-black);
     /* margin-top: 2rem; */
 }
 
@@ -200,7 +204,13 @@
 
 .checkboxs input:checked ~ .check_box::after {
     display: block;
+    transition: all .2s;
 }
+
+/* .checkboxs input:checked ~ .checkboxs {
+    border:  1px solid var(--cyan-middle);
+    transition: all .2s;
+} */
 
 .checkboxs .check_box::after {
     width: 2rem;
@@ -208,7 +218,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: aquamarine;
-    border: .1rem solid black;
+    background-color: var(--cyan-middle);
+    border: .1rem solid var(--cyan-middle);
     border-radius: 50%;
 }

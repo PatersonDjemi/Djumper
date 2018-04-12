@@ -73,8 +73,7 @@ class LoginPage extends Component {
                         </div>        
         
                         <div className="signin__right">
-                            image. mettre l image de ce block en background
-                            quand le block ci disparait
+                            image. 
                         </div>
                     </div>
                 </Container>

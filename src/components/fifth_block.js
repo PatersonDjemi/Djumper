@@ -22,7 +22,7 @@ const H_Fifth = () => {
                 <Grid.Column computer={8} tablet={12}>
 
                     <div className="keep_tracking__devices">
-                        <div className="device_type">
+                        <div className="device_types">
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@ const H_Fifth = () => {
                                 et dolore magna aliquyam erat, sed diam voluptua"/>
 
 
-                           <Link to="/sign_in" id="create_account" className="link_btn link_btn--orange"> creata a free account </Link>     
+                           <Link to="/signup" id="create_account" className="link_to_btn"> creata a free account </Link>     
                     </div>
 
                     
