@@ -16,9 +16,9 @@ import help from '../../assets/info.svg'
 const SingleTask = (props) => {
     return (
         <Link to="">
-            <li className="task">
+            <li className="single__menu">
                 <Image src={props.icons} className="imgplus" height="25" width="25" />
-                <span className="taskname_">{props.taskname}</span>
+                <span className="menu__name">{props.taskname}</span>
             </li>
         </Link>
     )
@@ -26,15 +26,15 @@ const SingleTask = (props) => {
 
 const MenuTask = () => {
     return (
-        <ul className="taskslist">
-            <SingleTask taskname="My account" icons={account} />
-            <SingleTask taskname="Transactions" icons={transactions} />
-            <SingleTask taskname="Articles" icons={artciles} />
-            <SingleTask taskname="Send money" icons={sendmoney} />
-            <SingleTask taskname="Create a check" icons={checkbank} />
-            <SingleTask taskname="Find user" icons={finduser} />
-            <SingleTask taskname="Setting" icons={settings} />
-            <SingleTask taskname="Help" icons={help} />
+        <ul className="dashboard__menu_list">
+            <SingleTask taskname="account" icons={account} />
+            <SingleTask taskname="transactions" icons={transactions} />
+            <SingleTask taskname="articles" icons={artciles} />
+            <SingleTask taskname="send money" icons={sendmoney} />
+            <SingleTask taskname="create a check" icons={checkbank} />
+            <SingleTask taskname="find user" icons={finduser} />
+            <SingleTask taskname="setting" icons={settings} />
+            <SingleTask taskname="help" icons={help} />
         </ul>
     );
 }
@@ -42,15 +42,15 @@ const MenuTask = () => {
 const Dashmenu = () => {
     return (
 
-        <div className="dashmenu">
-            <Header as="h2" textAlign="center" className="dashlogo" content="DJUMPER" />
-            <div className="userinfo">
+        <div className="dashboard__menu">
+            <Header as="h1" className="dashboard__logo" content="DJUMPER" />
+            {/* <div className="userinfo">
                 <span id="greeting">Hello again !</span><br/>
                 <span id="username">Hassan Paterson</span><br/>
                 <Image src={confirm} className="confimedaccount" /><span id="confirmed">confirmed</span>
 
-            </div>
-            <div className="usertasks">
+            </div> */}
+            <div className="dashboard__menu_user">
                 <MenuTask/>
             </div>
         </div>

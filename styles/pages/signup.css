@@ -119,6 +119,7 @@
 
 .create_account__title {
     margin: 1rem .5rem 2rem !important;
+    color: var(--cyan-middle) !important;
     font-size: 2rem !important;
     text-transform: uppercase !important;
     letter-spacing: .5rem;

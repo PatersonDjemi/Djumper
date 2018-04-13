@@ -1,3 +1,12 @@
 .container__top {
     background: #f1f1f1; /** en attendant de fixer le pb de la barre du haut la **/
 }
+
+.dashcontent {
+    height: 100%;
+    max-width: 100%;
+    position: fixed;
+    /* background-color: #f1f1f1; */
+    margin-left: 300px;
+    padding-left: 5rem;
+}

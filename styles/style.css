@@ -2,6 +2,7 @@
 
 @import "basics/base.css";
 @import "components/components.css";
+@import "components/dashboardNav.css";
 @import "layouts/layout.css";
 @import "pages/home.css";
 @import "pages/login.css";
@@ -9,6 +10,7 @@
 @import "pages/faq.css";
 @import "pages/thankyou.css";
 @import "test.css";
+@import "pages/dashboardMenu.css";
 
 
 
@@ -369,32 +371,18 @@
 */
 
 /*--------------- Dashboard ------*/
-.dashmenu {
-    position: fixed !important;
-    width: 300px;
-    height: 100%;
-    background-color: #673AB7;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: white !important;
-}
-.dashcontent {
-    height: 100%;
-    max-width: 100%;
-    /*background-color: dimgrey;*/
-    margin-left: 300px;
-}
-.dashlogo {
+
+/* .dashlogo {
    /* margin-bottom: 15px !important;*/
-    padding-bottom: 30px !important;
-}
-.userinfo {
+    /* padding-bottom: 30px !important;
+} */
+/* .userinfo {
     text-align: center;
     padding: 34px 10px 31px 10px;
     line-height: 2em;
     background-color: #ffffff;
     color: black;
-}
+}  */
 #greeting {
     font-size: 17px;
     font-weight: normal;
@@ -419,33 +407,19 @@
     display: inline !important;
     margin-right: 20px;
 }
-.usertasks {
+/* .usertasks {
     padding: 15px 0px;
-}
-.taskslist {
-    list-style: none;
-    padding: 0px !important;
-}
+} */
+
 .imgplus {
     display: inline-block !important;
 }
-.taskname_ {
-    vertical-align: middle;
-    padding-left: 20px;
-}
-.task {
-    padding: 20px 15px 20px 50px;
-    font-size: 17px;
-    font-weight: 300;
-}
+
 ul.taskslist li:hover {
     background-color: #0ea432;
 }
 
-ul.taskslist a {
-    text-decoration: none;
-    color: black;
-}
+
 .headmenu {
     padding: 10px 10px;
 }
@@ -474,33 +448,22 @@ ul.taskslist a {
 .headsearch {
     padding: 0px 25px;
 }
-.searchdiv {
+/* .searchdiv {
     max-width: 500px;
-    box-shadow: rgba(0, 0, 0, 0.12) 1px 0px 10px, rgba(0, 0, 0, 0.12) 1px 2px 2px;
-    padding: 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 0px 2px;    padding: 5px 15px;
     box-sizing: border-box;
-}
-#mysearchbar {
-    width: 100%;
-    border: none;
-    height: 30px;
-    outline: none;
-    font-size: 15px;
-    font-weight: 300;
-}
+} */
 
-.dashcontentheader {
+
+/* .dashcontentheader {
     height: 70px !important;
     padding-top: 5px !important;
     padding-bottom: 5px;
     /*margin-bottom: 30px !important;*/
-    border: none;
+    /* border: none;
     box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 10px, rgba(0, 0, 0, 0.12) 1px 1px 2px;
-}
-.gridnav {
-    height: 100% !important;
-    align-items: center !important;
-}
+} */ 
+
 .banner_account {
     background-color: lightBlue;
     margin-top: 35px !important;

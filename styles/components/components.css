@@ -55,7 +55,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: var(--blue-dark);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;}
     @media (max-width: 87.5em) {
         .navigation__logo a  {

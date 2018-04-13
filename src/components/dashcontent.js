@@ -25,12 +25,12 @@ const MenuItem = (props) => {
 }
 
 const Searchbar = () => {
-    return(
-        <div className="headsearch">
-            <div className="searchdiv">
-                <input type="searchbar" id="mysearchbar" placeholder="search" />
+    return (
+        // <div className="headsearchs">
+            <div className="header__search">
+                <input type="searchbar" id="mysearchbar" placeholder="Search..." />
             </div>
-        </div>
+        // </div>
     );
 }
 
@@ -66,7 +66,7 @@ const Quicktask = (props) => {
 const Banner = () => {
     return (
         <Container fluid className="mybanner">
-            <Grid centered stackable  style={{backgroundColor: 'lightBlue' }} >
+            <Grid centered stackable >
                 <Grid.Column width={5} >
                     <div>
                         <Boxone titre="Total Balance"
@@ -104,8 +104,8 @@ const mgTop = 35;
 const Dashcontent = () => {
     return (
         <div className="dashcontent">
-            <Container fluid  className="dashcontentheader">
-                <Grid centered className="gridnav">
+            <Container fluid  className="dashboard__nav">
+                <Grid centered className="grid__nav">
                     <Grid.Column width={8} >
                         <Searchbar/>
                     </Grid.Column>
@@ -121,6 +121,24 @@ const Dashcontent = () => {
                     </Grid.Column>
                 </Grid>
             </Container>
+            <div className="quick_overview">
+                Quick Overview
+            </div>
+            <div className="box__banner">
+                <div className="box__text">
+                    <div className="box__banner_title">
+                        <span className="bg_title"> Total Balance </span> <br/>
+                        <span className="sm_title">montant disponible</span>
+                    </div>
+                    <div className="box__amount">
+                        <span className="sum"> 10.000 </span>
+                        <span style={{marginLeft: 0}}>$</span>
+                    </div>
+                </div>
+                <div className="box__img">
+                    <Image src={wallet} height="60" width="60" className="iconsboxes" />
+                </div>
+            </div>
 
             <Banner/>
 
