@@ -38,20 +38,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 42rem;
+    width: 40rem;
+    max-width: 40rem;
     background-color: var(--white-color);
     padding: 3rem ;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px;
-
-    margin-bottom: 50px;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px; */
 }
+
+/* .box__banner:hover {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+} */
 
 .bg_title {
     font-size: 2.5rem;
     font-weight: 500;
     display: inline-block;
     margin-bottom: 1rem;
+    color: var(--black-color);
 }
 
 .sm_title {
@@ -61,7 +65,7 @@
 
 .box__amount {
     padding-top: 2rem;
-    color: var(--cyan-middle);
+    color: var(--pink-middle);
 }
 
 .box__amount:last-child {
@@ -70,7 +74,7 @@
 
 .sum {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .box__img {

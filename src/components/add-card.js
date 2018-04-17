@@ -84,7 +84,7 @@ const AddCard = (props) => {
     return (
         <Container fluid >
             <Grid stackable centered >
-                <Grid.Column width={15}>
+                <Grid.Column width={11}>
                     <div className="addCard">
                        <Header as="h3" content="Add a Bank account / Add a credit Card" className="addCardtitle" />
                         <div className="descriptionAddCard">
@@ -95,7 +95,7 @@ const AddCard = (props) => {
                         </div>
                     </div>
                     <Grid stackable centered className="cardBox" >
-                        <Grid.Column width={5}>
+                        <Grid.Column width={8}>
                             <CardBox card="Bank card"
                                      title="Link a bank account"
                                      src={bank}
@@ -104,7 +104,7 @@ const AddCard = (props) => {
                                        At vero eos et accusam et justo duo dolores et ea rebum. Stet"
                                      action="add a bank account" />
                         </Grid.Column>
-                        <Grid.Column width={5}>
+                        <Grid.Column width={8}>
                             <CardBox card="Credit card"
                                      title="Link a credit card"
                                      src={credit}
@@ -113,7 +113,7 @@ const AddCard = (props) => {
                                        At vero eos et accusam et justo duo dolores et ea rebum. Stet"
                                      action="add a credit card" />
                         </Grid.Column>
-                        <Grid.Column width={5}>
+                        <Grid.Column width={8}>
                             <CardBox card="Paypal account"
                                      title="Link a paypal account"
                                      src={paypal}
@@ -123,6 +123,9 @@ const AddCard = (props) => {
                                      action="add a paypal account" />
                         </Grid.Column>
                     </Grid>
+                </Grid.Column>
+                <Grid.Column width={5}>
+                    side bar
                 </Grid.Column>
             </Grid>
         </Container>

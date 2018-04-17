@@ -420,31 +420,7 @@ ul.taskslist li:hover {
 }
 
 
-.headmenu {
-    padding: 10px 10px;
-}
-.navimenu {
-    margin: 0px !important;
-    list-style: none;
-    padding: 0px;
-    padding-right: 50px;
-    text-align: right;
-}
 
-.navimenu li {
-    display: inline-block;
-
-}
-.navimenu li a {
-    padding-left: 25px;
-    padding-right: 25px;
-    display: block;
-    color: rgba(0, 0, 0, 0.87);
-    font-size: 15px;
-}
-.menuname {
-    padding: 5px 0px;
-}
 .headsearch {
     padding: 0px 25px;
 }
@@ -516,26 +492,26 @@ ul.taskslist li:hover {
 }
 
 /******************** Add card component ************/
-.addCard {
+/* .addCard {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 50px;
-}
+} */
 .addCardtitle {
-    padding: 20px 30px !important;
+    padding: 20px 0px !important;
     font-size: 30px !important;
     font-weight: 500 !important;
     margin-bottom: 0px !important;
 }
 .descriptionAddCard {
-    padding-left: 30px;
+    padding-left: 0px;
     padding-right: 30px;
     font-size: 17px;
     text-align: justify;
     line-height: 1.71;
 }
 .cardBox {
-    padding: 50px 30px 30px !important;
+    padding: 50px 0px 30px !important;
 }
 .cardbank {
     padding: 16px;

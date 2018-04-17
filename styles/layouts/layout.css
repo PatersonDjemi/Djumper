@@ -5,8 +5,16 @@
 .dashcontent {
     height: 100%;
     max-width: 100%;
-    position: fixed;
+    /* position: fixed; */
     /* background-color: #f1f1f1; */
     margin-left: 300px;
     padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.overview {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;    
 }

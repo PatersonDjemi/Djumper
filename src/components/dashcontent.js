@@ -10,15 +10,18 @@ import wallet from '../../assets/wallet.svg'
 import transfer from '../../assets/transfer-money.svg'
 import request from '../../assets/get-money.svg'
 
+import notif from '../../assets/bell.svg'
+import message from '../../assets/message.svg'
+
+
 const MenuItem = (props) => {
     return (
         <li>
-            <div>
-                <Link to="">
-                    <div className="menuname">
-                        <span>{props.title}</span>
-                    </div>
-                </Link>
+            <div className="menu__block">
+                <div className="menu__block_icons">
+                    <Image src={props.src} height="25" width="25" /> 
+                </div>
+                <span className="menu__block_nber"> {props.nber} </span>
             </div>
         </li>
     );
@@ -99,6 +102,26 @@ const Banner = () => {
     )
 }
 
+const Overview = (props) => {
+    return (
+        <div className="box__banner">
+            <div className="box__text">
+                <div className="box__banner_title">
+                    <span className="bg_title"> {props.mainTitle} </span> <br/>
+                    <span className="sm_title">{props.secondTitle}</span>
+                </div>
+                <div className="box__amount">
+                    <span className="sum"> {props.amount} </span>
+                    <span style={{marginLeft: 0}}> {props.devise} </span>
+                </div>
+            </div>
+            <div className="box__img">
+                <Image src={props.src} height="60" width="60" className="iconsboxes" />
+            </div>
+        </div>
+    );
+}
+
 const mgTop = 35;
 
 const Dashcontent = () => {
@@ -111,36 +134,52 @@ const Dashcontent = () => {
                     </Grid.Column>
                     <Grid.Column width={8} >
                         <nav className="headmenu">
-                            <ul className="navimenu">
-                                <MenuItem title="message" />
-                                <MenuItem title="notification" />
-                                <MenuItem title="help" />
-                                <MenuItem title="profil" />
+                            <ul className="nav__menu">
+                                <MenuItem src={message} nber="5" />
+                                <MenuItem src={notif} nber="3" />
+                                <li>
+                                    <div className="profil">
+                                        <div className="profil__pic">
+                                        </div>
+                                    </div>
+                                </li>
+                                {/* <MenuItem title="help" />
+                                <MenuItem title="profil" /> */}
                             </ul>
                         </nav>
                     </Grid.Column>
                 </Grid>
             </Container>
-            <div className="quick_overview">
-                Quick Overview
-            </div>
-            <div className="box__banner">
-                <div className="box__text">
-                    <div className="box__banner_title">
-                        <span className="bg_title"> Total Balance </span> <br/>
-                        <span className="sm_title">montant disponible</span>
-                    </div>
-                    <div className="box__amount">
-                        <span className="sum"> 10.000 </span>
-                        <span style={{marginLeft: 0}}>$</span>
-                    </div>
-                </div>
-                <div className="box__img">
-                    <Image src={wallet} height="60" width="60" className="iconsboxes" />
-                </div>
-            </div>
 
-            <Banner/>
+            <section>   
+                <div className="quick_overview">
+                    Quick Overview
+                </div>
+
+                <div className="overview">
+                    <Overview
+                        mainTitle="Total Balance"
+                        secondTitle="montant disponible"
+                        amount="10.000"
+                        devise="$"
+                        src={wallet} />
+                    <Overview
+                        mainTitle="Last Request"
+                        secondTitle="am 10.12.2018"
+                        amount="1.038"
+                        devise="$"
+                        src={request} />
+                    <Overview
+                        mainTitle="Last Transfert"
+                        secondTitle="am 10.08.2018"
+                        amount="3.038"
+                        devise="$"
+                        src={transfer} />
+                </div>
+            </section>
+
+
+            {/* <Banner/> */}
 
 
             <AddCard/>
@@ -151,34 +190,3 @@ const Dashcontent = () => {
 
 export default Dashcontent;
 
-/*
-presentation de la page d accueil au niveau de account
-const Dashcontent = () => {
-    return (
-        <div className="dashcontent">
-            <Container fluid  className="dashcontentheader">
-                <Grid centered className="gridnav">
-                    <Grid.Column width={8} >
-                        <Searchbar/>
-                    </Grid.Column>
-                    <Grid.Column width={8} >
-                        <nav className="headmenu">
-                            <ul className="navimenu">
-                                <MenuItem title="message" />
-                                <MenuItem title="notification" />
-                                <MenuItem title="help" />
-                                <MenuItem title="profil" />
-                            </ul>
-                        </nav>
-                    </Grid.Column>
-                </Grid>
-            </Container>
-
-            <Banner/>
-
-            <AddCard/>
-
-        </div>
-    );
-};
-*/
