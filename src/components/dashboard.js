@@ -5,13 +5,16 @@ import {Link} from 'react-router-dom'
 import user from '../../assets/lnr-user.svg'
 import Dashmenu from './dashmenu'
 import Dashcontent from './dashcontent'
+import Account from './dashboard/account'
 
 
 const Dashboard = () => {
     return (
         <div className="dashboard">
             <Dashmenu/>
-            <Dashcontent/>
+            <Dashcontent>
+                <Account />
+            </Dashcontent>
         </div>
 
     );

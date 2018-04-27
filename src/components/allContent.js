@@ -80,29 +80,33 @@ const AddCardForm = () => { /* formulaire pour pouvoir relier une carte à notre
     );
 }
 
+const Activity = (props) => {
+    return (
+        <div className="block__Activity">
+            <div className="activity__title"> {props.title} </div>
+            <div className="activity__description"> {props.text} </div>
+            <span className="activity__time"> {props.time} </span>
+        </div>
+    );
+}
+
 const AddCard = (props) => {
     return (
         <Container fluid >
-            <Grid stackable centered >
-                <Grid.Column width={11}>
-                    <div className="addCard">
-                       <Header as="h3" content="Add a Bank account / Add a credit Card" className="addCardtitle" />
-                        <div className="descriptionAddCard">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
-                            nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                            takimata
+            <Grid stackable >
+                <Grid.Column width={15}>
+                    <div className="last__activities" style={{ position: 'relative'}}>
+                       <Header as="h3" content="Last activities" className="last__activities__title" />
+                        <div className="last__activities__description">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                         </div>
+                        <span className="get_start view_all"> View all </span>
                     </div>
-                    <Grid stackable centered className="cardBox" >
-                        <Grid.Column width={8}>
-                            <CardBox card="Bank card"
-                                     title="Link a bank account"
-                                     src={bank}
-                                     bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
-                                       nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                       At vero eos et accusam et justo duo dolores et ea rebum. Stet"
-                                     action="add a bank account" />
+                    <Grid stackable centered className="main__" >
+                        <Grid.Column width={16}>
+                            <Activity title="activite"
+                                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+                                time="about 3h ago" />
                         </Grid.Column>
                         <Grid.Column width={8}>
                             <CardBox card="Credit card"
@@ -124,9 +128,7 @@ const AddCard = (props) => {
                         </Grid.Column>
                     </Grid>
                 </Grid.Column>
-                <Grid.Column width={5}>
-                    side bar
-                </Grid.Column>
+
             </Grid>
         </Container>
     );
@@ -136,3 +138,35 @@ const AddCard = (props) => {
 //<Header as="h3" content="My accounts (a trouver l endroit ou afficher ca)" className="addCardtitle" />
 
 export default AddCard;
+
+
+
+
+{/* <Grid stackable centered className="cardBox" >
+<Grid.Column width={16}>
+    <CardBox card="Bank card"
+             title="Link a bank account"
+             src={bank}
+             bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
+               nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+               At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+             action="add a bank account" />
+</Grid.Column>
+<Grid.Column width={8}>
+    <CardBox card="Credit card"
+             title="Link a credit card"
+             src={credit}
+             bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
+               nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+               At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+             action="add a credit card" />
+</Grid.Column>
+<Grid.Column width={8}>
+    <CardBox card="Paypal account"
+             title="Link a paypal account"
+             src={paypal}
+             bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
+               nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+               At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+             action="add a paypal account" />
+</Grid.Column> */}
