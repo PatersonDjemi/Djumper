@@ -19,3 +19,47 @@
     right: 1rem;
     padding: 1.5rem !important;
 }
+
+
+/************ block activity **********/
+.block__activity {
+    padding: 1.5rem 0 1.5rem 6rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.activity__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black-color);
+    padding: 0 0 .5rem 0;
+}
+
+.activity__description {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black-color);
+    line-height: 1.6;
+    /* padding: 0 0 .5rem 0;  */
+}
+
+.activity__time {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--black-color);
+}
+
+.activity__categorie {
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    border-radius: 100%;
+    top: 50%; /** oder 1.5rem **/
+    left: 1.5rem;
+    transform: translateY(-50%);
+}
+
+/*************** last transaction ***********/
+.last__transactions {
+    margin-top: 5rem;
+}

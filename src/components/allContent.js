@@ -82,10 +82,11 @@ const AddCardForm = () => { /* formulaire pour pouvoir relier une carte à notre
 
 const Activity = (props) => {
     return (
-        <div className="block__Activity">
+        <div className="block__activity" style={{position: 'relative'}}>
             <div className="activity__title"> {props.title} </div>
             <div className="activity__description"> {props.text} </div>
             <span className="activity__time"> {props.time} </span>
+            <div className="activity__categorie" style={{ backgroundColor: `${props.color}`}}></div>
         </div>
     );
 }
@@ -104,29 +105,28 @@ const AddCard = (props) => {
                     </div>
                     <Grid stackable centered className="main__" >
                         <Grid.Column width={16}>
-                            <Activity title="activite"
+                            <Activity title="First activity"
                                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
-                                time="about 3h ago" />
-                        </Grid.Column>
-                        <Grid.Column width={8}>
-                            <CardBox card="Credit card"
-                                     title="Link a credit card"
-                                     src={credit}
-                                     bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
-                                       nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                       At vero eos et accusam et justo duo dolores et ea rebum. Stet"
-                                     action="add a credit card" />
-                        </Grid.Column>
-                        <Grid.Column width={8}>
-                            <CardBox card="Paypal account"
-                                     title="Link a paypal account"
-                                     src={paypal}
-                                     bodyText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor i
-                                       nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                       At vero eos et accusam et justo duo dolores et ea rebum. Stet"
-                                     action="add a paypal account" />
+                                time="about 3h ago"
+                                color="#00BCD4" />
+                            <Activity title="Second activity"
+                                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+                                time="about 3h ago"
+                                color='#2196F3' />
+                            <Activity title="Third activity"
+                                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+                                time="about 3h ago"
+                                color='#E91E63' />
                         </Grid.Column>
                     </Grid>
+
+                    <div className="last__transactions" style={{ position: 'relative'}}>
+                       <Header as="h3" content="Last transactions" className="last__activities__title" />
+                        <div className="last__activities__description">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
+                        </div>
+                        <span className="get_start view_all"> View all </span>
+                    </div>
                 </Grid.Column>
 
             </Grid>
