@@ -42,14 +42,14 @@ const Account = () => {
         <div>
             <QuickOverview />
             <Layout.LayoutWithSideBar>
-                
+
                 <Layout.MainContent>
                     <AddCard />
                 </Layout.MainContent>
 
                 <Layout.Sidebar>
 
-                    <SideSection title="Have you paypal account ?">
+                    <SideSection title="Do you have paypal account ?">
                         <AddPaypal/>
                     </SideSection>
 
