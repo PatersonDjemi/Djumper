@@ -118,7 +118,7 @@ const Transaction = (props) => {
     )
 }
 
-const AddCard = (props) => {
+const Resume = (props) => {
     return (
         <Container fluid >
             <Grid stackable >
@@ -215,7 +215,7 @@ const AddCard = (props) => {
 //TODO trouver ou afficher la liste des differents comptes connectes à djumper
 //<Header as="h3" content="My accounts (a trouver l endroit ou afficher ca)" className="addCardtitle" />
 
-export default AddCard;
+export default Resume;
 
 
 

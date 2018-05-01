@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 import { Header, Image } from 'semantic-ui-react'
 
 import plus from '../../assets/lnr-plus-circle.svg'
@@ -13,48 +13,63 @@ import finduser from '../../assets/collaboration.svg'
 import settings from '../../assets/settings.svg'
 import help from '../../assets/info.svg'
 
+
+
+const sideMenuList = [
+    { taskname: 'account',  icons: account, link: 'account' },
+    { taskname: 'transactions',  icons: transactions, link: 'transactions' },
+    { taskname: 'articles',  icons: artciles, link: 'articles' },
+    { taskname: 'send money',  icons: sendmoney, link: 'sendmoney' },
+    { taskname: 'create check',  icons: checkbank, link: 'createcheck' },
+    { taskname: 'find user',  icons: finduser, link: 'finduser' },
+    { taskname: 'settings',  icons: settings, link: 'settings' },
+    { taskname: 'help',  icons: help, link: 'help' },
+];
+
 const SingleTask = (props) => {
     return (
-        <Link to="">
+        <NavLink to={props.link} activeClassName="test">
             <li className="single__menu">
                 <Image src={props.icons} className="imgplus" height="25" width="25" />
                 <span className="menu__name">{props.taskname}</span>
             </li>
-        </Link>
+        </NavLink>
     )
 };
 
-const MenuTask = () => {
-    return (
-        <ul className="dashboard__menu_list">
-            <SingleTask taskname="account" icons={account} />
-            <SingleTask taskname="transactions" icons={transactions} />
-            <SingleTask taskname="articles" icons={artciles} />
-            <SingleTask taskname="send money" icons={sendmoney} />
-            <SingleTask taskname="create a check" icons={checkbank} />
-            <SingleTask taskname="find user" icons={finduser} />
-            <SingleTask taskname="setting" icons={settings} />
-            <SingleTask taskname="help" icons={help} />
-        </ul>
-    );
+
+class Dashmenu extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    // rendering the side menu of dashboard
+    renderSideMenu() {
+        const { path } = this.props.match;
+        return sideMenuList.map( (item, index) => {
+            return <SingleTask taskname={item.taskname} icons={item.icons}
+                               link={`${path}/${item.link}`} key={index} /> 
+        });
+    }
+
+    render() {
+        return (
+            <div className="dashboard__menu">
+                <Header as="h1" className="dashboard__logo" content="DJUMPER" />
+                <div className="dashboard__menu_user">
+                    <ul className="dashboard__menu_list">
+                        { this.renderSideMenu() }
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+
 }
 
-const Dashmenu = () => {
-    return (
-
-        <div className="dashboard__menu">
-            <Header as="h1" className="dashboard__logo" content="DJUMPER" />
-            {/* <div className="userinfo">
-                <span id="greeting">Hello again !</span><br/>
-                <span id="username">Hassan Paterson</span><br/>
-                <Image src={confirm} className="confimedaccount" /><span id="confirmed">confirmed</span>
-
-            </div> */}
-            <div className="dashboard__menu_user">
-                <MenuTask/>
-            </div>
-        </div>
-    );
-};
-
 export default Dashmenu;
+
+// a revoir: 
+// comment extraire la nvaigation de telle facon que tout ne re-rendern pas entièrement
+// essayer d utiliser match.url à la place de match.path
+// revoir encore les liens qd ils sont actifs et ont le focus en meme tps le border devient plus gros, ce qui faut eviter

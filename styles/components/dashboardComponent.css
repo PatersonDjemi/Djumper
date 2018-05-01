@@ -92,3 +92,20 @@
 .status {
     padding-top: .5rem;
 }
+
+.test {
+    /* background-color: chartreuse; */
+    border-left: 5px solid var(--pink-middle);
+    color: var(--white-color) !important;
+}
+
+.filter {
+    padding: 1.2rem;
+    display: flex;
+}
+
+.filter__btn {
+    padding: 1.2rem;
+    margin: 1rem;
+    background-color: chartreuse;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'semantic-ui-react'
 
 import QuickOverview from './quickOverview'
-import AddCard from '../allContent';
+import Resume from '../resume';
 import Layout from './withSideBarLayout';
 
 import paypal from '../../../assets/paypal.svg'
@@ -41,10 +41,11 @@ const Account = () => {
     return (
         <div>
             <QuickOverview />
+
             <Layout.LayoutWithSideBar>
 
                 <Layout.MainContent>
-                    <AddCard />
+                    <Resume />
                 </Layout.MainContent>
 
                 <Layout.Sidebar>

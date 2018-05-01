@@ -30,6 +30,7 @@ const App = () => {
             <Route path="/thankyou" component={Thankyou} />
             <Route path="/checkedmail/:token" component={CheckMail} />
             <Route path="/" exact component={Home} />
+            {/* il manque le router qd rien match ici */}
         </Switch>
     );
 }
