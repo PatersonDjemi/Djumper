@@ -99,13 +99,65 @@
     color: var(--white-color) !important;
 }
 
+
+/********************* filter bouttons ****************/
+
 .filter {
-    padding: 1.2rem;
+    padding: 3rem 0 1.2rem;
     display: flex;
 }
 
 .filter__btn {
-    padding: 1.2rem;
-    margin: 1rem;
-    background-color: chartreuse;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    margin-right: 1.5rem;
+    /* background-color: chartreuse; */
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.filter__icons {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 1rem !important;
+}
+
+.filter__name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+
+
+/************** transactions ********************/
+
+.transactions {
+    margin-top: 3rem;
+}
+
+.transactions__title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.transactions__block {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    padding: 1rem 0 !important;
+    margin-bottom: .5rem;
+}
+
+.transactions__block_title {
+    font-size: 1.4rem;
+    color: var(--black-color);
+    font-weight: 300;
+    padding-bottom: .5rem;
+}
+
+.transactions__data {
+    font-size: 1.7rem;
+    color: var(--black-color);
+    font-weight: 600;
 }

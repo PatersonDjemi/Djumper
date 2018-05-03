@@ -5,6 +5,8 @@ import bank from '../../assets/bank.svg'
 import credit from '../../assets/credit-card.svg'
 import paypal from '../../assets/paypal.svg'
 
+import { Transaction } from './dashboard/articles'
+
 
 
 const CardBox = (props) => {
@@ -91,32 +93,32 @@ const Activity = (props) => {
     );
 }
 
-const Transaction = (props) => {
-    return (
-        <Grid.Row celled="true" className="transaction__block">
-            <Grid.Column width={3} className="mois__date">
-                <div className="transaction__mois"> { props.mois } </div>
-                <div className="transaction__date"> { props.date }</div>
-            </Grid.Column>
-            <Grid.Column width={8}>
-                <div className="transaction__receiver"> { props.receiver }</div>
-                <div className="transaction__type"> { props.type } </div>
-            </Grid.Column>
-            <Grid.Column width={3}>
-                <div className="transaction__amount"> { props.amount }</div>
-                <div className="transaction__amount_devise"> { props.amountDevise }</div>
-            </Grid.Column>
-            <Grid.Column width={2} className="period__nber">
-                <span className="transaction__period_nber"> { props.periodNber }</span>
-                <span className="transaction__period_time"> { props.periodTime } </span>
-                <div className="status" style={{ color: `${props.statusColor}`}}> { props.status } </div>                               
-            </Grid.Column>
-            <div className="progress">
-                <div className="progress__bar" style={{ width: `${props.width_}%`, backgroundColor: `${props.color}` }}></div>
-            </div>
-        </Grid.Row>      
-    )
-}
+// const Transaction = (props) => {
+//     return (
+//         <Grid.Row celled="true" className="transaction__block">
+//             <Grid.Column width={3} className="mois__date">
+//                 <div className="transaction__mois"> { props.mois } </div>
+//                 <div className="transaction__date"> { props.date }</div>
+//             </Grid.Column>
+//             <Grid.Column width={8}>
+//                 <div className="transaction__receiver"> { props.receiver }</div>
+//                 <div className="transaction__type"> { props.type } </div>
+//             </Grid.Column>
+//             <Grid.Column width={3}>
+//                 <div className="transaction__amount"> { props.amount }</div>
+//                 <div className="transaction__amount_devise"> { props.amountDevise }</div>
+//             </Grid.Column>
+//             <Grid.Column width={2} className="period__nber">
+//                 <span className="transaction__period_nber"> { props.periodNber }</span>
+//                 <span className="transaction__period_time"> { props.periodTime } </span>
+//                 <div className="status" style={{ color: `${props.statusColor}`}}> { props.status } </div>                               
+//             </Grid.Column>
+//             <div className="progress">
+//                 <div className="progress__bar" style={{ width: `${props.width_}%`, backgroundColor: `${props.color}` }}></div>
+//             </div>
+//         </Grid.Row>      
+//     )
+// }
 
 const Resume = (props) => {
     return (
@@ -165,7 +167,7 @@ const Resume = (props) => {
                             periodTime="months"
                             width_="50" 
                             color="#2196F3"
-                            status="not completed" 
+                            status="50%" 
                             statusColor="#2196F3" />
                         <Transaction mois="Jan"
                             date="29/18" 
@@ -177,7 +179,7 @@ const Resume = (props) => {
                             periodTime="fois"
                             width_="75"
                             color="#2196F3"
-                            status="not completed"
+                            status="75%"
                             statusColor="#2196F3" />
     {/* les transactions d envois d argents n ont pas de periode time */}
                         <Transaction mois="Dec"
@@ -190,7 +192,7 @@ const Resume = (props) => {
                             periodTime="month"
                             width_="25"
                             color="#2196F3"
-                            status="not completed"
+                            status="25%"
                             statusColor="#2196F3" />
                         <Transaction mois="Sept"
                             date="29/18" 
@@ -202,7 +204,7 @@ const Resume = (props) => {
                             periodTime="month"
                             width_="100"
                             color="#00BCD4"
-                            status="completed"
+                            status="100%"
                             statusColor="#00BCD4" />
                     </Grid>
                 </Grid.Column>

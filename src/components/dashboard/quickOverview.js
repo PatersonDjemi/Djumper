@@ -48,7 +48,7 @@ const QuickOverview = (props) => {
                     devise="$"
                     src={request} />
                 <Overview
-                    mainTitle="Last Transfert"
+                    mainTitle="Next Request"
                     secondTitle="am 10.08.2018"
                     amount="3.038"
                     devise="$"
