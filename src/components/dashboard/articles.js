@@ -4,31 +4,38 @@ import Layout from './withSideBarLayout'
 
 import { FilterButton } from './transactions'
 import Calendar from '../../../assets/Calendar.svg'
-
+import plane from '../../../assets/aeroplane.svg'
+import shirt from '../../../assets/shirt.svg'
 
 export const Transaction = (props) => {
     return (
         <Grid.Row celled="true" className="transaction__block">
-            <Grid.Column width={3} className="mois__date">
+            <Grid.Column width={2} className="mois__date">
                 <div className="transaction__mois"> { props.mois } </div>
                 <div className="transaction__date"> { props.date }</div>
             </Grid.Column>
-            <Grid.Column width={8}>
-                <div className="transaction__receiver"> { props.receiver }</div>
-                <div className="transaction__type"> { props.type } </div>
+            <Grid.Column width={6}>
+                <div className="transaction_">
+                    <div className="transaction__icon">
+                        <Image src={props.src}  height="20" width="20" />
+                    </div>
+                    <div className="transaction__receiver"> { props.receiver }</div>
+                    <div className="transaction__type"> { props.type } </div>
+                </div>
             </Grid.Column>
-            <Grid.Column width={3}>
-                <div className="transaction__amount"> { props.amount }</div>
-                <div className="transaction__amount_devise"> { props.amountDevise }</div>
+            <Grid.Column width={4}>
+                <div className="transaction__amount"> { `${props.amountDevise} ${props.amount}` } </div>
+                <div className="transaction__instalment"> rate: { props.instalment }</div>
             </Grid.Column>
-            <Grid.Column width={2} className="period__nber">
-                <span className="transaction__period_nber"> { props.periodNber }</span>
-                <span className="transaction__period_time"> { props.periodTime } </span>
-                <div className="status" > <span> status </span> <span style={{ color: `${props.statusColor}`}}> { props.status } </span> </div>                               
+            <Grid.Column width={4} className="transaction__evolution">
+                <span className="transaction__status"> <span> status: </span> { props.status } </span>
+                <span className="percentage"> {props.percentage}% </span>
+                <div className="status" >
+                 <div className="progress">
+                    <div className="progress__bar" style={{ width: `${props.percentage}%`, backgroundColor: `${props.color}` }}></div>
+                </div>
+                </div>                               
             </Grid.Column>
-            <div className="progress">
-                <div className="progress__bar" style={{ width: `${props.width_}%`, backgroundColor: `${props.color}` }}></div>
-            </div>
         </Grid.Row>      
     )
 }
@@ -56,53 +63,49 @@ class Articles extends Component {
                                 <Grid stackable centered className="main__transaction" >
                                     <Transaction mois="Avr"
                                         date="29/18" 
-                                        receiver="Zalando SE"
-                                        type="Payment"
-                                        amount="500,00"
-                                        amountDevise="eur"
-                                        periodNber="5"
-                                        periodTime="months"
-                                        width_="50" 
-                                        color="#2196F3"
-                                        status="50%" 
-                                        statusColor="#2196F3" />
+                                        src={plane}
+                                        receiver="Lufthansa"
+                                        type="Transport"
+                                        amountDevise="$"
+                                        amount="500.00"                                        
+                                        instalment="5 months"
+                                        status="not completed" 
+                                        percentage="50"                                        
+                                        color="#2196F3" />
                                     <Transaction mois="Jan"
-                                        date="29/18" 
-                                        receiver="Hassan Paterson"
-                                        type="Payment"
-                                        amount="100,00"
-                                        amountDevise="eur"
-                                        periodNber="1"
-                                        periodTime="fois"
-                                        width_="75"
-                                        color="#2196F3"
-                                        status="75%"
-                                        statusColor="#2196F3" />
+                                        date="11/18" 
+                                        src={shirt}
+                                        receiver="Puma"
+                                        type="Clothes"
+                                        amountDevise="$"
+                                        amount="100.00"
+                                        instalment="2 months"
+                                        status="not completed"
+                                        percentage="75"
+                                        color="#2196F3" />
                 {/* les transactions d envois d argents n ont pas de periode time */}
                                     <Transaction mois="Dec"
-                                        date="29/18" 
+                                        date="15/18" 
+                                        src={plane}
                                         receiver="Djumper AG"
-                                        type="Payment"
-                                        amount="75,00"
-                                        amountDevise="eur"
-                                        periodNber="1"
-                                        periodTime="month"
-                                        width_="25"
-                                        color="#2196F3"
-                                        status="25%"
-                                        statusColor="#2196F3" />
+                                        type="Transport"
+                                        amountDevise="$"
+                                        amount="75.00"
+                                        instalment="7 months"
+                                        status="not completed"
+                                        percentage="25"
+                                        color="#2196F3" />
                                     <Transaction mois="Sept"
-                                        date="29/18" 
-                                        receiver="Wallas wilson"
-                                        type="Payment"
-                                        amount="375,00"
-                                        amountDevise="eur"
-                                        periodNber="1"
-                                        periodTime="month"
-                                        width_="100"
-                                        color="#00BCD4"
-                                        status="100%"
-                                        statusColor="#00BCD4" />
+                                        date="30/18" 
+                                        src={shirt}
+                                        receiver="Adidas"
+                                        type="Clothes"
+                                        amountDevise="$"
+                                        amount="375.00"
+                                        instalment="1 month"
+                                        status="completd"
+                                        percentage="100"                                        
+                                        color="#00BCD4" />
                                 </Grid>
                             </div>
                         </Grid.Column>

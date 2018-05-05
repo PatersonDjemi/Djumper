@@ -1,6 +1,6 @@
 .transaction__block {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    padding: 1.5rem 0 0!important;
+    padding: 1.5rem 0 1.5rem!important;
     margin-bottom: .5rem;
 }
 
@@ -26,6 +26,22 @@
     padding-top: .5rem;
 }
 
+.transaction_ {
+    padding-left: 6rem;
+    position: relative;
+}
+
+.transaction__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background-color: var(--blue-middle);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
 .transaction__receiver {
     font-size: 1.8rem;
     color: var(--black-color);
@@ -41,29 +57,36 @@
 
 .transaction__amount {
     font-size: 2rem;
-    color: var(--pink-middle);   
+    color: var(--black-color);   
     font-weight: 600;
 }
 
-.transaction__amount_devise {
-    font-size: 1.5rem;
+.transaction__instalment {
+    font-size: 1.3rem;
     color: var(--black-color);
-    font-weight: 600;
-    text-transform: uppercase; 
+    font-weight: 400; 
     padding-top: .5rem;   
 }
 
-.period__nber {
+.transaction__evolution {
     padding-right: 2.5rem;
+    position: relative;
 }
 
-.transaction__period_nber {
-    font-size: 1.8rem;
+.transaction__status {
+    font-size: 1.3rem;
     color: var(--black-color);
     font-weight: 500;  
     display: inline-block;
     margin-right: .1rem; 
 }
+
+.percentage {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    font-size: 1.2rem;
+}   
 
 .transaction__period_time {
     font-size: 1.5rem;
