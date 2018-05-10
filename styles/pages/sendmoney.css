@@ -30,6 +30,7 @@
     background-color: #f1f1f1;
     border: 1px solid black;
     border-bottom: none;
+    margin-right: .5rem;
 }
 
 .tab__link__text {
@@ -77,4 +78,109 @@
     padding: 2rem;
     /* text-align: center; */
     font-size: 1.7rem;
+}
+
+
+
+/************ test ************/
+.test__block {
+    width: 70%;
+    min-height: 200px;
+    padding-bottom: 2rem;
+    margin: 5rem auto 3rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.test__block__title {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.test__type {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--black-color);
+    display: block;
+    padding-left: 1.5rem;
+}
+
+.test__block__input {
+    padding: 3rem 3rem 4rem;
+}
+
+.test__input__holder {
+    width: 70%;
+    padding: .5rem 1.5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.transfert__email {
+    display: block;
+    position: relative;
+    /* top: 2.2rem;
+    font-size: 2rem; */
+    top: 0;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    margin-bottom: .5rem;
+}
+
+#email__input {
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    height: 3rem;
+    padding-bottom: .5rem;
+    outline: none;
+    border: none;
+    /* border-bottom: 1px solid black; */
+}
+
+.transfert__to {
+    width: 70%;
+    margin: auto;
+    padding-left: 5.5rem;
+    padding-right: 2rem;
+    position: relative;
+}
+
+.text__to {
+    position: absolute;
+    font-weight: 600;
+    left: 2rem;
+    top: .5rem;
+}
+
+.text__to__name {
+    display: inline-block;
+    position: relative;
+    padding: .5rem 4rem .5rem 1.5rem;
+    border-radius: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem
+}
+
+.transform__summe {
+    width: 70%;
+    margin: auto;
+}
+
+.how__much {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.inputs__summes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

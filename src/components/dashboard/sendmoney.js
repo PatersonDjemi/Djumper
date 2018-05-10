@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GridRow, { Container, Grid, Image } from 'semantic-ui-react';
 
 import Layout from './withSideBarLayout'
-
+import Calendar from '../../../assets/Calendar.svg'
 
 const Description = () => {
     return (
@@ -45,7 +45,7 @@ class SendMoney extends Component {
                                     nonumy eirmod tempor
                                 </div>
 
-                                <div className="transfert__block">
+                                <div className="transfert__block" style={{display: 'none'}}>
                                     <div className="transfert__sender">
                                         <div className="transfert__type"> send money </div>
                                         <div className="transfert__sender__image">
@@ -58,6 +58,45 @@ class SendMoney extends Component {
                                     <div className="transfert__sreceiver">
                                         receiver
                                     </div>
+                                </div>
+
+                                <div className="test__block">
+
+                                    <div className="test__block__title"> 
+                                        <Image src={Calendar} height="20" width="20" className="test__block__image" />
+                                        <span className="test__type">Send Money </span>
+                                    </div>
+                                    <div className="test__block__input">
+                                        <div className="test__input__holder">
+                                            <label htmlFor="" className="transfert__email"> Enter an email </label>
+                                            <input type="text" placeholder="Enter an email" id="email__input" />
+                                        </div>
+                                    </div>
+                                    <div style={{ paddingBottom: 3 + 'rem'}}>
+                                        <div className="transfert__to">
+                                            <div className="test__to">
+                                                <span className="text__to"> to :</span>
+
+                                                <span className="text__to__name"> Paterson H </span>
+                                                <span className="text__to__name"> Paterson H </span>
+                                                <span className="text__to__name"> Paterson H</span>
+                                                <span className="text__to__name"> Paterson D</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="transform__summe">
+                                        <span className="how__much">How much do you want to send ? </span>
+                                        <div className="inputs__summes">
+                                            <div className="whatISend">
+                                                i send
+                                            </div>
+                                            <div className="whatYouReceive">
+                                                you receive
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </Grid.Column>
                         </Grid>
