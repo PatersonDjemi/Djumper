@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { Header, Image } from 'semantic-ui-react'
 
 import plus from '../../assets/lnr-plus-circle.svg'
@@ -20,7 +20,7 @@ const sideMenuList = [
     { taskname: 'transactions',  icons: transactions, link: 'transactions' },
     { taskname: 'articles',  icons: artciles, link: 'articles' },
     { taskname: 'send money',  icons: sendmoney, link: 'sendmoney' },
-    { taskname: 'create check',  icons: checkbank, link: 'createcheck' },
+    // { taskname: 'create check',  icons: checkbank, link: 'createcheck' },
     { taskname: 'find user',  icons: finduser, link: 'finduser' },
     { taskname: 'settings',  icons: settings, link: 'settings' },
     { taskname: 'help',  icons: help, link: 'help' },
@@ -55,7 +55,9 @@ class Dashmenu extends Component {
     render() {
         return (
             <div className="dashboard__menu">
-                <Header as="h1" className="dashboard__logo" content="DJUMPER" />
+                <Header as="h1" className="dashboard__logo">
+                    <Link to="/"> DJUMPER </Link>
+                </Header>
                 <div className="dashboard__menu_user">
                     <ul className="dashboard__menu_list">
                         { this.renderSideMenu() }

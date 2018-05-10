@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GridRow, { Container, Grid, Image } from 'semantic-ui-react';
+import  {GridRow, Container, Grid, Image } from 'semantic-ui-react';
 import Layout from './withSideBarLayout'
 
 import Calendar from '../../../assets/Calendar.svg'
@@ -15,7 +15,7 @@ export const FilterButton = (props) => {
 
 
 
-const Transactions_ = (props) => {
+const Transaction = (props) => {
     return (
         <Grid.Row celled='true' className="transactions__block">
             <Grid.Column width={3} className="mois__date">
@@ -63,25 +63,25 @@ class Transactions extends Component {
                                 <h3 className="transactions__title"> Transactions </h3>
 
                                 <Grid stackable>
-                                    <Transactions_ 
+                                    <Transaction 
                                         date="29/02/18" 
                                         transactionId="#125asddf78954asr7854789zt45"
                                         type="Payments"
                                         amount="500,00"
                                         amountDevise="eur" />
-                                    <Transactions_ 
+                                    <Transaction
                                         date="29/02/18" 
                                         transactionId="#125asddf78954asr7854789zt45"
                                         type="Payments received"
                                         amount="152,20"
                                         amountDevise="eur" />
-                                    <Transactions_ 
+                                    <Transaction
                                         date="09/12/17" 
                                         transactionId="#125asddf78954asr7854789zt45"
                                         type="Refunds"
                                         amount="52,20"
                                         amountDevise="eur" />
-                                    <Transactions_ 
+                                    <Transaction 
                                         date="15/08/17" 
                                         transactionId="#125asddf78954asr7854789zt45"
                                         type="Sent money"

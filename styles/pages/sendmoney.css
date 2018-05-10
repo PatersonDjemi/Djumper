@@ -1,0 +1,80 @@
+.sendmoney__descrition {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.sendMoney__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cyan-middle);
+}
+
+.sendmoney__description-text {
+    color: var(--black-color);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.tab__nav {
+    margin: 2rem 0;
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.tab__nav__link {
+    padding: 1.5rem 2rem;
+    color: var(--blue-middle);
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.tab__link__text {
+    color: var(--black-color);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: justify; 
+}
+
+.transfert__block {
+    width: 90%;
+    margin: 5rem auto 3rem;
+    min-height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    /* background-color: var(--blue-dark); */
+    display: flex;
+}
+
+.transfert__sender {
+    flex: 2 0;
+    /* background-color: var(--blue-middle); */
+}
+
+.transfert__sreceiver {
+    flex: 3 1;
+    background-color: var(--cyan-middle);
+}
+
+.transfert__type {
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black-color);
+    letter-spacing: .2rem;
+}
+
+.transfert__sender__image {
+    height: 150px;
+    padding-top: 5rem;
+    /* background-color: aqua; */
+}
+
+.transfert__sender__name {
+    padding: 2rem;
+    /* text-align: center; */
+    font-size: 1.7rem;
+}

@@ -7,7 +7,7 @@ import Calendar from '../../../assets/Calendar.svg'
 import plane from '../../../assets/aeroplane.svg'
 import shirt from '../../../assets/shirt.svg'
 
-export const Transaction = (props) => {
+export const Products = (props) => {
     return (
         <Grid.Row celled="true" className="transaction__block">
             <Grid.Column width={2} className="mois__date">
@@ -61,7 +61,7 @@ class Articles extends Component {
                             <div className="transactions">
                                 <h3 className="transactions__title"> Articles </h3>
                                 <Grid stackable centered className="main__transaction" >
-                                    <Transaction mois="Avr"
+                                    <Products mois="Avr"
                                         date="29/18" 
                                         src={plane}
                                         receiver="Lufthansa"
@@ -72,7 +72,7 @@ class Articles extends Component {
                                         status="not completed" 
                                         percentage="50"                                        
                                         color="#2196F3" />
-                                    <Transaction mois="Jan"
+                                    <Products mois="Jan"
                                         date="11/18" 
                                         src={shirt}
                                         receiver="Puma"
@@ -84,7 +84,7 @@ class Articles extends Component {
                                         percentage="75"
                                         color="#2196F3" />
                 {/* les transactions d envois d argents n ont pas de periode time */}
-                                    <Transaction mois="Dec"
+                                    <Products mois="Dec"
                                         date="15/18" 
                                         src={plane}
                                         receiver="Djumper AG"
@@ -95,7 +95,7 @@ class Articles extends Component {
                                         status="not completed"
                                         percentage="25"
                                         color="#2196F3" />
-                                    <Transaction mois="Sept"
+                                    <Products mois="Sept"
                                         date="30/18" 
                                         src={shirt}
                                         receiver="Adidas"

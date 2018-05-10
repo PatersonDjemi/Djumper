@@ -23,8 +23,7 @@ const H_Second = () => {
                                 src={CreateAccont}
                                 title="create account"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500"
+                                mise en page avant impression. Le Lorem Ipsum est"
                             />
                         </div>
                     </Grid.Column>
@@ -35,8 +34,7 @@ const H_Second = () => {
                                 src={Confirm}
                                 title="confirm it"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500"
+                                mise en page avant impression. Le Lorem Ipsum est"
                             />
                         </div>
                     </Grid.Column>
@@ -47,8 +45,7 @@ const H_Second = () => {
                                 src={Enjoy}
                                 title="enjoy djumper"
                                 text="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                0depuis les années 1500"
+                                mise en page avant impression. Le Lorem Ipsum est"
                             />
                         </div>
                     </Grid.Column >

@@ -7,7 +7,7 @@ import paypal from '../../assets/paypal.svg'
 import plane from '../../assets/aeroplane.svg'
 import shirt from '../../assets/shirt.svg'
 
-import { Transaction } from './dashboard/articles'
+import { Products } from './dashboard/articles'
 
 
 
@@ -125,14 +125,14 @@ const Resume = (props) => {
                     </Grid>
 
                     <div className="last__transactions" style={{ position: 'relative'}}>
-                       <Header as="h3" content="Last transactions" className="last__activities__title" />
+                       <Header as="h3" content="Products reviews" className="last__activities__title" />
                         <div className="last__activities__description">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                         </div>
                         <span className="get_start view_all"> View all </span>
                     </div>
                     <Grid stackable centered className="main__transaction" >
-                    <Transaction mois="Avr"
+                                    <Products mois="Avr"
                                         date="29/18" 
                                         src={plane}
                                         receiver="Lufthansa"
@@ -143,7 +143,7 @@ const Resume = (props) => {
                                         status="not completed" 
                                         percentage="50"                                        
                                         color="#2196F3" />
-                                    <Transaction mois="Jan"
+                                    <Products mois="Jan"
                                         date="11/18" 
                                         src={shirt}
                                         receiver="Puma"
@@ -155,7 +155,7 @@ const Resume = (props) => {
                                         percentage="75"
                                         color="#2196F3" />
                 {/* les transactions d envois d argents n ont pas de periode time */}
-                                    <Transaction mois="Dec"
+                                    <Products mois="Dec"
                                         date="15/18" 
                                         src={plane}
                                         receiver="Djumper AG"
@@ -166,7 +166,7 @@ const Resume = (props) => {
                                         status="not completed"
                                         percentage="25"
                                         color="#2196F3" />
-                                    <Transaction mois="Sept"
+                                    <Products mois="Sept"
                                         date="30/18" 
                                         src={shirt}
                                         receiver="Adidas"
@@ -178,6 +178,9 @@ const Resume = (props) => {
                                         percentage="100"                                        
                                         color="#00BCD4" />
                     </Grid>
+
+                    <AddCardForm />
+
                 </Grid.Column>
 
             </Grid>
