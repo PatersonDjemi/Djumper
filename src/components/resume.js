@@ -179,7 +179,7 @@ const Resume = (props) => {
                                         color="#00BCD4" />
                     </Grid>
 
-                    <AddCardForm />
+                    {/* <AddCardForm /> */}
 
                 </Grid.Column>
 
