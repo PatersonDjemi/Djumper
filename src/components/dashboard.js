@@ -45,10 +45,8 @@ class Dashboard extends Component {
 
                         <Redirect from={url} exact to={`${url}/account`} />
                     </Switch>
-
                 </Dashcontent>
-            </div>
-    
+            </div>    
         );
     }
 

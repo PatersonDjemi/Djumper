@@ -27,7 +27,6 @@ class LoginForm extends Component {
 
         return (
             <FormInput className="login__form_input form__icons"
-                inputStyle="login__inputs"
                 placeholder={placeholder}
                 type={type}
                 url={url}

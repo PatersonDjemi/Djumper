@@ -3,7 +3,8 @@ import { reduxForm, Field } from 'redux-form';
 import validator from 'validator';
 
 
-import {FormInput, CheckInput} from '../reusable/inputs'
+import {FormInput, FormInputPassword, CheckInput} from '../reusable/inputs'
+import {InputWithPassword, FormInputs} from '../reusable/HOC'
 import Mail from '../../assets/Mail.svg';
 import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
@@ -14,6 +15,7 @@ import { connect } from 'react-redux';
 import { signupStart } from '../actions'
 
 
+const Hey = InputWithPassword(FormInputs);
 
 class SignupForm extends Component {
     constructor(props) {
@@ -28,7 +30,6 @@ class SignupForm extends Component {
 
         return (
             <FormInput className="login__form_input form__icons"
-                    inputStyle="login__input"
                     placeholder={placeholder}
                     type={type}
                     url={url}
@@ -38,6 +39,21 @@ class SignupForm extends Component {
         );
     }
 
+    renderInputFieldPassword({input, 
+        meta: {touched, error, active},
+        placeholder, type, url} ) {
+
+        const hasError = touched && !active && error !== "undefined";
+
+        return (
+            <FormInputPassword className="login__form_input form__icons"
+                    placeholder={placeholder}
+                    url={url}
+                    input={input}
+                    hasError={hasError}
+                    error={error} />
+        );
+    }
     renderCheckbox({input, text, meta: {touched, error} }) {
 
         const hasError = touched && error !== 'undefined';
@@ -67,7 +83,7 @@ class SignupForm extends Component {
     render () {
 
         const { handleSubmit } = this.props;
-
+        
         return (
             <div style={{paddingTop: 1.5 + 'rem', paddingBottom: 1.5 + 'rem'}}>
 
@@ -93,9 +109,8 @@ class SignupForm extends Component {
                     validate={[reqEmail, myEmail]}/>
 
                 <Field name="password"
-                    component={this.renderInputField}
+                    component={this.renderInputFieldPassword}
                     placeholder="Password"
-                    type="password"
                     url={Password}
                     validate={[reqPassword, valPassword]} />
 

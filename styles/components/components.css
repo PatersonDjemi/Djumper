@@ -364,8 +364,9 @@
 .login__form_input {
     width: 100%;
     padding: 2.5rem 0 0rem 4.5rem;
-    font-size: 1.7rem;
-    font-weight: 300;
+    position: relative;
+    /* font-size: 1.7rem;
+    font-weight: 300; */
     margin-bottom: 1rem;
 }
 
@@ -375,10 +376,10 @@
     background-position: 0rem .8rem;
 }
 
-.login__input {
+/* .login__input {
     border: none !important;
     outline: none !important;
-    /* border-bottom: 1.5px solid black !important; */
+    border-bottom: 1.5px solid #bbb !important;
     font-size: 1.7rem !important;
     font-weight: 300 !important;
     letter-spacing: .1rem !important;
@@ -388,7 +389,7 @@
         .login__input {
             font-size: 1.7rem !important;
         }
-    }
+    } */
 
 /* .login__form > .login__form_input {
     margin-bottom: 1.5rem;
@@ -484,6 +485,13 @@
 
         }
     }
+
+.imagePassword {
+    position: absolute;
+    top: 2.3rem;
+    right: 1rem;
+    cursor: pointer;
+}
 
 /*********** sign button ************/
 

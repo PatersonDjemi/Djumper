@@ -216,10 +216,10 @@
     }
 
 
-.login__inputs {
+.login__input {
     border: none !important;
     outline: none !important;
-    /* border-bottom: 1px solid black !important; */
+    border-bottom: 1px solid #bbb !important;
     font-size: 1.7rem !important;
     font-weight: 300 !important;
     letter-spacing: .1rem !important;

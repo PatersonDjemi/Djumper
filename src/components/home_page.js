@@ -6,7 +6,6 @@ import H_Third from './third_block'
 import H_Fourth from './fourth_block'
 import H_Sixth from './sixth_block'
 import H_Fifth from './fifth_block'
-import Footer from './footer'
 
 const Home = () => {
     return (
@@ -17,7 +16,6 @@ const Home = () => {
             <H_Fourth/>
             <H_Fifth/>
             <H_Sixth/>
-            <Footer/>
         </div>
     );
 }

@@ -3,7 +3,6 @@ import { Container, Grid, Header, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import Navigation from './navigation'
-import Footer from './footer'
 
 import Down from '../../assets/lnr-chevron-down.svg'
 
@@ -131,7 +130,6 @@ const FAQ = (props) => {
             <First/>
             <Second/>
             <Third/>
-            <Footer/>
         </Container>
     );
 }
