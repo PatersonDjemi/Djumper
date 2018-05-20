@@ -1,6 +1,6 @@
 import * as types from './type'
 
-export function signupStart({ first, last, email, password, agree, history }) {
+export function signupStart({ first, last, email, password, agree }) {
     return {
         type: types.SIGN_UP_START,
         payload: {
@@ -13,7 +13,7 @@ export function signupStart({ first, last, email, password, agree, history }) {
     }
 }
 
-export function loginStart({email, password, history}) {
+export function loginStart({email, password}) {
     return {
         type: types.LOG_IN_START,
         payload: { 

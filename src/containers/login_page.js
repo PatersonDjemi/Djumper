@@ -31,12 +31,18 @@ class LoginPage extends Component {
             history.push('/dashboard');
             return false;
         }
-
         return true;
     }
 
-    render () {
+    componentWillReceiveProps(nextProps) {        
+        if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
+            // change state for the loader here
+            this.setState({isLoading: false});
+        }
+    }
 
+    render () {
+        console.log('state', this.state.isLoading)
         const loader = this.state.isLoading ? <Loader /> : null;
 
         return (

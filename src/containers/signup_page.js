@@ -38,18 +38,20 @@ class SignUp extends Component  {
         // ici nextProps = this.props
         const { authUser, history } = nextProps;
         
-        if ( authUser.authenticated === 'pending') {
+        if ( authUser.authenticated === true ) {
         //     // on redirige ici vers le dashboard
-            history.push('/thankyou');
-        //     // empeche le component de rerendern
-        //     // si on retourne true le component rendern tjrs après avoir changé de page
+            history.push('/dashboard');
+        // empeche le component de rerendern
+        // si on retourne true le component rendern tjrs après avoir changé de page
             return false;
         } 
 
+        console.log('component will update')
         return true;
     }
 
-    // don´t need this step anymore, react will rerender with the initaial state anyway
+    // don´t need this step anymore, react will rerender with the initaial state anyway: thats not true
+    // we need to rechange the state in respond in case of error
     componentWillReceiveProps(nextProps) {        
         if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
             // change state for the loader here
@@ -60,6 +62,7 @@ class SignUp extends Component  {
     render() {
         
         const loader = this.state.isLoading ? <Loader /> : null;
+        console.log('why this behavior')
 
         return (
             <div>

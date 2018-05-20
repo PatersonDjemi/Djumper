@@ -59,7 +59,7 @@ export class FormInputPassword extends Component {
 
 
     render () {
-        
+
         const {url, className, type, placeholder, iconPassword } = this.props;
         const {input, error, hasError } = this.props;
 
@@ -100,6 +100,12 @@ export class CheckInput extends Component {
     }
 }
 
+
+
+
+
+// TDOD render les couleurs des borders des input en fontion de l erreur
+// Props type aussi à definir
 
 
 

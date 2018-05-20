@@ -70,8 +70,7 @@ class SignupForm extends Component {
         
         const { reset, signupStart } = this.props;
 
-        this.props.loading();
- 
+        this.props.loading(); 
         
         // call the action creator
         signupStart({first, last, email, password, agree});
@@ -122,7 +121,7 @@ class SignupForm extends Component {
 
                 <span className="signup__btn sign__btn"
                       onClick={handleSubmit(this.submitSignup.bind(this))}> 
-                Sign up 
+                    Sign up 
                 </span>
 
             </div>
@@ -137,11 +136,11 @@ SignupForm = connect(null, { signupStart })(SignupForm);
 /* ---- call the function for validating every input ---- */
     // for the first name
     const reqFirstName = require("First Name");
-    const valFirstName = valLength("First Name", 3, 20);
+    const valFirstName = valLength("First Name", 4, 50);
     
         // for the last name
     const reqLastName = require("Last Name");
-    const valLastName = valLength("Last Name", 3, 20);
+    const valLastName = valLength("Last Name", 4, 20);
     
         // for the email
     const reqEmail = require("Email");
@@ -158,6 +157,5 @@ SignupForm = connect(null, { signupStart })(SignupForm);
     }
 
 export default reduxForm({
-    form: "signupForm",
-    touchOnBlur: true
+    form: "signupForm"
 })(SignupForm);

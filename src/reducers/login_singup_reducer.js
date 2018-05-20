@@ -8,13 +8,10 @@ export default function authentication(state = {}, action) {
     switch (type) {
 
         case 'AUTH_USER':
-            return update(state, { authenticated: { $set: true} } );
+            return update(state, { authenticated: { $set: true}, user: { $set: action.payload } } );
 
         case 'UNAUTH_USER':
-            return update(state, { authenticated: { $set: false} } );
-
-        case 'ERROR':
-            return update(state, { authenticated: { $set: false }, error: { $set: action.payload }});
+            return update(state, { authenticated: { $set: false}, error: { $set: action.error} } );
 
         case 'EMAIL_CONFIRM':
             return update(state, {authenticated: { $set: 'pending'} } )

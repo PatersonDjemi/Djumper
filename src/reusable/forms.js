@@ -1,5 +1,5 @@
 /*
-    functions for sign up form
+    functions for signup und login form
  */
 
 // required to write something in an input

@@ -16,7 +16,7 @@ import { saveToken, extractResponse } from '../../utils';
  *  **************/
 function* loginStartAsync(email, password) {
 //penser à changer test par login pour des expemles reels
-    const endPoint = `${config.baseUrl}/user/test`;
+    const endPoint = `${config.baseUrl}/user/login`;
 
      return yield axios.post(endPoint, { email, password})
          .then(response => response)
@@ -46,13 +46,14 @@ function* loginStart(action) {
         const data = extractResponse(response);
         console.log('response data', data );
 
-        yield put({type: 'AUTH_USER'});
+        yield put({type: 'AUTH_USER', payload: data});
     }
     catch (e) {
         // customiser l erreur et renvoyer un feedback à l utilisateur
+        // l erreur ici correspond à l´erreur que j envois depuis mon server
         console.log('error on the request', e)
         // user not authenticated
-        yield put({type: 'UNAUTH_USER'})
+        yield put({type: 'UNAUTH_USER', error: e.data})
     }
 }
 
@@ -104,17 +105,18 @@ function* signupStart(action) {
     try {
         response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
     // extract data and save token
-        const {data} = response
+        const data = extractResponse(response)
         console.log('response data', response );
 
-        yield put({type: 'EMAIL_CONFIRM'});
+        yield put({type: 'AUTH_USER', payload: data});
     }
 
     catch(e)  {
         // customiser l erreur et renvoyer un feedback à l utilisateur
+        // l erreur ici correspond à l´erreur que j envois depuis mon server
         console.log('error on the request', e)
         // user not authenticated
-        yield put({type: 'UNAUTH_USER'})
+        yield put({type: 'UNAUTH_USER', error: e.data})
     }
 }
 
