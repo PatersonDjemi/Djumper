@@ -8,6 +8,7 @@ import Mail from '../../assets/Mail.svg';
 import Password from '../../assets/locked.svg'
 import LoginForm from './loginForm'
 import Loader from '../reusable/Loader'
+import ShowError from '../components/showError'
 
 
 class LoginPage extends Component {
@@ -80,6 +81,7 @@ class LoginPage extends Component {
         
                         <div className="signin__right">
                             image. 
+                            <ShowError Bottom='10' Left='2' />
                         </div>
                     </div>
                 </Container>

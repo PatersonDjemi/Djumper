@@ -692,3 +692,42 @@
 .modal__cancel {
     background-color: #f1f1f1;
 }
+
+
+/******************* error box ***************/
+.error__box {
+    max-width: 40rem;
+    width: 100%;
+    min-width: 30rem;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    border-radius: 4px;
+    z-index: 9;
+}
+
+.error__header {
+    padding: 0rem 1rem ;
+}
+
+.error__title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: red;
+    text-transform: uppercase;
+}
+
+.error__list {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    list-style: none;
+}
+
+.single__error {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 1rem;
+}
+

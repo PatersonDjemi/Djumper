@@ -13,6 +13,7 @@ import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
 import SignupForm from './signupForm'
 import Loader from '../reusable/Loader'
+import ShowError from '../components/showError'
 import ThankYOu from '../components/thankyou'
 
 
@@ -46,7 +47,6 @@ class SignUp extends Component  {
             return false;
         } 
 
-        console.log('component will update')
         return true;
     }
 
@@ -62,7 +62,6 @@ class SignUp extends Component  {
     render() {
         
         const loader = this.state.isLoading ? <Loader /> : null;
-        console.log('why this behavior')
 
         return (
             <div>
@@ -91,7 +90,7 @@ class SignUp extends Component  {
                                             className="create_account__title" 
                                             textAlign="center" />
 
-                                        <SignupForm  loading={this.isLoading} />                                   
+                                        <SignupForm  loading={this.isLoading} />                                  
         
                                     <div className="account__already">
                                         <span>Already a DJUMPER account? </span>
@@ -100,6 +99,8 @@ class SignUp extends Component  {
         
                                 </div>
                             </div>
+
+                            <ShowError Bottom='57' Left='-31' /> 
                         </Grid.Column>
                     </Grid>
                 </Container>

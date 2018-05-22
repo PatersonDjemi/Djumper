@@ -236,6 +236,7 @@
 /*************** right side ************/
 .signin__right{
     flex: 3 1;
+    position: relative;
     padding: 4rem;
     background-color: cornflowerblue;}
     @media (max-width: 62.5em) {
