@@ -54,14 +54,16 @@ class Dashmenu extends Component {
 
     render() {
         return (
-            <div className="dashboard__menu">
-                <Header as="h1" className="dashboard__logo">
-                    <Link to="/"> DJUMPER </Link>
-                </Header>
-                <div className="dashboard__menu_user">
-                    <ul className="dashboard__menu_list">
-                        { this.renderSideMenu() }
-                    </ul>
+            <div className="dashboard__menu__container">
+                <div className="dashboard__menu">
+                    <Header as="h1" className="dashboard__logo">
+                        <Link to="/"> DJUMPER </Link>
+                    </Header>
+                    <div className="dashboard__menu_user">
+                        <ul className="dashboard__menu_list">
+                            { this.renderSideMenu() }
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

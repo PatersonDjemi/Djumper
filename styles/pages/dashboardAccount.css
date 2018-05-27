@@ -19,6 +19,9 @@
     font-size: 1.4rem !important;
     transform: translateY(-50%) !important;
     right: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    cursor: pointer;
     padding: 1rem 1.3rem !important;
     color: var(--black-color) !important;
     background-color: var(--white-color) !important;
@@ -65,5 +68,5 @@
 
 /*************** last transaction ***********/
 .last__transactions {
-    margin-top: 5rem;
+
 }

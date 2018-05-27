@@ -11,7 +11,8 @@
 
 .header__search {
     max-width: 500px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px, rgba(0, 0, 0, 0.12) 0px 0px 2px;    padding: 5px 15px;
+    border: 1px solid #bbb;
+    padding: 5px 15px;
     box-sizing: border-box;
 }
 
@@ -38,12 +39,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40rem;
-    max-width: 40rem;
+    width: 100%;
+    max-width: 45rem;
     background-color: var(--white-color);
-    padding: 3rem ;
+    padding: 3rem;
     border-radius: 4px;
-    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px; */
+    border: 1px solid #bbb;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 1px 8px, rgba(0, 0, 0, 0.23) 0px 3px 10px; */
 }
 
 /* .box__banner:hover {
@@ -68,8 +70,10 @@
     color: var(--pink-middle);
 }
 
-.box__amount:last-child {
-    font-size: 3rem;
+.devise__overview {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--black-color);
 }
 
 .sum {

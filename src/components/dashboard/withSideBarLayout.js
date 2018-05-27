@@ -12,7 +12,7 @@ const MainContent = (props) => {
 
 const Sidebar = (props) => {
     return (
-        <Grid.Column width={5} className="dashboard__sideBar">
+        <Grid.Column width={4} className="dashboard__sideBar">
 
             {props.children}
 

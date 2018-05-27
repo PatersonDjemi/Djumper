@@ -54,7 +54,7 @@ const Account = () => {
                         <AddPaypal/>
                     </SideSection>
 
-                    <SideSection title="Calendar">
+                    <SideSection title="Last activies">
                         <div className="calendar__description">
                             Lorem ipsum dolor sit amet, consetetur sadip scing elitr
                             nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos

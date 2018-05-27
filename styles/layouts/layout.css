@@ -2,21 +2,32 @@
     background: #f1f1f1; /** en attendant de fixer le pb de la barre du haut la **/
 }
 
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard__menu__container {
+    background-color: var(--blue-middle);
+    flex: 0 0 30rem;
+    /* 1er 0 empeche l element d occuper tt l espace
+     le 2e l empeche de se reduire qd la taille de l ecran change
+     la 3e pp permet de preciser la largeur */
+}
+
 .dashcontent {
-    height: 100%;
-    max-width: 100%;
-    /* position: fixed; */
-    /* background-color: #f1f1f1; */
-    margin-left: 300px;
+    flex: 1 1 !important;
     padding-left: 5rem;
     padding-right: 5rem;
+    /* background-color: aqua; */
+    overflow-y: auto;
 }
 
 .overview {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 5rem;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;    
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;     */
 }
 
 .dashboard__mainContent {

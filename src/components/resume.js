@@ -79,8 +79,8 @@ const Resume = (props) => {
     return (
         <Container fluid >
             <Grid stackable >
-                <Grid.Column width={15}>
-                    <div className="last__activities" style={{ position: 'relative'}}>
+                <Grid.Column width={14}>
+                    {/* <div className="last__activities" style={{ position: 'relative'}}>
                        <Header as="h3" content="Last activities" className="last__activities__title" />
                         <div className="last__activities__description">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
@@ -102,14 +102,14 @@ const Resume = (props) => {
                                 time="about 3h ago"
                                 color='#E91E63' />
                         </Grid.Column>
-                    </Grid>
+                    </Grid> */}
 
                     <div className="last__transactions" style={{ position: 'relative'}}>
                        <Header as="h3" content="Products reviews" className="last__activities__title" />
                         <div className="last__activities__description">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                         </div>
-                        <span className="get_start view_all"> View all </span>
+                        <span className=" view_all"> View all </span>
                     </div>
                     <Grid stackable centered className="main__transaction" >
                                     <Products mois="Avr"

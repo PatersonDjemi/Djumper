@@ -31,8 +31,8 @@ const Searchbar = () => {
 const DashNavi = (props) => {
     return (
         <Container fluid  className="dashboard__nav">
-            <Grid centered className="grid__nav">
-                <Grid.Column width={8} >
+            <Grid stackable centered className="grid__nav">
+                <Grid.Column width={7} >
                     <Searchbar/>
                 </Grid.Column>
                 <Grid.Column width={8} >
