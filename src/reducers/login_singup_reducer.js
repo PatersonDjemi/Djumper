@@ -1,7 +1,7 @@
 import update from 'immutability-helper';
 
 
-export default function authentication(state = {}, action) {
+export default function authentication(state = {authenticated: false}, action) {
 
     const { type } = action;
 
@@ -17,7 +17,7 @@ export default function authentication(state = {}, action) {
             return update(state, {authenticated: { $set: 'pending'} } )
 
         default:
-            return state;
+            return state
     }
 
 }

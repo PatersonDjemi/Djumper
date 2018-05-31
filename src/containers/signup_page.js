@@ -1,20 +1,21 @@
 // import from libraries
 import React, { Component } from 'react'
-import { reduxForm, Field, SubmissionError } from 'redux-form'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
-import {Link, Route } from 'react-router-dom';
-import { Container, Grid, Header, Button, Form} from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
+import { Container, Grid, Header} from 'semantic-ui-react'
 
-
-import {FormInput, CheckInput} from '../reusable/inputs'
 import Mail from '../../assets/Mail.svg';
 import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
-import SignupForm from './signupForm'
+
+import {FormInput, CheckInput} from '../reusable/inputs'
+import SignupForm from '../components/signupForm'
 import Loader from '../reusable/Loader'
 import ShowError from '../components/showError'
-import ThankYOu from '../components/thankyou'
+
+import { signupStart } from '../actions/index'
+
 
 
 class SignUp extends Component  {
@@ -26,8 +27,19 @@ class SignUp extends Component  {
         }
 
         this.isLoading = this.isLoading.bind(this);
+        this.signUserUp = this.signUserUp.bind(this);
     }
 
+    static mapStateToProps({authentication}) {
+        return {
+            authUser: authentication
+        }
+    }
+
+    signUserUp({first, last, email, password, agree}) {
+        // call the action creator
+        this.props.signupStart({first, last, email, password, agree});
+    }
 
     isLoading() {
         // displays the loader
@@ -39,10 +51,8 @@ class SignUp extends Component  {
         // ici nextProps = this.props
         const { authUser, history } = nextProps;
 
-        console.log('authenctication', authUser.authenticated)
-        
         if ( authUser.authenticated === true ) {
-        //     // on redirige ici vers le dashboard
+        // on redirige ici vers le dashboard
             history.push('/dashboard');
         // empeche le component de rerendern
         // si on retourne true le component rendern tjrs après avoir changé de page
@@ -56,7 +66,6 @@ class SignUp extends Component  {
     // we need to rechange the state in respond in case of error
     componentWillReceiveProps(nextProps) {        
         if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
-            // change state for the loader here
             this.setState({isLoading: false});
         }
     }
@@ -72,6 +81,7 @@ class SignUp extends Component  {
 
                 <Container fluid className="signup">
                     <Grid centered stackable className="signup__grid">
+
                         <Grid.Column computer={7} tablet={7}>
                             <div className="signup__left">
                                 <Header as="h1" className="signup__logo">
@@ -80,19 +90,24 @@ class SignUp extends Component  {
                                 <div className="signup__caracteristics">
                                     easy - flexibel - smart
                                 </div>
-                                <p className="signup__description">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la
-                                    mise en page avant impression. Le Lorem Ipsum est le faux texte standard de
-                                    l'imprimerie 0depuis les années 1500, quand un peintre. </p>
+                                <p className="signup__description">Le Lorem Ipsum est simplement du 
+                                    faux texte employé dans la composition et la mise en page avant 
+                                    impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
+                                     0depuis les années 1500, quand un peintre. 
+                                </p>
                             </div>
                         </Grid.Column>
+
                         <Grid.Column computer={7} tablet={9}>
                             <div className="create_account__outside">
+
                                 <div className="create_account__box">
+
                                     <Header as="h3" content="create an account" 
                                             className="create_account__title" 
                                             textAlign="center" />
 
-                                        <SignupForm  loading={this.isLoading} />                                  
+                                    <SignupForm callSignUpStart={this.signUserUp}  loading={this.isLoading} />                                  
         
                                     <div className="account__already">
                                         <span>Already a DJUMPER account? </span>
@@ -103,7 +118,9 @@ class SignUp extends Component  {
                             </div>
 
                             <ShowError Bottom='57' Left='-31' /> 
+
                         </Grid.Column>
+
                     </Grid>
                 </Container>
 
@@ -113,12 +130,8 @@ class SignUp extends Component  {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        authUser: state.authentication
-    }
-}
 
-export default connect(mapStateToProps)(SignUp);
+
+export default connect(SignUp.mapStateToProps, { signupStart })(SignUp);
 
 

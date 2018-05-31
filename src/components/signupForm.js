@@ -4,18 +4,15 @@ import validator from 'validator';
 
 
 import {FormInput, FormInputPassword, CheckInput} from '../reusable/inputs'
-import {InputWithPassword, FormInputs} from '../reusable/HOC'
+
+
 import Mail from '../../assets/Mail.svg';
 import User from '../../assets/User.svg';
 import Password from '../../assets/locked.svg'
 
 
 import { valLength , isEmail, require } from '../reusable/forms';
-import { connect } from 'react-redux';
-import { signupStart } from '../actions'
 
-
-const Hey = InputWithPassword(FormInputs);
 
 class SignupForm extends Component {
     constructor(props) {
@@ -30,12 +27,12 @@ class SignupForm extends Component {
 
         return (
             <FormInput className="login__form_input form__icons"
-                    placeholder={placeholder}
-                    type={type}
-                    url={url}
-                    input={input}
-                    hasError={hasError}
-                    error={error} />
+                placeholder={placeholder}
+                type={type}
+                url={url}
+                input={input}
+                hasError={hasError}
+                error={error} />
         );
     }
 
@@ -47,13 +44,14 @@ class SignupForm extends Component {
 
         return (
             <FormInputPassword className="login__form_input form__icons"
-                    placeholder={placeholder}
-                    url={url}
-                    input={input}
-                    hasError={hasError}
-                    error={error} />
+                placeholder={placeholder}
+                url={url}
+                input={input}
+                hasError={hasError}
+                error={error} />
         );
     }
+
     renderCheckbox({input, text, meta: {touched, error} }) {
 
         const hasError = touched && error !== 'undefined';
@@ -66,15 +64,12 @@ class SignupForm extends Component {
         );
     }
 
-    submitSignup({first, last, email, password, agree}) {
-        
-        const { reset, signupStart } = this.props;
+    submitSignup(allValueFields) {
 
-        this.props.loading(); 
-        
-        // call the action creator
-        signupStart({first, last, email, password, agree});
-        
+        const { reset, callSignUpStart } = this.props;
+        this.props.loading();         
+        // call the action creator on the parent component
+        callSignUpStart(allValueFields)     
         // clear the fields input
         reset()
     }
@@ -120,7 +115,7 @@ class SignupForm extends Component {
                        validate={reqCheckbox}/>
 
                 <span className="signup__btn sign__btn"
-                      onClick={handleSubmit(this.submitSignup.bind(this))}> 
+                    onClick={handleSubmit(this.submitSignup.bind(this))}> 
                     Sign up 
                 </span>
 
@@ -130,31 +125,29 @@ class SignupForm extends Component {
 }
 
 
-SignupForm = connect(null, { signupStart })(SignupForm);
-
-
 /* ---- call the function for validating every input ---- */
     // for the first name
     const reqFirstName = require("First Name");
     const valFirstName = valLength("First Name", 4, 50);
     
-        // for the last name
+    // for the last name
     const reqLastName = require("Last Name");
     const valLastName = valLength("Last Name", 4, 20);
     
-        // for the email
+    // for the email
     const reqEmail = require("Email");
     const myEmail = isEmail("Email");
     
-        // for the password
+    // for the password
     const reqPassword = require("Password");
     const valPassword = valLength("Password", 5, 100);
     
-        // for the checkbox
+    // for the checkbox
     const reqCheckbox = (value) => {
         if(value !== true)  
             return 'Please agree to the terms and conditions'
     }
+
 
 export default reduxForm({
     form: "signupForm"

@@ -31,3 +31,10 @@ export function autoLogin(token) {
     }
 }
 
+export function tellToLogin() {
+    return {
+        type: types.TELL_TO_LOGIN_FIRST,
+        error: 'Please make sure you login first in oder to visit the dashboard'
+    }
+}
+

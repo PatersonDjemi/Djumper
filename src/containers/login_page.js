@@ -6,9 +6,13 @@ import { connect } from 'react-redux'
 import { FormInput } from '../reusable/inputs';
 import Mail from '../../assets/Mail.svg';
 import Password from '../../assets/locked.svg'
-import LoginForm from './loginForm'
+
+
+import LoginForm from '../components/loginForm'
 import Loader from '../reusable/Loader'
 import ShowError from '../components/showError'
+
+import { loginStart } from '../actions'
 
 
 class LoginPage extends Component {
@@ -19,6 +23,17 @@ class LoginPage extends Component {
         }
 
         this.isLoading = this.isLoading.bind(this);
+        this.logUserIn = this.logUserIn.bind(this);
+    }
+
+    static mapStateToProps ({authentication}) {
+        return {
+            authUser: authentication
+        }
+    }
+
+    logUserIn({email, password}) {
+        this.props.loginStart({email, password});
     }
 
     isLoading() {
@@ -37,13 +52,12 @@ class LoginPage extends Component {
 
     componentWillReceiveProps(nextProps) {        
         if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
-            // change state for the loader here
             this.setState({isLoading: false});
         }
     }
 
     render () {
-        console.log('state', this.state.isLoading)
+
         const loader = this.state.isLoading ? <Loader /> : null;
 
         return (
@@ -56,16 +70,18 @@ class LoginPage extends Component {
                     <div className="login__outside_box">
         
                         <div className="signin__left">
+
                             <h2 className="login__logo">
                                 <Link to="/">djumper</Link> 
                             </h2>
                             <div className="login__title">                    
-                                        welcome back        
+                                welcome back        
                             </div>                   
         
-                            <LoginForm loading={this.isLoading} />                   
+                            <LoginForm callLoginStart={this.logUserIn} loading={this.isLoading} />                   
         
                             <div className="create__account">
+
                                 <div className="password__forget">
                                     <Link to="/">
                                         <span className="password_forgets">
@@ -75,14 +91,16 @@ class LoginPage extends Component {
                                 </div>
 
                                 <span>Don´t have an account yet ? </span>
-                                <Link to="/signup"> <span> Sign up </span> </Link> 
+                                <Link to="/signup"> <span> Sign up </span> </Link>  
+
                             </div>
+
                         </div>        
         
-                        <div className="signin__right">
-                            image. 
+                        <div className="signin__right"> image. 
                             <ShowError Bottom='10' Left='2' />
                         </div>
+
                     </div>
                 </Container>
             </div>
@@ -92,12 +110,7 @@ class LoginPage extends Component {
 
 }
 
-function mapStateToProps ({authentication}) {
-    return {
-        authUser: authentication
-    }
-}
 
-export default connect(mapStateToProps)(LoginPage);
+export default connect(LoginPage.mapStateToProps, { loginStart })(LoginPage);
 
 

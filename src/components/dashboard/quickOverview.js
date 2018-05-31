@@ -29,7 +29,6 @@ const Overview = (props) => {
 
 const QuickOverview = (props) => {
     return (
-
         <Container fluid>
             <Grid stackable centered>
                 <Grid.Column width={15}>
@@ -43,22 +42,22 @@ const QuickOverview = (props) => {
                                 mainTitle="Total Balance"
                                 secondTitle="montant disponible"
                                 amount="10 000"
-                                devise="USD"
+                                devise="EUR"
                                 src={wallet} />
                             <Overview
                                 mainTitle="Last Request"
                                 secondTitle="am 10.12.2018"
                                 amount="1 038"
-                                devise="USD"
+                                devise="EUR"
                                 src={request} />
                             <Overview
                                 mainTitle="Next Request"
                                 secondTitle="am 10.08.2018"
                                 amount="3 038"
-                                devise="USD"
+                                devise="EUR"
                                 src={transfer} />
                         </div>
-            </section>  
+                    </section>  
                 </Grid.Column>
             </Grid>
 

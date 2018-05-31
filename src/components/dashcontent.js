@@ -7,6 +7,7 @@ import { Container, Grid, Button, Image } from 'semantic-ui-react'
 import Transacion from './transactions'
 import QuickOverview from './dashboard/quickOverview'
 import DashNavigation from './dashboard/dashNavi'
+import Loader from '../reusable/Loader'
 
 const Boxone = (props) => {
     return (
@@ -39,16 +40,19 @@ const Quicktask = (props) => {
 
 
 const Dashcontent = (props) => {
-    return (
 
+    return props.loading ? (
         <div className="dashcontent">
-
-            <DashNavigation/>
-            
+            <DashNavigation/>           
             { props.children }
-
         </div>
-    );
+    ) : (
+        <div className="dashcontent">
+            <DashNavigation/>           
+            <Loader />
+        </div>
+    )
+ 
 };
 
 export default Dashcontent;

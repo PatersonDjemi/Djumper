@@ -22,27 +22,32 @@ import Help from './dashboard/help'
 class Dashboard extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            isLoading: false
+        }
+    }
+
+    componentDidMount() {
+        // fetch data from the server here
     }
 
     render() {
-        // console.log('see the props: ', this.props)
 
         const {  url, path } = this.props.match;
 
         return (
             <div className="dashboard">
                <Route path={path} component={Dashmenu} />
-                <Dashcontent>
+                <Dashcontent loading={this.state.isLoading} >
                     <Switch>
                         <Route path={`${url}/account`} component={Account} />
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
                         <Route path={`${url}/sendmoney`} component={SendMoney} />
                         <Route path={`${url}/createcheck`} component={CreateCheck} />
-                        {/* <Route path={`${url}/finduser`} component={Account} /> */}
                         <Route path={`${url}/settings`} component={Settings} />
                         <Route path={`${url}/help`} component={Help} />
-
                         <Redirect from={url} exact to={`${url}/account`} />
                     </Switch>
                 </Dashcontent>

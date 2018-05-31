@@ -8,7 +8,7 @@ import Layout from './withSideBarLayout';
 import paypal from '../../../assets/paypal.svg'
 
 
-const AddPaypal = () => {
+const AddPaypalSection = () => {
     return (
         <div className="paypal_account">
             <div className="paypal__header" style={{ position: 'relative'}}>
@@ -45,13 +45,15 @@ const Account = () => {
             <Layout.LayoutWithSideBar>
 
                 <Layout.MainContent>
+
                     <Resume />
+
                 </Layout.MainContent>
 
                 <Layout.Sidebar>
 
                     <SideSection title="Do you have paypal account ?">
-                        <AddPaypal/>
+                        <AddPaypalSection/>
                     </SideSection>
 
                     <SideSection title="Last activies">
