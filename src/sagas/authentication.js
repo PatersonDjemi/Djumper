@@ -53,7 +53,10 @@ function* loginStart(action) {
         // l erreur ici correspond à l´erreur que j envois depuis mon server
         console.log('error on the request', e)
         // user not authenticated
-        yield put({type: 'UNAUTH_USER', error: e.data})
+        if ( !e.data ) {
+            return yield put({type: 'UNAUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
+        }
+        return yield put({type: 'UNAUTH_USER', error: e.data})
     }
 }
 
@@ -116,7 +119,11 @@ function* signupStart(action) {
         // l erreur ici correspond à l´erreur que j envois depuis mon server
         console.log('error on the request', e)
         // user not authenticated
-        yield put({type: 'UNAUTH_USER', error: e.data})
+        if (!e.data) {
+            // if the request is on the request
+            return yield put({type: 'UNAUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
+        }
+        return yield put({type: 'UNAUTH_USER', error: e.data })
     }
 }
 

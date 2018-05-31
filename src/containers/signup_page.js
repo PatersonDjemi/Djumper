@@ -38,6 +38,8 @@ class SignUp extends Component  {
         // invoks après que le component ait recu les props
         // ici nextProps = this.props
         const { authUser, history } = nextProps;
+
+        console.log('authenctication', authUser.authenticated)
         
         if ( authUser.authenticated === true ) {
         //     // on redirige ici vers le dashboard
