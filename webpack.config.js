@@ -23,7 +23,7 @@ module.exports = {
     module: {
         rules: [
             {
-                use: "babel-loader",
+                use: ["babel-loader"],
                 test: /\.js$/,
                 exclude: path.resolve(__dirname, "node_modules")
             },

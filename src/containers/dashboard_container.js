@@ -8,7 +8,6 @@ import { tellToLogin } from '../actions/index'
 
 
 
-
 class DashboardContainer extends Component {
     constructor(props) {
         super(props);
@@ -22,26 +21,39 @@ class DashboardContainer extends Component {
         }
     }
     
+
+    componentDidMount() {
+        console.log('my component is mounted ')
+    }
+
+
+    componentWillUnmount(){
+        console.log('my component will unmount')
+    }
+
+
     plzloginfirst() {
         // update de reducer in oder to print a message
         // later in the login component
         this.props.tellToLogin();
+
+        return (
+            <Redirect from={this.props.match.url} to={`/login`} />     
+        )
     }
 
 
     render() {
 
-        const { authenticated } = this.props.auth_user;
+        const { auth_user, path } = this.props;
+
         // change later the condition to check if authenticated is true
-        if (!authenticated) { 
-            return <Route path={this.props.match.path} component={Dashboard} />
-        }
 
-        this.plzloginfirst();
+        return <Route path={this.props.path} render={ props => {
+          return !auth_user.authenticated ?
+            React.createElement(Dashboard, {...props, ...auth_user}) : this.plzloginfirst()
+        }} />
 
-        return (
-            <Redirect from={this.props.match.url} to={`/login`} />     
-        )
     }
 
 }
