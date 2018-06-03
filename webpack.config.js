@@ -16,7 +16,7 @@ module.exports = {
         vendor: VENDOR_LIBS
     },
     output: {
-        filename: "[name].[chunkHash].js",
+        filename: "[name].[hash].js",
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
@@ -24,7 +24,7 @@ module.exports = {
         rules: [
             {
                 use: ["babel-loader"],
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: path.resolve(__dirname, "node_modules")
             },
             {

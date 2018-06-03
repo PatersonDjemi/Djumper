@@ -1,7 +1,7 @@
 // all the router stuff of the app
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-
+import { hot } from 'react-hot-loader'
 
 
 
@@ -37,4 +37,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default hot(module)(App);
