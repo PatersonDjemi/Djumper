@@ -90,34 +90,3 @@ module.exports = {
 
 // devServer : historyApiFallback permet de dire à webpack de traquer l history du browser afin de pouvoir naviguer d une page à une autre
 
-
-
- /*
-resolve: {
-    alias: {
-        '../../theme.config$': path.join(__dirname, 'My-semantic-theme/theme.config')
-    }
-},
-*/
-// bundle: ['babel-polyfill', './src/index.js'] babel-polyfill permet d utiliser les generator et les await feature
-
-//bundle: './src/index.js',
-
-/*
-                    use: [  {
-                                loader:'css-loader',
-                                options: {
-                                    sourceMap:tr
-                                }
-                            },
-                            {
-                                loader: 'sass-loader',
-                                options: {
-                                    sourceMap: true
-                                }
-                            },
-                            {
-                                loader: 'less-loader'
-                            }
-                        ]
- */
