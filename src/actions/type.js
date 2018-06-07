@@ -7,3 +7,5 @@ export const AUTO_LOGIN = 'AUTO_LOGIN';
 export const TELL_TO_LOGIN_FIRST = 'UNAUTH_USER';
 
 export const LOG_OUT = 'UNAUTH_USER';
+
+export const FETCHING_ARTICLES = 'FETCHING ARTICLES';

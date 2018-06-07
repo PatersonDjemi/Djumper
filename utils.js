@@ -14,3 +14,23 @@ export function extractResponse(response) {
 
     return data
 }
+
+export class ErrorOnRequest {
+    constructor(ob, msg) {
+        this.ob = ob;
+        this.msg = msg;
+    }
+}
+
+export function handleErrorOnRequest(ob) {
+    if ( ob.response ) {
+        // server respond but with a bad status code
+        throw new ErrorOnRequest(ob.response, 'response back but not was expected');
+    }
+        // may be pb of connexion
+    else if (ob.request) {
+        throw new ErrorOnRequest(ob.request, 'request was made but no response received');
+    }
+}
+
+ 

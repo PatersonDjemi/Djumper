@@ -45,26 +45,6 @@ class DashNavi extends Component {
         this.checkons = this.checkons.bind(this);
     }
 
-    toggleDropdown(event) {
-        event.stopPropagation();
-        console.log('this is my event', event.target);
-        if ( this.state.dropdownProfil ) {
-            return this.setState({dropdownProfil:false});
-        }
-        return this.setState({dropdownProfil: true});
-    }
-
-    checkons(event) {
-        event.stopPropagation();
-        console.log('event', e.target);
-        console.log('event', e.target.parentNode);
-    }
-
-    callLogOut() {
-        //pass the history here as an argument
-        this.props.logUserOut(history)
-    }
-
     render() {
         return (
             <Container fluid  className="dashboard__nav">
@@ -82,15 +62,7 @@ class DashNavi extends Component {
                                         onClick={this.toggleDropdown}>
                                         <div className="profil__pic">
                                         </div>
-                                        { this.state.dropdownProfil && 
-                                           ( <DropDownComponent Top={'5'} Right={'-5'}>
-                                                <ul className="profil__menu">
-                                                    <li onClick={this.checkons} className="profil__menu__list"> Menu 1 </li>
-                                                    <li className="profil__menu__list"> Menu 2 </li>
-                                                    <li className="profil__menu__list"> Deconnexion </li>
-                                                </ul>
-                                            </DropDownComponent> )
-                                        }
+                                        { this.state.dropdownProfil && this.renderDropdowMenuUser() }
                                     </div>
                                 </li>
                             </ul>
@@ -100,6 +72,41 @@ class DashNavi extends Component {
             </Container>
         )
     }
+
+    toggleDropdown(event) {
+        event.stopPropagation();
+        console.log('this is my event', event.target);
+        if ( this.state.dropdownProfil ) {
+            return this.setState({dropdownProfil:false});
+        }
+        return this.setState({dropdownProfil: true});
+    }
+
+    checkons(event) {
+        // just for some ttest here
+        event.stopPropagation();
+        console.log('event', e.target);
+    }
+
+    callLogOut(event) {
+        event.stopPropagation();
+        console.log('event', event.target);
+        //pass the history here as an argument
+        this.props.logUserOut(history)
+    }
+
+    renderDropdowMenuUser() {
+        return (
+            <DropDownComponent Top={'5'} Right={'-5'}>
+                <ul className="profil__menu">
+                    {/* <li onClick={this.checkons} className="profil__menu__list"> Menu 1 </li>
+                    <li className="profil__menu__list"> Menu 2 </li> */}
+                    <li onClick={this.callLogOut} className="profil__menu__list"> Deconnexion </li>
+                </ul>
+            </DropDownComponent>
+        )
+    };
+
 }
 
 

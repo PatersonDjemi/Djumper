@@ -56,3 +56,13 @@ export function logUserOut(history) {
     }
 }
 
+
+/*
+    api call to fetch articles
+*/
+
+export function fetchArticles() {
+    return {
+        type: types.FETCHING_ARTICLES
+    }
+}
