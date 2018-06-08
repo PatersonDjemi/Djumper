@@ -32,7 +32,7 @@ function* loginStart(action) {
     try {
         response = yield call(loginStartAsync, email, password);
 
-        const data = extractResponse(response);
+        const data = extractResponse(response, true);
         console.log('response data', data );
 
         yield put({type: 'AUTH_USER', payload: data});
@@ -86,7 +86,7 @@ function* signupStart(action) {
     try {
         response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
     // extract data and save token
-        const data = extractResponse(response)
+        const data = extractResponse(response, true)
         console.log('response data', response );
 
         yield put({type: 'AUTH_USER', payload: data});
@@ -142,7 +142,7 @@ function* autoLogin(action) {
     try {
         response = yield call(autoLoginAsync, token);
 
-        const data = extractResponse(response);
+        const data = extractResponse(response, true);
         console.log('response data', data );
 
         yield put({type: 'AUTH_USER'});

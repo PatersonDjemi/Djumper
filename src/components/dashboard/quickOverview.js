@@ -7,6 +7,7 @@ import transfer from '../../../assets/transfer-money.svg'
 import request from '../../../assets/get-money.svg'
 
 import { fetchArticles } from '../../actions'
+import articlesReducer from '../../reducers/articles_reducer';
 
 
 const Overview = (props) => {
@@ -37,19 +38,37 @@ class QuickOverview extends Component {
 
         }
     }
-    
-    static mapStateToProps(state) {
-        return {
 
-        };
+    static mapStateToProps({ articlesReducer }) {
+        return { 
+            items: articlesReducer.articles
+         };
     }
 
     componentDidMount() {
-        // action for fetching data from the server
-        this.props.fetchArticles()
+        if (!this.props.items) {
+            // action for fetching data from the server
+            this.props.fetchArticles()
+        }
     }
 
     render() {
+
+        if ( !this.props.items) {
+            return null;
+        }
+
+        let { items } = this.props;
+        let amounts = items.reduce((acc, currentValue) => {
+            return parseFloat(acc) + parseFloat(currentValue.amount)
+        }, 0);
+
+        let nextPayment = items.reduce((acc, currentValue) => {
+           return parseFloat(acc) + (parseFloat(currentValue.amount) / parseFloat(currentValue.nberOfMonth));
+        }, 0)
+
+        let lastPayment = 0;
+
         return (
             <Container fluid>
                 <Grid stackable centered>
@@ -63,19 +82,19 @@ class QuickOverview extends Component {
                                 <Overview
                                     mainTitle="Total Balance"
                                     secondTitle="montant disponible"
-                                    amount="10 000"
+                                    amount={amounts}
                                     devise="EUR"
                                     src={wallet} />
                                 <Overview
-                                    mainTitle="Last Request"
+                                    mainTitle="Last Payment"
                                     secondTitle="am 10.12.2018"
-                                    amount="1 038"
+                                    amount={lastPayment}
                                     devise="EUR"
                                     src={request} />
                                 <Overview
-                                    mainTitle="Next Request"
+                                    mainTitle="Next Payment"
                                     secondTitle="am 10.08.2018"
-                                    amount="3 038"
+                                    amount={nextPayment}
                                     devise="EUR"
                                     src={transfer} />
                             </div>

@@ -1,10 +1,10 @@
 import update from 'immutability-helper';
 
-export default function articles(state={}, action) {
+export default function articlesReducer(state={}, action) {
     const { type, payload } = action;
 
     switch (type) {
-        case 'FETCH_ALL_ARTICLES':
+        case 'ARTICLES_FETCHED':
             return update(state, { articles: { $set: payload } });
         default:
             return state;

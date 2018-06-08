@@ -7,12 +7,22 @@ function saveToken (token) {
     console.warn('localstorage is not define here')
 }
 
-export function extractResponse(response) {
+export function extractResponse(response, save ) {
     const { data, headers } = response;
     //save token on Localstorage
-    saveToken(headers['x-auth']);
+    if (save) {
+        saveToken(headers['x-token']);
+    }
 
     return data
+}
+
+export function takeTokenFromLocalStorage(){
+    if (typeof(Storage) !== undefined) {
+        return localStorage.getItem("token");
+     }
+     // afficher un warning
+     console.warn('localstorage is not define here')    
 }
 
 export class ErrorOnRequest {
