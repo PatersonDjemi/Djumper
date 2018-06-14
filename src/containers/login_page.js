@@ -3,16 +3,16 @@ import {Container, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { FormInput } from '../reusable/inputs';
-import Mail from '../../assets/Mail.svg';
-import Password from '../../assets/locked.svg'
+import { FormInput } from '@reusable/inputs';
+import Mail from '@assets/Mail.svg';
+import Password from '@assets/locked.svg'
 
 
-import LoginForm from '../components/loginForm'
-import Loader from '../reusable/Loader'
-import ShowError from '../components/showError'
+import LoginForm from '@components/loginForm'
+import Loader from '@reusable/Loader'
+import ShowError from '@components/showError'
 
-import { loginStart } from '../actions'
+import { loginStart } from '@actions'
 
 
 class LoginPage extends Component {

@@ -1,88 +1,80 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {Container, Grid, Header, Image, Button } from 'semantic-ui-react'
 
-import bank from '../../assets/bank.svg'
-import credit from '../../assets/credit-card.svg'
-import paypal from '../../assets/paypal.svg'
-import plane from '../../assets/aeroplane.svg'
-import shirt from '../../assets/shirt.svg'
+
+import plane from '@assets/aeroplane.svg'
 
 import { Products } from './dashboard/articles'
 
 
 
 
-const Resume = (props) => {
-    return (
-        <Container fluid >
-            <Grid stackable >
-                <Grid.Column width={14}>
+class Resume extends Component {
 
-                    <div className="last__transactions" style={{ position: 'relative'}}>
-                       <Header as="h3" content="Products reviews" className="last__activities__title" />
-                        <div className="last__activities__description">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
+    static mapStateToProps(state) {
+        return {
+            items: state.articlesReducer
+        }
+    }
+
+    renderProductsReview() {
+
+    const { articles } = this.props.items;
+
+    if ( articles ) {
+        return articles.map(article => {
+            return <Products
+                mois="Avr"
+                date="29/18" 
+                src={plane}
+                receiver={article.seller}
+                type='Transport'
+                amountDevise={article.devise}
+                amount={article.amount}
+                instalment={`${article.nberOfMonth} months`}
+                status={article.status}
+                key={article._id}
+                percentage="50"                                        
+                color="#2196F3" 
+             />
+        })
+    }
+
+    return null;
+
+    }
+
+    render() {
+        console.log('these items ', this.props.items)
+        return (
+            <Container fluid >
+                <Grid stackable >
+                    <Grid.Column width={14}>
+    
+                        <div className="last__transactions" style={{ position: 'relative'}}>
+                           <Header as="h3" content="Products reviews" className="last__activities__title" />
+                            <div className="last__activities__description">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
+                            </div>
+                            <span className=" view_all"> View all </span>
                         </div>
-                        <span className=" view_all"> View all </span>
-                    </div>
-                    <Grid stackable centered className="main__transaction" >
-                        <Products mois="Avr"
-                            date="29/18" 
-                            src={plane}
-                            receiver="Lufthansa"
-                            type="Transport"
-                            amountDevise="$"
-                            amount="500.00"                                        
-                            instalment="5 months"
-                            status="not completed" 
-                            percentage="50"                                        
-                            color="#2196F3" />
-                        <Products mois="Jan"
-                            date="11/18" 
-                            src={shirt}
-                            receiver="Puma"
-                            type="Clothes"
-                            amountDevise="$"
-                            amount="100.00"
-                            instalment="2 months"
-                            status="not completed"
-                            percentage="75"
-                            color="#2196F3" />
-    {/* les transactions d envois d argents n ont pas de periode time */}
-                        <Products mois="Dec"
-                            date="15/18" 
-                            src={plane}
-                            receiver="Djumper AG"
-                            type="Transport"
-                            amountDevise="$"
-                            amount="75.00"
-                            instalment="7 months"
-                            status="not completed"
-                            percentage="25"
-                            color="#2196F3" />
-                        <Products mois="Sept"
-                            date="30/18" 
-                            src={shirt}
-                            receiver="Adidas"
-                            type="Clothes"
-                            amountDevise="$"
-                            amount="375.00"
-                            instalment="1 month"
-                            status="completd"
-                            percentage="100"                                        
-                            color="#00BCD4" />
-                    </Grid>
+                        <Grid stackable centered className="main__transaction" >
+                            { this.renderProductsReview() }
+                        </Grid>
+    
+                    </Grid.Column>
+                </Grid>
+            </Container>
+        );
+    }
 
-                </Grid.Column>
-            </Grid>
-        </Container>
-    );
 }
 
 //TODO trouver ou afficher la liste des differents comptes connectes à djumper
 //<Header as="h3" content="My accounts (a trouver l endroit ou afficher ca)" className="addCardtitle" />
 
-export default Resume;
+export default connect(Resume.mapStateToProps)(Resume);
 
 
 

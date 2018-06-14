@@ -3,15 +3,15 @@ import { reduxForm, Field } from 'redux-form';
 import validator from 'validator';
 
 
-import {FormInput, FormInputPassword, CheckInput} from '../reusable/inputs'
+import {FormInput, FormInputPassword, CheckInput} from '@reusable/inputs'
 
 
-import Mail from '../../assets/Mail.svg';
-import User from '../../assets/User.svg';
-import Password from '../../assets/locked.svg'
+import Mail from '@assets/Mail.svg';
+import User from '@assets/User.svg';
+import Password from '@assets/locked.svg'
 
 
-import { valLength , isEmail, require } from '../reusable/forms';
+import { valLength , isEmail, require } from '@reusable/forms';
 
 
 class SignupForm extends Component {

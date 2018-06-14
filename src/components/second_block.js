@@ -1,10 +1,12 @@
 import React from 'react'
 import { Grid, Container, Button, Header } from 'semantic-ui-react'
 
+
+import CreateAccont from '@assets/avatar.svg';
+import Confirm from '@assets/confirm.svg';
+import Enjoy from '@assets/flight.svg';
+
 import CardBlock from './card_block'
-import CreateAccont from '../../assets/avatar.svg';
-import Confirm from '../../assets/confirm.svg';
-import Enjoy from '../../assets/flight.svg';
 
 
 const H_Second = () => {

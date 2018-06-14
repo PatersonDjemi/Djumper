@@ -7,10 +7,10 @@ import { hot } from 'react-hot-loader'
 
 import Webpages from './webpages'
 import Dashboard from './dashboard'
-import DashboardContainer from '../containers/dashboard_container'
-import Signup from '../containers/signup_page'
-import Login from '../containers/login_page'
-import Modal from '../reusable/modal'
+import DashboardContainer from '@containers/dashboard_container'
+import Signup from '@containers/signup_page'
+import Login from '@containers/login_page'
+import Modal from '@reusable/modal'
 
 
 

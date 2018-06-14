@@ -2,10 +2,10 @@ import React from 'react';
 import { Image } from 'semantic-ui-react'
 
 import QuickOverview from './quickOverview'
-import Resume from '../resume';
+import Resume from '@components/resume';
 import Layout from './withSideBarLayout';
 
-import paypal from '../../../assets/paypal.svg'
+import paypal from '@assets/paypal.svg'
 
 
 const AddPaypalSection = () => {

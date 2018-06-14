@@ -20,6 +20,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
+    resolve: {
+        alias: {
+            '@assets': path.resolve(__dirname, './assets'),
+            '@actions' : path.resolve(__dirname, './src/actions'),
+            '@components': path.resolve(__dirname, './src/components'),
+            '@containers': path.resolve(__dirname, './src/containers'),
+            '@reusable': path.resolve(__dirname, './src/reusable'),
+        }
+    },
     module: {
         rules: [
             {

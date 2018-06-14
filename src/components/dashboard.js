@@ -2,9 +2,9 @@ import React,  { Component} from 'react';
 import {Container, Grid, Header, Image } from 'semantic-ui-react';
 import { Route, Redirect, Switch } from 'react-router-dom'
 
-import user from '../../assets/lnr-user.svg'
+import user from '@assets/lnr-user.svg'
 
-import Loader from '../reusable/Loader'
+import Loader from '@reusable/Loader'
 
 // my components here
 import Dashmenu from './dashmenu'

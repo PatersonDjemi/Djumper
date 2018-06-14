@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 
 
 import { FormInput } from '../reusable/inputs';
-import Mail from '../../assets/Mail.svg';
-import Password from '../../assets/locked.svg';
+import Mail from '@assets/Mail.svg';
+import Password from '@assets/locked.svg';
 
-import { valLength , isEmail, require } from '../reusable/forms';
+import { valLength , isEmail, require } from '@reusable/forms';
 
 
 

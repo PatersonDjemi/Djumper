@@ -1,5 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
-import * as types from '../actions/type';
+import * as types from '@actions/type';
 import config from '../../config'
 import axios from 'axios'
 

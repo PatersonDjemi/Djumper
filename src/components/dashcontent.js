@@ -7,7 +7,7 @@ import { Container, Grid, Button, Image } from 'semantic-ui-react'
 import Transacion from './transactions'
 import QuickOverview from './dashboard/quickOverview'
 import DashNavigation from './dashboard/dashNavi'
-import Loader from '../reusable/Loader'
+import Loader from '@reusable/Loader'
 
 
 

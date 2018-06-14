@@ -58,6 +58,7 @@ class QuickOverview extends Component {
             return null;
         }
 
+        // eviter de faire les calculations ici. voir ce qui peut etre sauvergardé ds la base de donnée.
         let { items } = this.props;
         let amounts = items.reduce((acc, currentValue) => {
             return parseFloat(acc) + parseFloat(currentValue.amount)

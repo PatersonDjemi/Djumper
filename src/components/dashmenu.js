@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import { Header, Image } from 'semantic-ui-react'
 
-import plus from '../../assets/lnr-plus-circle.svg'
-import confirm from '../../assets/lnr-checkmark-circle.svg'
-import account from '../../assets/account.svg'
-import transactions from '../../assets/euro.svg'
-import artciles from '../../assets/price-tag.svg'
-import sendmoney from '../../assets/send-money.svg'
-import checkbank from '../../assets/check.svg'
-import finduser from '../../assets/collaboration.svg'
-import settings from '../../assets/settings.svg'
-import help from '../../assets/info.svg'
+import plus from '@assets/lnr-plus-circle.svg'
+import confirm from '@assets/lnr-checkmark-circle.svg'
+import account from '@assets/account.svg'
+import transactions from '@assets/euro.svg'
+import artciles from '@assets/price-tag.svg'
+import sendmoney from '@assets/send-money.svg'
+import checkbank from '@assets/check.svg'
+import finduser from '@assets/collaboration.svg'
+import settings from '@assets/settings.svg'
+import help from '@assets/info.svg'
 
 
 

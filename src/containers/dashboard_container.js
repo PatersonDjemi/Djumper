@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import {Link, Route, Redirect } from 'react-router-dom';
 
 
-import Dashboard from '../components/dashboard';
-import { tellToLogin } from '../actions/index'
+import Dashboard from '@components/dashboard';
+import { tellToLogin } from '@actions'
 
 
 

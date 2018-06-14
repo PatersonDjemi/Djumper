@@ -5,16 +5,16 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom';
 import { Container, Grid, Header} from 'semantic-ui-react'
 
-import Mail from '../../assets/Mail.svg';
-import User from '../../assets/User.svg';
-import Password from '../../assets/locked.svg'
+import Mail from '@assets/Mail.svg';
+import User from '@assets/User.svg';
+import Password from '@assets/locked.svg'
 
-import {FormInput, CheckInput} from '../reusable/inputs'
-import SignupForm from '../components/signupForm'
-import Loader from '../reusable/Loader'
-import ShowError from '../components/showError'
+import {FormInput, CheckInput} from '@reusable/inputs'
+import SignupForm from '@components/signupForm'
+import Loader from '@reusable/Loader'
+import ShowError from '@components/showError'
 
-import { signupStart } from '../actions/index'
+import { signupStart } from '@actions/index'
 
 
 
