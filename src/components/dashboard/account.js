@@ -37,16 +37,16 @@ const SideSection = (props) => {
     );
 }
 
-const Account = () => {
+const Account = (props) => {
     return (
         <div>
-            <QuickOverview />
+            <QuickOverview theItems={props.theItems} />
 
             <Layout.LayoutWithSideBar>
 
                 <Layout.MainContent>
 
-                    <Resume />
+                    <Resume theItems={props.theItems} />
 
                 </Layout.MainContent>
 

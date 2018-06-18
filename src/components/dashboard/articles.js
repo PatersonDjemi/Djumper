@@ -27,7 +27,7 @@ export const Products = (props) => {
                 </div>
             </Grid.Column>
             <Grid.Column width={4}>
-                <div className="transaction__amount"> { `${props.amountDevise} ${props.amount}` } </div>
+                <div className="transaction__amount"> { ` ${props.amount} ${props.amountDevise} ` } </div>
                 <div className="transaction__instalment"> rate: { props.instalment }</div>
             </Grid.Column>
             <Grid.Column width={4} className="transaction__evolution">

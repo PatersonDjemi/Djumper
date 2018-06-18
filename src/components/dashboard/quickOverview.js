@@ -6,8 +6,6 @@ import wallet from '../../../assets/wallet.svg'
 import transfer from '../../../assets/transfer-money.svg'
 import request from '../../../assets/get-money.svg'
 
-import { fetchArticles } from '../../actions'
-import articlesReducer from '../../reducers/articles_reducer';
 
 
 const Overview = (props) => {
@@ -31,82 +29,60 @@ const Overview = (props) => {
 }
 
 
-class QuickOverview extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const QuickOverview = ({ theItems }) => {
 
-        }
+    if ( !theItems ) {
+        return null;
     }
 
-    static mapStateToProps({ articlesReducer }) {
-        return { 
-            items: articlesReducer.articles
-         };
-    }
+    // eviter de faire les calculations ici. voir ce qui peut etre sauvergardé ds la base de donnée.
+    let amounts = theItems.reduce((acc, currentValue) => {
+        return parseFloat(acc) + parseFloat(currentValue.amount)
+    }, 0);
 
-    componentDidMount() {
-        if (!this.props.items) {
-            // action for fetching data from the server
-            this.props.fetchArticles()
-        }
-    }
+    let nextPayment = theItems.reduce((acc, currentValue) => {
+        return parseFloat(acc) + (parseFloat(currentValue.amount) / parseFloat(currentValue.nberOfMonth));
+    }, 0)
 
-    render() {
+    let lastPayment = 0;
 
-        if ( !this.props.items) {
-            return null;
-        }
+    return (
+        <Container fluid>
+            <Grid stackable centered>
+                <Grid.Column width={15}>
+                    <section>   
+                        <div className="quick_overview">
+                            Quick Overview
+                        </div>
 
-        // eviter de faire les calculations ici. voir ce qui peut etre sauvergardé ds la base de donnée.
-        let { items } = this.props;
-        let amounts = items.reduce((acc, currentValue) => {
-            return parseFloat(acc) + parseFloat(currentValue.amount)
-        }, 0);
+                        <div className="overview">
+                            <Overview
+                                mainTitle="Total Balance"
+                                secondTitle="montant disponible"
+                                amount={amounts}
+                                devise="EUR"
+                                src={wallet} />
+                            <Overview
+                                mainTitle="Last Payment"
+                                secondTitle="am 10.12.2018"
+                                amount={lastPayment}
+                                devise="EUR"
+                                src={request} />
+                            <Overview
+                                mainTitle="Next Payment"
+                                secondTitle="am 10.08.2018"
+                                amount={nextPayment}
+                                devise="EUR"
+                                src={transfer} />
+                        </div>
 
-        let nextPayment = items.reduce((acc, currentValue) => {
-           return parseFloat(acc) + (parseFloat(currentValue.amount) / parseFloat(currentValue.nberOfMonth));
-        }, 0)
+                    </section>  
+                </Grid.Column>
+            </Grid>    
+        </Container>    
 
-        let lastPayment = 0;
+    )
 
-        return (
-            <Container fluid>
-                <Grid stackable centered>
-                    <Grid.Column width={15}>
-                        <section>   
-                            <div className="quick_overview">
-                                Quick Overview
-                            </div>
-    
-                            <div className="overview">
-                                <Overview
-                                    mainTitle="Total Balance"
-                                    secondTitle="montant disponible"
-                                    amount={amounts}
-                                    devise="EUR"
-                                    src={wallet} />
-                                <Overview
-                                    mainTitle="Last Payment"
-                                    secondTitle="am 10.12.2018"
-                                    amount={lastPayment}
-                                    devise="EUR"
-                                    src={request} />
-                                <Overview
-                                    mainTitle="Next Payment"
-                                    secondTitle="am 10.08.2018"
-                                    amount={nextPayment}
-                                    devise="EUR"
-                                    src={transfer} />
-                            </div>
-
-                        </section>  
-                    </Grid.Column>
-                </Grid>    
-            </Container>    
-    
-        )
-    }
 };
 
-export default connect(QuickOverview.mapStateToProps, { fetchArticles })(QuickOverview);
+export default QuickOverview;

@@ -1,6 +1,7 @@
 import React,  { Component} from 'react';
 import {Container, Grid, Header, Image } from 'semantic-ui-react';
 import { Route, Redirect, Switch } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 import user from '@assets/lnr-user.svg'
 
@@ -18,6 +19,10 @@ import Settings from './dashboard/settings'
 import Help from './dashboard/help'
 
 
+// actions creators
+import { fetchArticles } from '@actions'
+
+
 
 class Dashboard extends Component {
     constructor(props) {
@@ -28,20 +33,41 @@ class Dashboard extends Component {
         }
     }
 
+    static mapStateToProps({ articlesReducer }) {
+        return {
+            items: articlesReducer.articles
+        }
+    }
+
+    static getDerivedStateFromProps(nextProps) { // can´t access the this.props here
+        if ( nextProps.items ) {
+            // returns an object that updates the state
+            return { isLoading: false };
+        }
+
+        return null;
+
+    }
+
     componentDidMount() {
         // fetch data from the server here
+        if (!this.props.items) {
+            // action for fetching data from the server
+            this.props.fetchArticles()
+        }
     }
 
     render() {
 
         const {  url, path } = this.props.match;
+        const theItems = this.props.items ? this.props.items : null;
 
         return (
             <div className="dashboard">
                <Route path={path} component={Dashmenu} />
-                <Dashcontent loading={this.state.isLoading} >
+                <Dashcontent loading={this.state.isLoading} items={theItems} >
                     <Switch>
-                        <Route path={`${url}/account`} component={Account} />
+                        <Route path={`${url}/account`} render={ props => React.createElement(Account, { ...props, theItems })} />
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
                         <Route path={`${url}/sendmoney`} component={SendMoney} />
@@ -57,7 +83,7 @@ class Dashboard extends Component {
 
 }
 
-export default Dashboard;
+export default connect(Dashboard.mapStateToProps, { fetchArticles })(Dashboard);
 
     // bon à savoir
 // en ajoutant push ds le redirect component, on navigue vers l endroit souhaité, cependant on peut faire un retour en arrière en cliquant sur precédant

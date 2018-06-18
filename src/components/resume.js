@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {Container, Grid, Header, Image, Button } from 'semantic-ui-react'
 
 
@@ -8,22 +7,11 @@ import plane from '@assets/aeroplane.svg'
 import { Products } from './dashboard/articles'
 
 
+function renderProductsReview(theItems) {
 
+    if ( theItems ) {
 
-class Resume extends Component {
-
-    static mapStateToProps(state) {
-        return {
-            items: state.articlesReducer
-        }
-    }
-
-    renderProductsReview() {
-
-    const { articles } = this.props.items;
-
-    if ( articles ) {
-        return articles.map(article => {
+        return theItems.map(article => {
             return <Products
                 mois="Avr"
                 date="29/18" 
@@ -45,36 +33,37 @@ class Resume extends Component {
 
     }
 
-    render() {
-        console.log('these items ', this.props.items)
-        return (
-            <Container fluid >
-                <Grid stackable >
-                    <Grid.Column width={14}>
-    
-                        <div className="last__transactions" style={{ position: 'relative'}}>
-                           <Header as="h3" content="Products reviews" className="last__activities__title" />
-                            <div className="last__activities__description">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
-                            </div>
-                            <span className=" view_all"> View all </span>
+
+const Resume = ({ theItems }) => {
+
+    return (
+        <Container fluid >
+            <Grid stackable >
+                <Grid.Column width={14}>
+
+                    <div className="last__transactions" style={{ position: 'relative'}}>
+                        <Header as="h3" content="Products reviews" className="last__activities__title" />
+                        <div className="last__activities__description">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                         </div>
-                        <Grid stackable centered className="main__transaction" >
-                            { this.renderProductsReview() }
-                        </Grid>
-    
-                    </Grid.Column>
-                </Grid>
-            </Container>
-        );
-    }
+                        <span className=" view_all"> View all </span>
+                    </div>
+                    <Grid stackable centered className="main__transaction" >
+                        { renderProductsReview(theItems) }
+                    </Grid>
+
+                </Grid.Column>
+            </Grid>
+        </Container>
+    );
+
 
 }
 
 //TODO trouver ou afficher la liste des differents comptes connectes à djumper
 //<Header as="h3" content="My accounts (a trouver l endroit ou afficher ca)" className="addCardtitle" />
 
-export default connect(Resume.mapStateToProps)(Resume);
+export default Resume;
 
 
 
