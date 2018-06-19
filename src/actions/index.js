@@ -51,8 +51,8 @@ export function tellToLogin() {
 */
 export function logUserOut(history) {
     return {
-        type: types.LOG_OUT,
-        history
+        type: types.LOG_OUT_START,
+        history: history
     }
 }
 

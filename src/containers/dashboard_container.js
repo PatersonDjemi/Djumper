@@ -17,18 +17,18 @@ class DashboardContainer extends Component {
 
     static mapStateToProps( {authentication} ) {
         return {
-            auth_user: authentication
+            userAuth: authentication.authenticated
         }
     }
     
 
     componentDidMount() {
-        console.log('my component is mounted ')
+        console.log('dashboard container is mounted ')
     }
 
 
     componentWillUnmount(){
-        console.log('my component will unmount')
+        console.log('dashboard container will unmount')
     }
 
 
@@ -45,14 +45,14 @@ class DashboardContainer extends Component {
 
     render() {
 
-        const { auth_user, path } = this.props;
+        const { userAuth, path } = this.props;
 
         // change later the condition to check if authenticated is true
-
-        return <Route path={this.props.path} render={ props => {
-          return !auth_user.authenticated ?
-            React.createElement(Dashboard, {...props, ...auth_user}) : this.plzloginfirst()
-        }} />
+        return ( 
+            <Route path={this.props.path}  render={ props => {
+                return userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.plzloginfirst()  } }
+            /> 
+        );
 
     }
 

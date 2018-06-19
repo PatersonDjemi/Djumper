@@ -55,9 +55,15 @@ class Dashboard extends Component {
             // action for fetching data from the server
             this.props.fetchArticles()
         }
+        console.log('dashboard mounted')
+    }
+
+    componentWillUnmount() {
+        console.log('dashboard unmounting')
     }
 
     render() {
+        console.log('props of dashboard ', this.props);
 
         const {  url, path } = this.props.match;
         const theItems = this.props.items ? this.props.items : null;
@@ -67,7 +73,7 @@ class Dashboard extends Component {
                <Route path={path} component={Dashmenu} />
                 <Dashcontent loading={this.state.isLoading} items={theItems} >
                     <Switch>
-                        <Route path={`${url}/account`} render={ props => React.createElement(Account, { ...props, theItems })} />
+                        <Route path={`${url}/account`} render={ props => <Account {...props} theItems={theItems} />} />
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
                         <Route path={`${url}/sendmoney`} component={SendMoney} />

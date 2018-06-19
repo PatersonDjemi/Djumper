@@ -160,3 +160,47 @@ function* autoLogin(action) {
 export function* startAutoLogin() {
     yield takeLatest(types.AUTO_LOGIN, autoLogin)
 }
+
+
+/*********
+ * 
+ * 
+ *  login out
+ * 
+ * 
+ *  ****************/
+
+ function* logOutUserAsync(token) {
+    const endPoint = `${config.baseUrl}/user/logout`;
+    return yield axios.delete(endPoint, { headers: { 'x-token': token } } )
+        .then(response => response)
+        .catch(error => handleErrorOnRequest(error));
+ }
+
+ function* logOutUser({ history }) {
+    const token = localStorage.getItem('token');
+    
+    try {
+        let response = yield call(logOutUserAsync, token);
+        localStorage.removeItem('token');
+        yield history.push('/');
+        yield put({ type: 'UNAUTH_USER' });
+    }
+    catch(error) {
+        console.log('error on the request', error)
+        // // user not authenticated
+        // if (!error.ob.data) {
+        //     // if the request is on the request
+        //     return yield put({type: 'AUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
+        // }
+        // return yield put({type: 'AUTH_USER', error: error.ob.data })
+    }
+ }
+ 
+
+ export function* startLogOutSaga() {
+     yield takeLatest(types.LOG_OUT_START, logOutUser)
+ }
+
+
+ // faire une funtion qui me construit mes endpoints

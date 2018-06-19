@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { Container, Grid, Button, Image } from 'semantic-ui-react'
 
 
@@ -12,21 +12,14 @@ import Loader from '@reusable/Loader'
 
 
 const Dashcontent = (props) => {
-
-    return props.loading ?  (
+    return ( 
         <div className="dashcontent">
-            <DashNavigation/>           
-            <Loader />
+            <Route path={'/dashboard'} component={DashNavigation} />
+            { props.loading ? <Loader /> : props.children   }                    
         </div>
-    ) : (
-        <div className="dashcontent">
-            <DashNavigation/>           
-            { props.children }
-        </div>
-    ) 
- 
+    );
 };
 
 export default Dashcontent;
 
-
+// render nav component with a router

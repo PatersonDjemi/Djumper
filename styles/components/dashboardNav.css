@@ -181,8 +181,6 @@
 
 .component__dropdown {
     position: absolute;
-    top: 5rem;
-    right: -5rem;
     z-index: 999;
     max-width: 30rem;
     min-width: 28rem;
