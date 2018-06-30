@@ -19,18 +19,15 @@ class DashboardContainer extends Component {
         return {
             userAuth: authentication.authenticated
         }
-    }
-    
+    }    
 
     componentDidMount() {
         console.log('dashboard container is mounted ')
     }
 
-
     componentWillUnmount(){
         console.log('dashboard container will unmount')
     }
-
 
     pleaseLoginFirst() {
         // update de reducer in oder to print a message
@@ -42,11 +39,9 @@ class DashboardContainer extends Component {
         )
     }
 
-
     render() {
 
         const { userAuth, path } = this.props;
-
         // change later the condition to check if authenticated is true
         return ( 
             <Route path={this.props.path}  render={ props => {
@@ -57,8 +52,6 @@ class DashboardContainer extends Component {
     }
 
 }
-
-
 
 
 export default connect(DashboardContainer.mapStateToProps, { tellToLogin })(DashboardContainer);

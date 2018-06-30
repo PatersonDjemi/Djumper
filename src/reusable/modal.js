@@ -15,20 +15,20 @@ export class ModalBox extends Component {
     }
 
     componentDidMount() {
-        modal_root.appendChild(this.el)
+        modal_root.appendChild(this.el);
+        modalCard.addEventListener('click', this.props.closeModalBox);
     }
 
     componentWillUnmount() {
         modal_root.removeChild(this.el)
+        modalCard.removeEventListener('click', this.props.closeModalBox);
     }
 
     render() {
-
         return ReactDom.createPortal(
             this.props.children,
             this.el
         )
-
     }
 
 }
