@@ -12,7 +12,7 @@ class DashboardContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.plzloginfirst = this.plzloginfirst.bind(this);
+        this.pleaseLoginFirst = this.pleaseLoginFirst.bind(this);
     }
 
     static mapStateToProps( {authentication} ) {
@@ -32,7 +32,7 @@ class DashboardContainer extends Component {
     }
 
 
-    plzloginfirst() {
+    pleaseLoginFirst() {
         // update de reducer in oder to print a message
         // later in the login component
         this.props.tellToLogin();
@@ -50,7 +50,7 @@ class DashboardContainer extends Component {
         // change later the condition to check if authenticated is true
         return ( 
             <Route path={this.props.path}  render={ props => {
-                return userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.plzloginfirst()  } }
+                return !userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.pleaseLoginFirst()  } }
             /> 
         );
 

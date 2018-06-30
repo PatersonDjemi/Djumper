@@ -3,12 +3,15 @@ import Divider from 'semantic-ui-react';
 import ReactDom from 'react-dom'
 
 const modal_root = document.getElementById('modal_root');
+let modalCard = document.createElement('div');
+modalCard.id = 'modal_div'
 
-class ModalBox extends Component {
+
+export class ModalBox extends Component {
     constructor(props) {
         super(props);
 
-       this.el = document.createElement('div');
+       this.el = modalCard;
     }
 
     componentDidMount() {
@@ -37,7 +40,7 @@ class ModalContent extends Component {
     render() {
         return (
             <ModalBox>
-            <div  className="modal_div">
+
                 <div className="modal_box">
                     <h3 className="modal__header">
                         the header
@@ -50,7 +53,7 @@ class ModalContent extends Component {
                         <span className="modal__submit modal__btn"> submit </span>
                     </div>
                 </div>
-            </div>
+
             </ModalBox>
 
         );
@@ -65,11 +68,9 @@ class Modal extends Component {
 
     render() {
         return (
-            <ModalBox>
-                <ModalContent>
-                    Here content of the modal.!
-                </ModalContent>
-            </ModalBox>
+            <ModalContent>
+
+            </ModalContent>
         );
     }
 }

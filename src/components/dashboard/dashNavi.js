@@ -8,13 +8,14 @@ import message from '@assets/message.svg'
 
 import DropDownComponent from '@reusable/dropdown'
 import Loader from '@reusable/Loader'
+import Modalll, {ModalBox} from '@reusable/modal'
 
 import { logUserOut } from '@actions/index'
 
 
 const MenuItem = (props) => {
     return (
-        <li className="nav__menu__list">
+        <li onClick={props.renderBlock} className="nav__menu__list">
             <div className="menu__block">
                 <div className="menu__block_icons">
                     <Image src={props.src} height="25" width="25" /> 
@@ -39,11 +40,13 @@ class DashNavi extends Component {
         super(props);
         this.state= {
             dropdownProfil: false,
-            showLoader: false
+            showLoader: false,
+            showNotifAndMsg: false
         }
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.callLogOut = this.callLogOut.bind(this);
+        this.showNotifAndMessage = this.showNotifAndMessage.bind(this);
     }
 
     toggleDropdown(event) {
@@ -51,6 +54,7 @@ class DashNavi extends Component {
         if ( this.state.dropdownProfil ) {
             return this.setState({dropdownProfil:false});
         }
+        event.target.focus()
         return this.setState({dropdownProfil: true});
 
     }
@@ -63,14 +67,32 @@ class DashNavi extends Component {
 
     renderDropdowMenuUser() {
         return (
-            <DropDownComponent Top={'1'} Right={'-5'}>
+            <DropDownComponent top={'1.5'} right={'-5'}>
                 <ul className="profil__menu">
+                    <div className="greeting__user">Hi Paterson </div>
+                    <li className="profil__menu__list"> Edit profil </li>
+                    <li className="profil__menu__list"> Invite friend </li>
+                    <li className="profil__menu__list"> Config account </li>
                     <li onClick={this.callLogOut} className="profil__menu__list"> Deconnexion </li>
                 </ul>
             </DropDownComponent>
         )
     };
 
+    showNotifAndMessage() {
+        console.log('hiii')
+        this.setState({showNotifAndMsg: true});
+    }
+
+    renderNotifcationAndMessage() {
+        return (
+            <ModalBox>
+                <div className="notif__msg">
+                    All your news here
+                </div>
+            </ModalBox>
+        );
+    }
     
     render() {
 
@@ -81,6 +103,8 @@ class DashNavi extends Component {
 
                     { this.state.showLoader && <Loader /> }
 
+                    { this.state.showNotifAndMsg && this.renderNotifcationAndMessage()  }
+
                     <Grid.Column width={7} >
                         <Searchbar/>
                     </Grid.Column>
@@ -88,11 +112,11 @@ class DashNavi extends Component {
                     <Grid.Column width={8} >
                         <nav className="headmenu">
                             <ul className="nav__menu">
-                                <MenuItem src={message} nber="5" />
-                                <MenuItem src={notif} nber="3" />
-                                <li className="nav__menu__list" onClick={() => {console.log('i was also click')}}>
+                                {/* <MenuItem src={message} nber="5" /> */}
+                                <MenuItem renderBlock={this.showNotifAndMessage} src={notif} nber="3" />
+                                <li className="nav__menu__list" >
                                     <div className="profil"
-                                        onClick={this.toggleDropdown}>
+                                        onClick={this.toggleDropdown} >
                                         <div className="profil__pic"></div>
                                     </div>
                                 </li>
