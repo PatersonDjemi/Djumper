@@ -33,7 +33,6 @@ class DashboardContainer extends Component {
         // update de reducer in oder to print a message
         // later in the login component
         this.props.tellToLogin();
-
         return (
             <Redirect from={this.props.match.url} to={`/login`} />     
         )
@@ -42,15 +41,12 @@ class DashboardContainer extends Component {
     render() {
 
         const { userAuth, path } = this.props;
-        // change later the condition to check if authenticated is true
         return ( 
             <Route path={this.props.path}  render={ props => {
-                return !userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.pleaseLoginFirst()  } }
+                return userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.pleaseLoginFirst()  } }
             /> 
         );
-
     }
-
 }
 
 

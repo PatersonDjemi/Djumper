@@ -57,15 +57,10 @@ class LoginPage extends Component {
     }
 
     render () {
-
         const loader = this.state.isLoading ? <Loader /> : null;
-
         return (
-
             <div>
-
                 { loader }
-
                 <Container fluid className="login">
                     <div className="login__outside_box">
         
@@ -104,7 +99,6 @@ class LoginPage extends Component {
                     </div>
                 </Container>
             </div>
-
         );
     }
 

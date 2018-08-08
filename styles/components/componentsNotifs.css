@@ -1,0 +1,46 @@
+.notifBlock {
+    display: flex;
+    color: var(--black-color);
+    border-bottom: 1px solid #bbb;
+}
+
+.notifBlock:hover {
+    background-color: aliceblue;
+}
+
+.notifBlock__content {
+    padding: 2rem 1.5rem 2rem;
+}
+
+.notifBlock__content__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notifBlock__content__from {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.notif__time {
+    color: var(--cyan-middle);
+}
+
+.notifBlock__content__title {
+    padding-top: .7rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--blue-dark);    
+}
+
+.notifBlock__content__text {
+    padding: .4rem 0rem .5rem;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.show_more_less {
+    cursor: pointer;
+    color: var(--cyan-middle);
+}
+

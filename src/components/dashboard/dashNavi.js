@@ -10,6 +10,8 @@ import DropDownComponent from '@reusable/dropdown'
 import Loader from '@reusable/Loader'
 import {ModalBox} from '@reusable/modal'
 
+import NotifAndMsg from '@containers/notifAndMsg'
+
 import { logUserOut } from '@actions/index'
 
 
@@ -50,7 +52,8 @@ class DashNavi extends Component {
         this.callLogOut = this.callLogOut.bind(this);
         this.documentCloseDropdown = this.documentCloseDropdown.bind(this);
         this.renderDropdowMenuUser = this.renderDropdowMenuUser.bind(this);
-        this.modalBoxClose = this.modalBoxClose.bind(this);
+        this.hideNotifAndMsg = this.hideNotifAndMsg.bind(this);
+
     }
 
     toggleDropdown(event) {
@@ -70,6 +73,10 @@ class DashNavi extends Component {
         }
     }
 
+    hideNotifAndMsg() {
+        this.setState({showNotifAndMsg: false});
+    }
+
     renderDropdowMenuUser() {
         return (
             <DropDownComponent top={'1.5'} right={'-5'}>
@@ -84,22 +91,8 @@ class DashNavi extends Component {
         )
     };
 
-    modalBoxClose(event) {
-        event.stopPropagation();
-        if (event.target.id === 'modal_div') {
-           return this.setState({showNotifAndMsg: false});
-        }
-    }
-
-
     renderNotifcationAndMessage() {
-        return (
-            <ModalBox closeModalBox={this.modalBoxClose}>
-                <div className="notif__msg">
-                    All your news here
-                </div>
-            </ModalBox>
-        );
+        return <NotifAndMsg hideNotifAndMsg={this.hideNotifAndMsg} />;
     }
 
     callLogOut(event) {

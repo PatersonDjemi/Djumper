@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Divider from 'semantic-ui-react';
 import ReactDom from 'react-dom'
 
 const modal_root = document.getElementById('modal_root');
@@ -12,16 +11,17 @@ export class ModalBox extends Component {
         super(props);
 
        this.el = modalCard;
+       this.divRef = React.createRef();
     }
 
     componentDidMount() {
         modal_root.appendChild(this.el);
-        modalCard.addEventListener('click', this.props.closeModalBox);
+        this.el.addEventListener('click', this.props.closeModalBox);
     }
 
     componentWillUnmount() {
         modal_root.removeChild(this.el)
-        modalCard.removeEventListener('click', this.props.closeModalBox);
+        this.el.removeEventListener('click', this.props.closeModalBox);
     }
 
     render() {

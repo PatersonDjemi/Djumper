@@ -197,14 +197,45 @@
     color: var(--black-color);
 }
 
+
+/* notification modal */
 .notif__msg {
     position: absolute;
-    padding: 2rem;
     height: 100%;
-    width: 425px;
+    width: 45rem;
     top: 0;
     right: 0;
     background: var(--white-color);
     z-index: 99999;
     box-shadow: rgba(0, 0, 0, 0.1) -7px 1px 18px;
+}
+
+.all__news {
+    padding-top: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;    
+    color: var(--black-color);
+    text-transform: uppercase;
+}
+
+.ui.grid.gird__notif__message {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.notification, .message {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black-color);
+    padding:  1.1rem 0;
+    cursor: pointer;
+}
+
+.notification {
+    border-bottom: 4px solid var(--pink-light);
+}
+
+.message {
+    border-bottom: 4px solid #bbb;
 }

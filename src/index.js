@@ -7,29 +7,29 @@ import { composeWithDevTools } from 'redux-devtools-extension'; // pour utiliser
 import  createSagaMiddleware  from 'redux-saga';
 
 
-
-
 import '../semantic/dist/semantic.css'
 import '../styles/style.css'
-
-import RootReducers from './reducers'
+import rootReducers from './reducers'
 import rootSaga from './sagas'
-
 import App from './components/app'
+import {persistState, loadPersistedState} from './persistState'
 
 
 const sagaMiddleware = createSagaMiddleware();
+const composeWithDevTool =  composeWithDevTools(applyMiddleware(sagaMiddleware));
+const loadedState = loadPersistedState();
+export const myStore = createStore(rootReducers, loadedState, composeWithDevTool);
 
-const ComposeWithDevTools =  composeWithDevTools(applyMiddleware(sagaMiddleware));
+myStore.subscribe(() => {
+    // add a callback to avoid calling the persiState function
+    // everytime the state changes: throttle (from lodash)
+    persistState(myStore.getState())
+});
 
-export const MyStore = createStore(RootReducers, ComposeWithDevTools);
-
-
-sagaMiddleware.run(rootSaga)
-
+sagaMiddleware.run(rootSaga);
 
 ReactDom.render(
-    <Provider store={MyStore}>
+    <Provider store={myStore}>
         <Router >
             <App/>
         </Router>
@@ -38,4 +38,3 @@ ReactDom.render(
 );
 
 
-// browserRouter va mettre à notre disposition l' history library
