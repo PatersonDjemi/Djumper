@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import GridColumn, { Container, Grid, Image } from 'semantic-ui-react'
 
 import {ModalBox} from '@reusable/modal'
+import {notifOrMsg} from '@components/notifAndMsg/notifOrMsg';
 
+const Notification = notifOrMsg();
+const Message = notifOrMsg(true);
 
 class NotifAndMsg extends Component {
     constructor(props) {
@@ -13,6 +16,7 @@ class NotifAndMsg extends Component {
             showMessage: false
         }
 
+        this.borderColor = this.borderColor.bind(this);
         this.myNotifications = this.myNotifications.bind(this);
         this.myMessages = this.myMessages.bind(this);
         this.modalBoxClose = this.modalBoxClose.bind(this);
@@ -41,7 +45,15 @@ class NotifAndMsg extends Component {
         // this function wird immer angerufen à chaque click, weiss nicht warum
     }
 
+    borderColor(propOfState, defaultClass) {
+        if (propOfState) {
+            return `${defaultClass} pinkBorder`;
+        }
+        return `${defaultClass} greyBorder`;
+    }
+
     render() {
+        const { showMessage, showNotification } = this.state;
         return (
             <ModalBox closeModalBox={this.modalBoxClose}>
                 <div className="notif__msg" onClick={this.test}>
@@ -54,13 +66,13 @@ class NotifAndMsg extends Component {
                             </Grid.Row>
                             <Grid.Row className="no__padding__bottom">
                                 <Grid.Column textAlign="center" width={8} className="noPaddingLeftRigth" >
-                                <div className="notification"
+                                    <div className={this.borderColor(showNotification, "notification")}
                                         onClick={this.myNotifications}>
                                         Notifications (15)
                                     </div> 
                                 </Grid.Column>
                                 <Grid.Column textAlign="center" width={8} className="noPaddingLeftRigth">
-                                    <div className="message"
+                                    <div className={this.borderColor(showMessage, 'message')}
                                         onClick={this.myMessages}>
                                         Messages (15)
                                     </div>
@@ -68,40 +80,54 @@ class NotifAndMsg extends Component {
                             </Grid.Row>
                             <Grid.Row className="no__padding__top" >
                                 <Grid.Column className="noPaddingLeftRigth">
-                                    <div className="notifBlock">
-                                        {/* <div className="notifBlock__source">
-                                            photo here
-                                        </div> */}
-                                        <div className="notifBlock__content">
-                                            <div className="notifBlock__content__header">
-                                                <div className="notifBlock__content__from"> Hassan Paterson </div>
-                                                <div className="notif__time"> 3 min ago </div>
-                                            </div>
-                                            <div className="notifBlock__content__title"> Payment confirmation </div>
-                                            <div className="notifBlock__content__text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    { showNotification && (
+                                        <div>
+                                            <Notification
+                                                from="Hassan Paterson"
+                                                when="3 min ago"
+                                                title="Payement confirmation"
+                                                content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                                                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua. <span className="show_more_less"> Show more </span>
-                                            </div>
-                                            {/* <div> Today at 23:32 </div> */}
-                                        </div>
-                                    </div>
-                                    <div className="notifBlock">
-                                        {/* <div className="notifBlock__source">
-                                            photo here
-                                        </div> */}
-                                        <div className="notifBlock__content">
-                                            <div className="notifBlock__content__header">
-                                                <div className="notifBlock__content__from"> Hassan Paterson </div>
-                                                <div className="notif__time"> 3 min ago </div>
-                                            </div>
-                                            <div className="notifBlock__content__title"> Payment confirmation </div>
-                                            <div className="notifBlock__content__text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                magna aliquyam erat, sed diam voluptua"
+                                            />
+                                                <Notification
+                                                from="Rebecca Hanke"
+                                                when="Yesterday"
+                                                title="Bisous bisous"
+                                                content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                                                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua. <span className="show_more_less"> Show more </span>
-                                            </div>
-                                            {/* <div> Today at 23:32 </div> */}
+                                                magna aliquyam erat, sed diam voluptua"
+                                            />
+                                            <Notification
+                                                from="Martin Pop"
+                                                when="one week ago"
+                                                title="Talk room"
+                                                content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                                magna aliquyam erat, sed diam voluptua"
+                                            />
                                         </div>
-                                    </div>
+                                    )}
+
+                                    { showMessage && (
+                                        <div>
+                                            <Message
+                                                from="Hassan Paterson"
+                                                when="two days ago"
+                                                content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                                magna aliquyam erat, sed diam voluptua"
+                                            />
+                                            <Message
+                                                from="Martin Pop"
+                                                when="one week ago"
+                                                content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                                                magna aliquyam erat, sed diam voluptua"
+                                            />
+                                        </div>
+                                    )}
+
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
@@ -114,3 +140,21 @@ class NotifAndMsg extends Component {
 }
 
 export default NotifAndMsg;
+
+
+{/* <div className="notifBlock">
+<div className="notifBlock__source">
+    photo here
+</div>
+<div className="notifBlock__content">
+    <div className="notifBlock__content__header">
+        <div className="notifBlock__content__from"> Hassan Paterson </div>
+        <div className="notif__time"> 3 min ago </div>
+    </div>
+    <div className="notifBlock__content__title"> Payment confirmation </div>
+    <div className="notifBlock__content__text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+        sed diam nonumy eirmod tempor invidunt ut labore et dolore
+        magna aliquyam erat, sed diam voluptua. <span className="show_more_less"> Show more </span>
+    </div>
+</div>
+</div> */}
