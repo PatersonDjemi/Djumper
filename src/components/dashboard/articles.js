@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GridRow, { Container, Grid, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 
 import Layout from './withSideBarLayout'
@@ -34,12 +35,43 @@ export const Products = (props) => {
                 <span className="transaction__status"> <span> status: </span> { props.status } </span>
                 <span className="percentage"> {props.percentage}% </span>
                 <div className="status" >
-                 <div className="progress">
+                <div className="progress">
                     <div className="progress__bar" style={{ width: `${props.percentage}%`, backgroundColor: `${props.color}` }}></div>
                 </div>
                 </div>                               
             </Grid.Column>
-        </Grid.Row>      
+        </Grid.Row>          
+    )
+}
+
+export const Article = (props) => {
+    const { month, day, seller, type,
+        amount, rate, status, devise,
+        percentage, color, page, id } = props;
+
+    return (
+        <Link to={`/dashboard/${page}/${id}`} className="articles__link">
+            <Container fluid className="artcicle__wrapper">
+                <div className="artciles__date celled">
+                    <div className="date__month">{ month }</div>
+                    <div className="date__day">{ day }</div>
+                </div>
+                <div className="article__name celled"> 
+                    <div className="name__seller">{ seller }</div>
+                    <div className="article__type"> { type } </div>
+                </div>
+                <div className="artciles__price celled"> 
+                    <div className="price__amount"> { amount } { devise } </div>
+                    <div className="rate__duration"> rate: { rate } months </div>
+                </div>
+                <div className="artcile__state celled"> 
+                    <div className="rate__state"> Status: { status } </div>
+                    <div className="progress">
+                        <div className="progress__bar" style={{ width: `${percentage}%`, backgroundColor: `${color}` }}></div>
+                    </div>
+                </div>
+            </Container>
+        </Link>
     )
 }
 
@@ -53,20 +85,21 @@ class Articles extends Component {
     renderProductsReview() {
         const { articles } = this.props.items;
         return articles.map(article => {
-            return <Products
-                mois="Avr"
-                date="29/18" 
-                src={plane}
-                receiver={article.seller}
-                type='Transport'
-                amountDevise={article.devise}
-                amount={article.amount}
-                instalment={`${article.nberOfMonth} months`}
-                status={article.status}
-                key={article._id}
-                percentage="50"                                        
-                color="#2196F3" 
-             />
+            return <Article
+                    page='articles'
+                    id={article._id}
+                    month="Avr"
+                    day="29/18" 
+                    seller={article.seller}
+                    type='Transport'
+                    devise={article.devise}
+                    amount={article.amount}
+                    rate={`${article.nberOfMonth} months`}
+                    status={article.status}
+                    key={article._id}
+                    percentage="50"                                        
+                    color="#2196F3" 
+                />          
         })
     }
 
@@ -87,11 +120,10 @@ class Articles extends Component {
                             </div>
 
                             <div className="transactions">
-                                <h3 className="transactions__title"> Articles </h3>
-                                <Grid stackable centered className="main__transaction" >
-                                    { this.renderProductsReview() }
-                                </Grid>
+                                <h3 className="transactions__title"> Articles </h3>                                
+                                { this.renderProductsReview() }    
                             </div>
+
                         </Grid.Column>
                     </Grid>
                 </Layout.MainContent>

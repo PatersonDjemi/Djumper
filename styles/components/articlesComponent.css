@@ -1,0 +1,70 @@
+.articles__link {
+    display: block;
+    text-decoration: none;
+    color: var(--black-color) !important;
+    margin-bottom: .5rem;
+}
+
+.artcicle__wrapper {
+    display: table !important;
+    border: 1px solid #bbb;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.celled {
+    display: table-cell !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.artciles__date {
+    width: 12.5%;
+    padding-left: 1.5rem;
+}
+
+.date__month {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.date__day {
+    font-size: 1.5rem;
+    font-weight: 600;   
+    padding-top: .5rem;
+}
+
+.article__name {
+    width: 37.5%;
+}
+
+.name__seller {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.article__type {
+    font-size: 1.5rem; 
+    padding-top: .5rem; 
+    font-weight: 600; 
+}
+
+.artciles__price {
+    width: 25%;
+}
+
+.price__amount {
+    font-size: 2rem;   
+    font-weight: 600;
+}
+
+.rate__duration {
+    font-size: 1.3rem;
+    font-weight: 400; 
+    padding-top: .5rem; 
+}
+
+.artcile__state {
+    width: 25%;
+    padding-right: 1.5rem;
+}

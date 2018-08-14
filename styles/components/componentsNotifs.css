@@ -103,3 +103,6 @@
     color: var(--cyan-middle);
 }
 
+.articles__ {
+    display: flex !important;
+}

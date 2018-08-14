@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Image, Container, Grid } from 'semantic-ui-react';
+import { Image, Container, Grid, Segment } from 'semantic-ui-react';
 
 import wallet from '../../../assets/wallet.svg'
 import transfer from '../../../assets/transfer-money.svg'
@@ -10,7 +10,7 @@ import request from '../../../assets/get-money.svg'
 
 const Overview = (props) => {
     return (
-        <div className="box__banner">
+        <Segment className="box__banner">
             <div className="box__text">
                 <div className="box__banner_title">
                     <span className="bg_title"> {props.mainTitle} </span> <br/>
@@ -24,7 +24,7 @@ const Overview = (props) => {
             <div className="box__img">
                 <Image src={props.src} height="60" width="60" className="iconsboxes" />
             </div>
-        </div>
+        </Segment>
     );
 }
 
@@ -47,7 +47,7 @@ const QuickOverview = ({ theItems }) => {
     let lastPayment = 0;
 
     return (
-        <Container fluid>
+        <Container fluid style={{ marginBottom: '5rem' }}>
             <Grid stackable centered>
                 <Grid.Column width={15}>
                     <section>   
@@ -75,7 +75,6 @@ const QuickOverview = ({ theItems }) => {
                                 devise="EUR"
                                 src={transfer} />
                         </div>
-
                     </section>  
                 </Grid.Column>
             </Grid>    

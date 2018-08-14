@@ -1,0 +1,184 @@
+/********* Statistik header ********/
+.statistik__header {
+    margin-bottom: 1rem !important;
+    font-size: 2.5rem !important;
+    font-weight: 600 !important;
+    color: var(--cyan-middle) !important;
+}
+
+.statistik__description {
+    margin-bottom: 2rem;
+}
+
+.statistik__left {
+   /* border: 1px solid #bbb; */
+   padding: 1.5rem 2.5rem; 
+   /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
+   min-height: 10rem;
+}
+
+.statistik__right {
+    /* border: 1px solid #bbb; */
+    padding: 1.5rem 2.5rem;
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
+    min-height: 10rem;
+}
+
+
+
+
+
+.btn__view_all {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform-origin-y: -50%;
+}
+
+.overview {
+    display: flex;
+    justify-content: space-between;
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;     */
+}
+
+
+
+.for__next_month {
+    margin-bottom: 5rem;
+    padding: 2rem 1rem;
+    display: none;
+    /* border: 1px solid #bbb; */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+
+}
+
+/****** Component ********/
+.sideBar__block {
+    margin-bottom: 4rem;
+}
+
+.sideBar__block__title {
+    padding: .5rem;
+    font-size: 2rem;
+    color: var(--black-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/****** Paypal block *******/
+
+.paypal_account {
+    padding: 1rem;
+    /* border-radius: 4px; */
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
+}
+
+.paypal__header span {
+    font-size: 1.3rem;
+    color: var(--black-clor);
+    font-weight: normal;
+}
+.paypal__title {
+    font-size: 2rem;
+    color: var(--cyan-middle);
+    font-weight: 600;
+    padding: .7rem 0 0;
+}
+.imgpaypal {
+    position: absolute !important;
+    top: 5px;
+    right: 5px;
+    display: inline-block !important;
+}
+.paypal__text {
+    padding-top: 2.5rem;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    line-height: 1.6;
+    text-align: justify;
+}
+.link__paypal {
+    margin-top: 1.5rem;
+    padding: 1.5rem !important;
+    font-size: 1.5rem !important;
+}
+
+/*************  quick overview  ********/
+.box__banner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 45rem !important;
+    background-color: var(--white-color) !important;
+    padding: 1rem !important;
+    margin: 1rem 0px !important;
+    /* border-radius: 4px; */
+    /* border: 1px solid #bbb; */
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 1px 8px, rgba(0, 0, 0, 0.23) 0px 3px 10px; */
+}
+
+.bg_title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--black-color);
+}
+
+.sm_title {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.box__amount {
+    padding-top: 2rem;
+    color: var(--pink-middle);
+}
+
+.devise__overview {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.sum {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.box__img {
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: var(--blue-light);
+}
+
+/********** see next month ***********/
+.see__next__month {
+}
+
+.see__next__content{
+    padding: 1rem;
+}
+
+.see__next__amount {
+    display: table;
+    padding-bottom: 1rem;
+}
+
+.next__text {
+    vertical-align: middle;
+}
+
+.next__amount {
+    font-size: 1.8rem;
+    font-weight: 600;
+    vertical-align: middle;
+    padding-left: 0px !important;
+}
+
+.up__down__see {
+    position: absolute !important;
+    bottom: 1rem;
+    right: 1rem;
+}
