@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Navigation from './navigation'
 
-import Down from '../../assets/lnr-chevron-down.svg'
+import Down from '@assets/lnr-chevron-down.svg'
 
 
 const Titre = (props) => {

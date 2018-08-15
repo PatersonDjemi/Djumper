@@ -16,15 +16,24 @@ module.exports = {
         vendor: VENDOR_LIBS
     },
     output: {
-        filename: "[name].[chunkHash].js",
+        filename: "[name].[hash].js",
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
+    },
+    resolve: {
+        alias: {
+            '@assets': path.resolve(__dirname, './assets'),
+            '@actions' : path.resolve(__dirname, './src/actions'),
+            '@components': path.resolve(__dirname, './src/components'),
+            '@containers': path.resolve(__dirname, './src/containers'),
+            '@reusable': path.resolve(__dirname, './src/reusable'),
+        }
     },
     module: {
         rules: [
             {
-                use: "babel-loader",
-                test: /\.js$/,
+                use: ["babel-loader"],
+                test: /\.jsx?$/,
                 exclude: path.resolve(__dirname, "node_modules")
             },
             {
@@ -90,34 +99,3 @@ module.exports = {
 
 // devServer : historyApiFallback permet de dire à webpack de traquer l history du browser afin de pouvoir naviguer d une page à une autre
 
-
-
- /*
-resolve: {
-    alias: {
-        '../../theme.config$': path.join(__dirname, 'My-semantic-theme/theme.config')
-    }
-},
-*/
-// bundle: ['babel-polyfill', './src/index.js'] babel-polyfill permet d utiliser les generator et les await feature
-
-//bundle: './src/index.js',
-
-/*
-                    use: [  {
-                                loader:'css-loader',
-                                options: {
-                                    sourceMap:tr
-                                }
-                            },
-                            {
-                                loader: 'sass-loader',
-                                options: {
-                                    sourceMap: true
-                                }
-                            },
-                            {
-                                loader: 'less-loader'
-                            }
-                        ]
- */

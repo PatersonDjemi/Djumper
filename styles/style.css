@@ -1,19 +1,22 @@
 /*** all my imports ***/
 
 @import "basics/base.css";
+@import "layouts/layout.css";
 @import "components/components.css";
 @import "components/dashboardNav.css";
-@import "layouts/layout.css";
+@import "components/dashboardComponent.css";
+@import "components/componentsNotifs.css";
+@import "components/articlesComponent.css";
 @import "pages/home.css";
 @import "pages/login.css";
 @import "pages/signup.css";
 @import "pages/faq.css";
 @import "pages/thankyou.css";
-@import "test.css";
 @import "pages/dashboardMenu.css";
 @import "pages/dashboardAccount.css";
-@import "components/dashboardComponent.css";
 @import "pages/sendmoney.css";
+@import "pages/accounts.css";
+@import "test.css";
 
 
 

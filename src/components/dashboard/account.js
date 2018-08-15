@@ -1,57 +1,77 @@
 import React from 'react';
-import { Image } from 'semantic-ui-react'
+import { Image, Segment, Icon } from 'semantic-ui-react'
+
 
 import QuickOverview from './quickOverview'
-import Resume from '../resume';
+import Resume from '@components/resume';
 import Layout from './withSideBarLayout';
 
-import paypal from '../../../assets/paypal.svg'
+import paypal from '@assets/paypal.svg'
 
-
-const AddPaypal = () => {
+const AddPaypalSection = () => {
     return (
-        <div className="paypal_account">
-            <div className="paypal__header" style={{ position: 'relative'}}>
-                <span> paypal account </span>
-                <div className="paypal__title"> Link your paypal </div>
-                <Image src={paypal} height="40" width="40" className="imgpaypal" />
-            </div>
-            <div className="paypal__text">
-                Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod tempor i
-                nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
-            </div>
+        <Segment >
+            <div className="paypal_account">
+                <div className="paypal__header" style={{ position: 'relative'}}>
+                    <span> paypal account </span>
+                    <div className="paypal__title"> Link your paypal </div>
+                    <Image src={paypal} height="40" width="40" className="imgpaypal" />
+                </div>
+                <div className="paypal__text">
+                    Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod tempor i
+                    nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+                </div>
 
-            <span className="get_start link__paypal"> Link your Paypal Account </span>
-        </div>
+                <span className="get_start link__paypal"> Link your Paypal Account </span>
+            </div>
+        </Segment>
     );
 }
 
-const SideSection = (props) => {
+const SideSection = ({ title, children }) => {
     return (
         <div className="sideBar__block">
-            <div className="sideBar__block__title">
-                { props.title }
-            </div>
-            { props.children }
+            { title? (<div className="sideBar__block__title">
+                { title } </div>) : null }
+            { children }
         </div> 
     );
 }
 
-const Account = () => {
+const Account = (props) => {
     return (
         <div>
-            <QuickOverview />
+            <QuickOverview theItems={props.theItems} />
 
             <Layout.LayoutWithSideBar>
 
                 <Layout.MainContent>
-                    <Resume />
+
+                    <Resume theItems={props.theItems} />
+
                 </Layout.MainContent>
 
                 <Layout.Sidebar>
 
-                    <SideSection title="Do you have paypal account ?">
-                        <AddPaypal/>
+                    <SideSection>
+                        <Segment size="huge" className="see__next__month">
+                           <div className="see__next__content">
+                                Lorem ipsum dolor sit amet, consetetur sadip scing elitr
+                                nvidunt ut labore et dolore magna aliquyam erat
+                           </div> 
+                           <div className="see__next__amount">
+                                <div className="next__text celled">
+                                    Next month payement : <br/>
+                                    voraus.: 29/05/18
+                                </div> 
+                                <div className="next__amount celled"> 354,98 eur</div>
+                           </div> 
+                           <Icon name="chevron circle up" size="big" className="up__down__see"/>
+                        </Segment>
+                    </SideSection>
+
+                    <SideSection  title="Do you have paypal account ?">
+                        <AddPaypalSection/>
                     </SideSection>
 
                     <SideSection title="Last activies">

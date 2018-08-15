@@ -1,31 +1,34 @@
 import React, {Component} from 'react'
-import Divider from 'semantic-ui-react';
 import ReactDom from 'react-dom'
 
 const modal_root = document.getElementById('modal_root');
+let modalCard = document.createElement('div');
+modalCard.id = 'modal_div'
 
-class ModalBox extends Component {
+
+export class ModalBox extends Component {
     constructor(props) {
         super(props);
 
-       this.el = document.createElement('div');
+       this.el = modalCard;
+       this.divRef = React.createRef();
     }
 
     componentDidMount() {
-        modal_root.appendChild(this.el)
+        modal_root.appendChild(this.el);
+        this.el.addEventListener('click', this.props.closeModalBox);
     }
 
     componentWillUnmount() {
         modal_root.removeChild(this.el)
+        this.el.removeEventListener('click', this.props.closeModalBox);
     }
 
     render() {
-
         return ReactDom.createPortal(
             this.props.children,
             this.el
         )
-
     }
 
 }
@@ -37,7 +40,7 @@ class ModalContent extends Component {
     render() {
         return (
             <ModalBox>
-            <div  className="modal_div">
+
                 <div className="modal_box">
                     <h3 className="modal__header">
                         the header
@@ -50,7 +53,7 @@ class ModalContent extends Component {
                         <span className="modal__submit modal__btn"> submit </span>
                     </div>
                 </div>
-            </div>
+
             </ModalBox>
 
         );
@@ -65,11 +68,9 @@ class Modal extends Component {
 
     render() {
         return (
-            <ModalBox>
-                <ModalContent>
-                    Here content of the modal.!
-                </ModalContent>
-            </ModalBox>
+            <ModalContent>
+
+            </ModalContent>
         );
     }
 }

@@ -23,12 +23,6 @@
     overflow-y: auto;
 }
 
-.overview {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5rem;
-    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;     */
-}
 
 .dashboard__mainContent {
 
@@ -40,50 +34,6 @@
     /* background-color: #f1f1f1; */
 }
 
-.sideBar__block__title {
-    padding: .5rem;
-    font-size: 2rem;
-    color: var(--black-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.paypal_account {
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    margin-bottom: 5rem;
-}
-
-.paypal__header span {
-    font-size: 1.3rem;
-    color: var(--black-clor);
-    font-weight: normal;
-}
-.paypal__title {
-    font-size: 2rem;
-    color: var(--cyan-middle);
-    font-weight: 600;
-    padding: .7rem 0 0;
-}
-.imgpaypal {
-    position: absolute !important;
-    top: 5px;
-    right: 5px;
-    display: inline-block !important;
-}
-.paypal__text {
-    padding-top: 2.5rem;
-    font-size: 1.6rem;
-    color: var(--black-color);
-    line-height: 1.6;
-    text-align: justify;
-}
-.link__paypal {
-    margin-top: 1.5rem;
-    padding: 1.5rem !important;
-    font-size: 1.5rem !important;
-}
 
 .calendar__description {
     padding: 0 .5rem;

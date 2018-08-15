@@ -1,14 +1,16 @@
-import React from 'react';
-import { Image, Container, Grid } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Image, Container, Grid, Segment } from 'semantic-ui-react';
 
 import wallet from '../../../assets/wallet.svg'
 import transfer from '../../../assets/transfer-money.svg'
 import request from '../../../assets/get-money.svg'
 
 
+
 const Overview = (props) => {
     return (
-        <div className="box__banner">
+        <Segment className="box__banner">
             <div className="box__text">
                 <div className="box__banner_title">
                     <span className="bg_title"> {props.mainTitle} </span> <br/>
@@ -22,15 +24,30 @@ const Overview = (props) => {
             <div className="box__img">
                 <Image src={props.src} height="60" width="60" className="iconsboxes" />
             </div>
-        </div>
+        </Segment>
     );
 }
 
 
-const QuickOverview = (props) => {
-    return (
+const QuickOverview = ({ theItems }) => {
 
-        <Container fluid>
+    if ( !theItems ) {
+        return null;
+    }
+
+    // eviter de faire les calculations ici. voir ce qui peut etre sauvergardé ds la base de donnée.
+    let amounts = theItems.reduce((acc, currentValue) => {
+        return parseFloat(acc) + parseFloat(currentValue.amount)
+    }, 0);
+
+    let nextPayment = theItems.reduce((acc, currentValue) => {
+        return parseFloat(acc) + (parseFloat(currentValue.amount) / parseFloat(currentValue.nberOfMonth));
+    }, 0)
+
+    let lastPayment = 0;
+
+    return (
+        <Container fluid style={{ marginBottom: '5rem' }}>
             <Grid stackable centered>
                 <Grid.Column width={15}>
                     <section>   
@@ -42,30 +59,29 @@ const QuickOverview = (props) => {
                             <Overview
                                 mainTitle="Total Balance"
                                 secondTitle="montant disponible"
-                                amount="10 000"
-                                devise="USD"
+                                amount={amounts}
+                                devise="EUR"
                                 src={wallet} />
                             <Overview
-                                mainTitle="Last Request"
+                                mainTitle="Last Payment"
                                 secondTitle="am 10.12.2018"
-                                amount="1 038"
-                                devise="USD"
+                                amount={lastPayment}
+                                devise="EUR"
                                 src={request} />
                             <Overview
-                                mainTitle="Next Request"
+                                mainTitle="Next Payment"
                                 secondTitle="am 10.08.2018"
-                                amount="3 038"
-                                devise="USD"
+                                amount={nextPayment}
+                                devise="EUR"
                                 src={transfer} />
                         </div>
-            </section>  
+                    </section>  
                 </Grid.Column>
-            </Grid>
-
-        </Container>
-
+            </Grid>    
+        </Container>    
 
     )
+
 };
 
 export default QuickOverview;

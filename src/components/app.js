@@ -1,21 +1,16 @@
 // all the router stuff of the app
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-
-
+import { hot } from 'react-hot-loader'
 
 import Webpages from './webpages'
 import Dashboard from './dashboard'
-import Signup from '../containers/signup_page'
-import Login from '../containers/login_page'
-import Modal from '../reusable/modal'
-
-
+import DashboardContainer from '@containers/dashboard_container'
+import Signup from '@containers/signup_page'
+import Login from '@containers/login_page'
+import Modal from '@reusable/modal'
 
 import Test from './test'
-
-
-
 
 const App = () => {
     return (
@@ -26,7 +21,7 @@ const App = () => {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login}  />
 
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={DashboardContainer} />
             <Route path="/"  component={Webpages} />
             
             {/* <Route path="/" exact component={Home} /> */}
@@ -34,4 +29,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default hot(module)(App);

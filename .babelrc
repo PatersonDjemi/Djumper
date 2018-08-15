@@ -1,5 +1,5 @@
 {
-  "presets": ["babel-preset-env", "stage-3", "react"],
-  "plugins": [ ["lodash", {"id": ["lodash", "semantic-ui-react"] }] ]
+  "presets": ["env", "stage-3", "react"],
+  "plugins": [["lodash", {"id": ["lodash", "semantic-ui-react"] }] ]
 }
 

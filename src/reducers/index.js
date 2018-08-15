@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import {reducer as FormReducer } from 'redux-form'
 import  authentication  from './login_singup_reducer'
+import articlesReducer from './articles_reducer'
 
 
 
@@ -8,7 +9,8 @@ import  authentication  from './login_singup_reducer'
 
 const RootReducer = combineReducers({
     form: FormReducer,
-    authentication
+    authentication,
+    articlesReducer
 });
 
 export default RootReducer;

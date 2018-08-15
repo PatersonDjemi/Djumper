@@ -1,11 +1,11 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
-import * as types from '../actions/type';
+import * as types from '@actions/type';
 import config from '../../config'
 import axios from 'axios'
-import { saveToken, extractResponse } from '../../utils';
+
+
+import { saveToken, extractResponse, handleErrorOnRequest, ErrorOnRequest } from '../../utils';
 // import { autoLogin } from '../actions';
-
-
 
 
 /************** 
@@ -19,19 +19,8 @@ function* loginStartAsync(email, password) {
     const endPoint = `${config.baseUrl}/user/login`;
 
      return yield axios.post(endPoint, { email, password})
-         .then(response => response)
-         .catch(error => {
-            if(error.response) {
-                // server respond but with a bad status code
-                console.log('response back but not was expected')
-                throw error.response;
-
-            } else if (error.request) {
-                // request was made but no response received
-                console.log('why no response from server');
-                throw error.request;
-            }         
-        });
+        .then(response => response)
+        .catch( error => handleErrorOnRequest(error));
 }
 
 
@@ -43,20 +32,20 @@ function* loginStart(action) {
     try {
         response = yield call(loginStartAsync, email, password);
 
-        const data = extractResponse(response);
+        const data = extractResponse(response, true);
         console.log('response data', data );
 
         yield put({type: 'AUTH_USER', payload: data});
     }
-    catch (e) {
+    catch (error) {
         // customiser l erreur et renvoyer un feedback à l utilisateur
         // l erreur ici correspond à l´erreur que j envois depuis mon server
-        console.log('error on the request', e)
+        console.log('error on the request', error)
         // user not authenticated
-        if ( !e.data ) {
+        if ( !error.ob.data ) {
             return yield put({type: 'UNAUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
         }
-        return yield put({type: 'UNAUTH_USER', error: e.data})
+        return yield put({type: 'UNAUTH_USER', error: error.ob.data})
     }
 }
 
@@ -85,18 +74,7 @@ function* startSignUpAsync(firstName, lastName, email, password, agree) {
 
     return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
         .then( response => response)
-        .catch(error => {
-            if(error.response) {
-                // server respond but with a bad status code
-                console.log('response back but not was expected')
-                throw error.response;
-
-            } else if (error.request) {
-                // request was made but no response received
-                console.log('why no response from server');
-                throw error.request;
-            }         
-        });
+        .catch(error => handleErrorOnRequest(error));
 }
 
 function* signupStart(action) {
@@ -108,22 +86,20 @@ function* signupStart(action) {
     try {
         response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
     // extract data and save token
-        const data = extractResponse(response)
+        const data = extractResponse(response, true)
         console.log('response data', response );
 
         yield put({type: 'AUTH_USER', payload: data});
     }
 
-    catch(e)  {
-        // customiser l erreur et renvoyer un feedback à l utilisateur
-        // l erreur ici correspond à l´erreur que j envois depuis mon server
-        console.log('error on the request', e)
+    catch(error)  {
+        console.log('error on the request', error)
         // user not authenticated
-        if (!e.data) {
+        if (!error.ob.data) {
             // if the request is on the request
             return yield put({type: 'UNAUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
         }
-        return yield put({type: 'UNAUTH_USER', error: e.data })
+        return yield put({type: 'UNAUTH_USER', error: error.ob.data })
     }
 }
 
@@ -142,21 +118,20 @@ export function* startSignUpSaga() {
 
 function* autoLoginAsync(token) {
     const endPoint = `${config.baseUrl}/user/checkmail/:token`;
-
     return yield axios.post(endPoint, {token} )
-            .then( resposne => resposne)
-            .catch(error => {
-                if(error.response) {
-                    // server respond but with a bad status code
-                    console.log('response back but not was expected')
-                    throw error.response;
-    
-                } else if (error.request) {
-                    // request was made but no response received
-                    console.log('why no response from server');
-                    throw error.request;
-                }         
-            });
+        .then( resposne => resposne)
+        .catch(error => {
+            if(error.response) {
+                // server respond but with a bad status code
+                console.log('response back but not was expected')
+                throw error.response;
+
+            } else if (error.request) {
+                // request was made but no response received
+                console.log('why no response from server');
+                throw error.request;
+            }         
+        });
 }
 
 function* autoLogin(action) {
@@ -167,7 +142,7 @@ function* autoLogin(action) {
     try {
         response = yield call(autoLoginAsync, token);
 
-        const data = extractResponse(response);
+        const data = extractResponse(response, true);
         console.log('response data', data );
 
         yield put({type: 'AUTH_USER'});
@@ -185,3 +160,47 @@ function* autoLogin(action) {
 export function* startAutoLogin() {
     yield takeLatest(types.AUTO_LOGIN, autoLogin)
 }
+
+
+/*********
+ * 
+ * 
+ *  login out
+ * 
+ * 
+ *  ****************/
+
+ function* logOutUserAsync(token) {
+    const endPoint = `${config.baseUrl}/user/logout`;
+    return yield axios.delete(endPoint, { headers: { 'x-token': token } } )
+        .then(response => response)
+        .catch(error => handleErrorOnRequest(error));
+ }
+
+ function* logOutUser({ history }) {
+    const token = localStorage.getItem('token');
+    
+    try {
+        let response = yield call(logOutUserAsync, token);
+        localStorage.removeItem('token');
+        yield history.push('/');
+        yield put({ type: 'UNAUTH_USER' });
+    }
+    catch(error) {
+        console.log('error on the request', error)
+        // // user not authenticated
+        // if (!error.ob.data) {
+        //     // if the request is on the request
+        //     return yield put({type: 'AUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
+        // }
+        // return yield put({type: 'AUTH_USER', error: error.ob.data })
+    }
+ }
+ 
+
+ export function* startLogOutSaga() {
+     yield takeLatest(types.LOG_OUT_START, logOutUser)
+ }
+
+
+ // faire une funtion qui me construit mes endpoints

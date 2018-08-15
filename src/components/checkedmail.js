@@ -3,7 +3,7 @@ import {Container, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { autoLogin } from '../actions';
 
-import Loader from '../reusable/Loader'
+import Loader from '@reusable/Loader'
 
 
 import Footer from './footer';

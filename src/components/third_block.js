@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Grid, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-import Trust from '../../assets/hand-shake.svg';
-import Smart from '../../assets/bulb.svg';
-import Plan from '../../assets/planning.svg';
-import Easy from '../../assets/solution.svg';
+import Trust from '@assets/hand-shake.svg';
+import Smart from '@assets/bulb.svg';
+import Plan from '@assets/planning.svg';
+import Easy from '@assets/solution.svg';
 
 const Reasons = (props) => {
     return (
