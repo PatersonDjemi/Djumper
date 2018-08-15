@@ -41,7 +41,7 @@ const H_Third = () => {
 
                     </div>
 
-                    <Link to="/sign_in" id="free_account" className="link_btn link_btn--orange"> creata a free account </Link>
+                    <Link to="/signup" id="free_account" className="link_to_btn"> creata a free account </Link>
 
                 </Grid.Column>
                 <Grid.Column computer={7} tablet={12}>

@@ -16,6 +16,7 @@
 .faq__question_one {
     font-size: 4rem !important;
     font-weight: 500 !important;
+    color: var(--cyan-middle) !important;
     text-transform: uppercase !important;
     letter-spacing: .5rem !important;
     margin-bottom: 4rem !important;}
@@ -42,7 +43,7 @@
     le css est uberschreiben par quelque chose dautre 
     **********************/
 .faq__grid {
-    padding: 0 3rem !important;}
+    padding: 0 4.5rem !important;}
     @media (max-width: 87.5em) {
         .grid.faq__grid  {
             padding: 0 1.5rem !important;
@@ -70,6 +71,7 @@
 .faq__take_look {
     font-size: 1.7rem !important;
     font-weight: 300 !important;
+    color: var(--black-color) !important;
     letter-spacing: .1rem !important;}
     @media (max-width: 87.5em) {
         .faq__take_look {
@@ -114,6 +116,7 @@
 .still_question {
     font-size: 4rem !important;
     font-weight: 500 !important;
+    color: var(--black-color) !important;
     margin-bottom: 3rem !important;
     letter-spacing: .5rem !important;
     text-transform: uppercase !important;}
@@ -136,9 +139,10 @@
 
 
 .customized_service {
-    font-size: 1.7rem;
+    font-size: 2rem;
     text-align: center;
     font-weight: normal;
+    color: var(--black-color);
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;}
@@ -168,13 +172,15 @@
 
 .sign__btnss {
     display: inline-block;
-    padding: 2rem 7.5rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    padding: 2rem 5.5rem;
+    box-shadow:rgba(0, 0, 0, 0.16) 3px 3px 10px, rgba(0, 0, 0, 0.23) 1px 3px 10px;
     font-size: 2rem;
     font-weight: 500;
-    border-radius: 7.5rem;
+    color: var(--white-color);
+    /* border-radius: 7.5rem; */
+    border-radius: 4px;
     cursor: pointer;
-    background-color: lightskyblue;}
+    background-color: var(--pink-middle);}
     @media (max-width: 87.5em) {
         .sign__btnss {
             font-size: 1.8rem !important;
@@ -193,3 +199,10 @@
             padding: 2rem 2rem;
         }
     }
+
+.sign__btnss:hover {
+    transform: translateY(-1px);
+    background-color: var(--pink-light);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 15px, rgba(0, 0, 0, 0.23) 0px 5px 9px;
+    transition: all .2s;
+}

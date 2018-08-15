@@ -3,22 +3,33 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 
-import Home from './home_page';
-import FAQ from './faq_page'
-import Signup from './signup'
-import Login from './login_page';
+
+import Webpages from './webpages'
 import Dashboard from './dashboard'
+import Signup from '../containers/signup_page'
+import Login from '../containers/login_page'
+import Modal from '../reusable/modal'
+
+
+
+import Test from './test'
+
 
 
 
 const App = () => {
     return (
         <Switch>
+            <Route path="/test" component={Test} />
+            <Route path="/modal" component={Modal} />
+
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login}  />
-            <Route path="/faq" component={FAQ} />
+
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/" component={Home} />
+            <Route path="/"  component={Webpages} />
+            
+            {/* <Route path="/" exact component={Home} /> */}
         </Switch>
     );
 }

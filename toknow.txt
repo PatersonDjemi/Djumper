@@ -1,0 +1,4 @@
+## git checkout -- <file> permet d annuler les modifications et de retourner à l´etait precedent du fichier
+## noter que ca c est qd le fichier n a pas encore été indexé cad on a pas utilisé de git add pour indexer les fichiers
+
+## git reset HEAD <fichier> s apllique sur les sur le fichiers qui ont déjà été indexés.

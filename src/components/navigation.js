@@ -14,7 +14,7 @@ const Navigation = () => {
                 </div>
                 <div className="navigation__menu">
                     <Link to="/faq" className="_faqLink"> faq </Link>
-                    <Link to="/login" className="link_btn link_btn--orange " > log in </Link>
+                    <Link to="/login" className="link_btn link_btn--color " > log in </Link>
                 </div>
 
             </div>

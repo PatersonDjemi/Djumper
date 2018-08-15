@@ -1,0 +1,188 @@
+.transaction__block {
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
+    padding: 1.5rem 0 1.5rem!important;
+    margin-bottom: .5rem;
+    border: 1px solid #bbb;
+}
+
+.main__transaction {
+    margin-bottom: 5rem !important;
+    margin-top: 3rem !important;
+}
+
+.mois__date {
+    padding-left: 2.5rem !important;
+}
+
+.transaction__mois {
+    font-size: 1.8rem;
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+.transaction__date {
+    font-size: 1.5rem;
+    color: var(--black-color);
+    font-weight: 600;   
+    padding-top: .5rem;
+}
+
+.transaction_ {
+    padding-left: 6rem;
+    position: relative;
+}
+
+.transaction__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background-color: var(--blue-middle);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.transaction__receiver {
+    font-size: 1.8rem;
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+.transaction__type {
+    font-size: 1.5rem;
+    color: var(--black-color); 
+    padding-top: .5rem; 
+    font-weight: 600; 
+}
+
+.transaction__amount {
+    font-size: 2rem;
+    color: var(--black-color);   
+    font-weight: 600;
+}
+
+.transaction__instalment {
+    font-size: 1.3rem;
+    color: var(--black-color);
+    font-weight: 400; 
+    padding-top: .5rem;   
+}
+
+.transaction__evolution {
+    padding-right: 2.5rem;
+    position: relative;
+}
+
+.transaction__status {
+    font-size: 1.3rem;
+    color: var(--black-color);
+    font-weight: 500;  
+    display: inline-block;
+    margin-right: .1rem; 
+}
+
+.percentage {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    font-size: 1.2rem;
+}   
+
+.transaction__period_time {
+    font-size: 1.5rem;
+    color: var(--black-color);  
+}
+
+.progress {
+    /* padding: 1rem 0; */
+    height: .5rem;
+    background-color: #f1f1f1; 
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    border-radius: 4px;
+}
+
+.progress__bar {
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* width: 50%; */
+    background-color: blueviolet;
+    border-radius: 4px;
+}
+
+.status {
+    padding-top: .5rem;
+}
+
+.test {
+    /* background-color: chartreuse; */
+    border-left: 5px solid var(--pink-middle);
+    color: var(--white-color) !important;
+}
+
+
+/********************* filter bouttons ****************/
+
+.filter {
+    padding: 3rem 0 1.2rem;
+    display: flex;
+}
+
+.filter__btn {
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    margin-right: 1.5rem;
+    /* background-color: chartreuse; */
+    cursor: pointer;
+    border: 1px solid #bbb;
+}
+
+.filter__icons {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 1rem !important;
+}
+
+.filter__name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+
+
+/************** transactions ********************/
+
+.transactions {
+    margin-top: 3rem;
+}
+
+.transactions__title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.transactions__block {
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
+    padding: 1rem 0 !important;
+    margin-bottom: .5rem;
+    border: 1px solid #bbb;
+}
+
+.transactions__block_title {
+    font-size: 1.4rem;
+    color: var(--black-color);
+    font-weight: 300;
+    padding-bottom: .5rem;
+}
+
+.transactions__data {
+    font-size: 1.7rem;
+    color: var(--black-color);
+    font-weight: 600;
+}

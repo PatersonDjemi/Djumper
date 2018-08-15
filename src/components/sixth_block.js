@@ -9,7 +9,7 @@ const H_Sixth = () => {
             <Grid centered columns="twelve">
                 <Grid.Column width={12} textAlign="center">
                     <Header as="h2" textAlign="center" className="get_started__title"> it´s simple - start now and enjoy paying your trip </Header>
-                    <Link to="/sign_in" id="get_started__btn" className="link_btn link_btn--orange"> get started </Link>
+                    <Link to="/signup"  className="border_btn"> start now </Link>
                 </Grid.Column>
             </Grid>
         </Container>

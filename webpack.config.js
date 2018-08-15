@@ -10,6 +10,7 @@ const VENDOR_LIBS = ['react', 'react-dom', 'lodash', 'redux', 'react-redux', 're
 
 
 module.exports = {
+    target: 'web',
     entry: {
         bundle: ['babel-polyfill', './src/index.js'],
         vendor: VENDOR_LIBS
@@ -17,7 +18,7 @@ module.exports = {
     output: {
         filename: "[name].[chunkHash].js",
         path: path.resolve(__dirname, 'dist'),
-
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -44,7 +45,7 @@ module.exports = {
                 use: [
                     {
                         loader: "url-loader",
-                        options: { limit: 400000}
+                        options: { limit: 4000}
                     },
                     'image-webpack-loader']
             },
@@ -56,7 +57,8 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: './'
+        contentBase: path.resolve('./dist')
+        // publicpath: './'
     },
     plugins: [
         new ExtractTextPlugin('style.css'),
@@ -64,10 +66,12 @@ module.exports = {
             names: ['vendor', 'manifest']
         }),
         new htmlWebpackPlugin({
-            template: 'index.html'
+            title: 'djumper',
+            filename: 'index.html', 
+            template: './index.html'
         })
-
     ]
+   
 };
 
 

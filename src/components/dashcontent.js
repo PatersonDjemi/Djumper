@@ -2,37 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Grid, Button, Image } from 'semantic-ui-react'
 
-import AddCard from './add-card';
+
+
 import Transacion from './transactions'
-
-
-import wallet from '../../assets/wallet.svg'
-import transfer from '../../assets/transfer-money.svg'
-import request from '../../assets/get-money.svg'
-
-const MenuItem = (props) => {
-    return (
-        <li>
-            <div>
-                <Link to="">
-                    <div className="menuname">
-                        <span>{props.title}</span>
-                    </div>
-                </Link>
-            </div>
-        </li>
-    );
-}
-
-const Searchbar = () => {
-    return(
-        <div className="headsearch">
-            <div className="searchdiv">
-                <input type="searchbar" id="mysearchbar" placeholder="search" />
-            </div>
-        </div>
-    );
-}
+import QuickOverview from './dashboard/quickOverview'
+import DashNavigation from './dashboard/dashNavi'
 
 const Boxone = (props) => {
     return (
@@ -63,104 +37,18 @@ const Quicktask = (props) => {
     );
 }
 
-const Banner = () => {
-    return (
-        <Container fluid className="mybanner">
-            <Grid centered stackable  style={{backgroundColor: 'lightBlue' }} >
-                <Grid.Column width={5} >
-                    <div>
-                        <Boxone titre="Total Balance"
-                                textSecondaire="montant disponible"
-                                monaie="€"
-                                montant=" 1.000.000,00"
-                                src={wallet} />
-                    </div>
-                </Grid.Column>
-                <Grid.Column width={5} >
-                    <div>
-                        <Boxone titre="Last Request"
-                                textSecondaire="from Anderson stephanie"
-                                monaie="€"
-                                montant=" 100.000,00"
-                                src={request} />
-                    </div>
-                </Grid.Column>
-                <Grid.Column width={5} >
-                    <div>
-                        <Boxone titre="Last Transfer"
-                                textSecondaire="to Wallas wilson"
-                                monaie="€"
-                                montant=" 1.000,00"
-                                src={transfer} />
-                    </div>
-                </Grid.Column>
-            </Grid>
-        </Container>
-    )
-}
 
-const mgTop = 35;
-
-const Dashcontent = () => {
+const Dashcontent = (props) => {
     return (
+
         <div className="dashcontent">
-            <Container fluid  className="dashcontentheader">
-                <Grid centered className="gridnav">
-                    <Grid.Column width={8} >
-                        <Searchbar/>
-                    </Grid.Column>
-                    <Grid.Column width={8} >
-                        <nav className="headmenu">
-                            <ul className="navimenu">
-                                <MenuItem title="message" />
-                                <MenuItem title="notification" />
-                                <MenuItem title="help" />
-                                <MenuItem title="profil" />
-                            </ul>
-                        </nav>
-                    </Grid.Column>
-                </Grid>
-            </Container>
 
-            <Banner/>
-
-
-            <AddCard/>
+            <DashNavigation/>
+            
+            { props.children }
 
         </div>
     );
 };
 
 export default Dashcontent;
-
-/*
-presentation de la page d accueil au niveau de account
-const Dashcontent = () => {
-    return (
-        <div className="dashcontent">
-            <Container fluid  className="dashcontentheader">
-                <Grid centered className="gridnav">
-                    <Grid.Column width={8} >
-                        <Searchbar/>
-                    </Grid.Column>
-                    <Grid.Column width={8} >
-                        <nav className="headmenu">
-                            <ul className="navimenu">
-                                <MenuItem title="message" />
-                                <MenuItem title="notification" />
-                                <MenuItem title="help" />
-                                <MenuItem title="profil" />
-                            </ul>
-                        </nav>
-                    </Grid.Column>
-                </Grid>
-            </Container>
-
-            <Banner/>
-
-            <AddCard/>
-
-        </div>
-    );
-};
-*/

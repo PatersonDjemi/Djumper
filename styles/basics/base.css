@@ -1,3 +1,23 @@
+:root {
+    --cyan-middle: #00BCD4; /*---- 500  ---*/
+    --blue-middle: #2196F3; /*---- 500  ---*/
+    --pink-middle: #E91E63; /*---- 500  ---*/
+
+    --cyan-dark: #006064; /*---- 900  ---*/
+    --blue-dark: #0D47A1; /*---- 900  ---*/
+    --pink-dark: #880E4F; /*---- 900  ---*/
+
+    --cyan-light: #26c6da; /*---- 400  ---*/
+    --blue-light: #42A5F5; /*---- 400  ---*/
+    --pink-light: #EC407A; /*---- 400  ---*/
+
+
+    --white-color: #ffffff;
+    --black-color: #161d28;
+}
+
+
+
 *,
 *::after,
 *::before {
@@ -37,3 +57,4 @@ body {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
