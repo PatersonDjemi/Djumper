@@ -10,13 +10,13 @@ import Loader from '@reusable/Loader'
 // my components here
 import Dashmenu from './dashmenu'
 import Dashcontent from './dashcontent'
-import Account from './dashboard/account'
-import Transactions from './dashboard/transactions'
-import Articles from './dashboard/articles'
-import SendMoney from './dashboard/sendmoney'
-import CreateCheck from './dashboard/createcheck'
-import Settings from './dashboard/settings'
-import Help from './dashboard/help'
+import Account from './dashboard/account/account'
+import Transactions from './dashboard/transactions/transactions'
+import Articles from './dashboard/articles/articles'
+import SendMoney from './dashboard/sendMoney/sendmoney'
+import CreateCheck from './dashboard/sendMoney/createcheck'
+import Settings from './dashboard/settings/settings'
+import Help from './dashboard/help/help'
 
 
 // actions creators

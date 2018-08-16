@@ -1,38 +1,23 @@
 import React, { Component } from 'react';
-import GridRow, { Container, Grid, Image } from 'semantic-ui-react';
+import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
 
-import Layout from './withSideBarLayout'
-import Calendar from '../../../assets/Calendar.svg'
+import Layout from '../withSideBarLayout'
+import Calendar from '@assets/Calendar.svg'
 
-const Description = () => {
-    return (
-        <div className="sendmoney__descrition">
-            <h3 className="sendMoney__title">
-                Send, Request Money, Create a check
-            </h3>  
-            <div className="sendmoney__description-text">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br/>sed diam 
-                voluptua. At vero eos et accusam et justo duo
-            </div>
-        </div>
-    )
-}
-
+import {Description} from './componentsWithoutProps';
 
 class SendMoney extends Component {
 
     render() {
         return (
             <div>
-                
-                <Description />
-
+                <Description />    
+            
                 <Layout.LayoutWithSideBar>
-
                     <Layout.MainContent>
                         <Grid stackable >
                             <Grid.Column width={15}>
+                            
                                 <ul className="tab__nav">
                                     <li className="tab__nav__link"> Send money </li>
                                     <li className="tab__nav__link"> Request money </li>
@@ -124,13 +109,10 @@ class SendMoney extends Component {
                     <Layout.Sidebar>
 
                         side
-                    </Layout.Sidebar>
-            
+                    </Layout.Sidebar>     
 
                 </Layout.LayoutWithSideBar>
-
-            </div>
-
+            </div>   
         )
     }
 

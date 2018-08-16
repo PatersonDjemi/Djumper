@@ -1,10 +1,10 @@
 import React from 'react';
-import { Image, Segment, Icon } from 'semantic-ui-react'
+import { Image, Segment, Icon, Button } from 'semantic-ui-react'
 
 
 import QuickOverview from './quickOverview'
-import Resume from '@components/resume';
-import Layout from './withSideBarLayout';
+import Resume from './resume';
+import Layout from '../withSideBarLayout';
 
 import paypal from '@assets/paypal.svg'
 
@@ -22,7 +22,11 @@ const AddPaypalSection = () => {
                     nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
                 </div>
 
-                <span className="get_start link__paypal"> Link your Paypal Account </span>
+                {/* <span className="get_start link__paypal"></span> */}
+                <span className="link__paypal">
+                    <Button color='red' size="big">Link your Paypal Account</Button>
+                </span>
+                
             </div>
         </Segment>
     );
@@ -61,7 +65,7 @@ const Account = (props) => {
                            </div> 
                            <div className="see__next__amount">
                                 <div className="next__text celled">
-                                    Next month payement : <br/>
+                                    Next month : <br/>
                                     voraus.: 29/05/18
                                 </div> 
                                 <div className="next__amount celled"> 354,98 eur</div>

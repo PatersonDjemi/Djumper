@@ -2,11 +2,7 @@ import React from 'react'
 import { Link, Route } from 'react-router-dom'
 import { Container, Grid, Button, Image } from 'semantic-ui-react'
 
-
-
-import Transacion from './transactions'
-import QuickOverview from './dashboard/quickOverview'
-import DashNavigation from './dashboard/dashNavi'
+import DashNavigation from './dashboard/navigation/dashNavi'
 import Loader from '@reusable/Loader'
 
 

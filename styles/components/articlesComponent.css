@@ -34,8 +34,14 @@
     padding-top: .5rem;
 }
 
+.articles__profil{
+    width: 7.5%; 
+    vertical-align: middle;
+    padding-left: 2rem !important;  
+}
+
 .article__name {
-    width: 37.5%;
+    width: 30%;
 }
 
 .name__seller {
@@ -46,7 +52,7 @@
 .article__type {
     font-size: 1.5rem; 
     padding-top: .5rem; 
-    font-weight: 600; 
+    font-weight: 500; 
 }
 
 .artciles__price {
@@ -55,16 +61,23 @@
 
 .price__amount {
     font-size: 2rem;   
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .rate__duration {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 400; 
     padding-top: .5rem; 
 }
 
 .artcile__state {
+
     width: 25%;
     padding-right: 1.5rem;
+}
+
+.rate__state::after {
+    content: "";
+    display: table;
+    clear: both;
 }

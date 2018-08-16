@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 import plane from '@assets/aeroplane.svg'
 
-import { Article } from './dashboard/articles'
-
+import { Article } from '../commonComponents/boughtItems'
 
 function renderProductsReview(theItems) {
     if ( theItems ) {
@@ -45,12 +44,12 @@ const Resume = ({ theItems }) => {
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                             </div>
                         </Grid.Column>
-                        <Grid.Column className="">
+                        <Grid.Column width={10} className="">
                             <Segment className="statistik__left">
                                 <span style={{ fontSize: '17px', fontWeight: 500 }}> Statistik left </span> 
                             </Segment>  
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column width={6}>
                             <Segment className="statistik__right">
                                 <span style={{ fontSize: '17px', fontWeight: 500 }}> Statistik right </span>
                             </Segment>  
@@ -70,6 +69,7 @@ const Resume = ({ theItems }) => {
                         </div>
                         
                         { renderProductsReview(theItems) }
+
                     </Grid.Column>
                 </Grid.Row>
             </Grid.Column>

@@ -36,7 +36,6 @@ const Searchbar = () => {
     );
 }
 
-
 class DashNavi extends Component {
     constructor(props) {
         super(props);

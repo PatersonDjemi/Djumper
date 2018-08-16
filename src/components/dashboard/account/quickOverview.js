@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Image, Container, Grid, Segment } from 'semantic-ui-react';
 
-import wallet from '../../../assets/wallet.svg'
-import transfer from '../../../assets/transfer-money.svg'
-import request from '../../../assets/get-money.svg'
+import wallet from '@assets/wallet.svg'
+import transfer from '@assets/transfer-money.svg'
+import request from '@assets/get-money.svg'
 
 
 
@@ -44,7 +44,7 @@ const QuickOverview = ({ theItems }) => {
         return parseFloat(acc) + (parseFloat(currentValue.amount) / parseFloat(currentValue.nberOfMonth));
     }, 0)
 
-    let lastPayment = 0;
+    let lastPayment = '0.00';
 
     return (
         <Container fluid style={{ marginBottom: '5rem' }}>
