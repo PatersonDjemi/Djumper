@@ -84,27 +84,24 @@ class NotifAndMsg extends Component {
                                         <div>
                                             <Notification
                                                 from="Hassan Paterson"
-                                                when="3 min ago"
+                                                when="3 hours ago"
                                                 title="Payement confirmation"
                                                 content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua"
+                                                sed diam nonumy eirmod temp"
                                             />
                                                 <Notification
                                                 from="Rebecca Hanke"
                                                 when="Yesterday"
                                                 title="Bisous bisous"
                                                 content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua"
+                                                sed diam nonumy eirmod temp"
                                             />
                                             <Notification
                                                 from="Martin Pop"
-                                                when="one week ago"
+                                                when="1 week ago"
                                                 title="Talk room"
                                                 content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua"
+                                                sed diam nonumy eirmod temt"
                                             />
                                         </div>
                                     )}
@@ -113,17 +110,15 @@ class NotifAndMsg extends Component {
                                         <div>
                                             <Message
                                                 from="Hassan Paterson"
-                                                when="two days ago"
+                                                when="2 days ago"
                                                 content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua"
+                                                sed diam nonumy eirmod tem"
                                             />
                                             <Message
                                                 from="Martin Pop"
-                                                when="one week ago"
+                                                when="1 week ago"
                                                 content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                                magna aliquyam erat, sed diam voluptua"
+                                                sed diam nonumy eirmod tem"
                                             />
                                         </div>
                                     )}

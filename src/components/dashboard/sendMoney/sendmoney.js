@@ -74,12 +74,12 @@ class SendMoney extends Component {
                                             <span className="how__much">How much do you want to send ? </span>
                                             <div className="inputs__summes">
                                                 <div className="whatISend">
-                                                    <label style={{ marginBottom: .5 + 'rem', display: 'inline-block'}}> You send </label>
+                                                    <label style={{ marginBottom: .5 + 'rem', display: 'inline-block'}}> Send </label>
                                                     <input type="text" placeholder="10,00" className="input__money" />
                                                     <span className="transfert__device"> eur </span>
                                                 </div>
                                                 <div className="whatYouReceive">
-                                                    <label  style={{ marginBottom: .5 + 'rem', display: 'inline-block'}}> He will receive </label>
+                                                    <label  style={{ marginBottom: .5 + 'rem', display: 'inline-block'}}> Receive </label>
                                                     <input type="text" placeholder="10,00" className="input__money" />
                                                     <span className="transfert__device"> eur </span>
                                                 </div>
