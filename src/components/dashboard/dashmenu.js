@@ -17,9 +17,9 @@ import help from '@assets/info.svg'
 
 const sideMenuList = [
     { taskname: 'account',  icons: account, link: 'account' },
-    { taskname: 'transactions',  icons: transactions, link: 'transactions' },
     { taskname: 'articles',  icons: artciles, link: 'articles' },
-    { taskname: 'send money',  icons: sendmoney, link: 'sendmoney' },
+    { taskname: 'money',  icons: sendmoney, link: 'money' },
+    { taskname: 'transactions',  icons: transactions, link: 'transactions' },
     // { taskname: 'create check',  icons: checkbank, link: 'createcheck' },
     { taskname: 'find user',  icons: finduser, link: 'finduser' },
     { taskname: 'settings',  icons: settings, link: 'settings' },

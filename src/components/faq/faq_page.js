@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Grid, Header, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
-import Navigation from './navigation'
+import Navigation from '../navigation/navigation'
 
 import Down from '@assets/lnr-chevron-down.svg'
 

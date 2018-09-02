@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from './home_page';
-import FAQ from './faq_page'
+import Home from './home/home_page';
+import FAQ from './faq/faq_page'
 import Thankyou from './thankyou'
 import CheckMail from './checkedmail'
-import Footer from './footer'
+import Footer from './footer/footer'
 
 
 

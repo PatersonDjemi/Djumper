@@ -1,9 +1,17 @@
 .sendmoney__descrition {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    height: 25rem;
     padding-left: 5rem;
-    padding-right: 40rem;
+    padding-right: 5rem;
     text-align: center;
+    /* background-color: aqua; */
+    position: relative;
+}
+
+.sendmoney__describe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .sendMoney__title {
@@ -20,21 +28,24 @@
     text-align: center;
 }
 
-.tab__nav {
-    margin: 2rem 0;
+.money__options {
+    margin: 0rem;
     list-style: none;
-    display: flex;
-    border-bottom: 1px solid #bbb;
+    width: 100%;
 }
 
-.tab__nav__link {
-    padding: 1.5rem 2rem;
-    color: var(--blue-middle);
-    cursor: pointer;
-    background-color: #f1f1f1;
-    border: 1px solid #bbb;
-    border-bottom: none;
-    margin-right: .5rem;
+.money__options__tab {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    padding-bottom: 15px;
+}
+
+.money__options__text {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .tab__link__text {
@@ -44,65 +55,23 @@
     text-align: justify; 
 }
 
+/************ transfert block ************/
 .transfert__block {
-    width: 90%;
-    margin: 5rem auto 3rem;
-    min-height: 100px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    /* background-color: var(--blue-dark); */
-    display: flex;
-}
-
-.transfert__sender {
-    flex: 2 0;
-    /* background-color: var(--blue-middle); */
-}
-
-.transfert__sreceiver {
-    flex: 3 1;
-    background-color: var(--cyan-middle);
-}
-
-.transfert__type {
-    padding: 1rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--black-color);
-    letter-spacing: .2rem;
-}
-
-.transfert__sender__image {
-    height: 150px;
-    padding-top: 5rem;
-    /* background-color: aqua; */
-}
-
-.transfert__sender__name {
-    padding: 2rem;
-    /* text-align: center; */
-    font-size: 1.7rem;
-}
-
-
-
-/************ test ************/
-.test__block {
     width: 100%;
     max-width: 70rem;
     min-height: 200px;
     padding-bottom: 2rem;
-    margin: 5rem auto 3rem;
+    margin: 5rem auto 2rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 }
 
-.test__block__title {
-    padding: 1.5rem 2rem;
+.transfert__block__title {
+    padding: 3rem 4rem;
     display: flex;
     align-items: center;
 }
 
-.test__type {
+.transfert__block__type {
     font-size: 1.3rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -116,21 +85,16 @@
     max-width: 55rem;
     width: 100%;
     margin: auto;
-    padding: 3rem 3rem;
+    padding: 1rem 1rem 1rem;
 }
 
-.test__block__input {
-    /* padding: 3rem 3rem 4rem; */
-    margin-bottom: 3rem;
-}
-
-.test__input__holder {
-    /* width: 70%; */
+.tranfert__input__holder {
     padding: .5rem 1.5rem 0;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid #bbb;
     border-radius: 4px;
+    margin-bottom: 3rem;
 }
 
 .transfert__email {
@@ -157,7 +121,7 @@
 
 .transfert__to__block {
     display: table;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
 }
 
 .transfert__test__to {
@@ -165,6 +129,7 @@
     vertical-align: baseline;
     color: var(--black-color);
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .transfert__to__name {
@@ -180,8 +145,8 @@
     border-radius: 3rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     font-size: 1.3rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem
+    margin-right: 1.2rem;
+    margin-bottom: 1.2rem
 }
 
 .how__much {
@@ -249,7 +214,7 @@
 
 .transfert__btn__block {
     text-align: right;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .tranfert__btn {
@@ -271,5 +236,21 @@
 .btn__next {
    box-shadow:rgba(0, 0, 0, 0.16) 3px 3px 10px, rgba(0, 0, 0, 0.23) 1px 3px 10px;
    background-color: var(--cyan-middle);
-   padding: 1.5rem 2.5rem;
+   padding: 1.2rem 2.5rem;
+}
+
+/********** progress - step ************/
+.transfert__progress {
+    position: relative;
+    text-align: center;
+}
+
+.transfert__step {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }

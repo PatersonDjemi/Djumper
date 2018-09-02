@@ -19,20 +19,20 @@ export const notifOrMsg = (...args) => {
                 <div className="profil__letter"> {letter}  </div>
              </div>) } 
              <div className="notifBlock__content">
-                 <div className="notifBlock__content__header">
+                <div className="notifBlock__content__header">
                     
-                     <div className="notifBlock__content__from"> {props.from} </div>
+                    <div className="notifBlock__content__from"> {props.from} </div>
                      {/* <div className="notif__time"> {props.when} </div> */}
-                     <Icon name="star" size="large" className="star__icon"/>
-                 </div>
+                    <div> {th.length === 3 ? `${th[0]} ${th[1]} ${th[2]}` : props.when } </div>
+                     
+                </div>
                 { args.length == 0 ? (<div className="notifBlock__content__title"> {props.title} </div>) : null } 
                 <div className="notifBlock__content__wrapper">
                     <div className="notifBlock__content__text"> {props.content}
                     <span className="show_more_less"> Show more </span>
                     </div>
                     <div className="notif__times"> 
-                        <span>{th.length === 3 ? th[0] : props.when }</span> <br/>
-                        <span>{th.length === 3 ? `${th[1]} ${th[2]}` : null }</span>
+                        <Icon name="star" size="large" className="star__icon"/>
                     </div>                
                 </div>
 

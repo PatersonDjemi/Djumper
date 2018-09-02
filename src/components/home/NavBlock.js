@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Header, Menu, Button, Container} from 'semantic-ui-react'
 
-import Navigation from './navigation';
+import Navigation from '../navigation/navigation';
 import FirstBlock from './first_block'
 
 

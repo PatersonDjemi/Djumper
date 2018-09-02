@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 
-import { FormInput } from '../reusable/inputs';
+import { FormInput } from '../../reusable/inputs';
 import Mail from '@assets/Mail.svg';
 import Password from '@assets/locked.svg';
 

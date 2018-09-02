@@ -68,7 +68,7 @@ ul.dashboard__menu_list a:hover .single__menu::after {
 ul.dashboard__menu_list a:hover .single__menu {
     transform: translateX(.5rem);
     transition: transform .5s;
-    color: var(--white-color);
+    /* color: var(--white-color); */
 }
 
 .menu__name {

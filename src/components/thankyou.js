@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Grid } from 'semantic-ui-react';
-import Footer from './footer';
+import Footer from './footer/footer';
 
 const Thanks = (props) => {
     return (

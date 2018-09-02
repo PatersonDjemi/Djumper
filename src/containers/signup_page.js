@@ -10,7 +10,7 @@ import User from '@assets/User.svg';
 import Password from '@assets/locked.svg'
 
 import {FormInput, CheckInput} from '@reusable/inputs'
-import SignupForm from '@components/signupForm'
+import SignupForm from '@components/signup/signupForm'
 import Loader from '@reusable/Loader'
 import ShowError from '@components/showError'
 

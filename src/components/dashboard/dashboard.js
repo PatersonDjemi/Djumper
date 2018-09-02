@@ -10,13 +10,13 @@ import Loader from '@reusable/Loader'
 // my components here
 import Dashmenu from './dashmenu'
 import Dashcontent from './dashcontent'
-import Account from './dashboard/account/account'
-import Transactions from './dashboard/transactions/transactions'
-import Articles from './dashboard/articles/articles'
-import SendMoney from './dashboard/sendMoney/sendmoney'
-import CreateCheck from './dashboard/sendMoney/createcheck'
-import Settings from './dashboard/settings/settings'
-import Help from './dashboard/help/help'
+import Account from './account/account'
+import Transactions from './transactions/transactions'
+import Articles from './articles/articles'
+import SendMoney from './sendMoney/sendmoney'
+import CreateCheck from './sendMoney/createcheck'
+import Settings from './settings/settings'
+import Help from './help/help'
 
 
 // actions creators
@@ -76,7 +76,7 @@ class Dashboard extends Component {
                         <Route path={`${url}/account`} render={ props => <Account {...props} theItems={theItems} />} />
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
-                        <Route path={`${url}/sendmoney`} component={SendMoney} />
+                        <Route path={`${url}/money`} component={SendMoney} />
                         <Route path={`${url}/createcheck`} component={CreateCheck} />
                         <Route path={`${url}/settings`} component={Settings} />
                         <Route path={`${url}/help`} component={Help} />
