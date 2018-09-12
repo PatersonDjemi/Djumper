@@ -27,6 +27,7 @@ module.exports = {
             '@components': path.resolve(__dirname, './src/components'),
             '@containers': path.resolve(__dirname, './src/containers'),
             '@reusable': path.resolve(__dirname, './src/reusable'),
+            '@utils': path.resolve(__dirname, './src/utils')
         }
     },
     module: {

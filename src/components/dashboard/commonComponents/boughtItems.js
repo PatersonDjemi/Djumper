@@ -1,6 +1,7 @@
 import React from 'react';
 import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import {letterToProfil} from '@utils/utilsOnString';
 
 import info from '@assets/info.svg'
 
@@ -9,11 +10,15 @@ export const Article = (props) => {
         amount, rate, status, devise,
         percentage, color, page, id } = props;
 
+    const letters = letterToProfil(seller);
+
     return (
         <Link to={`/dashboard/${page}/${id}`} className="articles__link">
             <Container fluid className="artcicle__wrapper">
                 <div className="articles__profil celled">
-                    <Image src={info} height="40" width="40" />
+                    <div className="articles__profil__name"> 
+                        {letters}
+                    </div>
                 </div>
                 <div className="artciles__date celled">
                     <div className="date__month">{ month }</div>

@@ -11,7 +11,7 @@ import request from '@assets/get-money.svg'
 const Overview = (props) => {
     return (
         <Segment className="box__banner">
-            <div className="box__text">
+            <div className="box__text" style={{ width: 55 +'%'}}>
                 <div className="box__banner_title">
                     <span className="bg_title"> {props.mainTitle} </span> <br/>
                     <span className="sm_title">{props.secondTitle}</span>
@@ -47,7 +47,7 @@ const QuickOverview = ({ theItems }) => {
     let lastPayment = '0.00';
 
     return (
-        <Container fluid style={{ marginBottom: '5rem' }}>
+        <Container fluid style={{ marginBottom: '2rem' }}>
             <Grid stackable centered>
                 <Grid.Column width={15}>
                     <section>   
@@ -69,7 +69,7 @@ const QuickOverview = ({ theItems }) => {
                                 devise="EUR"
                                 src={request} />
                             <Overview
-                                mainTitle="Next Payment"
+                                mainTitle="Upcoming Payment"
                                 secondTitle="am 10.08.2018"
                                 amount={nextPayment}
                                 devise="EUR"

@@ -5,6 +5,8 @@ import { Container, Grid, Image } from 'semantic-ui-react'
 
 import notif from '@assets/bell.svg'
 import message from '@assets/message.svg'
+import profil from '@assets/User.svg'
+import search from '@assets/search.svg'
 
 import DropDownComponent from '@reusable/dropdown'
 import Loader from '@reusable/Loader'
@@ -14,19 +16,8 @@ import NotifAndMsg from '@containers/notifAndMsg'
 
 import { logUserOut } from '@actions/index'
 
+import MenuNav from './menuNav'
 
-const MenuItem = (props) => {
-    return (
-        <li className="nav__menu__list">
-            <div className="menu__block">
-                <div onClick={props.renderBlock} className="menu__block_icons">
-                    <Image src={props.src} height="25" width="25" /> 
-                </div>
-                <span className="menu__block_nber"> {props.nber} </span>
-            </div>
-        </li>
-    );
-}
 
 const Searchbar = () => {
     return (
@@ -117,14 +108,14 @@ class DashNavi extends Component {
                     <Grid.Column width={8} >
                         <nav className="headmenu">
                             <ul className="nav__menu">
-                                {/* <MenuItem src={message} nber="5" /> */}
-                                <MenuItem renderBlock={() => this.setState({showNotifAndMsg: true})} src={notif} nber="3" />
-                                <li className="nav__menu__list" >
-                                    <div className="profil">
-                                        <div className="profil__pic"
-                                         onClick={this.toggleDropdown}></div>
-                                    </div>
-                                </li>
+                                <MenuNav 
+                                    actionClick={() => console.log('search clicked')}
+                                    src={search} />
+                                <MenuNav actionClick={() => this.setState({showNotifAndMsg: true})}
+                                    src={notif}
+                                    nber="3" />
+                                <MenuNav actionClick={this.toggleDropdown} 
+                                    src={profil} />
                             </ul>
                             <div style={{ display: 'flex', flexDirection: 'row-reverse', position: 'relative'}}>
                                 { this.state.dropdownProfil && this.renderDropdowMenuUser() }

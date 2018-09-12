@@ -8,19 +8,19 @@
 }
 
 .dashboard__menu__container {
-    /* background-color: var(--blue-middle); */
+    background-color: #374760;
     box-shadow: rgba(0, 0, 0, 0) 3px 0px 20px, rgba(0, 0, 0, 0.22) 0px 0px 22px;
     flex: 0 0 30rem;
-    /* 1er 0 empeche l element d occuper tt l espace
-     le 2e l empeche de se reduire qd la taille de l ecran change
-     la 3e pp permet de preciser la largeur */
+    /* 1er 0 empeche l element d occuper tt l espace */
+    /* le 2e l empeche de se reduire qd la taille de l ecran change */
+    /* la 3e pp permet de preciser la largeur */
 }
 
 .dashcontent {
     flex: 1 1 !important;
     padding-left: 5rem;
     padding-right: 5rem;
-    /* background-color: aqua; */
+    background-color: #f1f1f1;
     overflow-y: auto;
 }
 

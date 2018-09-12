@@ -11,9 +11,11 @@
 
 .header__search {
     max-width: 500px;
-    border: 1px solid #bbb;
+    /* border: 1px solid #bbb; */
+    background-color: var(--white-color);
     padding: 5px 15px;
     box-sizing: border-box;
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
 }
 
 #mysearchbar {
@@ -25,15 +27,6 @@
     font-weight: 300;
     /* color: var(--cyan-middle); */
 }
-
-.quick_overview {
-   font-size: 2.5rem;
-   font-weight: 600;
-   color: var(--cyan-middle);
-   padding-top: 2rem;
-   padding-bottom: 1rem;
-}
-
 
 
 /**** horizontal menu ***********/ 
@@ -51,7 +44,7 @@
 
 .nav__menu__list {
     display: inline-block;
-    padding: 0 1rem;
+    padding: 0 0rem 0rem 1rem;
 }
 
 .menu__block {
@@ -86,7 +79,7 @@
 .profil__pic {
     width: 4rem;
     height: 4rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     position: relative;
     border-radius: 100%;
     display: flex;
@@ -99,7 +92,7 @@
     cursor: pointer;
 }
 
-.profil__pic::after {
+/* .profil__pic::after {
     content: "";
     position: absolute;
     width: 4rem;
@@ -107,7 +100,7 @@
     border-radius: 100%;
     border: 1px solid var(--black-color);
     padding: 2rem;
-}
+} */
 
 .profil {
     position: relative;

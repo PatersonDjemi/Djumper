@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
-import Calendar from '@assets/Calendar.svg';
+
 
 import {FirstStep} from './firstStep';
 import {SecondStep} from './secondStep';
@@ -26,12 +26,7 @@ class MoneyPanel extends Component {
     render() {
         return (
             <div className="transfert__block">
-    
-                <div className="transfert__block__title"> 
-                    <Image src={Calendar} height="20" width="20" className="test__block__image" />
-                    <span className="transfert__block__type">Send Money </span>
-                </div>
-    
+
                 <div className="transfert__block__content">
     
                     {this.state.firstStep && <FirstStep /> }

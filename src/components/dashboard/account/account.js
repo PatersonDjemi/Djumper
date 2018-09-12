@@ -5,6 +5,7 @@ import { Image, Segment, Icon, Button } from 'semantic-ui-react'
 import QuickOverview from './quickOverview'
 import Resume from './resume';
 import Layout from '../withSideBarLayout';
+import SeeNext from './seeNext'
 
 import paypal from '@assets/paypal.svg'
 
@@ -24,7 +25,7 @@ const AddPaypalSection = () => {
 
                 {/* <span className="get_start link__paypal"></span> */}
                 <span className="link__paypal">
-                    <Button color='red' size="big">Link your Paypal Account</Button>
+                    <Button color='red' size="big" className="link__paypal_btn">Link your Paypal Account</Button>
                 </span>
                 
             </div>
@@ -58,20 +59,7 @@ const Account = (props) => {
                 <Layout.Sidebar>
 
                     <SideSection>
-                        <Segment size="huge" className="see__next__month">
-                           <div className="see__next__content">
-                                Lorem ipsum dolor sit amet, consetetur sadip scing elitr
-                                nvidunt ut labore et dolore magna aliquyam erat
-                           </div> 
-                           <div className="see__next__amount">
-                                <div className="next__text celled">
-                                    Next month : <br/>
-                                    voraus.: 29/05/18
-                                </div> 
-                                <div className="next__amount celled"> 354,98 eur</div>
-                           </div> 
-                           <Icon name="chevron circle up" size="big" className="up__down__see"/>
-                        </Segment>
+                        <SeeNext />
                     </SideSection>
 
                     <SideSection  title="Do you have paypal account ?">

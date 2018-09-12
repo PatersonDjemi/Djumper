@@ -20,7 +20,6 @@ const sideMenuList = [
     { taskname: 'articles',  icons: artciles, link: 'articles' },
     { taskname: 'money',  icons: sendmoney, link: 'money' },
     { taskname: 'transactions',  icons: transactions, link: 'transactions' },
-    // { taskname: 'create check',  icons: checkbank, link: 'createcheck' },
     { taskname: 'find user',  icons: finduser, link: 'finduser' },
     { taskname: 'settings',  icons: settings, link: 'settings' },
     { taskname: 'help',  icons: help, link: 'help' },
@@ -28,7 +27,7 @@ const sideMenuList = [
 
 const SingleTask = (props) => {
     return (
-        <NavLink to={props.link} activeClassName="test">
+        <NavLink to={props.link} activeClassName="active__link">
             <li className="single__menu">
                 <Image src={props.icons} className="imgplus" height="25" width="25" />
                 <span className="menu__name">{props.taskname}</span>
@@ -57,7 +56,7 @@ class Dashmenu extends Component {
             <div className="dashboard__menu__container">
                 <div className="dashboard__menu">
                     <Header as="h1" className="dashboard__logo">
-                        <Link to="/"> DJUMPER </Link>
+                        <Link to="/" className="text__logo"> DJUMPER </Link>
                     </Header>
                     <div className="dashboard__menu_user">
                         <ul className="dashboard__menu_list">
@@ -74,6 +73,5 @@ class Dashmenu extends Component {
 export default Dashmenu;
 
 // a revoir: 
-// comment extraire la nvaigation de telle facon que tout ne re-rendern pas entièrement
 // essayer d utiliser match.url à la place de match.path
 // revoir encore les liens qd ils sont actifs et ont le focus en meme tps le border devient plus gros, ce qui faut eviter

@@ -417,9 +417,7 @@
     padding: 15px 0px;
 } */
 
-.imgplus {
-    display: inline-block !important;
-}
+
 
 ul.taskslist li:hover {
     background-color: #0ea432;

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
 
+import Sendmoney from '@assets/send-money.svg';
+
 import MoneyPanel from './transfertPanel';
 import MoneyContent from './moneyContent';
 
@@ -8,13 +10,22 @@ import MoneyContent from './moneyContent';
 const MoneyMenu = () => {
     return (
         <Grid.Column width={4}>
-                
-            <ul className="money__options">
-                <li className="money__options__tab"> Send money </li>
-                <li className="money__options__tab"> Request money </li>
-                <li className="money__options__tab"> Create check </li>
-            </ul>
-
+            <div className="menu__options__wrapper">
+                <ul className="money__options">
+                    <li className="money__options__tab"> 
+                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+                        <span className="menu__option__title">Send money</span> 
+                    </li>
+                    <li className="money__options__tab"> 
+                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+                        <span className="menu__option__title">Request money</span> 
+                    </li>
+                    <li className="money__options__tab"> 
+                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+                        <span className="menu__option__title">Create check</span> 
+                    </li>
+                </ul>
+            </div>
         </Grid.Column>
     );
 }
