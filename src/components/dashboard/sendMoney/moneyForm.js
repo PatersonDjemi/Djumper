@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
+import  { GridRow, Container, Grid, Image, Menu } from 'semantic-ui-react';
 
 import Sendmoney from '@assets/send-money.svg';
 
@@ -7,24 +7,38 @@ import MoneyPanel from './transfertPanel';
 import MoneyContent from './moneyContent';
 
 
+// const MoneyMenu = () => {
+//     return (
+//         <Grid.Column width={4}>
+//             <div className="menu__options__wrapper">
+//                 <ul className="money__options">
+//                     <li className="money__options__tab"> 
+//                         <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+//                         <span className="menu__option__title">Send money</span> 
+//                     </li>
+//                     <li className="money__options__tab"> 
+//                         <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+//                         <span className="menu__option__title">Request money</span> 
+//                     </li>
+//                     <li className="money__options__tab"> 
+//                         <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
+//                         <span className="menu__option__title">Create check</span> 
+//                     </li>
+//                 </ul>
+//             </div>
+//         </Grid.Column>
+//     );
+// }
+
 const MoneyMenu = () => {
     return (
         <Grid.Column width={4}>
             <div className="menu__options__wrapper">
-                <ul className="money__options">
-                    <li className="money__options__tab"> 
-                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
-                        <span className="menu__option__title">Send money</span> 
-                    </li>
-                    <li className="money__options__tab"> 
-                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
-                        <span className="menu__option__title">Request money</span> 
-                    </li>
-                    <li className="money__options__tab"> 
-                        <Image src={Sendmoney} height={25} width={25} className="menu__option__svg"/>
-                        <span className="menu__option__title">Create check</span> 
-                    </li>
-                </ul>
+                <Menu vertical fluid secondary>
+                    <Menu.Item name='Send Money' active />
+                    <Menu.Item name='Request Money'  />
+                    <Menu.Item name='Create a check'  />
+                </Menu>
             </div>
         </Grid.Column>
     );

@@ -18,10 +18,11 @@
 
 .dashcontent {
     flex: 1 1 !important;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    background-color: #f1f1f1;
     overflow-y: auto;
+    overflow-x: hidden;
+    /* padding-left: 5rem;
+    padding-right: 5rem; */
+    /* background-color: #f1f1f1; */
 }
 
 

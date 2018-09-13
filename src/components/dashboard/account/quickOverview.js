@@ -47,7 +47,7 @@ const QuickOverview = ({ theItems }) => {
     let lastPayment = '0.00';
 
     return (
-        <Container fluid style={{ marginBottom: '2rem' }}>
+        <Container fluid style={{ marginBottom: '2rem', backgroundColor: '#f1f1f1' }}>
             <Grid stackable centered>
                 <Grid.Column width={15}>
                     <section>   
