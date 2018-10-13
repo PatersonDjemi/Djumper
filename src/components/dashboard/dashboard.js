@@ -13,8 +13,7 @@ import Dashcontent from './dashcontent'
 import Account from './account/account'
 import Transactions from './transactions/transactions'
 import Articles from './articles/articles'
-import SendMoney from './sendMoney/sendmoney'
-import CreateCheck from './sendMoney/createcheck'
+import SendMoney from './money/money'
 import Settings from './settings/settings'
 import Help from './help/help'
 
@@ -77,7 +76,6 @@ class Dashboard extends Component {
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
                         <Route path={`${url}/money`} component={SendMoney} />
-                        <Route path={`${url}/createcheck`} component={CreateCheck} />
                         <Route path={`${url}/settings`} component={Settings} />
                         <Route path={`${url}/help`} component={Help} />
                         <Redirect from={url} exact to={`${url}/account`} />

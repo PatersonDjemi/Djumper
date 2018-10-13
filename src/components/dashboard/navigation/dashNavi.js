@@ -69,7 +69,7 @@ class DashNavi extends Component {
 
     renderDropdowMenuUser() {
         return (
-            <DropDownComponent top={'1.5'} right={'-5'}>
+            <DropDownComponent top={'1.5'} right={'-4'}>
                 <ul className="profil__menu" ref={this.dropDownRef}>
                     <div className="greeting__user">Hi Paterson </div>
                     <li className="profil__menu__list"> Edit profil </li>
