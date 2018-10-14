@@ -16,6 +16,16 @@
     font-weight: 600;    
     color: var(--black-color);
     text-transform: uppercase;
+    position: relative !important;
+}
+
+#go__back {
+    position: absolute;
+    top: 33px;
+    left: 2rem;
+    display: inline-block;
+    padding-right: 2rem;
+    cursor: pointer;
 }
 
 .ui.grid.gird__notif__message {
@@ -40,7 +50,6 @@
 }
 
 .notifBlock {
-    display: flex;
     color: var(--black-color);
     border-bottom: 1px solid #bbb;
 }

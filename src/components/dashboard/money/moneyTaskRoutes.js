@@ -9,9 +9,9 @@ import CreateCheck from './createcheck'
 const MoneyTaskRoutes = (props) => (
 
     <Grid stackable columns={16} >   
-        <Route path={`${props.match.url}/sendmoney`} component={SendMoney} />
-        <Route path={`${props.match.url}/requestmoney`} component={RequestMoney} />
-        <Route path={`${props.match.url}/createcheck`} component={CreateCheck} />   
+        <Route path={`${props.match.url}/sendmoney`} exact component={SendMoney} />
+        <Route path={`${props.match.url}/requestmoney`} exact component={RequestMoney} />
+        <Route path={`${props.match.url}/createcheck`} exact component={CreateCheck} />   
     </Grid>
 
 );

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import GridColumn, { Container, Grid, Image } from 'semantic-ui-react'
+import { Container, Grid, Image, Icon } from 'semantic-ui-react'
 
 import {ModalBox} from '@reusable/modal'
 import {notifOrMsg} from '@components/notifAndMsg/notifOrMsg';
@@ -42,6 +42,9 @@ class NotifAndMsg extends Component {
         if (event.target.id === 'modal_div') {
            return this.props.hideNotifAndMsg();
         }
+        if (event.target.id === 'go__back') {
+            return this.props.hideNotifAndMsg();
+        }
         // this function wird immer angerufen à chaque click, weiss nicht warum
     }
 
@@ -61,7 +64,11 @@ class NotifAndMsg extends Component {
                         <Grid stackable className="gird__notif__message" >
                             <Grid.Row>
                                 <Grid.Column className="all__news">
+                                    
+                                    <Icon id="go__back"  onClick={this.modalBoxClose} name='long arrow alternate left' size='large' />
+                       
                                     <span>all your news</span> 
+
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row className="no__padding__bottom">

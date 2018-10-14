@@ -44,16 +44,16 @@ const Resume = ({ theItems }) => {
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr 
                             </div>
                         </Grid.Column>
-                        <Grid.Column width={10} className="">
+                        <Grid.Column width={16} className="">
                             <Segment className="statistik__left">
                                 <span style={{ fontSize: '17px', fontWeight: 500 }}> Statistik left </span> 
                             </Segment>  
                         </Grid.Column>
-                        <Grid.Column width={6}>
+                        {/* <Grid.Column width={16}>
                             <Segment className="statistik__right">
                                 <span style={{ fontSize: '17px', fontWeight: 500 }}> Statistik right </span>
                             </Segment>  
-                        </Grid.Column>
+                        </Grid.Column> */}
                     </Grid.Row>                    
                 </Grid>
 

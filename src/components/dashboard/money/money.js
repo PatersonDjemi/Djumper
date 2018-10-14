@@ -9,6 +9,12 @@ import Description from './moneyDescription';
 import MoneyTaskRoutes from './moneyTaskRoutes'
 
 class Money extends Component {
+    
+    componentDidMount() {
+        // set the sendmoney page as entry point 
+        // for the money component
+        this.props.history.replace(`${this.props.match.url}/sendmoney`);
+    }
 
     render() {
         console.log('rendering here', this.props.match);

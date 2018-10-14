@@ -14,7 +14,7 @@ export const StepInstruction = (props) => (
             <div className="step__description__text">
                 <span style={{ fontWeight: 600 }}> {props.title} </span> 
                 <p style={{ marginBottom: 1+'rem'}}> {props.description} </p>
-                <div className="step__status">
+                <div className="step__status" style={{display: 'none'}}>
                     <Icon name="check circle outline" size="large" className="step__status__icon" />
                     <span className="step__status__text"> {props.status} </span>
                 </div>

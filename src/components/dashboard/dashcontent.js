@@ -18,4 +18,3 @@ const Dashcontent = (props) => {
 
 export default Dashcontent;
 
-// render nav component with a router

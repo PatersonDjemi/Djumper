@@ -44,10 +44,10 @@ class Dashmenu extends Component {
 
     // rendering the side menu of dashboard
     renderSideMenu() {
-        const { path } = this.props.match;
+        const { path, url } = this.props.match;
         return sideMenuList.map( (item, index) => {
             return <SingleTask taskname={item.taskname} icons={item.icons}
-                               link={`${path}/${item.link}`} key={index} /> 
+                               link={`${url}/${item.link}`} key={index} /> 
         });
     }
 
