@@ -6,9 +6,9 @@ import { BrowserRouter  as Router} from 'react-router-dom'
 import { composeWithDevTools } from 'redux-devtools-extension'; // pour utiliser reduxdevtools
 import  createSagaMiddleware  from 'redux-saga';
 
-
 import '../semantic/dist/semantic.css'
 import '../styles/style.css'
+
 import rootReducers from './reducers'
 import rootSaga from './sagas'
 import App from './components/app'
@@ -18,6 +18,7 @@ import {persistState, loadPersistedState} from './persistState'
 const sagaMiddleware = createSagaMiddleware();
 const composeWithDevTool =  composeWithDevTools(applyMiddleware(sagaMiddleware));
 const loadedState = loadPersistedState();
+
 export const myStore = createStore(rootReducers, loadedState, composeWithDevTool);
 
 myStore.subscribe(() => {

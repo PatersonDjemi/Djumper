@@ -1,31 +1,4 @@
-.last__activities__title {
-    font-size: 2.5rem !important;
-    color: var(--cyan-middle) !important;
-    font-weight: 600 !important;
-    margin-bottom: 1rem !important;
-}
 
-.last__activities__description {
-    font-size: 1.6rem;
-    font-weight: 500;
-    text-align: justify;
-    color: var(--black-color);
-    line-height: 1.6;
-}
-
-.view_all {
-    position: absolute;
-    top: 50%;
-    font-size: 1.4rem !important;
-    transform: translateY(-50%) !important;
-    right: 0rem;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 1rem 1.3rem !important;
-    color: var(--black-color) !important;
-    background-color: var(--white-color) !important;
-}
 
 
 /************ block activity **********/

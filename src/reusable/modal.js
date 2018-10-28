@@ -2,15 +2,25 @@ import React, {Component} from 'react'
 import ReactDom from 'react-dom'
 
 const modal_root = document.getElementById('modal_root');
-let modalCard = document.createElement('div');
-modalCard.id = 'modal_div'
+let target = document.createElement('div');
 
+const ModalContent = (props) => {
+    return (
+        <div id="modal_div" style={{ backgroundColor: `${props.backgroung}`}}>
+            {props.children}
+        </div>
+    )
+}
 
-export class ModalBox extends Component {
+ModalContent.defaultProps = {
+    backgroundColor: '#ffffff'
+}
+
+class ModalBox extends Component {
     constructor(props) {
         super(props);
 
-       this.el = modalCard;
+       this.el = target;
        this.divRef = React.createRef();
     }
 
@@ -26,54 +36,58 @@ export class ModalBox extends Component {
 
     render() {
         return ReactDom.createPortal(
-            this.props.children,
+            <ModalContent>
+                {this.props.children}
+            </ModalContent>,
             this.el
         )
     }
 
 }
 
+export default ModalBox;
 
 
-class ModalContent extends Component {
 
-    render() {
-        return (
-            <ModalBox>
+// class ModalContent extends Component {
 
-                <div className="modal_box">
-                    <h3 className="modal__header">
-                        the header
-                    </h3>
-                    <div className="modal__body">
-                        { this.props.children }
-                    </div>
-                    <div className="modal__footer">
-                        <span className="modal__cancel modal__btn"> cancel </span>
-                        <span className="modal__submit modal__btn"> submit </span>
-                    </div>
-                </div>
+//     render() {
+//         return (
+//             <ModalBox>
 
-            </ModalBox>
+//                 <div className="modal_box">
+//                     <h3 className="modal__header">
+//                         the header
+//                     </h3>
+//                     <div className="modal__body">
+//                         { this.props.children }
+//                     </div>
+//                     <div className="modal__footer">
+//                         <span className="modal__cancel modal__btn"> cancel </span>
+//                         <span className="modal__submit modal__btn"> submit </span>
+//                     </div>
+//                 </div>
 
-        );
-    }
+//             </ModalBox>
 
-}
+//         );
+//     }
 
-class Modal extends Component {
-    constructor(props) {
-        super(props);
-    }
+// }
 
-    render() {
-        return (
-            <ModalContent>
+// class Modal extends Component {
+//     constructor(props) {
+//         super(props);
+//     }
 
-            </ModalContent>
-        );
-    }
-}
+//     render() {
+//         return (
+//             <ModalContent>
+
+//             </ModalContent>
+//         );
+//     }
+// }
 
 
-export default Modal;
+// export default Modal;

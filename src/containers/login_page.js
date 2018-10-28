@@ -8,7 +8,7 @@ import Mail from '@assets/Mail.svg';
 import Password from '@assets/locked.svg'
 
 
-import LoginForm from '@components/loginForm'
+import LoginForm from '@components/login/loginForm'
 import Loader from '@reusable/Loader'
 import ShowError from '@components/showError'
 

@@ -1,36 +1,103 @@
 .sendmoney__descrition {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    position: relative;
+    box-shadow: 0px 2px 3px 0 rgba(34, 36, 38, 0.15);
+    background-color: #f1f1f1;
+}
+
+.sendmoney__wrapper {
+    position:  relative !important;
 }
 
 .sendMoney__title {
-    font-size: 2rem;
+    font-size: 3.3rem;
     font-weight: 600;
     color: var(--cyan-middle);
+    margin-bottom: 2rem;
+    display: inline-block;
 }
 
 .sendmoney__description-text {
     color: var(--black-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 1.6;
     text-align: justify;
+    width: 50%;
+    margin-right: auto;
 }
 
-.tab__nav {
-    margin: 2rem 0;
-    list-style: none;
+.icon__menu__wrapper {
     display: flex;
-    border-bottom: 1px solid #bbb;
+    position: absolute;
+    top: 0%;
+    right: 0%;
 }
 
-.tab__nav__link {
-    padding: 1.5rem 2rem;
-    color: var(--blue-middle);
+.round__image__wrapper {
+    height: 8.5rem;
+    width: 8.5rem;
+    border: #f1f1f1;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.icon__menu {
+    margin-right: 2.5rem;
+    text-align: center;
+    text-align: -webkit-center;
+    color: var(--black-color);
+}
+
+.icon__menu__link {
+    display: block;
+    text-decoration: none;
+}
+
+.MoneyContentWrapper {
+    /* box-shadow: rgba(0, 0, 0, 0.12) 7px 6px 6px, rgba(0, 0, 0, 0.12) -7px 0px 6px;    padding-left: 4rem; */
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+    background-color: white;
+    margin-top: 4rem;
+}
+
+.menu__option__svg {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.menu__option__title {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 1rem;
+}
+
+.money__options {
+    margin: 0rem;
+    list-style: none;
+    width: 100%;
+}
+
+.money__options__tab {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    padding-left: 2.5rem;
+    padding-bottom: 15px;
     cursor: pointer;
-    background-color: #f1f1f1;
-    border: 1px solid #bbb;
-    border-bottom: none;
-    margin-right: .5rem;
+}
+
+.money__options__text {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .tab__link__text {
@@ -40,65 +107,26 @@
     text-align: justify; 
 }
 
+/************ transfert block ************/
+.transfertWrapper {
+    padding: 0rem 3rem 3rem !important;
+}
+
 .transfert__block {
-    width: 90%;
-    margin: 5rem auto 3rem;
-    min-height: 100px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    /* background-color: var(--blue-dark); */
-    display: flex;
-}
-
-.transfert__sender {
-    flex: 2 0;
-    /* background-color: var(--blue-middle); */
-}
-
-.transfert__sreceiver {
-    flex: 3 1;
-    background-color: var(--cyan-middle);
-}
-
-.transfert__type {
-    padding: 1rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--black-color);
-    letter-spacing: .2rem;
-}
-
-.transfert__sender__image {
-    height: 150px;
-    padding-top: 5rem;
-    /* background-color: aqua; */
-}
-
-.transfert__sender__name {
-    padding: 2rem;
-    /* text-align: center; */
-    font-size: 1.7rem;
-}
-
-
-
-/************ test ************/
-.test__block {
     width: 100%;
     max-width: 70rem;
     min-height: 200px;
     padding-bottom: 2rem;
-    margin: 5rem auto 3rem;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-}
+    margin: 3rem auto 2rem;
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);}
 
-.test__block__title {
-    padding: 1.5rem 2rem;
+.transfert__block__title {
+    padding: 1.5rem 0rem;
     display: flex;
     align-items: center;
 }
 
-.test__type {
+.transfert__block__type {
     font-size: 1.3rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -109,24 +137,42 @@
 }
 
 .transfert__block__content {
-    max-width: 50rem;
+    max-width: 55rem;
     width: 100%;
     margin: auto;
-    padding: 3rem 3rem;
+    padding: 5rem 1rem 2rem;
 }
 
-.test__block__input {
-    /* padding: 3rem 3rem 4rem; */
-    margin-bottom: 3rem;
+.transfert__input__btn {
+    padding: 1rem 0rem;
+    text-align: right;
+    padding: 1rem 0rem 1.5rem;
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-.test__input__holder {
-    /* width: 70%; */
+/* .round__icon {
+    display: flex;
+    background-color: #f1f1f1;
+    height: 4rem;
+    width: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin-left: 1rem;
+} */
+
+.tranfert__input__holder {
     padding: .5rem 1.5rem 0;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #bbb;
+    /* border: 1px solid #bbb; */
+    border: 1px solid rgba(34,36,38,.15);
     border-radius: 4px;
+    margin-bottom: 3rem;
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
 }
 
 .transfert__email {
@@ -153,7 +199,7 @@
 
 .transfert__to__block {
     display: table;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
 }
 
 .transfert__test__to {
@@ -161,11 +207,12 @@
     vertical-align: baseline;
     color: var(--black-color);
     font-weight: 600;
+    padding-right: 1rem;
 }
 
 .transfert__to__name {
     display: table-cell;
-    padding-left: 1.5rem;
+    padding-left: .5rem;
     vertical-align: baseline;
 }
 
@@ -176,8 +223,8 @@
     border-radius: 3rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     font-size: 1.3rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem
+    margin-right: 1.2rem;
+    margin-bottom: 1.2rem
 }
 
 .how__much {
@@ -194,7 +241,7 @@
 }
 
 .whatISend, .whatYouReceive {
-    max-width: 19rem;
+    max-width: 20rem;
     width: 100%;
     padding: .5rem 1rem;
     border: 1px solid #bbb;
@@ -245,7 +292,7 @@
 
 .transfert__btn__block {
     text-align: right;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .tranfert__btn {
@@ -267,5 +314,92 @@
 .btn__next {
    box-shadow:rgba(0, 0, 0, 0.16) 3px 3px 10px, rgba(0, 0, 0, 0.23) 1px 3px 10px;
    background-color: var(--cyan-middle);
-   padding: 1.5rem 2.5rem;
+   padding: 1.2rem 2.5rem;
+}
+
+/********** progress - step ************/
+.transfert__progress {
+    position: relative;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.transfert__step {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+/************ block instructions ************/
+.menu__options__wrapper {
+    background-color: white;
+    margin-top: 4rem;
+    padding-right: 4rem;
+    text-align: justify;
+    line-height: 1.6;
+    color: var(--black-color);
+}
+.steps__description {
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.step1Intructions {
+    margin-bottom: 2rem;
+    position: relative;
+    /* border-left: 4px solid blue; */
+}
+
+/* .step1Intructions::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: blue;
+    border-radius: 10px;
+} */
+
+.step__table {
+    display: table;
+}
+
+.step__description__number {
+    display: table-cell;
+    font-size: 2.5rem;
+    font-weight: 800;
+    vertical-align: top;
+    line-height: 1;
+    padding-left: .5rem;
+    color: var(--cyan-middle);
+}
+
+.step__description__text {
+    display: table-cell;
+    font-size: 1.5rem;
+    vertical-align: top;
+    padding-left: 1rem;
+}
+
+.step__status {
+    margin-top: .5rem;
+}
+
+.step__status__icon {
+    /* display: inline-block; */
+    vertical-align: middle !important;
+}
+
+.step__status__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: .5rem;
+    color: var(--cyan-middle);
+    font-size: 1.5rem;
 }

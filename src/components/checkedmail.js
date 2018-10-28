@@ -6,7 +6,7 @@ import { autoLogin } from '../actions';
 import Loader from '@reusable/Loader'
 
 
-import Footer from './footer';
+import Footer from './footer/footer';
 
 class CheckMail extends Component {
     constructor(props) {

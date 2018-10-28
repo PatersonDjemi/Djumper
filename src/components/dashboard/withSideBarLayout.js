@@ -2,6 +2,20 @@ import React from 'react';
 import  { Container, Grid, Image } from 'semantic-ui-react';
 
 
+
+
+const LayoutWithSideBar = (props) => {
+    return (
+        <Container fluid >
+            <Grid stackable centered >
+
+                {props.children}
+
+            </Grid>
+        </Container>
+    );
+}
+
 const MainContent = (props) => {
     return (
         <Grid.Column width={11} className="dashboard__mainContent">
@@ -20,17 +34,6 @@ const Sidebar = (props) => {
     );
 }
 
-const LayoutWithSideBar = (props) => {
-    return (
-        <Container fluid >
-            <Grid stackable centered >
-
-                {props.children}
-
-            </Grid>
-        </Container>
-    );
-}
 
 
 export default {
