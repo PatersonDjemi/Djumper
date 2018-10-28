@@ -9,7 +9,7 @@ import { FormInput } from '../../reusable/inputs';
 import Mail from '@assets/Mail.svg';
 import Password from '@assets/locked.svg';
 
-import { valLength , isEmail, require } from '@reusable/forms';
+import { valLength , isEmail, myRequire } from '@reusable/forms';
 
 
 
@@ -80,11 +80,11 @@ class LoginForm extends Component {
 
 
 // for the email
-const reqEmail = require("Email");
+const reqEmail = myRequire("Email");
 const myEmail = isEmail("Email");
 
 // for the password
-const reqPassword = require("Password");
+const reqPassword = myRequire("Password");
 const valPassword = valLength("Password", 5, 100);
 
 

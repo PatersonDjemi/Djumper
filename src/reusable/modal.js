@@ -16,7 +16,7 @@ ModalContent.defaultProps = {
     backgroundColor: '#ffffff'
 }
 
-export class ModalBox extends Component {
+class ModalBox extends Component {
     constructor(props) {
         super(props);
 
@@ -45,6 +45,7 @@ export class ModalBox extends Component {
 
 }
 
+export default ModalBox;
 
 
 

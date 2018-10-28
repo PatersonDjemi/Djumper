@@ -11,7 +11,7 @@ import User from '@assets/User.svg';
 import Password from '@assets/locked.svg'
 
 
-import { valLength , isEmail, require } from '@reusable/forms';
+import { valLength , isEmail, myRequire } from '@reusable/forms';
 
 
 class SignupForm extends Component {
@@ -127,19 +127,19 @@ class SignupForm extends Component {
 
 /* ---- call the function for validating every input ---- */
     // for the first name
-    const reqFirstName = require("First Name");
+    const reqFirstName = myRequire("First Name");
     const valFirstName = valLength("First Name", 4, 50);
     
     // for the last name
-    const reqLastName = require("Last Name");
+    const reqLastName = myRequire("Last Name");
     const valLastName = valLength("Last Name", 4, 20);
     
     // for the email
-    const reqEmail = require("Email");
+    const reqEmail = myRequire("Email");
     const myEmail = isEmail("Email");
     
     // for the password
-    const reqPassword = require("Password");
+    const reqPassword = myRequire("Password");
     const valPassword = valLength("Password", 5, 100);
     
     // for the checkbox

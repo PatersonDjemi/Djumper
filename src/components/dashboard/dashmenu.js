@@ -14,7 +14,6 @@ import settings from '@assets/settings.svg'
 import help from '@assets/info.svg'
 
 
-
 const sideMenuList = [
     { taskname: 'account',  icons: account, link: 'account' },
     { taskname: 'articles',  icons: artciles, link: 'articles' },
@@ -47,7 +46,7 @@ class Dashmenu extends Component {
         const { path, url } = this.props.match;
         return sideMenuList.map( (item, index) => {
             return <SingleTask taskname={item.taskname} icons={item.icons}
-                               link={`${url}/${item.link}`} key={index} /> 
+                    link={`${url}/${item.link}`} key={index} /> 
         });
     }
 

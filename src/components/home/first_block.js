@@ -16,7 +16,7 @@ const FirstBlock = () => {
                     <p id="djumper__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong.
                         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mu
                     </p>
-                  <Link to="/sign_in" id="djumper__create_account" className="link_btn link_btn--orange"> create an account </Link>
+                  <Link to="/dashboard" id="djumper__create_account" className="link_btn link_btn--orange"> create an account </Link>
 
                 </div>
             </div>

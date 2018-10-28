@@ -3,7 +3,7 @@
  */
 
 // required to write something in an input
-export const require = (input_name) => (value) => !value ? `${input_name} is required`: undefined;
+export const myRequire = (input_name) => (value) => !value ? `${input_name} is required`: undefined;
 
 
 // checks the maximal and minimal characters of an input

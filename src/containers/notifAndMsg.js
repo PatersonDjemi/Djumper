@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Container, Grid, Image, Icon } from 'semantic-ui-react'
 
-import {ModalBox} from '@reusable/modal'
+import ModalBox from '@reusable/modal'
 import {notifOrMsg} from '@components/notifAndMsg/notifOrMsg';
 
 const Notification = notifOrMsg();
