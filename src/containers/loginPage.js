@@ -3,26 +3,19 @@ import {Container, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { FormInput } from '@reusable/inputs';
-import Mail from '@assets/Mail.svg';
-import Password from '@assets/locked.svg'
-
-
 import LoginForm from '@components/login/loginForm'
 import Loader from '@reusable/Loader'
 import ShowError from '@components/showError'
 
 import { loginStart } from '@actions'
 
-
 class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            isLoading: false,
         }
 
-        this.isLoading = this.isLoading.bind(this);
         this.logUserIn = this.logUserIn.bind(this);
     }
 
@@ -34,13 +27,10 @@ class LoginPage extends Component {
 
     logUserIn({email, password}) {
         this.props.loginStart({email, password});
-    }
-
-    isLoading() {
         this.setState({isLoading: true})
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         const { authUser, history } = nextProps;
 
         if (authUser.authenticated) {
@@ -50,17 +40,13 @@ class LoginPage extends Component {
         return true;
     }
 
-    componentWillReceiveProps(nextProps) {        
-        if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
-            this.setState({isLoading: false});
-        }
-    }
-
     render () {
         const loader = this.state.isLoading ? <Loader /> : null;
         return (
             <div>
+
                 { loader }
+
                 <Container fluid className="login">
                     <div className="login__outside_box">
         
@@ -85,7 +71,8 @@ class LoginPage extends Component {
                                     </Link>
                                 </div>
 
-                                <span>Don´t have an account yet ? </span>
+                                <span> Don´t have an account yet ? </span>
+
                                 <Link to="/signup"> <span> Sign up </span> </Link>  
 
                             </div>

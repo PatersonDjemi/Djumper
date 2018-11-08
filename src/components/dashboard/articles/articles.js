@@ -6,7 +6,7 @@ import Layout from '../withSideBarLayout'
 import { FilterButton } from '../transactions/transactions'
 import { Article } from '../commonComponents/boughtItems'
 
-import Calendar from '@assets/Calendar.svg'
+import Calendar from '@assets/calendar.svg'
 
 
 class Articles extends Component {

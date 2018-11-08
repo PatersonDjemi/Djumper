@@ -1,21 +1,14 @@
-// import from libraries
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom';
 import { Container, Grid, Header} from 'semantic-ui-react'
 
-import Mail from '@assets/Mail.svg';
-import User from '@assets/User.svg';
-import Password from '@assets/locked.svg'
-
-import {FormInput, CheckInput} from '@reusable/inputs'
 import SignupForm from '@components/signup/signupForm'
 import Loader from '@reusable/Loader'
 import ShowError from '@components/showError'
 
 import { signupStart } from '@actions/index'
-
 
 
 class SignUp extends Component  {
@@ -26,7 +19,6 @@ class SignUp extends Component  {
             isLoading: false,
         }
 
-        this.isLoading = this.isLoading.bind(this);
         this.signUserUp = this.signUserUp.bind(this);
     }
 
@@ -36,14 +28,13 @@ class SignUp extends Component  {
         }
     }
 
-    signUserUp({first, last, email, password, agree}) {
-        // call the action creator
-        this.props.signupStart({first, last, email, password, agree});
-    }
-
-    isLoading() {
-        // displays the loader
-        this.setState({isLoading: true});
+    static getDerivedStateFromProps(props) {
+        if (props.authUser.authenticated) {
+            return {
+                isLoading: false
+            }
+        }
+        return null;
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -62,12 +53,11 @@ class SignUp extends Component  {
         return true;
     }
 
-    // don´t need this step anymore, react will rerender with the initaial state anyway: thats not true
-    // we need to rechange the state in respond in case of error
-    componentWillReceiveProps(nextProps) {        
-        if (!this.props.authUser.authenticated && (nextProps.authUser.authenticated !== true) ) {
-            this.setState({isLoading: false});
-        }
+    signUserUp({first, last, email, password, agree}) {
+        // displays the loader
+        this.setState({isLoading: true});
+        // call the action creator
+        this.props.signupStart({first, last, email, password, agree});
     }
 
     render() {
@@ -93,7 +83,7 @@ class SignUp extends Component  {
                                 <p className="signup__description">Le Lorem Ipsum est simplement du 
                                     faux texte employé dans la composition et la mise en page avant 
                                     impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie
-                                     0depuis les années 1500, quand un peintre. 
+                                    0depuis les années 1500, quand un peintre. 
                                 </p>
                             </div>
                         </Grid.Column>
@@ -107,7 +97,7 @@ class SignUp extends Component  {
                                             className="create_account__title" 
                                             textAlign="center" />
 
-                                    <SignupForm callSignUpStart={this.signUserUp}  loading={this.isLoading} />                                  
+                                    <SignupForm callSignUpStart={this.signUserUp}  />                                  
         
                                     <div className="account__already">
                                         <span>Already a DJUMPER account? </span>

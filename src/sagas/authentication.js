@@ -5,20 +5,18 @@ import axios from 'axios'
 
 
 import { saveToken, extractResponse, handleErrorOnRequest, ErrorOnRequest } from '../../utils';
-// import { autoLogin } from '../actions';
 
 
 /************** 
  * 
- * 
  * Log in
  * 
- *  **************/
+ ***************/
 function* loginStartAsync(email, password) {
 //penser à changer test par login pour des expemles reels
-    const endPoint = `${config.baseUrl}/user/login`;
+    const endPoint = `${config.baseUrl}/auth/signin`;
 
-     return yield axios.post(endPoint, { email, password})
+     return yield axios.post(endPoint, { email, password })
         .then(response => response)
         .catch( error => handleErrorOnRequest(error));
 }
@@ -70,7 +68,7 @@ export function* startLogInSaga() {
 
 function* startSignUpAsync(firstName, lastName, email, password, agree) {
     //penser à changer test par signup pour des expemles reels
-    const endPoint = `${config.baseUrl}/user/signup`;
+    const endPoint = `${config.baseUrl}/auth/signup`;
 
     return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
         .then( response => response)
@@ -114,10 +112,10 @@ export function* startSignUpSaga() {
  *  auto login
  * 
  * 
- *  ****************/
+ *********/
 
 function* autoLoginAsync(token) {
-    const endPoint = `${config.baseUrl}/user/checkmail/:token`;
+    const endPoint = `${config.baseUrl}/auth/checkmail/:token`;
     return yield axios.post(endPoint, {token} )
         .then( resposne => resposne)
         .catch(error => {
@@ -168,10 +166,10 @@ export function* startAutoLogin() {
  *  login out
  * 
  * 
- *  ****************/
+ *********/
 
  function* logOutUserAsync(token) {
-    const endPoint = `${config.baseUrl}/user/logout`;
+    const endPoint = `${config.baseUrl}/auth/signout`;
     return yield axios.delete(endPoint, { headers: { 'x-token': token } } )
         .then(response => response)
         .catch(error => handleErrorOnRequest(error));

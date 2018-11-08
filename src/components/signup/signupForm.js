@@ -1,23 +1,14 @@
 import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
-import validator from 'validator';
 
-
-import {FormInput, FormInputPassword, CheckInput} from '@reusable/inputs'
-
-
-import Mail from '@assets/Mail.svg';
-import User from '@assets/User.svg';
+import Mail from '@assets/mail.svg';
+import User from '@assets/user.svg';
 import Password from '@assets/locked.svg'
 
-
-import { valLength , isEmail, myRequire } from '@reusable/forms';
-
+import { valLength, myRequire, validEmail } from '@reusable/forms';
+import {FormInput, FormInputPassword, CheckInput} from '@reusable/inputs'
 
 class SignupForm extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     renderInputField({input, 
         meta: {touched, error, active},
@@ -66,8 +57,7 @@ class SignupForm extends Component {
 
     submitSignup(allValueFields) {
 
-        const { reset, callSignUpStart } = this.props;
-        this.props.loading();         
+        const { reset, callSignUpStart } = this.props;        
         // call the action creator on the parent component
         callSignUpStart(allValueFields)     
         // clear the fields input
@@ -100,7 +90,7 @@ class SignupForm extends Component {
                     placeholder="Email"
                     type="email" 
                     url={Mail}
-                    validate={[reqEmail, myEmail]}/>
+                    validate={[reqEmail, valEmail]}/>
 
                 <Field name="password"
                     component={this.renderInputFieldPassword}
@@ -136,7 +126,7 @@ class SignupForm extends Component {
     
     // for the email
     const reqEmail = myRequire("Email");
-    const myEmail = isEmail("Email");
+    const valEmail = validEmail("Email");
     
     // for the password
     const reqPassword = myRequire("Password");

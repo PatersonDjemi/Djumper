@@ -4,10 +4,9 @@ import {Route, Switch} from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 
 import Webpages from './webpages'
-import Dashboard from './dashboard/dashboard'
-import DashboardContainer from '@containers/dashboard_container'
-import Signup from '@containers/signup_page'
-import Login from '@containers/login_page'
+import DashboardContainer from '@containers/dashboardContainer'
+import Signup from '@containers/signupPage'
+import Login from '@containers/loginPage'
 import Modal from '@reusable/modal'
 
 import Test from './test'

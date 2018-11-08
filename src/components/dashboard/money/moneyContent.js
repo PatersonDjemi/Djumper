@@ -1,7 +1,7 @@
 import React from 'react';
 import  { GridRow, Container, Grid, Image, Segment } from 'semantic-ui-react';
 
-import Calendar from '@assets/Calendar.svg';
+import Calendar from '@assets/calendar.svg';
 import MoneyPanel from './transfertPanel';
 
 

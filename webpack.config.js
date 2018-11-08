@@ -43,11 +43,21 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 use: [
-                    "style-loader",
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "less-loader"
-                ]
+                    env_mode ? "style-loader": MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "less-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ],
+                exclude: [/[\/\\]node_modules[\/\\]semantic-ui-less[\/\\]/]
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
@@ -87,7 +97,7 @@ module.exports = {
           name: true,
           cacheGroups: {
             vendors: {
-              test: /[\\/]node_modules[\\/]/,
+              test: /[\\/]node_modules[\\/](react|react-dom|redux|react-redux|react-router-dom|redux-form|redux-saga|prop-types|semantic-ui-react|semantic-react|redux-promise)[\\/]/,
               name: 'vendor',
               chunks: 'all',
               priority: -10
@@ -115,3 +125,4 @@ module.exports = {
 // publicPath allows you to specify the base path for all the assets within your application. 
 // historyAPIFallback will redirect 404s to /index.html
 // contentBase est use pour servir les files statics
+// use style loader en dev pour profiter du HMR

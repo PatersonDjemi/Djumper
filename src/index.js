@@ -24,7 +24,7 @@ export const myStore = createStore(rootReducers, loadedState, composeWithDevTool
 myStore.subscribe(() => {
     // add a callback to avoid calling the persiState function
     // everytime the state changes: throttle (from lodash)
-    console.log('my state is ', myStore.getState())
+    // console.log('my state is ', myStore.getState())
 });
 
 sagaMiddleware.run(rootSaga);

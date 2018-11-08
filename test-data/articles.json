@@ -1,0 +1,20 @@
+[
+    {
+       "seller": "Air france" ,
+       "amount": "450",
+       "devise": "euro",
+       "dateOfPayment": "2018-09-21",
+       "ratePament": true,
+       "ratePeriod": "5 months",
+       "websiteOfSeller": "www.fluege.de"
+    },
+    {
+        "seller": "Lufthansa" ,
+        "amount": "650",
+        "devise": "euro",
+        "dateOfPayment": "2018-11-21",
+        "ratePament": true,
+        "ratePeriod": "4 months",
+        "websiteOfSeller": "www.fluege.de"
+     }
+]

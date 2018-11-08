@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import {Link, Route, Redirect } from 'react-router-dom';
-
+import {Route, Redirect } from 'react-router-dom';
 
 import Dashboard from '@components/dashboard/dashboard';
 import { tellToLogin } from '@actions'
-
-
 
 class DashboardContainer extends Component {
     constructor(props) {
@@ -39,7 +36,6 @@ class DashboardContainer extends Component {
     }
 
     render() {
-
         const { userAuth, path } = this.props;
         return ( 
             <Route path={this.props.path}  render={ props => {

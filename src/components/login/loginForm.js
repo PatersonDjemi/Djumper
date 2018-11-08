@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import { reduxForm, Field } from 'redux-form';
-import validator from 'validator';
-import { Link } from 'react-router-dom'
-
-
 
 import { FormInput } from '../../reusable/inputs';
-import Mail from '@assets/Mail.svg';
+import Mail from '@assets/mail.svg';
 import Password from '@assets/locked.svg';
 
-import { valLength , isEmail, myRequire } from '@reusable/forms';
-
-
+import { valLength , myRequire, validEmail} from '@reusable/forms';
 
 class LoginForm extends Component {
 
@@ -35,7 +29,6 @@ class LoginForm extends Component {
     submitLogin(allValueFields) {
 
         const { reset, callLoginStart } = this.props;
-        this.props.loading()
         // call the action creator
         callLoginStart(allValueFields);     
         // clear the input fields
@@ -53,7 +46,7 @@ class LoginForm extends Component {
                         placeholder="Email"
                         type="email" 
                         url={Mail}
-                        validate={[reqEmail, myEmail]}/>
+                        validate={[reqEmail, valEmail]}/>
 
                     <Field name="password"
                         component={this.renderInputField}
@@ -81,7 +74,7 @@ class LoginForm extends Component {
 
 // for the email
 const reqEmail = myRequire("Email");
-const myEmail = isEmail("Email");
+const valEmail = validEmail("Email");
 
 // for the password
 const reqPassword = myRequire("Password");

@@ -5,7 +5,7 @@ import { Container, Grid, Image } from 'semantic-ui-react'
 
 import notif from '@assets/bell.svg'
 import message from '@assets/message.svg'
-import profil from '@assets/User.svg'
+import profil from '@assets/user.svg'
 import search from '@assets/search.svg'
 
 import DropDownComponent from '@reusable/dropdown'

@@ -3,7 +3,7 @@ import  { GridRow, Container, Grid, Image } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
 
 import Layout from '../withSideBarLayout'
-import Calendar from '@assets/Calendar.svg'
+import Calendar from '@assets/calendar.svg'
 
 import Description from './moneyDescription';
 import MoneyTaskRoutes from './moneyTaskRoutes'

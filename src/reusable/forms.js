@@ -1,6 +1,8 @@
+import {isEmail} from 'validator';
+
 /*
-    functions for signup und login form
- */
+  functions for signup und login form
+*/
 
 // required to write something in an input
 export const myRequire = (input_name) => (value) => !value ? `${input_name} is required`: undefined;
@@ -21,9 +23,10 @@ export const valLength = (input_name, min, max) => (value) => {
 }
 
 // check if it is really an email
- export const isEmail = (input_name) => value => {
+ export const validEmail = (input_name) => value => {
 
-    if(value && !value.match(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,8}$/i)) {
+    if(value && !isEmail(value)) {
+        
         return `Please enter a valid ${input_name} `;
     }
 

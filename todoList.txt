@@ -1,0 +1,2 @@
+#### gerer l apparition et la disparition du loading en cas de probleme : not completed
+### envoyer la date aussi de création qd la personne se einloggen: not completed
