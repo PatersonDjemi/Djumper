@@ -1,9 +1,7 @@
 import * as types from './type'
-
-/* 
-    sign up the user for the first time
-*/
-export function signupStart({ first, last, email, password, agree }) {
+ 
+// sign up the user for the first time
+export function signUpAC({ first, last, email, password, agree }) {
     return {
         type: types.SIGN_UP_START,
         payload: {
@@ -11,14 +9,13 @@ export function signupStart({ first, last, email, password, agree }) {
             lastName: last, 
             email: email,
             password: password,
-            agree: agree 
+            agree: agree,
+            createdAt: new Date().getTime()
         }
     }
 }
 
-/* 
-    log the user in when he clicks on deconnexion
-*/
+// log the user in when he clicks on connexion
 export function loginStart({email, password}) {
     return {
         type: types.LOG_IN_START,
@@ -36,19 +33,16 @@ export function autoLogin(token) {
     }
 }
 
-/* notify a user to login first when visiting a private route 
-    without being authenticated
-*/
+// notify a user to login first when visiting a private route 
+// without being authenticated
 export function tellToLogin() {
     return {
         type: types.TELL_TO_LOGIN_FIRST,
         error: 'Please make sure you login first in oder to visit the dashboard'
     }
 }
-
-/* 
-    log the user out when he clicks on deconnexion
-*/
+ 
+//  log the user out when he clicks on deconnexion
 export function logUserOut(history) {
     return {
         type: types.LOG_OUT_START,
@@ -57,10 +51,8 @@ export function logUserOut(history) {
 }
 
 
-/*
-    api call to fetch articles
-*/
 
+// api call to fetch articles
 export function fetchArticles() {
     return {
         type: types.FETCHING_ARTICLES

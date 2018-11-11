@@ -34,7 +34,7 @@ class Dashboard extends Component {
 
     static mapStateToProps({ articlesReducer }) {
         return {
-            items: articlesReducer.articles
+            // items: articlesReducer.articles
         }
     }
 
@@ -50,10 +50,10 @@ class Dashboard extends Component {
 
     componentDidMount() {
         // fetch data from the server here
-        if (!this.props.items) {
+/*         if (!this.props.items) {
             // action for fetching data from the server
             this.props.fetchArticles()
-        }
+        } */
         console.log('dashboard mounted')
     }
 
@@ -72,7 +72,7 @@ class Dashboard extends Component {
                <Route path={path} component={Dashmenu} />
                 <Dashcontent loading={this.state.isLoading} items={theItems} >
                     <Switch>
-                        <Route path={`${url}/account`} render={ props => <Account {...props} theItems={theItems} />} />
+                        <Route path={`${url}/account`} render={ props => <Account {...props} />} />
                         <Route path={`${url}/transactions`} component={Transactions} />
                         <Route path={`${url}/articles`} component={Articles} />
                         <Route path={`${url}/money`} component={Money} />

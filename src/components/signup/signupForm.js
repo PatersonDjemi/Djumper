@@ -57,9 +57,9 @@ class SignupForm extends Component {
 
     submitSignup(allValueFields) {
 
-        const { reset, callSignUpStart } = this.props;        
+        const { reset, callSignUpActionCreator } = this.props;        
         // call the action creator on the parent component
-        callSignUpStart(allValueFields)     
+        callSignUpActionCreator(allValueFields)     
         // clear the fields input
         reset()
     }

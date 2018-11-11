@@ -1,83 +1,47 @@
-import React from 'react';
-import { Image, Segment, Icon, Button } from 'semantic-ui-react'
+import React from "react";
 
-
-import QuickOverview from './quickOverview'
-import Resume from './resume';
+import QuickOverviewContainer from "@containers/quickOverviewContainer";
+import MainContent from "./mainContent";
+import SideBlock from "./sideBlock";
+import AddPaypalSection from "./addPaypal";
 import Layout from '../withSideBarLayout';
-import SeeNext from './seeNext'
+import NextMonthOverview from '@containers/nextMonthOverviewContainer'
 
-import paypal from '@assets/paypal.svg'
-
-const AddPaypalSection = () => {
+const Account = () => {
     return (
-        <Segment >
-            <div className="paypal_account">
-                <div className="paypal__header" style={{ position: 'relative'}}>
-                    <span> paypal account </span>
-                    <div className="paypal__title"> Link your paypal </div>
-                    <Image src={paypal} height="40" width="40" className="imgpaypal" />
-                </div>
-                <div className="paypal__text">
-                    Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod tempor i
-                    nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
-                </div>
+        <React.Fragment>
 
-                {/* <span className="get_start link__paypal"></span> */}
-                <span className="link__paypal">
-                    <Button color='red' size="big" className="link__paypal_btn">Link your Paypal Account</Button>
-                </span>
-                
-            </div>
-        </Segment>
-    );
-}
-
-const SideSection = ({ title, children }) => {
-    return (
-        <div className="sideBar__block">
-            { title? (<div className="sideBar__block__title">
-                { title } </div>) : null }
-            { children }
-        </div> 
-    );
-}
-
-const Account = (props) => {
-    return (
-        <div>
-            <QuickOverview theItems={props.theItems} />
+            <QuickOverviewContainer />
 
             <Layout.LayoutWithSideBar>
 
                 <Layout.MainContent>
 
-                    <Resume theItems={props.theItems} />
+                    <MainContent />
 
                 </Layout.MainContent>
 
                 <Layout.Sidebar>
 
-                    <SideSection>
-                        <SeeNext />
-                    </SideSection>
+                    <SideBlock>
+                        <NextMonthOverview />
+                    </SideBlock>
 
-                    <SideSection  title="Do you have paypal account ?">
-                        <AddPaypalSection/>
-                    </SideSection>
+                    <SideBlock  title="Do you have paypal account ?">
+                        <AddPaypalSection />
+                    </SideBlock>
 
-                    <SideSection title="Last activies">
+                    <SideBlock title="Last activies">
                         <div className="calendar__description">
                             Lorem ipsum dolor sit amet, consetetur sadip scing elitr
                             nvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
                         </div>
-                    </SideSection>
-
+                    </SideBlock>
 
                 </Layout.Sidebar>
 
             </Layout.LayoutWithSideBar>
-        </div>
+        </React.Fragment>
     );
 }
 

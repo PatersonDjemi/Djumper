@@ -59,51 +59,44 @@ export function* startLogInSaga() {
 
 
 /*********
- * 
- * 
- *  sign up
- * 
- * 
- *  ****************/
+ * sign up flow **********************
+ ********/
 
-function* startSignUpAsync(firstName, lastName, email, password, agree) {
+export function* startSignUpSaga() {
+    yield takeLatest(types.SIGN_UP_START, signupStart);
+}
+
+function* startSignUpAsync(firstName, lastName, email, password, agree, createdAt) {
     //penser à changer test par signup pour des expemles reels
     const endPoint = `${config.baseUrl}/auth/signup`;
 
-    return yield axios.post(endPoint,{ firstName, lastName, email, password, agree })
+    return yield axios.post(endPoint,{ firstName, lastName, email, password, agree, createdAt })
         .then( response => response)
         .catch(error => handleErrorOnRequest(error));
 }
 
 function* signupStart(action) {
 
-    const { payload: { firstName, lastName, email, password, agree}, history } = action;
-    //console.log('action signup in saga is: ', action)
+    const { payload: { firstName, lastName, email, password, agree, createdAt}, history } = action;
     let response;
-
     try {
-        response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree );
+        response =  yield call(startSignUpAsync, firstName, lastName, email, password, agree, createdAt );
     // extract data and save token
-        const data = extractResponse(response, true)
-        console.log('response data', response );
-
+        const data = extractResponse(response, false);
+        console.log('response data', data );
         yield put({type: 'AUTH_USER', payload: data});
     }
-
-    catch(error)  {
+    catch (error)  {
         console.log('error on the request', error)
         // user not authenticated
         if (!error.ob.data) {
-            // if the request is on the request
+            // if the failure is on the request
             return yield put({type: 'UNAUTH_USER', error: 'Oops an error occurs, please try aigain later '});           
         }
         return yield put({type: 'UNAUTH_USER', error: error.ob.data })
     }
 }
 
-export function* startSignUpSaga() {
-    yield takeLatest(types.SIGN_UP_START, signupStart)
-}
 
 
 /*********

@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { Container, Grid, Button, Image } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 
 
 const CardBlock = (props) => {

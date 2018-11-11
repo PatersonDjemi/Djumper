@@ -25,9 +25,13 @@ class LoginPage extends Component {
         }
     }
 
-    logUserIn({email, password}) {
-        this.props.loginStart({email, password});
-        this.setState({isLoading: true})
+    static getDerivedStateFromProps(props) {
+        if (props.authUser.authenticated || props.authUser.error) {
+            return {
+                isLoading: false
+            }
+        }
+        return null;
     }
 
     shouldComponentUpdate(nextProps) {
@@ -40,8 +44,16 @@ class LoginPage extends Component {
         return true;
     }
 
+    logUserIn({email, password}) {
+        this.props.loginStart({email, password});
+        this.setState({isLoading: true})
+    }
+
     render () {
+
         const loader = this.state.isLoading ? <Loader /> : null;
+        const errorLogin = this.props.authUser.error;
+
         return (
             <div>
 
@@ -80,7 +92,7 @@ class LoginPage extends Component {
                         </div>        
         
                         <div className="signin__right"> image. 
-                            <ShowError Bottom='10' Left='2' />
+                            { errorLogin && <ShowError bottom="10" left="10" textError={errorLogin} /> }
                         </div>
 
                     </div>
@@ -91,7 +103,4 @@ class LoginPage extends Component {
 
 }
 
-
 export default connect(LoginPage.mapStateToProps, { loginStart })(LoginPage);
-
-

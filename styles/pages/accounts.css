@@ -14,8 +14,10 @@
 .statistik__left {
    /* border: 1px solid #bbb; */
    padding: 1.5rem 2.5rem; 
+   text-align: center;
    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; */
    min-height: 10rem;
+   margin-top: 3.5rem !important;
 }
 
 .statistik__right {
@@ -138,7 +140,7 @@
     font-size: 2rem;
     font-weight: 600;
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: var(--black-color);
 }
 
@@ -211,6 +213,7 @@
     position: absolute !important;
     bottom: 1rem;
     right: 0rem;
+    cursor: pointer;
 }
 
 

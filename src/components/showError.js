@@ -1,24 +1,25 @@
 import React from 'react';
-import { Image, Header} from 'semantic-ui-react'
-
+import PropType from "prop-types";
 
 const ShowError = (props) => {
     return (
-        <div className="error__box" style={{ position: 'absolute' , bottom: props.Bottom + 'px', left: props.Left +'%' }}>
+        <div className="error__box" style={{ position: 'absolute' , bottom: props.bottom + 'px', left: props.left +'%' }}>
             <div className="error__header">
                 <span className="error__title"> error </span>
             </div>
             <div className="error_body">
                 <ul className="error__list">
-                    <li className="single__error">Le Lorem Ipsum est simplement du faux texte employé dans la composition et laIpsum es </li>
-                    <li className="single__error">Le Lorem Ipsum est simplement du faux texte employé dans la composition et laIpsum es </li>
-                    <li className="single__error">Le Lorem Ipsum est simplement du faux texte employé dans la composition et laIpsum es </li>
-                    <li className="single__error">Le Lorem Ipsum est simplement du faux texte employé dans la composition et laIpsum es </li>
+                    <li className="single__error"> {props.textError} </li>
                 </ul>
             </div>
         </div>
     );
 }
 
+ShowError.PropType = {
+    bottom: PropType.number.isRequired,
+    left: PropType.number.isRequired,
+    textError: PropType.string.isRequired
+}
 
 export default ShowError;

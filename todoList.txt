@@ -1,2 +1,3 @@
-#### gerer l apparition et la disparition du loading en cas de probleme : not completed
-### envoyer la date aussi de création qd la personne se einloggen: not completed
+#### gerer l apparition et la disparition du loading en cas de probleme :  completed
+### envoyer la date aussi de création qd la personne se einloggen:  completed
+### gerer la disparition du block d erreur login et signup page: not completed

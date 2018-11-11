@@ -39,7 +39,7 @@ class DashboardContainer extends Component {
         const { userAuth, path } = this.props;
         return ( 
             <Route path={this.props.path}  render={ props => {
-                return userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.pleaseLoginFirst()  } }
+                return !userAuth ? <Dashboard {...props} userAuth={userAuth} /> : this.pleaseLoginFirst()  } }
             /> 
         );
     }

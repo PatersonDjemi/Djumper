@@ -8,7 +8,7 @@ import SignupForm from '@components/signup/signupForm'
 import Loader from '@reusable/Loader'
 import ShowError from '@components/showError'
 
-import { signupStart } from '@actions/index'
+import { signUpAC } from '@actions/index'
 
 
 class SignUp extends Component  {
@@ -29,7 +29,7 @@ class SignUp extends Component  {
     }
 
     static getDerivedStateFromProps(props) {
-        if (props.authUser.authenticated) {
+        if (props.authUser.authenticated || props.authUser.error) {
             return {
                 isLoading: false
             }
@@ -57,12 +57,13 @@ class SignUp extends Component  {
         // displays the loader
         this.setState({isLoading: true});
         // call the action creator
-        this.props.signupStart({first, last, email, password, agree});
+        this.props.signUpAC({first, last, email, password, agree});
     }
 
     render() {
         
         const loader = this.state.isLoading ? <Loader /> : null;
+        const signupError = this.props.authUser.error;
 
         return (
             <div>
@@ -97,7 +98,7 @@ class SignUp extends Component  {
                                             className="create_account__title" 
                                             textAlign="center" />
 
-                                    <SignupForm callSignUpStart={this.signUserUp}  />                                  
+                                    <SignupForm callSignUpActionCreator={this.signUserUp}  />                                  
         
                                     <div className="account__already">
                                         <span>Already a DJUMPER account? </span>
@@ -107,7 +108,7 @@ class SignUp extends Component  {
                                 </div>
                             </div>
 
-                            <ShowError Bottom='57' Left='-31' /> 
+                        { signupError && <ShowError bottom="57" left="-31" textError={signupError} />  }   
 
                         </Grid.Column>
 
@@ -122,6 +123,6 @@ class SignUp extends Component  {
 
 
 
-export default connect(SignUp.mapStateToProps, { signupStart })(SignUp);
+export default connect(SignUp.mapStateToProps, { signUpAC })(SignUp);
 
 

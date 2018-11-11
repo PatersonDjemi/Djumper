@@ -1,8 +1,5 @@
 import React from 'react';
-import  { Container, Grid, Image } from 'semantic-ui-react';
-
-
-
+import  { Container, Grid } from 'semantic-ui-react';
 
 const LayoutWithSideBar = (props) => {
     return (
@@ -33,8 +30,6 @@ const Sidebar = (props) => {
         </Grid.Column>
     );
 }
-
-
 
 export default {
     LayoutWithSideBar,
