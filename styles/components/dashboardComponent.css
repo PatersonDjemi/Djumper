@@ -127,8 +127,11 @@
 /********************* filter bouttons ****************/
 
 .filter {
-    padding: 3rem 0 1.2rem;
-    display: flex;
+    padding: 4rem 0 4rem !important;
+    display: flex !important;
+    justify-content: center;
+    background-color: #f1f1f1;
+    margin-bottom: 5rem !important;
 }
 
 .filter__btn {
@@ -163,9 +166,9 @@
 }
 
 .transactions__title {
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
+    font-size: 1.7rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .transactions__block {
